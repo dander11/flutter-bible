@@ -69,14 +69,19 @@ class BibleProvider {
     var chapters = booksToSearch.expand((book) => book.chapters);
 
     var verses = chapters.expand((c) => c.verses);
-    return verses
-        .where((verse) =>
-            _contains(searchTerm.toLowerCase(), verse.text.toLowerCase()))
-        .where((verse) => verse.text
-            .toLowerCase()
-            .split(" ")
-            .contains(searchTerm.toLowerCase()))
-        .toList();
+    verses = verses.where((verse) =>
+        _contains(searchTerm.toLowerCase(), verse.text.toLowerCase()));
+    if (verses.contains(" ")) {
+      verses = verses
+          .where((verse) => verse.text
+              .toLowerCase()
+              .split(" ")
+              .contains(searchTerm.toLowerCase()))
+          .toList();
+    } else {
+      verses = verses.where((verse) =>
+          verse.text.toLowerCase().contains(searchTerm.toLowerCase()));
+    }
   }
 
   static bool _contains(String query, String verse) {
