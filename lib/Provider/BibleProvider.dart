@@ -71,10 +71,11 @@ class BibleProvider {
     var verses = chapters.expand((c) => c.verses);
     verses = verses.where((verse) =>
         _contains(searchTerm.toLowerCase(), verse.text.toLowerCase()));
-    if (verses.contains(" ")) {
+    if (verses.contains(" ") && !searchTerm.contains(" ")) {
       verses = verses
           .where((verse) => verse.text
               .toLowerCase()
+              .replaceAll(".", "")
               .split(" ")
               .contains(searchTerm.toLowerCase()))
           .toList();
