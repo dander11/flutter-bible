@@ -27,6 +27,7 @@ class ChapterCircle extends StatelessWidget {
       elevation: 0.0,
       onPressed: () {
         InheritedBlocs.of(context).bibleBloc.currentChapter.add(chapter);
+        Navigator.of(context).pop();
       },
     );
   }
