@@ -251,6 +251,25 @@ class BibleSearchDelegate extends SearchDelegate<Chapter> {
         ),
         StreamBuilder(
           stream: InheritedBlocs.of(context).bibleBloc.searchResults,
+          initialData: [],
+          builder: (BuildContext context, AsyncSnapshot snapshot) {
+            return Row(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: <Widget>[
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(0.0, 0.0, 17.0, 0.0),
+                  child: Text(
+                    "${snapshot.data.length} Results",
+                    style: Theme.of(context).textTheme.body1,
+                  ),
+                )
+              ],
+            );
+          },
+        ),
+        Divider(),
+        StreamBuilder(
+          stream: InheritedBlocs.of(context).bibleBloc.searchResults,
           builder:
               (context, AsyncSnapshot<UnmodifiableListView<Verse>> snapshot) {
             if (snapshot.hasData) {

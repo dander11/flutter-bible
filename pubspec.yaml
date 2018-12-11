@@ -31,7 +31,10 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
   faker: ^1.0.0
-
+  
+flutter_icons:
+  android: true 
+  image_path: "resources/icon/icon.png"
 
 # For information on the generic Dart part of this file, see the
 # following page: https://www.dartlang.org/tools/pub/pubspec

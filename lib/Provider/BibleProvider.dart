@@ -72,8 +72,10 @@ class BibleProvider {
     return verses
         .where((verse) =>
             _contains(searchTerm.toLowerCase(), verse.text.toLowerCase()))
-        .where((verse) =>
-            verse.text.split(" ").contains("{searchTerm.toLowerCase()}"))
+        .where((verse) => verse.text
+            .toLowerCase()
+            .split(" ")
+            .contains(searchTerm.toLowerCase()))
         .toList();
   }
 
