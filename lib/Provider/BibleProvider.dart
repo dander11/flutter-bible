@@ -82,7 +82,7 @@ class BibleProvider {
       verses = verses.where((verse) =>
           verse.text.toLowerCase().contains(searchTerm.toLowerCase()));
     }
-    return verses;
+    return verses.toList();
   }
 
   static bool _contains(String query, String verse) {
