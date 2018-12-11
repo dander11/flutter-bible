@@ -12,19 +12,25 @@ class BookDrawer extends StatelessWidget {
       child: StreamBuilder(
         stream: InheritedBlocs.of(context).bibleBloc.books,
         builder: (BuildContext context, AsyncSnapshot snapshot) {
-          return Column(
-            children: <Widget>[
-              Expanded(
-                flex: 1,
-                child: ListView.builder(
-                  itemBuilder: (BuildContext context, int index) => BookPanel(
-                        book: snapshot.data[index],
-                      ),
-                  itemCount: snapshot.data.length,
+          if (snapshot.hasData) {
+            return Column(
+              children: <Widget>[
+                Expanded(
+                  flex: 1,
+                  child: ListView.builder(
+                    itemBuilder: (BuildContext context, int index) => BookPanel(
+                          book: snapshot.data[index],
+                        ),
+                    itemCount: snapshot.data.length,
+                  ),
                 ),
-              ),
-            ],
-          );
+              ],
+            );
+          } else {
+            return Column(
+              children: <Widget>[],
+            );
+          }
         },
       ),
     );

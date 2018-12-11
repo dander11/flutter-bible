@@ -95,13 +95,7 @@ class _MyHomePageState extends State<MyHomePage> {
             );
           } else {
             readCurrentBookAndChapter();
-            return Column(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
-                Center(child: CircularProgressIndicator()),
-              ],
-            );
+            return new LoadingColumn();
           }
         },
       ),
@@ -189,6 +183,23 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 }
 
+class LoadingColumn extends StatelessWidget {
+  const LoadingColumn({
+    Key key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.center,
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: <Widget>[
+        Center(child: CircularProgressIndicator()),
+      ],
+    );
+  }
+}
+
 class BibleSearchDelegate extends SearchDelegate<Chapter> {
   @override
   List<Widget> buildActions(BuildContext context) {
@@ -242,8 +253,12 @@ class BibleSearchDelegate extends SearchDelegate<Chapter> {
           stream: InheritedBlocs.of(context).bibleBloc.searchResults,
           builder:
               (context, AsyncSnapshot<UnmodifiableListView<Verse>> snapshot) {
-            final results = snapshot.data;
-            return new SearchResults(results: results);
+            if (snapshot.hasData) {
+              final results = snapshot.data;
+              return new SearchResults(results: results);
+            } else {
+              return LoadingColumn();
+            }
           },
         ),
       ],
