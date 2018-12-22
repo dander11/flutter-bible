@@ -55,29 +55,33 @@ class BibleBloc {
     });
 
     _searchTermController.stream.listen((search) {
-      var booksToSearch = search.book.isNotEmpty
-          ? this
-              ._books
-              .where((book) =>
-                  book.name.toLowerCase() == search.book.toLowerCase())
-              .toList()
-          : this._books;
-      List<Verse> results =
-          BibleProvider.getSearchResults(search.queryText, booksToSearch);
-      _searchResultsSubject.add(UnmodifiableListView(results));
+      if (search.queryText.length > 2) {
+        var booksToSearch = search.book.isNotEmpty
+            ? this
+                ._books
+                .where((book) =>
+                    book.name.toLowerCase() == search.book.toLowerCase())
+                .toList()
+            : this._books;
+        List<Verse> results =
+            BibleProvider.getSearchResults(search.queryText, booksToSearch);
+        _searchResultsSubject.add(UnmodifiableListView(results));
+      }
     });
 
     _suggestionSearchTermController.stream.listen((search) {
-      var booksToSearch = search.book.isNotEmpty
-          ? this
-              ._books
-              .where((book) =>
-                  book.name.toLowerCase() == search.book.toLowerCase())
-              .toList()
-          : this._books;
-      List<Verse> results =
-          BibleProvider.getSearchResults(search.queryText, booksToSearch);
-      _suggestionSearchResultsSubject.add(UnmodifiableListView(results));
+      if (search.queryText.length > 2) {
+        var booksToSearch = search.book.isNotEmpty
+            ? this
+                ._books
+                .where((book) =>
+                    book.name.toLowerCase() == search.book.toLowerCase())
+                .toList()
+            : this._books;
+        List<Verse> results =
+            BibleProvider.getSearchResults(search.queryText, booksToSearch);
+        _suggestionSearchResultsSubject.add(UnmodifiableListView(results));
+      }
     });
   }
 

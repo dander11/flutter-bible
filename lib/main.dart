@@ -225,6 +225,23 @@ class BibleSearchDelegate extends SearchDelegate<Chapter> {
 
   @override
   Widget buildResults(BuildContext context) {
+    if (query.length < 3) {
+      return Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: <Widget>[
+          Center(
+            child: Text(
+              "Search term must be longer than two letters.",
+              textScaleFactor: 1.2,
+              style: Theme.of(context)
+                  .textTheme
+                  .subhead
+                  .copyWith(color: Colors.red.shade300),
+            ),
+          )
+        ],
+      );
+    }
     InheritedBlocs.of(context)
         .bibleBloc
         .searchTerm
@@ -237,33 +254,52 @@ class BibleSearchDelegate extends SearchDelegate<Chapter> {
 
     return Column(
       children: <Widget>[
-        StreamBuilder(
+        StreamBuilder<UnmodifiableListView<Verse>>(
           stream:
               InheritedBlocs.of(context).bibleBloc.suggestionSearchearchResults,
-          initialData: [],
-          builder: (BuildContext context, AsyncSnapshot snapshot) {
+          initialData: UnmodifiableListView([]),
+          builder: (BuildContext context,
+              AsyncSnapshot<UnmodifiableListView<Verse>> snapshot) {
+            if (!snapshot.hasData || snapshot.data.length == 0) {
+              return Container();
+            }
             final books = Collection(snapshot.data)
                 .select((verse) => verse.chapter.book)
-                .distinct()
                 .toList();
-            return new SearchFilter(query: query, books: books);
+            return Padding(
+              padding: const EdgeInsets.fromLTRB(17.0, 0.0, 17.0, 0.0),
+              child: new SearchFilter(query: query, books: books),
+            );
           },
         ),
-        StreamBuilder(
+        StreamBuilder<UnmodifiableListView<Verse>>(
           stream: InheritedBlocs.of(context).bibleBloc.searchResults,
-          initialData: [],
-          builder: (BuildContext context, AsyncSnapshot snapshot) {
-            return Row(
-              mainAxisAlignment: MainAxisAlignment.end,
-              children: <Widget>[
-                Padding(
-                  padding: const EdgeInsets.fromLTRB(0.0, 0.0, 17.0, 0.0),
-                  child: Text(
+          builder: (BuildContext context,
+              AsyncSnapshot<UnmodifiableListView<Verse>> snapshot) {
+            if (!snapshot.hasData || snapshot.data.length == 0) {
+              return Row();
+            }
+            return Padding(
+              padding: const EdgeInsets.fromLTRB(17.0, 0.0, 17.0, 0.0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: <Widget>[
+                  Text(
                     "${snapshot.data.length} Results",
                     style: Theme.of(context).textTheme.body1,
                   ),
-                )
-              ],
+                  Collection(snapshot.data)
+                              .select((v) => v.chapter.book)
+                              .distinct()
+                              .count() >
+                          1
+                      ? Text("")
+                      : Text(
+                          " in ${Collection(snapshot.data).select((v) => v.chapter.book).distinct().toList().first.name}",
+                          style: Theme.of(context).textTheme.body1,
+                        ),
+                ],
+              ),
             );
           },
         ),
@@ -272,11 +308,23 @@ class BibleSearchDelegate extends SearchDelegate<Chapter> {
           stream: InheritedBlocs.of(context).bibleBloc.searchResults,
           builder:
               (context, AsyncSnapshot<UnmodifiableListView<Verse>> snapshot) {
-            if (snapshot.hasData) {
+            if (!snapshot.hasData) {
+              return LoadingColumn();
+            } else if (snapshot.data.length == 0) {
+              return Column(
+                children: <Widget>[
+                  Text(
+                    "No Results Found.",
+                    style: Theme.of(context)
+                        .textTheme
+                        .subhead
+                        .copyWith(color: Colors.red.shade300),
+                  ),
+                ],
+              );
+            } else {
               final results = snapshot.data;
               return new SearchResults(results: results);
-            } else {
-              return LoadingColumn();
             }
           },
         ),

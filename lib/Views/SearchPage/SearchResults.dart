@@ -4,17 +4,18 @@ import 'package:collection/collection.dart';
 import 'package:flutter/material.dart';
 
 class SearchResults extends StatelessWidget {
-  const SearchResults({
-    Key key,
-    @required this.results,
-  }) : super(key: key);
+  const SearchResults({Key key, @required this.results, this.controller})
+      : super(key: key);
 
   final UnmodifiableListView<Verse> results;
+  final ScrollController controller;
 
   @override
   Widget build(BuildContext context) {
     return Expanded(
       child: ListView.builder(
+        controller:
+            this.controller == null ? ScrollController() : this.controller,
         itemCount: results.length,
         itemBuilder: (BuildContext context, int index) {
           var verse = results[index];
