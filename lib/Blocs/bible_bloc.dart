@@ -4,14 +4,16 @@ import 'package:bible_bloc/Models/Book.dart';
 import 'package:bible_bloc/Models/Chapter.dart';
 import 'package:bible_bloc/Models/SearchQuery.dart';
 import 'package:bible_bloc/Models/Verse.dart';
+import 'package:bible_bloc/Provider/IBibleProvider.dart';
+import 'package:bible_bloc/Provider/SqlLiteBibleProvider.dart';
+import 'package:bible_bloc/Provider/XmlBibleProvider.dart';
 import 'package:flutter/services.dart';
 import 'package:rxdart/rxdart.dart';
-import 'package:bible_bloc/Provider/BibleProvider.dart';
 import 'package:xml/xml.dart' as xml;
 import 'dart:collection';
 
 class BibleBloc {
-  BibleProvider _importer;
+  IBibleProvider _importer;
   List<Book> _books;
 
   Stream<UnmodifiableListView<Book>> get books => _booksSubject.stream;
@@ -43,11 +45,11 @@ class BibleBloc {
       BehaviorSubject<UnmodifiableListView<Verse>>();
 
   BibleBloc(String bibleFilePath) {
-    rootBundle.loadString(bibleFilePath).then((fileData) {
-      xml.XmlDocument xmlDocument = xml.parse(fileData);
-      _importer = BibleProvider(xmlDocument: xmlDocument);
-      _getBooks();
-    });
+    //rootBundle.loadString(bibleFilePath).then((fileData) {
+    //xml.XmlDocument xmlDocument = xml.parse(fileData);
+    _importer = SqlLiteBibleProvider();
+    _getBooks();
+    //});
 
     _currentChapterController.stream.listen((currentChapter) {
       _verseSubject.add(UnmodifiableListView(currentChapter.verses));
@@ -64,7 +66,7 @@ class BibleBloc {
                 .toList()
             : this._books;
         List<Verse> results =
-            BibleProvider.getSearchResults(search.queryText, booksToSearch);
+            _importer.getSearchResults(search.queryText, booksToSearch);
         _searchResultsSubject.add(UnmodifiableListView(results));
       }
     });
@@ -79,7 +81,7 @@ class BibleBloc {
                 .toList()
             : this._books;
         List<Verse> results =
-            BibleProvider.getSearchResults(search.queryText, booksToSearch);
+            _importer.getSearchResults(search.queryText, booksToSearch);
         _suggestionSearchResultsSubject.add(UnmodifiableListView(results));
       }
     });

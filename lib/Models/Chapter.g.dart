@@ -8,18 +8,20 @@ part of 'Chapter.dart';
 
 Chapter _$ChapterFromJson(Map<String, dynamic> json) {
   return Chapter(
-      json['number'] as int,
-      (json['verses'] as List)
+      number: json['Number'] as int,
+      verses: (json['verses'] as List)
           ?.map((e) =>
               e == null ? null : Verse.fromJson(e as Map<String, dynamic>))
           ?.toList(),
-      json['book'] == null
+      book: json['book'] == null
           ? null
-          : Book.fromJson(json['book'] as Map<String, dynamic>));
+          : Book.fromJson(json['book'] as Map<String, dynamic>))
+    ..id = json['Id'] as int;
 }
 
 Map<String, dynamic> _$ChapterToJson(Chapter instance) => <String, dynamic>{
+      'Id': instance.id,
       'verses': instance.verses,
       'book': instance.book,
-      'number': instance.number
+      'Number': instance.number
     };

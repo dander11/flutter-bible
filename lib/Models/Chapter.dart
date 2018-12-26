@@ -6,11 +6,16 @@ part 'Chapter.g.dart';
 
 @JsonSerializable()
 class Chapter {
+  @JsonKey(name: 'Id')
+  int id;
+  @JsonKey(required: false)
   List<Verse> verses;
+  @JsonKey(required: false)
   Book book;
+  @JsonKey(name: 'Number')
   int number;
 
-  Chapter(this.number, this.verses, [this.book]);
+  Chapter({this.number, this.verses, this.book});
 
   Verse getVerse(int verseNumber) {
     if (verseNumber < 0 || verseNumber > verses.length) {

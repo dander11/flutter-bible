@@ -5,9 +5,13 @@ part 'Verse.g.dart';
 
 @JsonSerializable()
 class Verse {
+  @JsonKey(name: 'Id')
+  int id;
+  @JsonKey(name: 'Text')
   final String text;
+  @JsonKey(name: 'Number')
   final int number;
-  @JsonKey(ignore: true)
+  @JsonKey(required: false)
   Chapter chapter;
 
   Verse({this.number, this.text});

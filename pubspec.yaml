@@ -13,6 +13,8 @@ environment:
   sdk: ">=2.0.0-dev.68.0 <3.0.0"
 
 dependencies:
+  path_provider: ^0.4.1
+  sqflite: ^0.13.0+1
   queries: ^0.1.4
   xml: "^3.0.0"
   rxdart: ^0.19.0
@@ -42,7 +44,7 @@ flutter_icons:
 # The following section is specific to Flutter.
 flutter:
   assets:
-    - resources/esv.xml
+    - resources/BibleDb.db
 
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in

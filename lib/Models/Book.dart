@@ -5,9 +5,12 @@ part 'Book.g.dart';
 
 @JsonSerializable()
 class Book {
+  @JsonKey(name: 'Id')
+  int id;
+  @JsonKey(name: 'Name')
   final String name;
-  @JsonKey(ignore: true)
-  final List<Chapter> chapters;
+  @JsonKey(required: false)
+  List<Chapter> chapters;
 
   Book({this.name, this.chapters});
 
