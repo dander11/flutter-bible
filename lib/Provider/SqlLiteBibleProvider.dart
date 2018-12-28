@@ -14,6 +14,9 @@ class SqlLiteBibleProvider extends IBibleProvider {
   List<Map<String, dynamic>> _verses;
 
   List<Map<String, dynamic>> _chapters;
+
+  List<Book> _books;
+
   Stopwatch watch = new Stopwatch();
 
   Future<Database> get database async {
@@ -57,15 +60,15 @@ class SqlLiteBibleProvider extends IBibleProvider {
     var result = await data.query("Book");
 
     this._chapters = await data.query("Chapter");
-    List<Book> books = List<Book>();
+    // = List<Book>();
     for (var item in result) {
       var book = Book.fromJson(item);
       book.chapters = await _getChaptersForBook(book);
-      books.add(book);
+      _books.add(book);
     }
     watch.stop();
     print("Getting all books took: ${watch.elapsedMilliseconds}ms");
-    return books;
+    return _books;
   }
 
   @override
@@ -99,7 +102,7 @@ class SqlLiteBibleProvider extends IBibleProvider {
     for (var item in result) {
       var chapter = Chapter.fromJson(item);
       chapter.book = book;
-      chapter.verses = await _getVerses(chapter);
+      //chapter.verses = await _getVerses(chapter);
       chapters.add(chapter);
     }
     return chapters;
@@ -118,5 +121,20 @@ class SqlLiteBibleProvider extends IBibleProvider {
       verses.add(verse);
     }
     return verses;
+  }
+
+  @override
+  Future<Chapter> getChapterById(int chapterId) async {
+    var data = await this.database;
+    var result = this._chapters.where((v) => v['Id'] == chapterId);
+
+    List<Chapter> chapters = List<Chapter>();
+    for (var item in result) {
+      var chapter = Chapter.fromJson(item);
+      //chapter.book = book;
+      //chapter.verses = await _getVerses(chapter);
+      chapters.add(chapter);
+    }
+    return chapters.first;
   }
 }

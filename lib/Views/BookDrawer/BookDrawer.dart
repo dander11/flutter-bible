@@ -7,15 +7,15 @@ class BookDrawer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return new Drawer(
+    return Drawer(
       semanticLabel: "Books",
-      child: StreamBuilder(
-        stream: InheritedBlocs.of(context).bibleBloc.books,
-        builder: (BuildContext context, AsyncSnapshot snapshot) {
-          if (snapshot.hasData) {
-            return Column(
-              children: <Widget>[
-                Expanded(
+      child: Column(
+        children: [
+          StreamBuilder(
+            stream: InheritedBlocs.of(context).bibleBloc.books,
+            builder: (BuildContext context, AsyncSnapshot snapshot) {
+              if (snapshot.hasData) {
+                return Expanded(
                   flex: 1,
                   child: ListView.builder(
                     itemBuilder: (BuildContext context, int index) => BookPanel(
@@ -23,15 +23,13 @@ class BookDrawer extends StatelessWidget {
                         ),
                     itemCount: snapshot.data.length,
                   ),
-                ),
-              ],
-            );
-          } else {
-            return Column(
-              children: <Widget>[],
-            );
-          }
-        },
+                );
+              } else {
+                return Container();
+              }
+            },
+          ),
+        ],
       ),
     );
   }

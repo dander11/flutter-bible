@@ -9,5 +9,7 @@ abstract class IBibleProvider {
 
   Chapter getChapter(String bookName, int chapterNumber);
 
+  Future<Chapter> getChapterById(int chapterId);
+
   List<Verse> getSearchResults(String searchTerm, List<Book> booksToSearch);
 }

@@ -8,12 +8,14 @@ class Verses extends StatelessWidget {
   final Book book;
   final Function(DismissDirection) swipeAction;
   final bool addBackgrounds;
+  final bool showVerseNumbers;
 
   Verses({
     this.chapter,
     this.book,
     this.swipeAction,
     this.addBackgrounds,
+    this.showVerseNumbers,
   });
 
   Widget build(BuildContext context) {
@@ -24,10 +26,12 @@ class Verses extends StatelessWidget {
         style: new TextStyle(fontWeight: FontWeight.bold),
       );
       var verText = new TextSpan(
-        text: verse.text,
+        text: verse.text + ' ',
         style: new TextStyle(fontWeight: FontWeight.normal),
       );
-      chapterText.add(number);
+      if (this.showVerseNumbers) {
+        chapterText.add(number);
+      }
       chapterText.add(verText);
     }
     return new Dismissible(
@@ -50,6 +54,7 @@ class Verses extends StatelessWidget {
         book: book,
         swipeAction: swipeAction,
         addBackgrounds: false,
+        showVerseNumbers: this.showVerseNumbers,
       );
     }
   }
@@ -70,6 +75,7 @@ class Verses extends StatelessWidget {
         book: book,
         swipeAction: swipeAction,
         addBackgrounds: false,
+        showVerseNumbers: this.showVerseNumbers,
       );
     }
   }

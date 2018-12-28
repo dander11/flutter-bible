@@ -16,28 +16,14 @@ class VerseText extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return new Column(
-      children: <Widget>[
-        new Expanded(
-          child: new SingleChildScrollView(
-            scrollDirection: Axis.vertical,
-            child: new Column(
-              mainAxisAlignment: MainAxisAlignment.start,
-              children: <Widget>[
-                new Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: new RichText(
-                    text: new TextSpan(
-                      children: chapterText,
-                      style: Theme.of(context).textTheme.body2,
-                    ),
-                  ),
-                ),
-              ],
-            ),
-          ),
+    return Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: new RichText(
+        text: new TextSpan(
+          children: chapterText,
+          style: Theme.of(context).textTheme.body2,
         ),
-      ],
+      ),
     );
   }
 }

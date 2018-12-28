@@ -119,4 +119,10 @@ class XmlBibleProvider extends IBibleProvider {
     // Nothing found.
     return false;
   }
+
+  @override
+  Future<Chapter> getChapterById(int chapterId) async {
+    // TODO: implement getChapterById
+    return null;
+  }
 }

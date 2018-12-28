@@ -5,7 +5,6 @@ import 'package:bible_bloc/Models/Chapter.dart';
 import 'package:bible_bloc/Models/SearchQuery.dart';
 import 'package:bible_bloc/Models/Verse.dart';
 import 'package:bible_bloc/Provider/IBibleProvider.dart';
-import 'package:bible_bloc/Provider/SqlLiteBibleProvider.dart';
 import 'package:bible_bloc/Provider/XmlBibleProvider.dart';
 import 'package:flutter/services.dart';
 import 'package:rxdart/rxdart.dart';
@@ -45,11 +44,14 @@ class BibleBloc {
       BehaviorSubject<UnmodifiableListView<Verse>>();
 
   BibleBloc(String bibleFilePath) {
-    //rootBundle.loadString(bibleFilePath).then((fileData) {
-    //xml.XmlDocument xmlDocument = xml.parse(fileData);
+    rootBundle.loadString(bibleFilePath).then((fileData) {
+      xml.XmlDocument xmlDocument = xml.parse(fileData);
+      _importer = XmlBibleProvider(xmlDocument: xmlDocument);
+      _getBooks();
+    });
+/* 
     _importer = SqlLiteBibleProvider();
-    _getBooks();
-    //});
+    _getBooks(); */
 
     _currentChapterController.stream.listen((currentChapter) {
       _verseSubject.add(UnmodifiableListView(currentChapter.verses));
