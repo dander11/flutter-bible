@@ -2,7 +2,6 @@ import 'dart:convert';
 import 'package:bible_bloc/Blocs/settings_bloc.dart';
 import 'package:bible_bloc/Views/SearchPage/BibleSearchDelegate.dart';
 import 'package:bible_bloc/Views/Settings/SettingPopupMenu.dart';
-import 'package:flutter/services.dart';
 import 'package:bible_bloc/Blocs/bible_bloc.dart';
 import 'package:bible_bloc/Designs/DarkDesign.dart';
 import 'package:bible_bloc/InheritedBlocs.dart';
@@ -13,9 +12,11 @@ import 'package:bible_bloc/Views/VerseViewer/DismissableVerseViewer.dart';
 import 'package:flutter/material.dart';
 import 'dart:collection';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:global_configuration/global_configuration.dart';
 
-void main() {
-  final bibleBloc = BibleBloc('resources/esv.xml');
+void main() async {
+  await GlobalConfiguration().loadFromAsset("app_settings");
+  final bibleBloc = BibleBloc();
   runApp(MyApp(
     bibleBloc: bibleBloc,
     settingsBloc: SettingsBloc(),
@@ -120,14 +121,14 @@ class _MyHomePageState extends State<MyHomePage> {
     try {
       SharedPreferences sp = await SharedPreferences.getInstance();
 
-      var loadedChapter =
+      /* var loadedChapter =
           Chapter.fromJson(json.decode(sp.getString(membershipKey)));
       var books = await InheritedBlocs.of(context).bibleBloc.books.first;
       var currentChapter = books
           .firstWhere((book) => book.name == loadedChapter.book.name)
           .chapters
           .firstWhere((chapter) => chapter.number == loadedChapter.number);
-      InheritedBlocs.of(context).bibleBloc.currentChapter.add(currentChapter);
+      InheritedBlocs.of(context).bibleBloc.currentChapter.add(currentChapter); */
     } catch (e) {
       //return new AppState();
     }

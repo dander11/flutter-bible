@@ -6,9 +6,7 @@ import 'package:bible_bloc/Models/SearchQuery.dart';
 import 'package:bible_bloc/Models/Verse.dart';
 import 'package:bible_bloc/Provider/IBibleProvider.dart';
 import 'package:bible_bloc/Provider/XmlBibleProvider.dart';
-import 'package:flutter/services.dart';
 import 'package:rxdart/rxdart.dart';
-import 'package:xml/xml.dart' as xml;
 import 'dart:collection';
 
 class BibleBloc {
@@ -43,18 +41,19 @@ class BibleBloc {
   final _suggestionSearchResultsSubject =
       BehaviorSubject<UnmodifiableListView<Verse>>();
 
-  BibleBloc(String bibleFilePath) {
-    rootBundle.loadString(bibleFilePath).then((fileData) {
-      xml.XmlDocument xmlDocument = xml.parse(fileData);
-      _importer = XmlBibleProvider(xmlDocument: xmlDocument);
-      _getBooks();
-    });
+  BibleBloc() {
+    _importer = XmlBibleProvider();
+    _getBooks();
 /* 
     _importer = SqlLiteBibleProvider();
     _getBooks(); */
 
     _currentChapterController.stream.listen((currentChapter) {
-      _verseSubject.add(UnmodifiableListView(currentChapter.verses));
+      //var verses = currentChapter.elements.where((e) => e is Verse);
+      var chapter =
+          _importer.getChapter(currentChapter.book.name, currentChapter.number);
+      var verses = chapter.elements.whereType<Verse>();
+      _verseSubject.add(UnmodifiableListView(verses));
       _currentChapter.add(currentChapter);
     });
 
@@ -90,6 +89,7 @@ class BibleBloc {
   }
 
   Future<Null> _getBooks() async {
+    await _importer.init();
     _books = await _importer.getAllBooks();
     _booksSubject.add(UnmodifiableListView(_books));
   }

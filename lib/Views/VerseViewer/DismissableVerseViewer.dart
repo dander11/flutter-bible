@@ -1,5 +1,6 @@
 import 'package:bible_bloc/Models/Book.dart';
 import 'package:bible_bloc/Models/Chapter.dart';
+import 'package:bible_bloc/Models/Verse.dart';
 import 'package:bible_bloc/Views/VerseViewer/VerseText.dart';
 import 'package:flutter/material.dart';
 
@@ -20,7 +21,7 @@ class Verses extends StatelessWidget {
 
   Widget build(BuildContext context) {
     List<TextSpan> chapterText = new List<TextSpan>();
-    for (var verse in chapter.verses) {
+    for (Verse verse in chapter.elements.whereType<Verse>().toList()) {
       var number = new TextSpan(
         text: ' ' + verse.number.toString() + ' ',
         style: new TextStyle(fontWeight: FontWeight.bold),

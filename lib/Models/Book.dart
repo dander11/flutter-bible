@@ -1,15 +1,9 @@
 import 'Chapter.dart';
-import 'package:json_annotation/json_annotation.dart';
 
-part 'Book.g.dart';
 
-@JsonSerializable()
 class Book {
-  @JsonKey(name: 'Id')
   int id;
-  @JsonKey(name: 'Name')
   final String name;
-  @JsonKey(required: false)
   List<Chapter> chapters;
 
   Book({this.name, this.chapters});
@@ -22,13 +16,4 @@ class Book {
     return chapters[chapterNumber - 1];
   }
 
-  /// A necessary factory constructor for creating a new User instance
-  /// from a map. Pass the map to the generated `_$UserFromJson` constructor.
-  /// The constructor is named after the source class, in this case User.
-  factory Book.fromJson(Map<String, dynamic> json) => _$BookFromJson(json);
-
-  /// `toJson` is the convention for a class to declare support for serialization
-  /// to JSON. The implementation simply calls the private, generated
-  /// helper method `_$UserToJson`.
-  Map<String, dynamic> toJson() => _$BookToJson(this);
 }

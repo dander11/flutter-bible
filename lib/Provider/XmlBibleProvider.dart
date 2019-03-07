@@ -1,13 +1,28 @@
 import 'package:bible_bloc/Models/Book.dart';
 import 'package:bible_bloc/Models/Chapter.dart';
+import 'package:bible_bloc/Models/IChapterElement.dart';
 import 'package:bible_bloc/Models/Verse.dart';
 import 'package:bible_bloc/Provider/IBibleProvider.dart';
+import 'package:flutter/services.dart';
+import 'package:global_configuration/global_configuration.dart';
 import 'package:xml/xml.dart' as xml;
 
 class XmlBibleProvider extends IBibleProvider {
-  final xml.XmlDocument xmlDocument;
+  xml.XmlDocument xmlDocument;
+  GlobalConfiguration _cfg;
 
-  XmlBibleProvider({this.xmlDocument});
+  XmlBibleProvider() {
+    _cfg = new GlobalConfiguration();
+  }
+  Future init() async {
+    var path = _cfg.getString("xmlBiblePath");
+    return await loadDocument(path);
+  }
+
+  Future loadDocument(String path) async {
+    var fileData = await rootBundle.loadString(path);
+    xmlDocument = xml.parse(fileData);
+  }
 
   Future<List<Book>> getAllBooks() async {
     var xmlBooks = xmlDocument.findAllElements("b");
@@ -45,8 +60,8 @@ class XmlBibleProvider extends IBibleProvider {
     for (var item in xmlChapters) {
       var chapter = new Chapter(
           number: int.parse(item.getAttribute("n")),
-          verses: this._getVerses(item));
-      chapter.verses.forEach((v) => v.chapter = chapter);
+          elements: this._getVerses(item));
+      chapter.elements.forEach((v) => v.chapter = chapter);
       chapters.add(chapter);
     }
 
@@ -69,7 +84,8 @@ class XmlBibleProvider extends IBibleProvider {
   List<Verse> getSearchResults(String searchTerm, List<Book> booksToSearch) {
     var chapters = booksToSearch.expand((book) => book.chapters);
 
-    var verses = chapters.expand((c) => c.verses);
+    Iterable<Verse> verses =
+        chapters.expand((c) => c.elements.where((e) => e is Verse));
     verses = verses.where((verse) =>
         _contains(searchTerm.toLowerCase(), verse.text.toLowerCase()));
     if (verses.contains(" ") && !searchTerm.contains(" ")) {
