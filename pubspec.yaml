@@ -20,6 +20,12 @@ dependencies:
   rxdart: ^0.19.0
   global_configuration: ^0.1.4
   shared_preferences: ^0.4.2
+  zefyr: 
+    git:
+      url: https://github.com/memspace/zefyr.git
+      path: packages/zefyr
+      ref: flutter-master
+  material_design_icons_flutter: ^3.2.3595 
   flutter:
     sdk: flutter
 
