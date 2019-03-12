@@ -22,8 +22,8 @@ class NotesBloc {
   NotesBloc() {
     loadInitialNotes();
     _addNoteController.stream.listen((newNote) {
-      addOrUpdateNote(newNote);
-      saveNotesToFile();
+      _addOrUpdateNote(newNote);
+      _saveNotesToFile();
     });
   }
 
@@ -33,7 +33,7 @@ class NotesBloc {
     _highestNoteId.close();
   }
 
-  void addOrUpdateNote(Note newNote) async {
+  void _addOrUpdateNote(Note newNote) async {
     var currentNotes = await savedNotes.first;
     if (currentNotes.any((n) => n.id == newNote.id)) {
       var noteToUpdate = currentNotes.firstWhere((n) => n.id == newNote.id);
@@ -59,15 +59,17 @@ class NotesBloc {
     }
   }
 
-  void saveNotesToFile() async {
+  void _saveNotesToFile() async {
     var notesToSave = await _notes.first;
     _notesProvider.saveNotes(notesToSave);
   }
 
   Future loadInitialNotes() async {
     var notes = await _notesProvider.getNotes();
-    var highestId = Collection(notes).max$1((n) => n.id).toInt();
-    _highestNoteId.add(highestId);
+    if (notes.length > 0) {
+      var highestId = Collection(notes).max$1((n) => n.id).toInt();
+      _highestNoteId.add(highestId);
+    }
     _notes.add(notes);
   }
 }

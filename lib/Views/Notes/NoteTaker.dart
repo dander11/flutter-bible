@@ -30,7 +30,7 @@ class NotePageState extends State<NotePage> {
         var delta = _controller.document.toDelta();
         if (delta != originalDelta) {
           note.lastUpdated = DateTime.now();
-          InheritedBlocs.of(context).notesBloc.addOrUpdateNote(note);
+          InheritedBlocs.of(context).notesBloc.addUpdateNote.add(note);
         }
       },
     );
