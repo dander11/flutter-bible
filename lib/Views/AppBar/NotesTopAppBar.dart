@@ -4,8 +4,8 @@ import 'package:bible_bloc/Views/BookDrawer/BookDrawer.dart';
 import 'package:bible_bloc/Views/Settings/SettingPopupMenu.dart';
 import 'package:flutter/material.dart';
 
-class BibleReaderAppBar extends StatelessWidget {
-  const BibleReaderAppBar({
+class NotesTopAppBar extends StatelessWidget {
+  const NotesTopAppBar({
     Key key,
   }) : super(key: key);
 
@@ -26,18 +26,9 @@ class BibleReaderAppBar extends StatelessWidget {
           stream: InheritedBlocs.of(context).bibleBloc.chapter,
           builder: (BuildContext context, AsyncSnapshot<Chapter> snapshot) {
             if (snapshot.hasData) {
-              return Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Text("${snapshot.data.book.name} ${snapshot.data.number}"),
-                  Icon(Icons.arrow_drop_down)
-                ],
-              );
+              return Text("${snapshot.data.book.name} ${snapshot.data.number}");
             } else {
-              return Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [Text("Select Chapter"), Icon(Icons.arrow_drop_down)],
-              );
+              return Text("");
             }
           },
         ),

@@ -1,23 +1,39 @@
+import 'package:bible_bloc/Blocs/notes_bloc.dart';
+import 'package:bible_bloc/InheritedBlocs.dart';
 import 'package:flutter/material.dart';
+import 'package:quill_delta/quill_delta.dart';
 import 'package:zefyr/zefyr.dart';
 
 class NotePage extends StatefulWidget {
+  final Note note;
+
+  const NotePage({Key key, this.note}) : super(key: key);
   @override
-  NotePageState createState() => NotePageState();
+  NotePageState createState() => NotePageState(note: note);
 }
 
 class NotePageState extends State<NotePage> {
+  final Note note;
   ZefyrController _controller;
   FocusNode _focusNode;
 
+  NotePageState({this.note});
+  Delta originalDelta;
   @override
   void initState() {
     super.initState();
-    // Create an empty document or load existing if you have one.
-    // Here we create an empty document:
-    final document = new NotusDocument();
-    _controller = new ZefyrController(document);
+    _controller = new ZefyrController(note.doc);
     _focusNode = new FocusNode();
+    originalDelta = _controller.document.toDelta();
+    _controller.addListener(
+      () {
+        var delta = _controller.document.toDelta();
+        if (delta != originalDelta) {
+          note.lastUpdated = DateTime.now();
+          InheritedBlocs.of(context).notesBloc.addOrUpdateNote(note);
+        }
+      },
+    );
   }
 
   @override
@@ -33,7 +49,9 @@ class NotePageState extends State<NotePage> {
       ),
     );
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(
+        title: Text(note.title),
+      ),
       body: Padding(
         padding: const EdgeInsets.all(8.0),
         child: ZefyrScaffold(

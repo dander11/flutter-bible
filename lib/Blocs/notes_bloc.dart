@@ -1,56 +1,81 @@
 import 'dart:async';
 
-import 'package:flutter/services.dart';
+import 'package:bible_bloc/Provider/INotesProvider.dart';
+import 'package:bible_bloc/Provider/NotesProvider.dart';
+import 'package:bible_bloc/Provider/TestNotesProvider.dart';
+import 'package:notus/notus.dart';
+import 'package:queries/collections.dart';
 import 'package:rxdart/rxdart.dart';
 
 class NotesBloc {
-  Sink<bool> get shouldShowVerseNumbers => _showVerseNumbersController.sink;
-  final _showVerseNumbersController = StreamController<bool>();
+  INotesProvider _notesProvider = new NotesProvider();
 
-  Stream<bool> get showVerseNumbers => _showVerseNumbers.stream;
-  final _showVerseNumbers = BehaviorSubject<bool>();
+  Sink<Note> get addUpdateNote => _addNoteController.sink;
+  final _addNoteController = StreamController<Note>();
 
-  Sink<bool> get shouldBeImmersiveReadingMode =>
-      _shouldBeImmersiveReadingModeController.sink;
-  final _shouldBeImmersiveReadingModeController = StreamController<bool>();
+  Stream<List<Note>> get savedNotes => _notes.stream;
+  final _notes = BehaviorSubject<List<Note>>();
 
-  Stream<bool> get immersiveReadingMode => _immersiveReadingMode.stream;
-  final _immersiveReadingMode = BehaviorSubject<bool>();
-
-  Stream<Map<String, bool>> get settingsItems => _settingsItems.stream;
-  final _settingsItems = BehaviorSubject<Map<String, bool>>();
+  Stream<int> get highestNoteId => _highestNoteId.stream;
+  final _highestNoteId = BehaviorSubject<int>();
 
   NotesBloc() {
-    var settings = Map<String, bool>();
-
-    settings["Show Verse Numbers"] = true;
-    settings["Immersive Reading Mode"] = false;
-    shouldShowVerseNumbers.add(true);
-    _showVerseNumbersController.stream.listen((bool shouldShow) async {
-      _showVerseNumbers.add(shouldShow);
-      settings["Show Verse Numbers"] = shouldShow;
-      _settingsItems.add(settings);
+    loadInitialNotes();
+    _addNoteController.stream.listen((newNote) {
+      addOrUpdateNote(newNote);
+      saveNotesToFile();
     });
-
-    _shouldBeImmersiveReadingModeController.stream
-        .listen((bool shouldBeImmersive) async {
-      _immersiveReadingMode.add(shouldBeImmersive);
-      settings["Immersive Reading Mode"] = shouldBeImmersive;
-      _settingsItems.add(settings);
-      if (shouldBeImmersive) {
-        SystemChrome.setEnabledSystemUIOverlays([]);
-      } else {
-        SystemChrome.setEnabledSystemUIOverlays(
-            [SystemUiOverlay.bottom, SystemUiOverlay.top]);
-      }
-    });
-    _settingsItems.add(settings);
   }
 
   dispose() {
-    _showVerseNumbersController.close();
-    _showVerseNumbers.close();
-    _immersiveReadingMode.close();
-    _shouldBeImmersiveReadingModeController.close();
+    _addNoteController.close();
+    _notes.close();
+    _highestNoteId.close();
   }
+
+  void addOrUpdateNote(Note newNote) async {
+    var currentNotes = await savedNotes.first;
+    if (currentNotes.any((n) => n.id == newNote.id)) {
+      var noteToUpdate = currentNotes.firstWhere((n) => n.id == newNote.id);
+      noteToUpdate.doc = newNote.doc;
+      noteToUpdate.lastUpdated = newNote.lastUpdated;
+      noteToUpdate.title = newNote.title;
+    } else if (newNote.id != null) {
+      var newNotes = currentNotes.toList();
+      newNotes.add(newNote);
+      _notes.add(newNotes);
+    } else {
+      var newNotes = currentNotes.toList();
+      var highestId = Collection(newNotes).max$1((n) => n.id).toInt();
+      var newNoteWithId = Note(
+        doc: newNote.doc,
+        lastUpdated: newNote.lastUpdated,
+        title: newNote.title,
+        id: highestId + 1,
+      );
+      _highestNoteId.add(newNoteWithId.id);
+      newNotes.add(newNoteWithId);
+      _notes.add(newNotes);
+    }
+  }
+
+  void saveNotesToFile() async {
+    var notesToSave = await _notes.first;
+    _notesProvider.saveNotes(notesToSave);
+  }
+
+  Future loadInitialNotes() async {
+    var notes = await _notesProvider.getNotes();
+    var highestId = Collection(notes).max$1((n) => n.id).toInt();
+    _highestNoteId.add(highestId);
+    _notes.add(notes);
+  }
+}
+
+class Note {
+  String title;
+  DateTime lastUpdated;
+  final int id;
+  NotusDocument doc;
+  Note({this.id, this.title, this.doc, this.lastUpdated});
 }
