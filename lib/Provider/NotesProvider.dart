@@ -27,13 +27,16 @@ class NotesProvider extends INotesProvider {
         var contents = file.readAsStringSync();
         var json = jsonDecode(contents);
         var doc = NotusDocument.fromJson(json);
-        var id = basename(file.path).split('.')[0];
+        var noteName = basename(file.path).split('.')[0];
+        var id = noteName.split('_')[0];
+        var title = noteName.split('_')[1];
+        var lastUpdated = DateTime.parse(noteName.split('_')[2]);
         notes.add(
           Note(
             id: int.parse(id),
-            title: "test",
+            title: title,
             doc: doc,
-            lastUpdated: DateTime.now(),
+            lastUpdated: lastUpdated,
           ),
         );
       } catch (e) {}
@@ -58,6 +61,8 @@ class NotesProvider extends INotesProvider {
           !existingPath.contains(formatted)) {
         File existingFile = File(existingPath);
         existingFile.deleteSync();
+      } else {
+        file.writeAsString(jsonEncode(note.doc.toJson()));
       }
     }
   }

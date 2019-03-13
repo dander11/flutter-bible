@@ -1,6 +1,7 @@
 import 'package:bible_bloc/Blocs/notes_bloc.dart';
 import 'package:bible_bloc/InheritedBlocs.dart';
 import 'package:bible_bloc/Views/Notes/NoteTaker.dart';
+import 'package:bible_bloc/Views/Notes/NoteTile.dart';
 import 'package:bible_bloc/main.dart';
 import 'package:flutter/material.dart';
 
@@ -16,21 +17,7 @@ class NotesIndex extends StatelessWidget {
           itemCount: notes.length,
           itemBuilder: (context, index) {
             var note = notes[index];
-            var lastUpdated = note.lastUpdated.toLocal();
-            return ListTile(
-              onTap: () => Navigator.of(context).push(
-                    MaterialPageRoute(
-                      builder: (context) {
-                        return NotePage(
-                          note: note,
-                        );
-                      },
-                    ),
-                  ),
-              title: Text(note.title),
-              subtitle: Text(
-                  "${lastUpdated.month}/${lastUpdated.day}/${lastUpdated.year}"),
-            );
+            return new NoteTile(note: note);
           },
         );
       },

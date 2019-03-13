@@ -14,6 +14,7 @@ import 'package:bible_bloc/Views/Notes/NotesIndex.dart';
 import 'package:bible_bloc/Views/VerseViewer/DismissableVerseViewer.dart';
 import 'package:flutter/material.dart';
 import 'package:notus/notus.dart';
+import 'package:rxdart/rxdart.dart';
 import 'dart:collection';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:global_configuration/global_configuration.dart';
@@ -172,7 +173,8 @@ class _MyHomePageState extends State<MyHomePage> {
     );
     if (text != null) {
       var id =
-          await InheritedBlocs.of(context).notesBloc.highestNoteId.first + 1;
+          await InheritedBlocs.of(context).notesBloc.highestNoteId.first ?? 0;
+      id++;
       Navigator.of(context).push(
         MaterialPageRoute(
           builder: (context) {

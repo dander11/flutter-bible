@@ -14,7 +14,7 @@ class NotesBloc {
   final _addNoteController = StreamController<Note>();
 
   Stream<List<Note>> get savedNotes => _notes.stream;
-  final _notes = BehaviorSubject<List<Note>>();
+  final _notes = BehaviorSubject<List<Note>>(seedValue: List<Note>());
 
   Stream<int> get highestNoteId => _highestNoteId.stream;
   final _highestNoteId = BehaviorSubject<int>(seedValue: 0);
@@ -23,7 +23,6 @@ class NotesBloc {
     loadInitialNotes();
     _addNoteController.stream.listen((newNote) {
       _addOrUpdateNote(newNote);
-      _saveNotesToFile();
     });
   }
 
@@ -34,7 +33,7 @@ class NotesBloc {
   }
 
   void _addOrUpdateNote(Note newNote) async {
-    var currentNotes = await savedNotes.first;
+    var currentNotes = _notes.value;
     if (currentNotes.any((n) => n.id == newNote.id)) {
       var noteToUpdate = currentNotes.firstWhere((n) => n.id == newNote.id);
       noteToUpdate.doc = newNote.doc;
@@ -53,14 +52,15 @@ class NotesBloc {
         title: newNote.title,
         id: highestId + 1,
       );
-      _highestNoteId.add(newNoteWithId.id);
       newNotes.add(newNoteWithId);
       _notes.add(newNotes);
     }
+    _setHighestId();
+    _saveNotesToFile();
   }
 
   void _saveNotesToFile() async {
-    var notesToSave = await _notes.first;
+    var notesToSave = _notes.value;
     _notesProvider.saveNotes(notesToSave);
   }
 
@@ -71,6 +71,13 @@ class NotesBloc {
       _highestNoteId.add(highestId);
     }
     _notes.add(notes);
+  }
+
+  void _setHighestId() {
+    if (_notes.value.length > 0) {
+      var highestId = Collection(_notes.value).max$1((n) => n.id).toInt();
+      _highestNoteId.add(highestId);
+    }
   }
 }
 
