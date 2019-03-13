@@ -14,28 +14,7 @@ class NotesTopAppBar extends StatelessWidget {
     return SliverAppBar(
       floating: true,
       centerTitle: true,
-      title: GestureDetector(
-        onTap: () {
-          showModalBottomSheet<void>(
-              context: context,
-              builder: (BuildContext context) {
-                return Container(child: BooksList());
-              });
-        },
-        child: StreamBuilder<Chapter>(
-          stream: InheritedBlocs.of(context).bibleBloc.chapter,
-          builder: (BuildContext context, AsyncSnapshot<Chapter> snapshot) {
-            if (snapshot.hasData) {
-              return Text("${snapshot.data.book.name} ${snapshot.data.number}");
-            } else {
-              return Text("");
-            }
-          },
-        ),
-      ),
-      actions: <Widget>[
-        SettingsPopupMenu(),
-      ],
+      title: Text("Notes"),
     );
   }
 }

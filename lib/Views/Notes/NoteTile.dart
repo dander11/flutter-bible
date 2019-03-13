@@ -17,13 +17,45 @@ class NoteTile extends StatefulWidget {
 
 class _NoteTileState extends State<NoteTile> {
   var _selected = false;
+  final _slideKey = GlobalKey();
+  final SlidableController slidableController = new SlidableController();
 
   @override
   Widget build(BuildContext context) {
     var lastUpdated = widget.note.lastUpdated.toLocal();
-    new Slidable(
+    return Slidable.builder(
+      key: _slideKey,
+      controller: slidableController,
       delegate: new SlidableDrawerDelegate(),
       actionExtentRatio: 0.25,
+      slideToDismissDelegate: new SlideToDismissDrawerDelegate(
+        onWillDismiss: (actionType) {
+          return showDialog<bool>(
+            context: context,
+            builder: (context) {
+              return new AlertDialog(
+                title: new Text('Delete'),
+                content: new Text('Item will be deleted'),
+                actions: <Widget>[
+                  new FlatButton(
+                    child: new Text('Cancel'),
+                    onPressed: () {
+                      Navigator.of(context).pop(false);
+                      //Slidable.of(context).close();
+                    },
+                  ),
+                  new FlatButton(
+                    child: new Text('Ok'),
+                    onPressed: () {
+                      Navigator.of(context).pop(true);
+                    },
+                  ),
+                ],
+              );
+            },
+          );
+        },
+      ),
       child: ListTile(
         selected: _selected,
         onLongPress: () {
@@ -44,14 +76,16 @@ class _NoteTileState extends State<NoteTile> {
         subtitle:
             Text("${lastUpdated.month}/${lastUpdated.day}/${lastUpdated.year}"),
       ),
-      secondaryActions: <Widget>[
-        new IconSlideAction(
-          caption: 'Delete',
-          color: Colors.red,
-          icon: Icons.delete,
-          onTap: () => {},
-        ),
-      ],
+      secondaryActionDelegate: SlideActionBuilderDelegate(
+          actionCount: 1,
+          builder: (context, index, animation, mode) {
+            return IconSlideAction(
+              caption: 'Delete',
+              color: Colors.redAccent.shade700,
+              icon: Icons.delete,
+              onTap: () => {},
+            );
+          }),
     );
   }
 }

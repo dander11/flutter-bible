@@ -18,45 +18,52 @@ class BibleBottomNavigationBar extends StatelessWidget {
         stream: InheritedBlocs.of(context).navigationBloc.currentPage,
         initialData: AppPage.readerPage,
         builder: (context, snapshot) {
-          return BottomNavigationBar(
-            currentIndex: snapshot.data.index,
-            onTap: (index) {
-              switch (index) {
-                case 0:
-                  InheritedBlocs.of(context)
-                      .navigationBloc
-                      .nextPage
-                      .add(AppPage.readerPage);
-                  break;
-                case 1:
-                  InheritedBlocs.of(context)
-                      .navigationBloc
-                      .nextPage
-                      .add(AppPage.notesPage);
-                  break;
-                case 2:
-                  showSearch(
-                    context: context,
-                    delegate: BibleSearchDelegate(),
-                  );
-                  break;
-                default:
-              }
-            },
-            items: [
-              BottomNavigationBarItem(
-                title: Text("Bible"),
-                icon: Icon(Icons.library_books),
-              ),
-              BottomNavigationBarItem(
-                title: Text("Notes"),
-                icon: Icon(MdiIcons.notebook),
-              ),
-              /* BottomNavigationBarItem(
-              title: Text("Search"),
-              icon: Icon(Icons.search),
-            ), */
-            ],
+          return Theme(
+            data: Theme.of(context).copyWith(
+              // sets the background color of the `BottomNavigationBar`
+              canvasColor: Theme.of(context).primaryColor,
+            ),
+            child: BottomNavigationBar(
+              fixedColor: Colors.white,
+              currentIndex: snapshot.data.index,
+              onTap: (index) {
+                switch (index) {
+                  case 0:
+                    InheritedBlocs.of(context)
+                        .navigationBloc
+                        .nextPage
+                        .add(AppPage.readerPage);
+                    break;
+                  case 1:
+                    InheritedBlocs.of(context)
+                        .navigationBloc
+                        .nextPage
+                        .add(AppPage.notesPage);
+                    break;
+                  case 2:
+                    showSearch(
+                      context: context,
+                      delegate: BibleSearchDelegate(),
+                    );
+                    break;
+                  default:
+                }
+              },
+              items: [
+                BottomNavigationBarItem(
+                  title: Text("Bible"),
+                  icon: Icon(Icons.library_books),
+                ),
+                BottomNavigationBarItem(
+                  title: Text("Notes"),
+                  icon: Icon(MdiIcons.notebook),
+                ),
+                /* BottomNavigationBarItem(
+                title: Text("Search"),
+                icon: Icon(Icons.search),
+              ), */
+              ],
+            ),
           );
         });
   }
