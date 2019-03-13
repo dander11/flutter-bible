@@ -17,7 +17,7 @@ class NotesBloc {
   final _notes = BehaviorSubject<List<Note>>();
 
   Stream<int> get highestNoteId => _highestNoteId.stream;
-  final _highestNoteId = BehaviorSubject<int>();
+  final _highestNoteId = BehaviorSubject<int>(seedValue: 0);
 
   NotesBloc() {
     loadInitialNotes();
