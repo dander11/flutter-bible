@@ -1,7 +1,5 @@
 import 'package:bible_bloc/Blocs/navigation_bloc.dart';
 import 'package:bible_bloc/InheritedBlocs.dart';
-import 'package:bible_bloc/Views/Notes/NoteTaker.dart';
-import 'package:bible_bloc/Views/Notes/NotesIndex.dart';
 import 'package:bible_bloc/Views/SearchPage/BibleSearchDelegate.dart';
 import 'package:flutter/material.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';

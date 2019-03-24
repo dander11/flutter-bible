@@ -1,6 +1,5 @@
 import 'package:bible_bloc/Models/Book.dart';
 import 'package:bible_bloc/Models/Chapter.dart';
-import 'package:bible_bloc/Models/IChapterElement.dart';
 import 'package:bible_bloc/Models/Verse.dart';
 import 'package:bible_bloc/Provider/IBibleProvider.dart';
 import 'package:flutter/services.dart';

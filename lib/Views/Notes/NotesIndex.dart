@@ -1,9 +1,7 @@
 import 'package:bible_bloc/Blocs/notes_bloc.dart';
 import 'package:bible_bloc/InheritedBlocs.dart';
 import 'package:bible_bloc/Views/AppBar/NotesTopAppBar.dart';
-import 'package:bible_bloc/Views/Notes/NoteTaker.dart';
 import 'package:bible_bloc/Views/Notes/NoteTile.dart';
-import 'package:bible_bloc/main.dart';
 import 'package:flutter/material.dart';
 
 class NotesIndex extends StatelessWidget {

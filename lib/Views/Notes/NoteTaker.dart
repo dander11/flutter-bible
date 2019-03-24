@@ -3,6 +3,7 @@ import 'package:bible_bloc/InheritedBlocs.dart';
 import 'package:flutter/material.dart';
 import 'package:quill_delta/quill_delta.dart';
 import 'package:zefyr/zefyr.dart';
+import 'dart:convert';
 
 class NotePage extends StatefulWidget {
   final Note note;
@@ -28,8 +29,28 @@ class NotePageState extends State<NotePage> {
     _controller.addListener(
       () {
         var delta = _controller.document.toDelta();
-        if (delta != originalDelta) {
+        if (delta != originalDelta &&
+            _controller.lastChangeSource == ChangeSource.local) {
+          originalDelta = delta;
           note.lastUpdated = DateTime.now();
+          var json = delta.toJson();
+          String text = jsonEncode(json);
+          //var rule = new ResolveInlineFormatRule();
+          if (getVerseIndex(text) > -1) {
+            /* int index = getVerseIndex(text);
+            var preVerse = text.replaceAll("John 2:1-3",
+                " \"}, {\"insert\":\"John 2:1-3\",\"attributes\": {\"a\":\"https://bible.com\"}}, {\"insert\":\"");
+            var post = jsonDecode(preVerse);
+            var doc = NotusDocument.fromJson(post);
+            var newDelta = Delta.fromJson(post); */
+            var change = _controller.document.format(
+                getVerseIndex(text),
+                getVerseLength(text),
+                NotusAttribute.link.fromString("https://bible.com"));
+            /* _controller.formatText(getVerseIndex(text), getVerseLength(text),
+                NotusAttribute.link.fromString("https://bible.com")); */
+            _controller.compose(change);
+          }
           InheritedBlocs.of(context).notesBloc.addUpdateNote.add(note);
         }
       },
@@ -65,5 +86,13 @@ class NotePageState extends State<NotePage> {
         ),
       ),
     );
+  }
+
+  int getVerseIndex(String text) {
+    return text.indexOf("John 2:1-3");
+  }
+
+  int getVerseLength(String text) {
+    return ("John 2:1-3").length;
   }
 }
