@@ -1,15 +1,19 @@
 import 'dart:convert';
+import 'package:bible_bloc/Blocs/navigation_bloc.dart';
+import 'package:bible_bloc/Blocs/notes_bloc.dart';
 import 'package:bible_bloc/Blocs/settings_bloc.dart';
-import 'package:bible_bloc/Views/SearchPage/BibleSearchDelegate.dart';
-import 'package:bible_bloc/Views/Settings/SettingPopupMenu.dart';
+import 'package:bible_bloc/Views/AppBar/BibleBottomNavigationBar.dart';
+import 'package:bible_bloc/Views/AppBar/BibleTopAppBar.dart';
 import 'package:bible_bloc/Blocs/bible_bloc.dart';
 import 'package:bible_bloc/Designs/DarkDesign.dart';
 import 'package:bible_bloc/InheritedBlocs.dart';
 import 'package:bible_bloc/Models/Book.dart';
 import 'package:bible_bloc/Models/Chapter.dart';
-import 'package:bible_bloc/Views/BookDrawer/BookDrawer.dart';
+import 'package:bible_bloc/Views/Notes/NoteTaker.dart';
+import 'package:bible_bloc/Views/Notes/NotesIndex.dart';
 import 'package:bible_bloc/Views/VerseViewer/DismissableVerseViewer.dart';
 import 'package:flutter/material.dart';
+import 'package:notus/notus.dart';
 import 'dart:collection';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:global_configuration/global_configuration.dart';
@@ -35,6 +39,8 @@ class MyApp extends StatelessWidget {
     return InheritedBlocs(
       bibleBloc: bibleBloc,
       settingsBloc: settingsBloc,
+      notesBloc: NotesBloc(),
+      navigationBloc: NavigationBloc(),
       child: MaterialApp(
         title: 'Flutter Demo',
         theme: Designs.darkTheme,
@@ -60,54 +66,39 @@ class _MyHomePageState extends State<MyHomePage> {
   final String membershipKey = 'david.anderson.bibleapp';
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: CustomScrollView(
-        slivers: <Widget>[
-          new BibleAppBar(),
-          SliverToBoxAdapter(
-            child: StreamBuilder(
-              stream: InheritedBlocs.of(context).bibleBloc.chapter,
-              //initialData: Chapter(1, []),
-              builder: (BuildContext context, AsyncSnapshot snapshot) {
-                if (snapshot.hasData) {
-                  //saveCurrentBookAndChapter();
-                  return StreamBuilder<bool>(
-                    stream: InheritedBlocs.of(context)
-                        .settingsBloc
-                        .showVerseNumbers,
-                    initialData: false,
-                    builder:
-                        (BuildContext context, AsyncSnapshot<bool> setting) {
-                      if (setting.hasData) {
-                        return Verses(
-                          addBackgrounds: true,
-                          book: snapshot.data.book,
-                          chapter: snapshot.data,
-                          swipeAction: swipeVersesAway,
-                          showVerseNumbers: setting.data,
-                        );
-                      } else {
-                        return Verses(
-                          addBackgrounds: true,
-                          book: snapshot.data.book,
-                          chapter: snapshot.data,
-                          swipeAction: swipeVersesAway,
-                          showVerseNumbers: true,
-                        );
-                      }
-                    },
-                  );
-                } else {
-                  //readCurrentBookAndChapter();
-                  return new LoadingColumn();
-                }
-              },
-            ),
-          ),
-        ],
-      ),
-      drawer: BookDrawer(),
-    );
+    return StreamBuilder<AppPage>(
+        stream: InheritedBlocs.of(context).navigationBloc.currentPage,
+        builder: (context, snapshot) {
+          switch (snapshot.data) {
+            case AppPage.readerPage:
+              return Scaffold(
+                body: ReaderPage(),
+                bottomNavigationBar:
+                    new BibleBottomNavigationBar(context: context),
+              );
+              break;
+
+            case AppPage.notesPage:
+              return Scaffold(
+                body: NotesIndex(),
+                floatingActionButton: FloatingActionButton(
+                  onPressed: () {
+                    showCreateNoteDialog();
+                  },
+                  child: Icon(
+                    Icons.add,
+                    color: Colors.white,
+                  ),
+                ),
+                bottomNavigationBar:
+                    new BibleBottomNavigationBar(context: context),
+              );
+              break;
+            default:
+              return new ReaderPage();
+              break;
+          }
+        });
   }
 
   void saveCurrentBookAndChapter() async {
@@ -122,32 +113,157 @@ class _MyHomePageState extends State<MyHomePage> {
       SharedPreferences sp = await SharedPreferences.getInstance();
 
       /* var loadedChapter =
-          Chapter.fromJson(json.decode(sp.getString(membershipKey)));
-      var books = await InheritedBlocs.of(context).bibleBloc.books.first;
-      var currentChapter = books
-          .firstWhere((book) => book.name == loadedChapter.book.name)
-          .chapters
-          .firstWhere((chapter) => chapter.number == loadedChapter.number);
-      InheritedBlocs.of(context).bibleBloc.currentChapter.add(currentChapter); */
+                              Chapter.fromJson(json.decode(sp.getString(membershipKey)));
+                          var books = await InheritedBlocs.of(context).bibleBloc.books.first;
+                          var currentChapter = books
+                              .firstWhere((book) => book.name == loadedChapter.book.name)
+                              .chapters
+                              .firstWhere((chapter) => chapter.number == loadedChapter.number);
+                          InheritedBlocs.of(context).bibleBloc.currentChapter.add(currentChapter); */
     } catch (e) {
       //return new AppState();
     }
   }
 
-  swipeVersesAway(DismissDirection swipeDetails) async {
+  Future showCreateNoteDialog() async {
+    final _formKey = GlobalKey<FormState>();
+    var text = await showDialog<String>(
+      context: context,
+      builder: (BuildContext context) {
+        TextEditingController _controller = TextEditingController();
+        return SimpleDialog(
+          children: <Widget>[
+            Form(
+              key: _formKey,
+              autovalidate: false,
+              child: Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Column(
+                  children: <Widget>[
+                    TextFormField(
+                      controller: _controller,
+                      autofocus: true,
+                      decoration: InputDecoration(
+                        hintText: "Title",
+                      ),
+                      validator: (value) {
+                        if (value.isEmpty) {
+                          return 'Please enter some text';
+                        }
+                      },
+                    ),
+                    RaisedButton(
+                      onPressed: () {
+                        // Validate will return true if the form is valid, or false if
+                        // the form is invalid.
+                        if (_formKey.currentState.validate()) {
+                          Navigator.pop(context, _controller.text);
+                        }
+                      },
+                      child: Text('Submit'),
+                    )
+                  ],
+                ),
+              ),
+            ),
+          ],
+        );
+      },
+    );
+    if (text != null) {
+      var id =
+          await InheritedBlocs.of(context).notesBloc.highestNoteId.first ?? 0;
+      id++;
+      Navigator.of(context).push(
+        MaterialPageRoute(
+          builder: (context) {
+            return NotePage(
+              note: Note(
+                id: id,
+                title: text,
+                lastUpdated: DateTime.now(),
+                doc: NotusDocument(),
+              ),
+            );
+          },
+        ),
+      );
+    }
+  }
+}
+
+class ReaderPage extends StatelessWidget {
+  const ReaderPage({
+    Key key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return CustomScrollView(
+      slivers: <Widget>[
+        BibleReaderAppBar(),
+        SliverToBoxAdapter(child: Reader()),
+      ],
+    );
+  }
+}
+
+class Reader extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return StreamBuilder(
+      stream: InheritedBlocs.of(context).bibleBloc.chapter,
+      //initialData: Chapter(1, []),
+      builder: (BuildContext context, AsyncSnapshot snapshot) {
+        if (snapshot.hasData) {
+          //saveCurrentBookAndChapter();
+          return StreamBuilder<bool>(
+            stream: InheritedBlocs.of(context).settingsBloc.showVerseNumbers,
+            initialData: false,
+            builder: (BuildContext context, AsyncSnapshot<bool> setting) {
+              if (setting.hasData) {
+                return Verses(
+                  addBackgrounds: true,
+                  book: snapshot.data.book,
+                  chapter: snapshot.data,
+                  swipeAction: (direction) =>
+                      swipeVersesAway(direction, context),
+                  showVerseNumbers: setting.data,
+                );
+              } else {
+                return Verses(
+                  addBackgrounds: true,
+                  book: snapshot.data.book,
+                  chapter: snapshot.data,
+                  swipeAction: (direction) =>
+                      swipeVersesAway(direction, context),
+                  showVerseNumbers: true,
+                );
+              }
+            },
+          );
+        } else {
+          //readCurrentBookAndChapter();
+          return new LoadingColumn();
+        }
+      },
+    );
+  }
+
+  swipeVersesAway(DismissDirection swipeDetails, BuildContext context) async {
     Chapter currentChapter =
         await InheritedBlocs.of(context).bibleBloc.chapter.first;
     var books = await InheritedBlocs.of(context).bibleBloc.books.first;
     if (swipeDetails == DismissDirection.endToStart) {
-      goToNextChapter(books, currentChapter);
+      goToNextChapter(books, currentChapter, context);
     } else {
-      goToPreviousChapter(books, currentChapter);
+      goToPreviousChapter(books, currentChapter, context);
     }
     // saveCurrentBookAndChapter();
   }
 
-  void goToPreviousChapter(
-      UnmodifiableListView<Book> books, Chapter currentChapter) {
+  void goToPreviousChapter(UnmodifiableListView<Book> books,
+      Chapter currentChapter, BuildContext context) {
     if (books.first == currentChapter.book && currentChapter.number == 1) {
       var prevBook = books.last;
       InheritedBlocs.of(context)
@@ -167,8 +283,8 @@ class _MyHomePageState extends State<MyHomePage> {
     }
   }
 
-  void goToNextChapter(
-      UnmodifiableListView<Book> books, Chapter currentChapter) {
+  void goToNextChapter(UnmodifiableListView<Book> books, Chapter currentChapter,
+      BuildContext context) {
     if (books.last == currentChapter.book &&
         currentChapter.number == currentChapter.book.chapters.length) {
       var nextBook = books.first;
@@ -187,41 +303,6 @@ class _MyHomePageState extends State<MyHomePage> {
           .chapters[currentChapter.book.chapters.indexOf(currentChapter) + 1];
       InheritedBlocs.of(context).bibleBloc.currentChapter.add(nextChapter);
     }
-  }
-}
-
-class BibleAppBar extends StatelessWidget {
-  const BibleAppBar({
-    Key key,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return SliverAppBar(
-      floating: true,
-      title: StreamBuilder<Chapter>(
-        stream: InheritedBlocs.of(context).bibleBloc.chapter,
-        builder: (BuildContext context, AsyncSnapshot<Chapter> snapshot) {
-          if (snapshot.hasData) {
-            return Text("${snapshot.data.book.name} ${snapshot.data.number}");
-          } else {
-            return Text("");
-          }
-        },
-      ),
-      actions: <Widget>[
-        IconButton(
-          icon: Icon(Icons.search),
-          onPressed: () {
-            showSearch(
-              context: context,
-              delegate: BibleSearchDelegate(),
-            );
-          },
-        ),
-        SettingsPopupMenu(),
-      ],
-    );
   }
 }
 

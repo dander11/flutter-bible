@@ -4,6 +4,7 @@ import 'package:bible_bloc/InheritedBlocs.dart';
 import 'package:bible_bloc/Models/Chapter.dart';
 import 'package:bible_bloc/Models/SearchQuery.dart';
 import 'package:bible_bloc/Models/Verse.dart';
+import 'package:bible_bloc/Views/AppBar/BibleBottomNavigationBar.dart';
 import 'package:bible_bloc/Views/SearchPage/SearchFilter.dart';
 import 'package:bible_bloc/Views/SearchPage/SearchResults.dart';
 import 'package:bible_bloc/main.dart';
@@ -35,6 +36,13 @@ class BibleSearchDelegate extends SearchDelegate<Chapter> {
 
   @override
   Widget buildResults(BuildContext context) {
+    return Scaffold(
+      body: searchResultsBody(context: context),
+      bottomNavigationBar: BibleBottomNavigationBar(),
+    );
+  }
+
+  Widget searchResultsBody({BuildContext context}) {
     if (query.length < 3) {
       return Column(
         mainAxisAlignment: MainAxisAlignment.center,
@@ -48,7 +56,8 @@ class BibleSearchDelegate extends SearchDelegate<Chapter> {
                   .subhead
                   .copyWith(color: Colors.red.shade300),
             ),
-          )
+          ),
+          BibleBottomNavigationBar(),
         ],
       );
     }
@@ -144,6 +153,9 @@ class BibleSearchDelegate extends SearchDelegate<Chapter> {
 
   @override
   Widget buildSuggestions(BuildContext context) {
-    return Column();
+    return Scaffold(
+      body: Column(),
+      //bottomNavigationBar: BibleBottomNavigationBar(),
+    );
   }
 }
