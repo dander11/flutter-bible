@@ -48,7 +48,8 @@ class NotePageState extends State<NotePage> {
                 getVerseLength(text),
                 NotusAttribute.link.fromString("https://bible.com"));
             /* _controller.formatText(getVerseIndex(text), getVerseLength(text),
-                NotusAttribute.link.fromString("https://bible.com")); */
+                NotusAttribute.link.fromString("https://bible.com")); 
+                */
             _controller.compose(change);
           }
           InheritedBlocs.of(context).notesBloc.addUpdateNote.add(note);
