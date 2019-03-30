@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?> 
+<?xml version="1.0" encoding="utf-8"?> 
 <crossway-bible>
 	<book title="Genesis" num="1">
 		<marker class="begin-verse" mid="v01001001">
@@ -393,5 +393,3 @@
 		</chapter>
 	</book>
 </crossway-bible>
-
-

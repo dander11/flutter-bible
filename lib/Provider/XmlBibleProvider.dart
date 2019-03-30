@@ -1,6 +1,7 @@
 import 'package:bible_bloc/Models/Book.dart';
 import 'package:bible_bloc/Models/Chapter.dart';
-import 'package:bible_bloc/Models/Verse.dart';
+import 'package:bible_bloc/Models/ChapterElements/Verse.dart';
+
 import 'package:bible_bloc/Provider/IBibleProvider.dart';
 import 'package:flutter/services.dart';
 import 'package:global_configuration/global_configuration.dart';
@@ -49,7 +50,7 @@ class XmlBibleProvider extends IBibleProvider {
     return book;
   }
 
-  Chapter getChapter(String bookName, int chapterNumber) {
+  Future<Chapter> getChapter(String bookName, int chapterNumber) async {
     return this.getBook(bookName).chapters[chapterNumber - 1];
   }
 
