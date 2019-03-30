@@ -22,10 +22,10 @@ class Heading extends IChapterElement {
       children: [
         TextSpan(
           text: this.text + "\n\r\n\r",
-          style: Theme.of(context)
-              .textTheme
-              .subhead
-              .copyWith(fontWeight: FontWeight.bold),
+          style: Theme.of(context).textTheme.display1.copyWith(
+                fontWeight: FontWeight.bold,
+                fontSize: 19.0,
+              ),
         ),
       ],
     );

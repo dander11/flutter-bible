@@ -17,13 +17,24 @@ class ChaperText extends IChapterElement {
 
   @override
   TextSpan toTextSpanWidget(BuildContext context) {
-    return TextSpan(
-      children: [
-        TextSpan(
-          text: ''' ${this.text} ''',
-          style: Theme.of(context).textTheme.body2,
-        ),
-      ],
+    //var reg = RegExp("\s[.!?\\-]", caseSensitive: false);
+    //var text = this.text.replaceAllMapped(reg, (Match m) => "${m[1]}");
+
+    var span = TextSpan(
+      children: [],
     );
+    if (text.length == 1 && text.contains(RegExp("[.!?\\-]"))) {
+      span.children.add(TextSpan(
+        text: '''${this.text.trim()}''',
+        style: Theme.of(context).textTheme.body2,
+      ));
+    } else {
+      span.children.add(TextSpan(
+        text: ''' ${this.text.trim()}''',
+        style: Theme.of(context).textTheme.body2,
+      ));
+    }
+
+    return span;
   }
 }

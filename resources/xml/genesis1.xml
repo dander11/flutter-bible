@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?> 
+﻿<?xml version="1.0" encoding="utf-8"?> 
 <crossway-bible>
 	<book title="Genesis" num="1">
 		<marker class="begin-verse" mid="v01001001">
@@ -193,7 +193,7 @@
 				And God 
 				<crossref let="k" cid="c01001016.1">
 				</crossref>
-				made the two great lightsùthe greater light to rule the day and the lesser light to rule the nightùand the stars.
+				made the two great lightsÃ¹the greater light to rule the day and the lesser light to rule the nightÃ¹and the stars.
 			</verse>
 			<marker class="begin-verse" mid="v01001017">
 			</marker>
@@ -269,7 +269,7 @@
 				And God said, 
 				<q class="begin-double" qid="" from="" to="">
 				</q>
-				Let the earth bring forth living creatures according to their kindsùlivestock and creeping things and beasts of the earth according to their kinds.
+				Let the earth bring forth living creatures according to their kindsÃ¹livestock and creeping things and beasts of the earth according to their kinds.
 				<q class="end-double" qid="" from="" to="">
 				</q>
 				 And it was so.

@@ -5,6 +5,7 @@ import 'package:bible_bloc/Models/ChapterElements/EmptyElement.dart';
 import 'package:bible_bloc/Models/ChapterElements/EndParagraph.dart';
 import 'package:bible_bloc/Models/ChapterElements/Heading.dart';
 import 'package:bible_bloc/Models/ChapterElements/IChapterElement.dart';
+import 'package:bible_bloc/Models/ChapterElements/Subheading.dart';
 import 'package:bible_bloc/Models/ChapterElements/Text.dart';
 import 'package:bible_bloc/Models/ChapterElements/Verse.dart';
 
@@ -69,8 +70,7 @@ class MultiPartXmlBibleProvider extends IBibleProvider {
   Future<Chapter> getChapter(String bookName, int chapterNumber) async {
     var path = (cfg.getString("multipartXmlBiblePath") +
         _getChapterPath(bookName, chapterNumber));
-    xml.XmlDocument chapterDoc =
-        await loadDocument("resources/xml/genesis1.xml");
+    xml.XmlDocument chapterDoc = await loadDocument(path);
     xml.XmlElement chapterElement = chapterDoc.findAllElements("book").first;
     Chapter convertChapterFromXml = _convertChapterFromXml(chapterElement);
 
@@ -106,7 +106,8 @@ class MultiPartXmlBibleProvider extends IBibleProvider {
         }
       }
       var convertedElement = _convertXmlToChapterElement(child);
-      if (child.children.length > 0 && !(convertedElement is Heading)) {
+      if (child.children.length > 0 &&
+          (convertedElement is Heading || convertedElement is EmptyElement)) {
         convertedElement.elements.addAll(_getChatperElements(child));
       }
       elements.add(convertedElement);
@@ -130,7 +131,15 @@ class MultiPartXmlBibleProvider extends IBibleProvider {
       } else if (aNode.name.local == "end-paragraph") {
         return EndParagraph();
       } else if (aNode.name.local == "begin-paragraph") {
-        return EmptyElement();
+        return BeginParagraph();
+      } else if (aNode.name.local == "q") {
+        if (aNode.attributes.any((a) => a.value.contains("double"))) {
+          return ChaperText(text: "\"");
+        } else if (aNode.attributes.any((a) => a.value.contains("single"))) {
+          return ChaperText(text: "\'");
+        }
+      } else if (aNode.name.local == "subheading") {
+        return Subheading(text: aNode.text.trim());
       } else {
         return EmptyElement();
       }

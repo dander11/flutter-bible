@@ -1,3 +1,4 @@
+import 'package:bible_bloc/InheritedBlocs.dart';
 import 'package:bible_bloc/Models/Chapter.dart';
 import 'package:bible_bloc/Models/ChapterElements/IChapterElement.dart';
 
@@ -30,6 +31,7 @@ class Verse extends IChapterElement {
           text: ''' ${this.number}.''',
           style: new TextStyle(fontWeight: FontWeight.bold)),
     ]);
+
     for (var verseElement in this.elements) {
       span.children.add(verseElement.toTextSpanWidget(context));
     }
