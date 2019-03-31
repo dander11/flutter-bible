@@ -57,6 +57,7 @@ class BibleBottomNavigationBar extends StatelessWidget {
                     break;
                   default:
                 }
+                lastPage = index;
               },
               items: [
                 BottomNavigationBarItem(

@@ -133,7 +133,7 @@ class MultiPartXmlBibleProvider extends IBibleProvider {
         return Heading(text: cleanedSpace.trim());
       } else if (aNode.name.local == "woc") {
         var cleanedSpace = aNode.text.replaceAll(multipleSpaces, "");
-        return WordsOfChrist(text: cleanedSpace.trim());
+        return WordsOfChrist(text: "\"${cleanedSpace.trim()}\"");
       } else if (aNode.name.local == "end-paragraph") {
         return EndParagraph();
       } else if (aNode.name.local == "begin-paragraph") {
