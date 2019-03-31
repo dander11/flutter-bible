@@ -15,7 +15,7 @@ class Verse extends IChapterElement {
   @override
   List<Text> toTextWidget(BuildContext context) {
     List<Text> span = [
-      Text(''' ${this.number} ''',
+      Text(''' ${this.number} ${this.text}''',
           style: new TextStyle(fontWeight: FontWeight.bold)),
     ];
     for (var verseElement in this.elements) {

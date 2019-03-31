@@ -11,7 +11,8 @@ abstract class IBibleProvider {
 
   Future<Chapter> getChapterById(int chapterId);
 
-  List<Verse> getSearchResults(String searchTerm, List<Book> booksToSearch);
+  Future<List<Verse>> getSearchResults(
+      String searchTerm, List<Book> booksToSearch);
 
   Future init();
 }

@@ -1,6 +1,7 @@
 import 'package:bible_bloc/Models/Book.dart';
 import 'package:bible_bloc/Models/Chapter.dart';
 import 'package:bible_bloc/Models/ChapterElements/BeginParagraph.dart';
+import 'package:bible_bloc/Models/ChapterElements/DivineName.dart';
 import 'package:bible_bloc/Models/ChapterElements/EmptyElement.dart';
 import 'package:bible_bloc/Models/ChapterElements/EndParagraph.dart';
 import 'package:bible_bloc/Models/ChapterElements/Heading.dart';
@@ -123,6 +124,7 @@ class MultiPartXmlBibleProvider extends IBibleProvider {
       if (aNode.name.local == "verse") {
         var verse = Verse(
           number: int.parse(node.getAttribute("num")),
+          text: aNode.text.replaceAll(multipleSpaces, ""),
         );
         for (var item in node.children) {
           verse.elements.add(_convertXmlToChapterElement(item));
@@ -139,20 +141,64 @@ class MultiPartXmlBibleProvider extends IBibleProvider {
       } else if (aNode.name.local == "begin-paragraph") {
         return BeginParagraph();
       } else if (aNode.name.local == "q") {
-        if (aNode.attributes.any((a) => a.value.contains("double"))) {
-          return ChaperText(text: "\"");
-        } else if (aNode.attributes.any((a) => a.value.contains("single"))) {
-          return ChaperText(text: "\'");
+        switch (
+            aNode.attributes.firstWhere((a) => a.name.local == "class").value) {
+          case "begin-double":
+            return ChaperText(text: " ${String.fromCharCode(8220)}");
+
+            break;
+          case "end-double":
+            return ChaperText(text: "${String.fromCharCode(8221)}");
+
+            break;
+          case "begin-single":
+            return ChaperText(text: " ${String.fromCharCode(8216)}");
+
+            break;
+          case "end-single":
+            return ChaperText(text: "${String.fromCharCode(8217)}");
+
+            break;
+          default:
+            return ChaperText(text: " ${String.fromCharCode(8220)}");
         }
       } else if (aNode.name.local == "subheading") {
         return Subheading(text: aNode.text.trim());
+      } else if (aNode.name.local == "span" &&
+          aNode.attributes.any((a) => a.value == "divine-name")) {
+        return DivineName(text: " ${aNode.text.trim()}");
       } else {
         return EmptyElement();
       }
     } else if (node is xml.XmlText && node.text.trim().isNotEmpty) {
       // this is treating all text as chapter text
       //TODO fix this
-      return ChaperText(text: '''${node.text.trim()}''');
+      var spaceBeforePunctuation = RegExp(" [.!?\\-]");
+      var punctuation = RegExp("[.!?\\-]");
+      if (node.previousSibling != null &&
+          node.previousSibling is xml.XmlElement &&
+          (node.previousSibling.attributes
+                  .any((a) => a.value == "begin-double") ||
+              node.previousSibling.attributes
+                  .any((a) => a.value == "end-double") ||
+              node.previousSibling.attributes
+                  .any((a) => a.value == "begin-single") ||
+              node.previousSibling.attributes
+                  .any((a) => a.value == "end-single"))) {
+        return ChaperText(
+            text: '''${node.text.replaceAll(multipleSpaces, "").trim()}''');
+      } else if (node.text.contains(spaceBeforePunctuation)) {
+        return ChaperText(
+            text:
+                ''' ${node.text.replaceAll(multipleSpaces, "").replaceAll(spaceBeforePunctuation, "").trim()}''');
+      } else if (node.text.replaceAll(multipleSpaces, "").length == 1 &&
+          node.text.contains(punctuation)) {
+        return ChaperText(
+            text: '''${node.text.replaceAll(multipleSpaces, "").trim()}''');
+      } else {
+        return ChaperText(
+            text: ''' ${node.text.replaceAll(multipleSpaces, "").trim()}''');
+      }
     } else {
       return EmptyElement();
     }
@@ -183,9 +229,63 @@ class MultiPartXmlBibleProvider extends IBibleProvider {
   }
 
   @override
-  List<Verse> getSearchResults(String searchTerm, List<Book> booksToSearch) {
-    // TODO: implement getSearchResults
-    return null;
+  Future<List<Verse>> getSearchResults(
+      String searchTerm, List<Book> booksToSearch) async {
+    var chapters = booksToSearch.expand((book) => book.chapters);
+
+    for (var chapter in chapters) {
+      chapter = await this.getChapter(chapter.book.name, chapter.number);
+    }
+    Iterable<Verse> verses =
+        chapters.expand((c) => c.elements.where((e) => e is Verse));
+    verses = verses.where((verse) =>
+        _contains(searchTerm.toLowerCase(), verse.text.toLowerCase()));
+    if (verses.contains(" ") && !searchTerm.contains(" ")) {
+      verses = verses
+          .where((verse) => verse.text
+              .toLowerCase()
+              .replaceAll(".", "")
+              .split(" ")
+              .contains(searchTerm.toLowerCase()))
+          .toList();
+    } else {
+      verses = verses.where((verse) =>
+          verse.text.toLowerCase().contains(searchTerm.toLowerCase()));
+    }
+    return verses.toList();
+  }
+
+  static bool _contains(String query, String verse) {
+    int i = 2; // First index to check.
+    int length = verse.length;
+    var C = query[query.length - 1];
+    var B = query[query.length - 2];
+    var A = query[query.length - 3];
+    while (i < length) {
+      if (verse[i] == C) {
+        if (verse[i - 1] == B && verse[i - 2] == A) {
+          return true;
+        }
+        // Must be at least 3 character away.
+        i += 3;
+        continue;
+      } else if (verse[i] == B) {
+        // Must be at least 1 characters away.
+        i += 1;
+        continue;
+      } else if (verse[i] == A) {
+        // Must be at least 2 characters away.
+        i += 2;
+        continue;
+      } else {
+        // Must be at least 4 characters away.
+        i += 3;
+        continue;
+      }
+    }
+
+    // Nothing found.
+    return false;
   }
 
   Future<xml.XmlDocument> loadDocument(String path) async {

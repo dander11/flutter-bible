@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 
 class BibleBottomNavigationBar extends StatelessWidget {
-  int lastPage = 0;
+  int lastPage = 10;
   BibleBottomNavigationBar({
     Key key,
     BuildContext context,
@@ -18,6 +18,7 @@ class BibleBottomNavigationBar extends StatelessWidget {
         stream: InheritedBlocs.of(context).navigationBloc.currentPage,
         initialData: AppPage.readerPage,
         builder: (context, snapshot) {
+          lastPage = snapshot.data.index;
           return Theme(
             data: Theme.of(context).copyWith(
               // sets the background color of the `BottomNavigationBar`
@@ -57,7 +58,6 @@ class BibleBottomNavigationBar extends StatelessWidget {
                     break;
                   default:
                 }
-                lastPage = index;
               },
               items: [
                 BottomNavigationBarItem(

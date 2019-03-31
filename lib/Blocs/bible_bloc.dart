@@ -9,11 +9,13 @@ import 'package:bible_bloc/Models/SearchQuery.dart';
 
 import 'package:bible_bloc/Provider/IBibleProvider.dart';
 import 'package:bible_bloc/Provider/MultiPartXmlBibleProvider.dart';
+import 'package:bible_bloc/Provider/XmlBibleProvider.dart';
 import 'package:rxdart/rxdart.dart';
 import 'dart:collection';
 
 class BibleBloc {
   IBibleProvider _importer;
+  IBibleProvider _searchProvider;
   List<Book> _books;
 
   Stream<UnmodifiableListView<Book>> get books => _booksSubject.stream;
@@ -49,6 +51,8 @@ class BibleBloc {
   BibleBloc() {
     _importer = MultiPartXmlBibleProvider();
     _getBooks();
+    _searchProvider = XmlBibleProvider();
+    _searchProvider.init();
 /* 
     _importer = SqlLiteBibleProvider();
     _getBooks(); */
@@ -71,9 +75,11 @@ class BibleBloc {
                     book.name.toLowerCase() == search.book.toLowerCase())
                 .toList()
             : this._books;
-        List<Verse> results =
-            _importer.getSearchResults(search.queryText, booksToSearch);
-        _searchResultsSubject.add(UnmodifiableListView(results));
+        _searchProvider
+            .getSearchResults(search.queryText, booksToSearch)
+            .then((results) {
+          _searchResultsSubject.add(UnmodifiableListView(results));
+        });
       }
     });
 
@@ -86,9 +92,11 @@ class BibleBloc {
                     book.name.toLowerCase() == search.book.toLowerCase())
                 .toList()
             : this._books;
-        List<Verse> results =
-            _importer.getSearchResults(search.queryText, booksToSearch);
-        _suggestionSearchResultsSubject.add(UnmodifiableListView(results));
+        _searchProvider
+            .getSearchResults(search.queryText, booksToSearch)
+            .then((results) {
+          _suggestionSearchResultsSubject.add(UnmodifiableListView(results));
+        });
       }
     });
   }

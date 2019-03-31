@@ -1,9 +1,9 @@
 import 'package:bible_bloc/Models/ChapterElements/IChapterElement.dart';
 import 'package:flutter/material.dart';
 
-class ChaperText extends IChapterElement {
+class DivineName extends IChapterElement {
   final String text;
-  ChaperText({this.text}) : super();
+  DivineName({this.text}) : super();
 
   @override
   List<Text> toTextWidget(BuildContext context) {
@@ -28,6 +28,7 @@ class ChaperText extends IChapterElement {
         )
       ],
     );
+
     return span;
   }
 }

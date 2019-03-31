@@ -1,6 +1,7 @@
 import 'package:bible_bloc/InheritedBlocs.dart';
 import 'package:bible_bloc/Models/Chapter.dart';
 import 'package:bible_bloc/Views/BookDrawer/BookDrawer.dart';
+import 'package:bible_bloc/Views/SearchPage/BibleSearchDelegate.dart';
 import 'package:bible_bloc/Views/Settings/SettingPopupMenu.dart';
 import 'package:flutter/material.dart';
 
@@ -14,6 +15,13 @@ class BibleReaderAppBar extends StatelessWidget {
     return SliverAppBar(
       floating: true,
       centerTitle: true,
+      leading: IconButton(
+        icon: Icon(Icons.search),
+        onPressed: () => showSearch(
+              context: context,
+              delegate: BibleSearchDelegate(),
+            ),
+      ),
       title: GestureDetector(
         onTap: () {
           showModalBottomSheet<void>(
@@ -28,9 +36,9 @@ class BibleReaderAppBar extends StatelessWidget {
             if (snapshot.hasData) {
               return Row(
                 mainAxisAlignment: MainAxisAlignment.center,
-                children: [
+                children: <Widget>[
                   Text("${snapshot.data.book.name} ${snapshot.data.number}"),
-                  Icon(Icons.arrow_drop_down)
+                  Icon(Icons.arrow_drop_down),
                 ],
               );
             } else {
@@ -45,6 +53,16 @@ class BibleReaderAppBar extends StatelessWidget {
       actions: <Widget>[
         SettingsPopupMenu(),
       ],
+      /* actions: <Widget>[
+        IconButton(
+          icon: Icon(Icons.search),
+          onPressed: () => showSearch(
+                context: context,
+                delegate: BibleSearchDelegate(),
+              ),
+        ),
+        SettingsPopupMenu(),
+      ], */
     );
   }
 }
