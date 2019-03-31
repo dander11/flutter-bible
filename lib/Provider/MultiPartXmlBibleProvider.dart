@@ -8,6 +8,7 @@ import 'package:bible_bloc/Models/ChapterElements/IChapterElement.dart';
 import 'package:bible_bloc/Models/ChapterElements/Subheading.dart';
 import 'package:bible_bloc/Models/ChapterElements/Text.dart';
 import 'package:bible_bloc/Models/ChapterElements/Verse.dart';
+import 'package:bible_bloc/Models/ChapterElements/WordsOfChrist.dart';
 
 import 'package:bible_bloc/Provider/IBibleProvider.dart';
 import 'package:flutter/services.dart';
@@ -116,6 +117,7 @@ class MultiPartXmlBibleProvider extends IBibleProvider {
   }
 
   IChapterElement _convertXmlToChapterElement(xml.XmlNode node) {
+    var multipleSpaces = RegExp("[\n\t\r]*");
     if (node is xml.XmlElement) {
       var aNode = node as xml.XmlElement;
       if (aNode.name.local == "verse") {
@@ -127,9 +129,11 @@ class MultiPartXmlBibleProvider extends IBibleProvider {
         }
         return verse;
       } else if (aNode.name.local == "heading") {
-        var multipleSpaces = RegExp("[\n\t]*");
         var cleanedSpace = aNode.text.replaceAll(multipleSpaces, "");
         return Heading(text: cleanedSpace.trim());
+      } else if (aNode.name.local == "woc") {
+        var cleanedSpace = aNode.text.replaceAll(multipleSpaces, "");
+        return WordsOfChrist(text: cleanedSpace.trim());
       } else if (aNode.name.local == "end-paragraph") {
         return EndParagraph();
       } else if (aNode.name.local == "begin-paragraph") {
