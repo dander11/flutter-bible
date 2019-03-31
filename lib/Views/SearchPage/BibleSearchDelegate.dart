@@ -4,9 +4,9 @@ import 'package:bible_bloc/InheritedBlocs.dart';
 import 'package:bible_bloc/Models/Chapter.dart';
 import 'package:bible_bloc/Models/ChapterElements/Verse.dart';
 import 'package:bible_bloc/Models/SearchQuery.dart';
+import 'package:bible_bloc/Views/LoadingColumn.dart';
 import 'package:bible_bloc/Views/SearchPage/SearchFilter.dart';
 import 'package:bible_bloc/Views/SearchPage/SearchResults.dart';
-import 'package:bible_bloc/main.dart';
 import 'package:flutter/material.dart';
 import 'package:queries/collections.dart';
 

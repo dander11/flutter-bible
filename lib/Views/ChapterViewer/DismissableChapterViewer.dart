@@ -1,18 +1,17 @@
 import 'package:bible_bloc/Models/Book.dart';
 import 'package:bible_bloc/Models/Chapter.dart';
 import 'package:bible_bloc/Models/ChapterElements/IChapterElement.dart';
-
 import 'package:bible_bloc/Views/VerseViewer/VerseText.dart';
 import 'package:flutter/material.dart';
 
-class Verses extends StatelessWidget {
+class DismissableChapterViewer extends StatelessWidget {
   final Chapter chapter;
   final Book book;
   final Function(DismissDirection) swipeAction;
   final bool addBackgrounds;
   final bool showVerseNumbers;
 
-  Verses({
+  DismissableChapterViewer({
     this.chapter,
     this.book,
     this.swipeAction,
@@ -72,7 +71,7 @@ class Verses extends StatelessWidget {
     if (1 == chapter.number) {
       return new Column();
     } else {
-      return new Verses(
+      return new DismissableChapterViewer(
         chapter: book.getChapter(chapter.number - 1),
         book: book,
         swipeAction: swipeAction,
@@ -93,7 +92,7 @@ class Verses extends StatelessWidget {
         ],
       );
     } else {
-      return new Verses(
+      return new DismissableChapterViewer(
         chapter: book.getChapter(chapter.number + 1),
         book: book,
         swipeAction: swipeAction,
