@@ -1,3 +1,4 @@
+import 'package:bible_bloc/Views/AppBar/BibleBottomNavigationBar.dart';
 import 'package:bible_bloc/Views/AppBar/BibleTopAppBar.dart';
 import 'package:bible_bloc/Views/Reader/Reader.dart';
 import 'package:flutter/material.dart';
@@ -9,11 +10,14 @@ class ReaderPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return CustomScrollView(
-      slivers: <Widget>[
-        BibleReaderAppBar(),
-        SliverToBoxAdapter(child: Reader()),
-      ],
+    return Scaffold(
+      body: CustomScrollView(
+        slivers: <Widget>[
+          BibleReaderAppBar(),
+          SliverToBoxAdapter(child: Reader()),
+        ],
+      ),
+      bottomNavigationBar: new BibleBottomNavigationBar(context: context),
     );
   }
 }

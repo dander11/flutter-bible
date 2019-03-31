@@ -14,10 +14,14 @@ import 'package:bible_bloc/Providers/XmlBibleProvider.dart';
 import 'package:rxdart/rxdart.dart';
 import 'dart:collection';
 
+import 'package:shared_preferences/shared_preferences.dart';
+
 class BibleBloc {
   IBibleProvider _importer;
   ISearchProvider _searchProvider;
   List<Book> _books;
+
+  final String membershipKey = 'david.anderson.bibleapp';
 
   Stream<UnmodifiableListView<Book>> get books => _booksSubject.stream;
   final _booksSubject = BehaviorSubject<UnmodifiableListView<Book>>();
@@ -61,6 +65,8 @@ class BibleBloc {
 
     _searchProvider = XmlBibleProvider();
     _searchProvider.init();
+
+    _initCurrentBook();
 
     _currentChapterController.stream.listen((currentChapter) async {
       await _updateChapters(currentChapter);
@@ -119,6 +125,7 @@ class BibleBloc {
     await _updatePreviousChapter(currentChapter);
 
     await _updateNextChapter(currentChapter);
+    _saveCurrentBookAndChapter();
   }
 
   Future _updateNextChapter(Chapter currentChapter) async {
@@ -162,5 +169,24 @@ class BibleBloc {
     _suggestionSearchTermController.close();
     _previousChapter.close();
     _nextChapter.close();
+  }
+
+  void _initCurrentBook() async {
+    SharedPreferences sp = await SharedPreferences.getInstance();
+    var currentChapterString = sp.getString(membershipKey);
+    if (currentChapterString.contains("_")) {
+      var bookName = currentChapterString.split("_")[0];
+      var chapterNumber = int.parse(currentChapterString.split("_")[0]);
+      currentChapter.add(await _importer.getChapter(bookName, chapterNumber));
+    } else {
+      currentChapter.add(await _importer.getChapter(_books.first.name, 1));
+    }
+  }
+
+  void _saveCurrentBookAndChapter() async {
+    SharedPreferences sp = await SharedPreferences.getInstance();
+    var currentChapter = _currentChapter.value;
+    sp.setString(
+        membershipKey, "${currentChapter.book.name}_${currentChapter.number}");
   }
 }
