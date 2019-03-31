@@ -1,5 +1,6 @@
 import 'package:bible_bloc/InheritedBlocs.dart';
-import 'package:bible_bloc/Models/Verse.dart';
+import 'package:bible_bloc/Models/ChapterElements/Verse.dart';
+
 import 'package:collection/collection.dart';
 import 'package:flutter/material.dart';
 

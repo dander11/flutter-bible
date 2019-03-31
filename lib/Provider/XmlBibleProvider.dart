@@ -1,6 +1,7 @@
 import 'package:bible_bloc/Models/Book.dart';
 import 'package:bible_bloc/Models/Chapter.dart';
-import 'package:bible_bloc/Models/Verse.dart';
+import 'package:bible_bloc/Models/ChapterElements/Verse.dart';
+
 import 'package:bible_bloc/Provider/IBibleProvider.dart';
 import 'package:flutter/services.dart';
 import 'package:global_configuration/global_configuration.dart';
@@ -9,6 +10,8 @@ import 'package:xml/xml.dart' as xml;
 class XmlBibleProvider extends IBibleProvider {
   xml.XmlDocument xmlDocument;
   GlobalConfiguration _cfg;
+
+  List<Book> _searchableBooks;
 
   XmlBibleProvider() {
     _cfg = new GlobalConfiguration();
@@ -21,6 +24,7 @@ class XmlBibleProvider extends IBibleProvider {
   Future loadDocument(String path) async {
     var fileData = await rootBundle.loadString(path);
     xmlDocument = xml.parse(fileData);
+    _searchableBooks = await getAllBooks();
   }
 
   Future<List<Book>> getAllBooks() async {
@@ -49,7 +53,7 @@ class XmlBibleProvider extends IBibleProvider {
     return book;
   }
 
-  Chapter getChapter(String bookName, int chapterNumber) {
+  Future<Chapter> getChapter(String bookName, int chapterNumber) async {
     return this.getBook(bookName).chapters[chapterNumber - 1];
   }
 
@@ -80,11 +84,14 @@ class XmlBibleProvider extends IBibleProvider {
     return verses;
   }
 
-  List<Verse> getSearchResults(String searchTerm, List<Book> booksToSearch) {
-    var chapters = booksToSearch.expand((book) => book.chapters);
+  Future<List<Verse>> getSearchResults(
+      String searchTerm, List<Book> booksToSearch) async {
+    var books = this
+        ._searchableBooks
+        .where((b) => booksToSearch.any((book) => book.name == b.name));
+    var chapters = books.expand((book) => book.chapters);
 
-    Iterable<Verse> verses =
-        chapters.expand((c) => c.elements.where((e) => e is Verse));
+    var verses = chapters.expand((c) => c.elements.whereType<Verse>());
     verses = verses.where((verse) =>
         _contains(searchTerm.toLowerCase(), verse.text.toLowerCase()));
     if (verses.contains(" ") && !searchTerm.contains(" ")) {

@@ -25,6 +25,9 @@ class NotesProvider extends INotesProvider {
         .toList()) {
       try {
         var contents = file.readAsStringSync();
+        if (contents.isEmpty) {
+          continue;
+        }
         var json = jsonDecode(contents);
         var doc = NotusDocument.fromJson(json);
         var noteName = basename(file.path).split('.')[0];

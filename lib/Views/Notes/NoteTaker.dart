@@ -48,7 +48,8 @@ class NotePageState extends State<NotePage> {
                 getVerseLength(text),
                 NotusAttribute.link.fromString("https://bible.com"));
             /* _controller.formatText(getVerseIndex(text), getVerseLength(text),
-                NotusAttribute.link.fromString("https://bible.com")); */
+                NotusAttribute.link.fromString("https://bible.com")); 
+                */
             _controller.compose(change);
           }
           InheritedBlocs.of(context).notesBloc.addUpdateNote.add(note);
@@ -60,7 +61,7 @@ class NotePageState extends State<NotePage> {
   @override
   Widget build(BuildContext context) {
     final theme = new ZefyrThemeData(
-      textColor: Colors.white70,
+      //textColor: Colors.white70,
       cursorColor: Colors.blue,
       toolbarTheme: ZefyrToolbarTheme.fallback(context).copyWith(
         color: Colors.grey.shade800,

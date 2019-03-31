@@ -1,6 +1,7 @@
 import 'package:bible_bloc/Models/Book.dart';
 import 'package:bible_bloc/Models/Chapter.dart';
-import 'package:bible_bloc/Models/Verse.dart';
+import 'package:bible_bloc/Models/ChapterElements/IChapterElement.dart';
+
 import 'package:bible_bloc/Views/VerseViewer/VerseText.dart';
 import 'package:flutter/material.dart';
 
@@ -20,9 +21,12 @@ class Verses extends StatelessWidget {
   });
 
   Widget build(BuildContext context) {
-    List<TextSpan> chapterText = new List<TextSpan>();
-    for (Verse verse in chapter.elements.whereType<Verse>().toList()) {
-      var number = new TextSpan(
+    TextSpan chapterText = TextSpan(
+      children: [],
+      style: Theme.of(context).textTheme.body2,
+    );
+    for (IChapterElement verse in chapter.elements) {
+      /*   var number = new TextSpan(
         text: ' ' + verse.number.toString() + ' ',
         style: new TextStyle(fontWeight: FontWeight.bold),
       );
@@ -32,9 +36,13 @@ class Verses extends StatelessWidget {
       );
       if (this.showVerseNumbers) {
         chapterText.add(number);
-      }
-      chapterText.add(verText);
+      } 
+      chapterText.add(verText);*/
+      chapterText.children.add(verse.toTextSpanWidget(context));
     }
+    var expandedChapterText = flatten(chapterText.children);
+    chapterText.children.clear();
+    chapterText.children.addAll(expandedChapterText);
     return new Dismissible(
       secondaryBackground: this.getNextBook(context),
       background: this.getPrevBook(context),
@@ -44,6 +52,20 @@ class Verses extends StatelessWidget {
           new VerseText(book: book, chapter: chapter, chapterText: chapterText),
       key: new ValueKey(chapter.number),
     );
+    /* return Container(
+      child: VerseText(
+          book: book,
+          chapter: chapter,
+          chapterText: chapterText,
+    ); */
+  }
+
+  List<TextSpan> flatten(List<TextSpan> iterable) {
+    return iterable
+        .expand((TextSpan e) => e.children != null && e.children.length > 0
+            ? flatten(e.children)
+            : [e])
+        .toList();
   }
 
   getPrevBook(context) {

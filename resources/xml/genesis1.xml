@@ -1,0 +1,395 @@
+﻿<?xml version="1.0" encoding="utf-8"?> 
+<crossway-bible>
+	<book title="Genesis" num="1">
+		<marker class="begin-verse" mid="v01001001">
+		</marker>
+		<chapter num="1">
+			<heading
+				> 
+				The Creation of the World
+			</heading>
+			<begin-paragraph
+				>
+			</begin-paragraph>
+			<verse num="1">
+				In the 
+				<crossref let="a" cid="c01001001.1">
+				</crossref>
+				beginning, God created the heavens and the earth.
+			</verse>
+			<marker class="begin-verse" mid="v01001002">
+			</marker>
+			<verse num="2">
+				The earth was 
+				<crossref let="b" cid="c01001002.1">
+				</crossref>
+				without form and void, and darkness was over the face of the deep. And the Spirit of God was hovering over the face of the waters.
+			</verse>
+			<end-paragraph
+				>
+			</end-paragraph>
+			<marker class="begin-verse" mid="v01001003">
+			</marker>
+			<begin-paragraph
+				>
+			</begin-paragraph>
+			<verse num="3">
+				And God said, 
+				<crossref let="c" cid="c01001003.1">
+				</crossref>
+				<q class="begin-double" qid="" from="" to="">
+				</q>
+				Let there be light,
+				<q class="end-double" qid="" from="" to="">
+				</q>
+				 and there was light.
+			</verse>
+			<marker class="begin-verse" mid="v01001004">
+			</marker>
+			<verse num="4">
+				And God saw that the light was good. And God separated the light from the darkness.
+			</verse>
+			<marker class="begin-verse" mid="v01001005">
+			</marker>
+			<verse num="5">
+				God called the light Day, and the darkness he called Night. And there was evening and there was morning, the first day.
+			</verse>
+			<end-paragraph
+				>
+			</end-paragraph>
+			<marker class="begin-verse" mid="v01001006">
+			</marker>
+			<begin-paragraph
+				>
+			</begin-paragraph>
+			<verse num="6">
+				And God said, 
+				<crossref let="d" cid="c01001006.1">
+				</crossref>
+				<q class="begin-double" qid="" from="" to="">
+				</q>
+				Let there be an expanse
+				<note nid="n01001006.1">
+				</note>
+				 in the midst of the waters, and let it separate the waters from the waters.
+				<q class="end-double" qid="" from="" to="">
+				</q>
+			</verse>
+			<marker class="begin-verse" mid="v01001007">
+			</marker>
+			<verse num="7">
+				And God made
+				<note nid="n01001007.1">
+				</note>
+				 the expanse and 
+				<crossref let="e" cid="c01001007.1">
+				</crossref>
+				separated the waters that were under the expanse from the waters that were 
+				<crossref let="f" cid="c01001007.2">
+				</crossref>
+				above the expanse. And it was so.
+			</verse>
+			<marker class="begin-verse" mid="v01001008">
+			</marker>
+			<verse num="8">
+				And God called the expanse Heaven.
+				<note nid="n01001008.1">
+				</note>
+				 And there was evening and there was morning, the second day.
+			</verse>
+			<end-paragraph
+				>
+			</end-paragraph>
+			<marker class="begin-verse" mid="v01001009">
+			</marker>
+			<begin-paragraph
+				>
+			</begin-paragraph>
+			<verse num="9">
+				And God said, 
+				<crossref let="g" cid="c01001009.1">
+				</crossref>
+				<q class="begin-double" qid="" from="" to="">
+				</q>
+				Let the waters under the heavens be gathered together into one place, and let the dry land appear.
+				<q class="end-double" qid="" from="" to="">
+				</q>
+				 And it was so.
+			</verse>
+			<marker class="begin-verse" mid="v01001010">
+			</marker>
+			<verse num="10">
+				God called the dry land Earth,
+				<note nid="n01001010.1">
+				</note>
+				 and the waters that were gathered together he called Seas. And God saw that it was good.
+			</verse>
+			<end-paragraph
+				>
+			</end-paragraph>
+			<marker class="begin-verse" mid="v01001011">
+			</marker>
+			<begin-paragraph
+				>
+			</begin-paragraph>
+			<verse num="11">
+				And God said, 
+				<crossref let="h" cid="c01001011.1">
+				</crossref>
+				<q class="begin-double" qid="" from="" to="">
+				</q>
+				Let the earth sprout vegetation, plants
+				<note nid="n01001011.1">
+				</note>
+				 yielding seed, and fruit trees bearing fruit in which is their seed, each according to its kind, on the earth.
+				<q class="end-double" qid="" from="" to="">
+				</q>
+				 And it was so.
+			</verse>
+			<marker class="begin-verse" mid="v01001012">
+			</marker>
+			<verse num="12">
+				The earth brought forth vegetation, plants yielding seed according to their own kinds, and trees bearing fruit in which is their seed, each according to its kind. And God saw that it was good.
+			</verse>
+			<marker class="begin-verse" mid="v01001013">
+			</marker>
+			<verse num="13">
+				And there was evening and there was morning, the third day.
+			</verse>
+			<end-paragraph
+				>
+			</end-paragraph>
+			<marker class="begin-verse" mid="v01001014">
+			</marker>
+			<begin-paragraph
+				>
+			</begin-paragraph>
+			<verse num="14">
+				And God said, 
+				<q class="begin-double" qid="" from="" to="">
+				</q>
+				Let there be lights in the expanse of the heavens to separate the day from the night. And let them be for 
+				<crossref let="i" cid="c01001014.1">
+				</crossref>
+				signs and for 
+				<crossref let="j" cid="c01001014.2">
+				</crossref>
+				seasons,
+				<note nid="n01001014.1">
+				</note>
+				 and for days and years,
+			</verse>
+			<marker class="begin-verse" mid="v01001015">
+			</marker>
+			<verse num="15">
+				and let them be lights in the expanse of the heavens to give light upon the earth.
+				<q class="end-double" qid="" from="" to="">
+				</q>
+				 And it was so.
+			</verse>
+			<marker class="begin-verse" mid="v01001016">
+			</marker>
+			<verse num="16">
+				And God 
+				<crossref let="k" cid="c01001016.1">
+				</crossref>
+				made the two great lightsÃ¹the greater light to rule the day and the lesser light to rule the nightÃ¹and the stars.
+			</verse>
+			<marker class="begin-verse" mid="v01001017">
+			</marker>
+			<verse num="17">
+				And God set them in the expanse of the heavens to give light on the earth,
+			</verse>
+			<marker class="begin-verse" mid="v01001018">
+			</marker>
+			<verse num="18">
+				to 
+				<crossref let="l" cid="c01001018.1">
+				</crossref>
+				rule over the day and over the night, and to separate the light from the darkness. And God saw that it was good.
+			</verse>
+			<marker class="begin-verse" mid="v01001019">
+			</marker>
+			<verse num="19">
+				And there was evening and there was morning, the fourth day.
+			</verse>
+			<end-paragraph
+				>
+			</end-paragraph>
+			<marker class="begin-verse" mid="v01001020">
+			</marker>
+			<begin-paragraph
+				>
+			</begin-paragraph>
+			<verse num="20">
+				And God said, 
+				<q class="begin-double" qid="" from="" to="">
+				</q>
+				Let the waters swarm with swarms of living creatures, and let birds
+				<note nid="n01001020.1">
+				</note>
+				 fly above the earth across the expanse of the heavens.
+				<q class="end-double" qid="" from="" to="">
+				</q>
+			</verse>
+			<marker class="begin-verse" mid="v01001021">
+			</marker>
+			<verse num="21">
+				So 
+				<crossref let="m" cid="c01001021.1">
+				</crossref>
+				God created the great sea creatures and every living creature that moves, with which the waters swarm, according to their kinds, and every winged bird according to its kind. And God saw that it was good.
+			</verse>
+			<marker class="begin-verse" mid="v01001022">
+			</marker>
+			<verse num="22">
+				And God blessed them, saying, 
+				<crossref let="n" cid="c01001022.1">
+				</crossref>
+				<q class="begin-double" qid="" from="" to="">
+				</q>
+				Be fruitful and multiply and fill the waters in the seas, and let birds multiply on the earth.
+				<q class="end-double" qid="" from="" to="">
+				</q>
+			</verse>
+			<marker class="begin-verse" mid="v01001023">
+			</marker>
+			<verse num="23">
+				And there was evening and there was morning, the fifth day.
+			</verse>
+			<end-paragraph
+				>
+			</end-paragraph>
+			<marker class="begin-verse" mid="v01001024">
+			</marker>
+			<begin-paragraph
+				>
+			</begin-paragraph>
+			<verse num="24">
+				And God said, 
+				<q class="begin-double" qid="" from="" to="">
+				</q>
+				Let the earth bring forth living creatures according to their kindsÃ¹livestock and creeping things and beasts of the earth according to their kinds.
+				<q class="end-double" qid="" from="" to="">
+				</q>
+				 And it was so.
+			</verse>
+			<marker class="begin-verse" mid="v01001025">
+			</marker>
+			<verse num="25">
+				And God made the beasts of the earth according to their kinds and the livestock according to their kinds, and everything that creeps on the ground according to its kind. And God saw that it was good.
+			</verse>
+			<end-paragraph
+				>
+			</end-paragraph>
+			<marker class="begin-verse" mid="v01001026">
+			</marker>
+			<begin-paragraph
+				>
+			</begin-paragraph>
+			<verse num="26">
+				Then God said, 
+				<crossref let="o" cid="c01001026.1">
+				</crossref>
+				<q class="begin-double" qid="" from="" to="">
+				</q>
+				Let us make man
+				<note nid="n01001026.1">
+				</note>
+				 in our image, 
+				<crossref let="p" cid="c01001026.2">
+				</crossref>
+				after our likeness. And 
+				<crossref let="q" cid="c01001026.3">
+				</crossref>
+				let them have dominion over the fish of the sea and over the birds of the heavens and over the livestock and over all the earth and over every creeping thing that creeps on the earth.
+				<q class="end-double" qid="" from="" to="">
+				</q>
+			</verse>
+			<end-paragraph
+				>
+			</end-paragraph>
+			<marker class="begin-verse" mid="v01001027">
+			</marker>
+			<begin-block-indent
+				>
+			</begin-block-indent>
+			<begin-paragraph class="line-group">
+			</begin-paragraph>
+			<verse num="27">
+				<begin-line
+					>
+				</begin-line>
+				So God created man in his own image,
+				<end-line class="br">
+				</end-line>
+				<begin-line class="indent">
+				</begin-line>
+				in the image of God he created him;
+				<end-line class="br">
+				</end-line>
+				<begin-line class="indent">
+				</begin-line>
+				<crossref let="r" cid="c01001027.1">
+				</crossref>
+				male and female he created them.
+				<end-line
+					>
+				</end-line>
+			</verse>
+			<end-paragraph
+				>
+			</end-paragraph>
+			<end-block-indent
+				>
+			</end-block-indent>
+			<marker class="begin-verse" mid="v01001028">
+			</marker>
+			<begin-paragraph
+				>
+			</begin-paragraph>
+			<verse num="28">
+				And God blessed them. And God said to them, 
+				<crossref let="s" cid="c01001028.1">
+				</crossref>
+				<q class="begin-double" qid="" from="" to="">
+				</q>
+				Be fruitful and multiply and fill the earth and subdue it and have dominion over the fish of the sea and over the birds of the heavens and over every living thing that moves on the earth.
+				<q class="end-double" qid="" from="" to="">
+				</q>
+			</verse>
+			<marker class="begin-verse" mid="v01001029">
+			</marker>
+			<verse num="29">
+				And God said, 
+				<q class="begin-double" qid="" from="" to="">
+				</q>
+				Behold, I have given you every plant yielding seed that is on the face of all the earth, and every tree with seed in its fruit. 
+				<crossref let="t" cid="c01001029.1">
+				</crossref>
+				You shall have them for food.
+			</verse>
+			<marker class="begin-verse" mid="v01001030">
+			</marker>
+			<verse num="30">
+				And 
+				<crossref let="u" cid="c01001030.1">
+				</crossref>
+				to every beast of the earth and to every bird of the heavens and to everything that creeps on the earth, everything that has the breath of life, I have given every green plant for food.
+				<q class="end-double" qid="" from="" to="">
+				</q>
+				 And it was so.
+			</verse>
+			<marker class="begin-verse" mid="v01001031">
+			</marker>
+			<verse num="31">
+				<crossref let="v" cid="c01001031.1">
+				</crossref>
+				And God saw everything that he had made, and behold, it was very good. And there was evening and there was morning, the sixth day.
+			</verse>
+			<end-paragraph
+				>
+			</end-paragraph>
+		</chapter>
+	</book>
+</crossway-bible>

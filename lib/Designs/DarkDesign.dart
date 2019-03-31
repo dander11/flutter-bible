@@ -15,10 +15,15 @@ class Designs {
     ThemeData darkTheme = new ThemeData.dark();
     return darkTheme.copyWith(
       textTheme: darkTheme.textTheme.copyWith(
-        body2: darkTheme.textTheme.body2
-            .copyWith(color: Colors.white70, fontSize: 18.0),
-        display1: darkTheme.textTheme.display1
-            .copyWith(color: Colors.white70, fontSize: 22.0),
+        body2: darkTheme.textTheme.body2.copyWith(
+          color: Colors.white70,
+          fontSize: 18.0,
+          fontWeight: FontWeight.w300,
+        ),
+        display1: darkTheme.textTheme.display1.copyWith(
+          color: Colors.white70,
+          fontSize: 22.0,
+        ),
         title: darkTheme.textTheme.title.copyWith(
           color: darkTheme.primaryColor,
         ),

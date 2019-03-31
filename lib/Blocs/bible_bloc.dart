@@ -2,22 +2,29 @@ import 'dart:async';
 
 import 'package:bible_bloc/Models/Book.dart';
 import 'package:bible_bloc/Models/Chapter.dart';
+import 'package:bible_bloc/Models/ChapterElements/IChapterElement.dart';
+import 'package:bible_bloc/Models/ChapterElements/Verse.dart';
+
 import 'package:bible_bloc/Models/SearchQuery.dart';
-import 'package:bible_bloc/Models/Verse.dart';
+
 import 'package:bible_bloc/Provider/IBibleProvider.dart';
+import 'package:bible_bloc/Provider/MultiPartXmlBibleProvider.dart';
 import 'package:bible_bloc/Provider/XmlBibleProvider.dart';
 import 'package:rxdart/rxdart.dart';
 import 'dart:collection';
 
 class BibleBloc {
   IBibleProvider _importer;
+  IBibleProvider _searchProvider;
   List<Book> _books;
 
   Stream<UnmodifiableListView<Book>> get books => _booksSubject.stream;
   final _booksSubject = BehaviorSubject<UnmodifiableListView<Book>>();
 
-  Stream<UnmodifiableListView<Verse>> get verses => _verseSubject.stream;
-  final _verseSubject = BehaviorSubject<UnmodifiableListView<Verse>>();
+  Stream<UnmodifiableListView<IChapterElement>> get chapterElements =>
+      _chapterElementsSubject.stream;
+  final _chapterElementsSubject =
+      BehaviorSubject<UnmodifiableListView<IChapterElement>>();
 
   Sink<Chapter> get currentChapter => _currentChapterController.sink;
   final _currentChapterController = StreamController<Chapter>();
@@ -42,18 +49,20 @@ class BibleBloc {
       BehaviorSubject<UnmodifiableListView<Verse>>();
 
   BibleBloc() {
-    _importer = XmlBibleProvider();
+    _importer = MultiPartXmlBibleProvider();
     _getBooks();
+    _searchProvider = XmlBibleProvider();
+    _searchProvider.init();
 /* 
     _importer = SqlLiteBibleProvider();
     _getBooks(); */
 
-    _currentChapterController.stream.listen((currentChapter) {
+    _currentChapterController.stream.listen((currentChapter) async {
       //var verses = currentChapter.elements.where((e) => e is Verse);
-      var chapter =
-          _importer.getChapter(currentChapter.book.name, currentChapter.number);
-      var verses = chapter.elements.whereType<Verse>();
-      _verseSubject.add(UnmodifiableListView(verses));
+      var chapter = await _importer.getChapter(
+          currentChapter.book.name, currentChapter.number);
+      _chapterElementsSubject.add(UnmodifiableListView(chapter.elements));
+      currentChapter.elements = chapter.elements;
       _currentChapter.add(currentChapter);
     });
 
@@ -66,9 +75,11 @@ class BibleBloc {
                     book.name.toLowerCase() == search.book.toLowerCase())
                 .toList()
             : this._books;
-        List<Verse> results =
-            _importer.getSearchResults(search.queryText, booksToSearch);
-        _searchResultsSubject.add(UnmodifiableListView(results));
+        _searchProvider
+            .getSearchResults(search.queryText, booksToSearch)
+            .then((results) {
+          _searchResultsSubject.add(UnmodifiableListView(results));
+        });
       }
     });
 
@@ -81,9 +92,11 @@ class BibleBloc {
                     book.name.toLowerCase() == search.book.toLowerCase())
                 .toList()
             : this._books;
-        List<Verse> results =
-            _importer.getSearchResults(search.queryText, booksToSearch);
-        _suggestionSearchResultsSubject.add(UnmodifiableListView(results));
+        _searchProvider
+            .getSearchResults(search.queryText, booksToSearch)
+            .then((results) {
+          _suggestionSearchResultsSubject.add(UnmodifiableListView(results));
+        });
       }
     });
   }

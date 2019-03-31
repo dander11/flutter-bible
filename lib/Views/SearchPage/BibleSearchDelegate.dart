@@ -2,9 +2,9 @@ import 'dart:collection';
 
 import 'package:bible_bloc/InheritedBlocs.dart';
 import 'package:bible_bloc/Models/Chapter.dart';
+import 'package:bible_bloc/Models/ChapterElements/Verse.dart';
 import 'package:bible_bloc/Models/SearchQuery.dart';
-import 'package:bible_bloc/Models/Verse.dart';
-import 'package:bible_bloc/Views/AppBar/BibleBottomNavigationBar.dart';
+
 import 'package:bible_bloc/Views/SearchPage/SearchFilter.dart';
 import 'package:bible_bloc/Views/SearchPage/SearchResults.dart';
 import 'package:bible_bloc/main.dart';
@@ -38,7 +38,6 @@ class BibleSearchDelegate extends SearchDelegate<Chapter> {
   Widget buildResults(BuildContext context) {
     return Scaffold(
       body: searchResultsBody(context: context),
-      bottomNavigationBar: BibleBottomNavigationBar(),
     );
   }
 
@@ -57,7 +56,7 @@ class BibleSearchDelegate extends SearchDelegate<Chapter> {
                   .copyWith(color: Colors.red.shade300),
             ),
           ),
-          BibleBottomNavigationBar(),
+          //BibleBottomNavigationBar(),
         ],
       );
     }
