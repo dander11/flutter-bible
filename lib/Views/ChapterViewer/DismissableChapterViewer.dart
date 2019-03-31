@@ -1,20 +1,19 @@
+import 'package:bible_bloc/InheritedBlocs.dart';
 import 'package:bible_bloc/Models/Book.dart';
 import 'package:bible_bloc/Models/Chapter.dart';
 import 'package:bible_bloc/Models/ChapterElements/IChapterElement.dart';
-import 'package:bible_bloc/Views/VerseViewer/VerseText.dart';
+import 'package:bible_bloc/Views/ChapterViewer/VerseText.dart';
 import 'package:flutter/material.dart';
 
 class DismissableChapterViewer extends StatelessWidget {
   final Chapter chapter;
   final Book book;
-  final Function(DismissDirection) swipeAction;
   final bool addBackgrounds;
   final bool showVerseNumbers;
 
   DismissableChapterViewer({
     this.chapter,
     this.book,
-    this.swipeAction,
     this.addBackgrounds,
     this.showVerseNumbers,
   });
@@ -25,80 +24,67 @@ class DismissableChapterViewer extends StatelessWidget {
       style: Theme.of(context).textTheme.body2,
     );
     for (IChapterElement verse in chapter.elements) {
-      /*   var number = new TextSpan(
-        text: ' ' + verse.number.toString() + ' ',
-        style: new TextStyle(fontWeight: FontWeight.bold),
-      );
-      var verText = new TextSpan(
-        text: verse.text + ' ',
-        style: new TextStyle(fontWeight: FontWeight.normal),
-      );
-      if (this.showVerseNumbers) {
-        chapterText.add(number);
-      } 
-      chapterText.add(verText);*/
       chapterText.children.add(verse.toTextSpanWidget(context));
     }
-    var expandedChapterText = flatten(chapterText.children);
+    var expandedChapterText = _flattenTextSpans(chapterText.children);
     chapterText.children.clear();
     chapterText.children.addAll(expandedChapterText);
+
     return new Dismissible(
-      secondaryBackground: this.getNextBook(context),
-      background: this.getPrevBook(context),
+      secondaryBackground: this._getNextChapter(context),
+      background: this._getPrevChapter(context),
       resizeDuration: null,
-      onDismissed: (DismissDirection direction) => this.swipeAction(direction),
+      onDismissed: (DismissDirection swipeDetails) async {
+        if (swipeDetails == DismissDirection.endToStart) {
+          var nextChapter =
+              await InheritedBlocs.of(context).bibleBloc.nextChapter.last;
+          InheritedBlocs.of(context).bibleBloc.currentChapter.add(nextChapter);
+        } else {
+          var previousChapter =
+              await InheritedBlocs.of(context).bibleBloc.previousChapter.last;
+          InheritedBlocs.of(context)
+              .bibleBloc
+              .currentChapter
+              .add(previousChapter);
+        }
+      },
       child:
           new VerseText(book: book, chapter: chapter, chapterText: chapterText),
       key: new ValueKey(chapter.number),
     );
-    /* return Container(
-      child: VerseText(
-          book: book,
-          chapter: chapter,
-          chapterText: chapterText,
-    ); */
   }
 
-  List<TextSpan> flatten(List<TextSpan> iterable) {
+  List<TextSpan> _flattenTextSpans(List<TextSpan> iterable) {
     return iterable
         .expand((TextSpan e) => e.children != null && e.children.length > 0
-            ? flatten(e.children)
+            ? _flattenTextSpans(e.children)
             : [e])
         .toList();
   }
 
-  getPrevBook(context) {
-    if (1 == chapter.number) {
-      return new Column();
-    } else {
-      return new DismissableChapterViewer(
-        chapter: book.getChapter(chapter.number - 1),
-        book: book,
-        swipeAction: swipeAction,
-        addBackgrounds: false,
-        showVerseNumbers: this.showVerseNumbers,
-      );
-    }
+  _getPrevChapter(context) {
+    return StreamBuilder<Chapter>(
+        stream: InheritedBlocs.of(context).bibleBloc.previousChapter,
+        builder: (context, snapshot) {
+          return new DismissableChapterViewer(
+            chapter: snapshot.data,
+            book: snapshot.data.book,
+            addBackgrounds: false,
+            showVerseNumbers: this.showVerseNumbers,
+          );
+        });
   }
 
-  getNextBook(context) {
-    if (book.chapters.length == chapter.number) {
-      return new Column(
-        children: <Widget>[
-          new Text(
-            "End of " + book.name,
-            style: Theme.of(context).textTheme.display1,
-          )
-        ],
-      );
-    } else {
-      return new DismissableChapterViewer(
-        chapter: book.getChapter(chapter.number + 1),
-        book: book,
-        swipeAction: swipeAction,
-        addBackgrounds: false,
-        showVerseNumbers: this.showVerseNumbers,
-      );
-    }
+  _getNextChapter(context) {
+    return StreamBuilder<Chapter>(
+        stream: InheritedBlocs.of(context).bibleBloc.nextChapter,
+        builder: (context, snapshot) {
+          return new DismissableChapterViewer(
+            chapter: snapshot.data,
+            book: snapshot.data.book,
+            addBackgrounds: false,
+            showVerseNumbers: this.showVerseNumbers,
+          );
+        });
   }
 }

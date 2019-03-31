@@ -11,7 +11,7 @@ import 'package:bible_bloc/Models/ChapterElements/Text.dart';
 import 'package:bible_bloc/Models/ChapterElements/Verse.dart';
 import 'package:bible_bloc/Models/ChapterElements/WordsOfChrist.dart';
 
-import 'package:bible_bloc/Provider/IBibleProvider.dart';
+import 'package:bible_bloc/Providers/IBibleProvider.dart';
 import 'package:flutter/services.dart';
 import 'package:global_configuration/global_configuration.dart';
 import 'package:xml/xml.dart' as xml;

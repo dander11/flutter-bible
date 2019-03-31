@@ -2,7 +2,7 @@ import 'dart:async';
 import 'dart:convert';
 import 'dart:io';
 import 'package:bible_bloc/Blocs/notes_bloc.dart';
-import 'package:bible_bloc/Provider/INotesProvider.dart';
+import 'package:bible_bloc/Providers/INotesProvider.dart';
 import 'package:intl/intl.dart';
 import 'package:notus/notus.dart';
 import 'package:path/path.dart';

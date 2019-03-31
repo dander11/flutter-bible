@@ -1,7 +1,7 @@
 import 'dart:async';
 
-import 'package:bible_bloc/Provider/INotesProvider.dart';
-import 'package:bible_bloc/Provider/NotesProvider.dart';
+import 'package:bible_bloc/Providers/INotesProvider.dart';
+import 'package:bible_bloc/Providers/NotesProvider.dart';
 import 'package:notus/notus.dart';
 import 'package:queries/collections.dart';
 import 'package:rxdart/rxdart.dart';

@@ -7,10 +7,10 @@ import 'package:bible_bloc/Models/ChapterElements/Verse.dart';
 
 import 'package:bible_bloc/Models/SearchQuery.dart';
 
-import 'package:bible_bloc/Provider/IBibleProvider.dart';
-import 'package:bible_bloc/Provider/ISearchProvider.dart';
-import 'package:bible_bloc/Provider/MultiPartXmlBibleProvider.dart';
-import 'package:bible_bloc/Provider/XmlBibleProvider.dart';
+import 'package:bible_bloc/Providers/IBibleProvider.dart';
+import 'package:bible_bloc/Providers/ISearchProvider.dart';
+import 'package:bible_bloc/Providers/MultiPartXmlBibleProvider.dart';
+import 'package:bible_bloc/Providers/XmlBibleProvider.dart';
 import 'package:rxdart/rxdart.dart';
 import 'dart:collection';
 
@@ -33,6 +33,12 @@ class BibleBloc {
   Stream<Chapter> get chapter => _currentChapter.stream;
   final _currentChapter = BehaviorSubject<Chapter>();
 
+  Stream<Chapter> get nextChapter => _nextChapter.stream;
+  final _nextChapter = BehaviorSubject<Chapter>();
+
+  Stream<Chapter> get previousChapter => _previousChapter.stream;
+  final _previousChapter = BehaviorSubject<Chapter>();
+
   Sink<SearchQuery> get searchTerm => _searchTermController.sink;
   final _searchTermController = StreamController<SearchQuery>();
 
@@ -52,54 +58,96 @@ class BibleBloc {
   BibleBloc() {
     _importer = MultiPartXmlBibleProvider();
     _getBooks();
+
     _searchProvider = XmlBibleProvider();
     _searchProvider.init();
-/* 
-    _importer = SqlLiteBibleProvider();
-    _getBooks(); */
 
     _currentChapterController.stream.listen((currentChapter) async {
-      //var verses = currentChapter.elements.where((e) => e is Verse);
-      var chapter = await _importer.getChapter(
-          currentChapter.book.name, currentChapter.number);
-      _chapterElementsSubject.add(UnmodifiableListView(chapter.elements));
-      currentChapter.elements = chapter.elements;
-      _currentChapter.add(currentChapter);
+      await _updateChapters(currentChapter);
     });
 
     _searchTermController.stream.listen((search) {
-      if (search.queryText.length > 2) {
-        var booksToSearch = search.book.isNotEmpty
-            ? this
-                ._books
-                .where((book) =>
-                    book.name.toLowerCase() == search.book.toLowerCase())
-                .toList()
-            : this._books;
-        _searchProvider
-            .getSearchResults(search.queryText, booksToSearch)
-            .then((results) {
-          _searchResultsSubject.add(UnmodifiableListView(results));
-        });
-      }
+      _updateSearchResults(search);
     });
 
     _suggestionSearchTermController.stream.listen((search) {
-      if (search.queryText.length > 2) {
-        var booksToSearch = search.book.isNotEmpty
-            ? this
-                ._books
-                .where((book) =>
-                    book.name.toLowerCase() == search.book.toLowerCase())
-                .toList()
-            : this._books;
-        _searchProvider
-            .getSearchResults(search.queryText, booksToSearch)
-            .then((results) {
-          _suggestionSearchResultsSubject.add(UnmodifiableListView(results));
-        });
-      }
+      _updateSearchSuggestions(search);
     });
+  }
+
+  void _updateSearchSuggestions(SearchQuery search) {
+    if (search.queryText.length > 2) {
+      var booksToSearch = search.book.isNotEmpty
+          ? this
+              ._books
+              .where((book) =>
+                  book.name.toLowerCase() == search.book.toLowerCase())
+              .toList()
+          : this._books;
+      _searchProvider
+          .getSearchResults(search.queryText, booksToSearch)
+          .then((results) {
+        _suggestionSearchResultsSubject.add(UnmodifiableListView(results));
+      });
+    }
+  }
+
+  void _updateSearchResults(SearchQuery search) {
+    if (search.queryText.length > 2) {
+      var booksToSearch = search.book.isNotEmpty
+          ? this
+              ._books
+              .where((book) =>
+                  book.name.toLowerCase() == search.book.toLowerCase())
+              .toList()
+          : this._books;
+      _searchProvider
+          .getSearchResults(search.queryText, booksToSearch)
+          .then((results) {
+        _searchResultsSubject.add(UnmodifiableListView(results));
+      });
+    }
+  }
+
+  Future _updateChapters(Chapter currentChapter) async {
+    var chapter = await _importer.getChapter(
+        currentChapter.book.name, currentChapter.number);
+    _chapterElementsSubject.add(UnmodifiableListView(chapter.elements));
+    currentChapter.elements = chapter.elements;
+    _currentChapter.add(currentChapter);
+
+    await _updatePreviousChapter(currentChapter);
+
+    await _updateNextChapter(currentChapter);
+  }
+
+  Future _updateNextChapter(Chapter currentChapter) async {
+    if (currentChapter.number != currentChapter.book.chapters.length - 1) {
+      var prevChapter = await _importer.getChapter(
+          currentChapter.book.name, currentChapter.number + 1);
+      _previousChapter.add(prevChapter);
+    } else {
+      var nextBook = _books.indexOf(currentChapter.book) != (_books.length - 1)
+          ? _books[_books.indexOf(currentChapter.book) + 1]
+          : _books.first;
+      var prevChapter = await _importer.getChapter(nextBook.name, 1);
+      _previousChapter.add(prevChapter);
+    }
+  }
+
+  Future _updatePreviousChapter(Chapter currentChapter) async {
+    if (currentChapter.number != 1) {
+      var prevChapter = await _importer.getChapter(
+          currentChapter.book.name, currentChapter.number - 1);
+      _previousChapter.add(prevChapter);
+    } else {
+      var prevBook = _books.indexOf(currentChapter.book) != 0
+          ? _books[_books.indexOf(currentChapter.book) - 1]
+          : _books.last;
+      var prevChapter =
+          await _importer.getChapter(prevBook.name, prevBook.chapters.length);
+      _previousChapter.add(prevChapter);
+    }
   }
 
   Future<Null> _getBooks() async {
@@ -112,5 +160,7 @@ class BibleBloc {
     _currentChapterController.close();
     _searchTermController.close();
     _suggestionSearchTermController.close();
+    _previousChapter.close();
+    _nextChapter.close();
   }
 }

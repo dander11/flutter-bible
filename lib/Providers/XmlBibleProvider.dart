@@ -2,8 +2,8 @@ import 'package:bible_bloc/Models/Book.dart';
 import 'package:bible_bloc/Models/Chapter.dart';
 import 'package:bible_bloc/Models/ChapterElements/Verse.dart';
 
-import 'package:bible_bloc/Provider/IBibleProvider.dart';
-import 'package:bible_bloc/Provider/ISearchProvider.dart';
+import 'package:bible_bloc/Providers/IBibleProvider.dart';
+import 'package:bible_bloc/Providers/ISearchProvider.dart';
 import 'package:flutter/services.dart';
 import 'package:global_configuration/global_configuration.dart';
 import 'package:xml/xml.dart' as xml;
