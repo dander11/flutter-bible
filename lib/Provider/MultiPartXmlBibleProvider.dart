@@ -127,7 +127,9 @@ class MultiPartXmlBibleProvider extends IBibleProvider {
         }
         return verse;
       } else if (aNode.name.local == "heading") {
-        return Heading(text: aNode.text.trim());
+        var multipleSpaces = RegExp("[\n\t]*");
+        var cleanedSpace = aNode.text.replaceAll(multipleSpaces, "");
+        return Heading(text: cleanedSpace.trim());
       } else if (aNode.name.local == "end-paragraph") {
         return EndParagraph();
       } else if (aNode.name.local == "begin-paragraph") {

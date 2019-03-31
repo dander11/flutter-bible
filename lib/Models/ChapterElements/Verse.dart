@@ -28,8 +28,11 @@ class Verse extends IChapterElement {
   TextSpan toTextSpanWidget(BuildContext context) {
     TextSpan span = TextSpan(children: [
       TextSpan(
-          text: ''' ${this.number}.''',
-          style: new TextStyle(fontWeight: FontWeight.bold)),
+        text: ''' ${this.number}.''',
+        style: new TextStyle(
+          fontWeight: FontWeight.w400,
+        ),
+      ),
     ]);
 
     for (var verseElement in this.elements) {

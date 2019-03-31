@@ -1,11 +1,13 @@
 import 'package:bible_bloc/Blocs/navigation_bloc.dart';
 import 'package:bible_bloc/InheritedBlocs.dart';
+import 'package:bible_bloc/Views/BookDrawer/BookDrawer.dart';
 import 'package:bible_bloc/Views/SearchPage/BibleSearchDelegate.dart';
 import 'package:flutter/material.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 
 class BibleBottomNavigationBar extends StatelessWidget {
-  const BibleBottomNavigationBar({
+  int lastPage = 0;
+  BibleBottomNavigationBar({
     Key key,
     BuildContext context,
   }) : super(key: key);
@@ -27,10 +29,19 @@ class BibleBottomNavigationBar extends StatelessWidget {
               onTap: (index) {
                 switch (index) {
                   case 0:
-                    InheritedBlocs.of(context)
-                        .navigationBloc
-                        .nextPage
-                        .add(AppPage.readerPage);
+                    if (lastPage == index) {
+                      showModalBottomSheet<void>(
+                          context: context,
+                          builder: (BuildContext context) {
+                            return Container(child: BooksList());
+                          });
+                    } else {
+                      InheritedBlocs.of(context)
+                          .navigationBloc
+                          .nextPage
+                          .add(AppPage.readerPage);
+                    }
+
                     break;
                   case 1:
                     InheritedBlocs.of(context)
