@@ -9,7 +9,6 @@ import 'package:path/path.dart';
 import 'package:path_provider/path_provider.dart';
 
 class NotesProvider extends INotesProvider {
-  List<Note> _notes = List<Note>();
   @override
   Future<List<Note>> getNotes() async {
     List<Note> notes = List<Note>();
@@ -55,7 +54,7 @@ class NotesProvider extends INotesProvider {
       var formatter = new DateFormat('yyyy-MM-dd');
       String formatted = formatter.format(note.lastUpdated);
       var file = File(
-          '${directory.path}/notes/${note.id}_${note.title}_${formatted}.txt');
+          '${directory.path}/notes/${note.id}_${note.title}_$formatted.txt');
       var existingPath = await _getFilePathWithId(note.id);
       if (existingPath.isEmpty) {
         file = await file.create(recursive: true);

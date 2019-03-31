@@ -8,6 +8,7 @@ import 'package:bible_bloc/Models/ChapterElements/Verse.dart';
 import 'package:bible_bloc/Models/SearchQuery.dart';
 
 import 'package:bible_bloc/Provider/IBibleProvider.dart';
+import 'package:bible_bloc/Provider/ISearchProvider.dart';
 import 'package:bible_bloc/Provider/MultiPartXmlBibleProvider.dart';
 import 'package:bible_bloc/Provider/XmlBibleProvider.dart';
 import 'package:rxdart/rxdart.dart';
@@ -15,7 +16,7 @@ import 'dart:collection';
 
 class BibleBloc {
   IBibleProvider _importer;
-  IBibleProvider _searchProvider;
+  ISearchProvider _searchProvider;
   List<Book> _books;
 
   Stream<UnmodifiableListView<Book>> get books => _booksSubject.stream;

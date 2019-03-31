@@ -1,7 +1,5 @@
-import 'package:bible_bloc/InheritedBlocs.dart';
 import 'package:bible_bloc/Models/Chapter.dart';
 import 'package:bible_bloc/Models/ChapterElements/IChapterElement.dart';
-
 import 'package:flutter/material.dart';
 
 class Verse extends IChapterElement {

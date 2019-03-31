@@ -3,11 +3,12 @@ import 'package:bible_bloc/Models/Chapter.dart';
 import 'package:bible_bloc/Models/ChapterElements/Verse.dart';
 
 import 'package:bible_bloc/Provider/IBibleProvider.dart';
+import 'package:bible_bloc/Provider/ISearchProvider.dart';
 import 'package:flutter/services.dart';
 import 'package:global_configuration/global_configuration.dart';
 import 'package:xml/xml.dart' as xml;
 
-class XmlBibleProvider extends IBibleProvider {
+class XmlBibleProvider extends IBibleProvider implements ISearchProvider {
   xml.XmlDocument xmlDocument;
   GlobalConfiguration _cfg;
 
@@ -46,7 +47,7 @@ class XmlBibleProvider extends IBibleProvider {
     return book;
   }
 
-  Book getBook(String name) {
+  Book _getBook(String name) {
     var xmlBooks = xmlDocument.findAllElements("b");
     var xmlBook = xmlBooks.firstWhere((n) => n.getAttribute("n") == name);
     var book = _convertBookFromXml(xmlBook);
@@ -54,7 +55,7 @@ class XmlBibleProvider extends IBibleProvider {
   }
 
   Future<Chapter> getChapter(String bookName, int chapterNumber) async {
-    return this.getBook(bookName).chapters[chapterNumber - 1];
+    return this._getBook(bookName).chapters[chapterNumber - 1];
   }
 
   List<Chapter> _getChapters(xml.XmlElement xmlBook) {
@@ -140,11 +141,5 @@ class XmlBibleProvider extends IBibleProvider {
 
     // Nothing found.
     return false;
-  }
-
-  @override
-  Future<Chapter> getChapterById(int chapterId) async {
-    // TODO: implement getChapterById
-    return null;
   }
 }
