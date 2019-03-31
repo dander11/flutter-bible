@@ -154,9 +154,19 @@ class MultiPartXmlBibleProvider extends IBibleProvider {
 
   String _getChapterPath(String bookName, int chapterNumber) {
     var chapters = booksDirectory.findAllElements("chapter");
-    var chapterResourceName = chapters.firstWhere((b) =>
-        b.getAttribute("resourceName") ==
-        "${bookName.toLowerCase()}_$chapterNumber");
+    xml.XmlElement chapterResourceName = null;
+    if (bookName.contains(RegExp("[0-2]"))) {
+      var number = bookName.split(" ")[0];
+      var name = bookName.split(" ")[1];
+      chapterResourceName = chapters.firstWhere((b) =>
+          b.getAttribute("resourceName") ==
+          "${name.toLowerCase()}_${number}_$chapterNumber");
+    } else {
+      chapterResourceName = chapters.firstWhere((b) =>
+          b.getAttribute("resourceName") ==
+          "${bookName.toLowerCase().replaceAll(" ", "_")}_$chapterNumber");
+    }
+
     return chapterResourceName.getAttribute("resourceName") + ".xml";
   }
 

@@ -21,7 +21,7 @@ class Heading extends IChapterElement {
     var span = TextSpan(
       children: [
         TextSpan(
-          text: this.text + "\n\r\n\r",
+          text: "\n\r\n\r" + this.text + "\n\r",
           style: Theme.of(context).textTheme.display1.copyWith(
                 fontWeight: FontWeight.bold,
                 fontSize: 19.0,
