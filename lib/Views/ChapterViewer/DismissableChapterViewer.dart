@@ -3,6 +3,7 @@ import 'package:bible_bloc/Models/Book.dart';
 import 'package:bible_bloc/Models/Chapter.dart';
 import 'package:bible_bloc/Models/ChapterElements/IChapterElement.dart';
 import 'package:bible_bloc/Views/ChapterViewer/VerseText.dart';
+import 'package:bible_bloc/Views/LoadingColumn.dart';
 import 'package:flutter/material.dart';
 
 class DismissableChapterViewer extends StatelessWidget {
@@ -31,17 +32,21 @@ class DismissableChapterViewer extends StatelessWidget {
     chapterText.children.addAll(expandedChapterText);
 
     return new Dismissible(
-      secondaryBackground: this._getNextChapter(context),
-      background: this._getPrevChapter(context),
+      secondaryBackground: this.addBackgrounds
+          ? _NextChapter(showVerseNumbers: showVerseNumbers)
+          : LoadingColumn(),
+      background: this.addBackgrounds
+          ? _PreviousChapter(showVerseNumbers: showVerseNumbers)
+          : LoadingColumn(),
       resizeDuration: null,
       onDismissed: (DismissDirection swipeDetails) async {
         if (swipeDetails == DismissDirection.endToStart) {
           var nextChapter =
-              await InheritedBlocs.of(context).bibleBloc.nextChapter.last;
+              await InheritedBlocs.of(context).bibleBloc.nextChapter.first;
           InheritedBlocs.of(context).bibleBloc.currentChapter.add(nextChapter);
         } else {
           var previousChapter =
-              await InheritedBlocs.of(context).bibleBloc.previousChapter.last;
+              await InheritedBlocs.of(context).bibleBloc.previousChapter.first;
           InheritedBlocs.of(context)
               .bibleBloc
               .currentChapter
@@ -62,29 +67,105 @@ class DismissableChapterViewer extends StatelessWidget {
         .toList();
   }
 
-  _getPrevChapter(context) {
-    return StreamBuilder<Chapter>(
+  Future<Chapter> _getPrevChapter(BuildContext context) async {
+    var previousChapter =
+        await InheritedBlocs.of(context).bibleBloc.previousChapter.first;
+    return previousChapter;
+    /* return StreamBuilder<Chapter>(
         stream: InheritedBlocs.of(context).bibleBloc.previousChapter,
+        initialData:
+            await InheritedBlocs.of(context).bibleBloc.previousChapter.last,
         builder: (context, snapshot) {
-          return new DismissableChapterViewer(
-            chapter: snapshot.data,
-            book: snapshot.data.book,
-            addBackgrounds: false,
-            showVerseNumbers: this.showVerseNumbers,
-          );
-        });
+          if (snapshot.hasData) {
+            return new DismissableChapterViewer(
+              chapter: snapshot.data,
+              book: snapshot.data.book,
+              addBackgrounds: false,
+              showVerseNumbers: this.showVerseNumbers,
+            );
+          } else {
+            return LoadingColumn();
+          }
+        }); */
   }
 
-  _getNextChapter(context) {
-    return StreamBuilder<Chapter>(
+  Future<Chapter> _getNextChapter(BuildContext context) async {
+    var nextChapter =
+        await InheritedBlocs.of(context).bibleBloc.nextChapter.first;
+    return nextChapter;
+    /* return StreamBuilder<Chapter>(
         stream: InheritedBlocs.of(context).bibleBloc.nextChapter,
+        initialData:
+            await InheritedBlocs.of(context).bibleBloc.nextChapter.last,
         builder: (context, snapshot) {
+          if (snapshot.hasData) {
+            return new DismissableChapterViewer(
+              chapter: snapshot.data,
+              book: snapshot.data.book,
+              addBackgrounds: false,
+              showVerseNumbers: this.showVerseNumbers,
+            );
+          } else {
+            return LoadingColumn();
+          }
+        }); */
+  }
+}
+
+class _NextChapter extends StatelessWidget {
+  const _NextChapter({
+    Key key,
+    @required this.showVerseNumbers,
+  }) : super(key: key);
+
+  final bool showVerseNumbers;
+
+  @override
+  Widget build(BuildContext context) {
+    return StreamBuilder(
+      stream: InheritedBlocs.of(context).bibleBloc.nextChapter,
+      initialData: null,
+      builder: (BuildContext _, chapter) {
+        if (chapter.hasData) {
           return new DismissableChapterViewer(
-            chapter: snapshot.data,
-            book: snapshot.data.book,
+            chapter: chapter.data,
+            book: chapter.data.book,
             addBackgrounds: false,
             showVerseNumbers: this.showVerseNumbers,
           );
-        });
+        } else {
+          return LoadingColumn();
+        }
+      },
+    );
+  }
+}
+
+class _PreviousChapter extends StatelessWidget {
+  const _PreviousChapter({
+    Key key,
+    @required this.showVerseNumbers,
+  }) : super(key: key);
+
+  final bool showVerseNumbers;
+
+  @override
+  Widget build(BuildContext context) {
+    return StreamBuilder(
+      stream: InheritedBlocs.of(context).bibleBloc.previousChapter,
+      initialData: null,
+      builder: (BuildContext _, chapter) {
+        if (chapter.hasData) {
+          return new DismissableChapterViewer(
+            chapter: chapter.data,
+            book: chapter.data.book,
+            addBackgrounds: false,
+            showVerseNumbers: this.showVerseNumbers,
+          );
+        } else {
+          return LoadingColumn();
+        }
+      },
+    );
   }
 }

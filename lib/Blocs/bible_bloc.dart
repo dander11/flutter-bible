@@ -61,15 +61,13 @@ class BibleBloc {
 
   BibleBloc() {
     _importer = MultiPartXmlBibleProvider();
-    _getBooks();
+    _getBooks().then((n) => _initCurrentBook());
 
     _searchProvider = XmlBibleProvider();
     _searchProvider.init();
 
-    _initCurrentBook();
-
     _currentChapterController.stream.listen((currentChapter) async {
-      await _updateChapters(currentChapter);
+      _updateChapters(currentChapter);
     });
 
     _searchTermController.stream.listen((search) {
@@ -120,25 +118,25 @@ class BibleBloc {
         currentChapter.book.name, currentChapter.number);
     _chapterElementsSubject.add(UnmodifiableListView(chapter.elements));
     currentChapter.elements = chapter.elements;
-    _currentChapter.add(currentChapter);
-
     await _updatePreviousChapter(currentChapter);
 
     await _updateNextChapter(currentChapter);
+    _currentChapter.add(currentChapter);
+
     _saveCurrentBookAndChapter();
   }
 
   Future _updateNextChapter(Chapter currentChapter) async {
     if (currentChapter.number != currentChapter.book.chapters.length - 1) {
-      var prevChapter = await _importer.getChapter(
+      var nextChapter = await _importer.getChapter(
           currentChapter.book.name, currentChapter.number + 1);
-      _previousChapter.add(prevChapter);
+      _nextChapter.add(nextChapter);
     } else {
       var nextBook = _books.indexOf(currentChapter.book) != (_books.length - 1)
           ? _books[_books.indexOf(currentChapter.book) + 1]
           : _books.first;
-      var prevChapter = await _importer.getChapter(nextBook.name, 1);
-      _previousChapter.add(prevChapter);
+      var nextChapter = await _importer.getChapter(nextBook.name, 1);
+      _nextChapter.add(nextChapter);
     }
   }
 
@@ -174,9 +172,9 @@ class BibleBloc {
   void _initCurrentBook() async {
     SharedPreferences sp = await SharedPreferences.getInstance();
     var currentChapterString = sp.getString(membershipKey);
-    if (currentChapterString.contains("_")) {
+    if (currentChapterString != null && currentChapterString.contains("_")) {
       var bookName = currentChapterString.split("_")[0];
-      var chapterNumber = int.parse(currentChapterString.split("_")[0]);
+      var chapterNumber = int.parse(currentChapterString.split("_")[1]);
       currentChapter.add(await _importer.getChapter(bookName, chapterNumber));
     } else {
       currentChapter.add(await _importer.getChapter(_books.first.name, 1));

@@ -21,6 +21,8 @@ class MultiPartXmlBibleProvider extends IBibleProvider {
   GlobalConfiguration _cfg;
   RegExp _multipleSpaces = RegExp("[\n\t\r]*");
 
+  List<Book> _books;
+
   MultiPartXmlBibleProvider() {
     _cfg = new GlobalConfiguration();
   }
@@ -35,12 +37,12 @@ class MultiPartXmlBibleProvider extends IBibleProvider {
   @override
   Future<List<Book>> getAllBooks() async {
     var xmlBooks = _booksDirectory.findAllElements("book");
-    var books = new List<Book>();
+    _books = new List<Book>();
     for (var item in xmlBooks) {
       var book = _convertBookFromXml(item);
-      books.add(book);
+      _books.add(book);
     }
-    return books;
+    return _books;
   }
 
   Book _convertBookFromXml(xml.XmlElement item) {
@@ -70,12 +72,16 @@ class MultiPartXmlBibleProvider extends IBibleProvider {
     xml.XmlDocument chapterDoc = await loadDocument(path);
     xml.XmlElement chapterElement = chapterDoc.findAllElements("book").first;
     Chapter convertChapterFromXml = _convertChapterFromXml(chapterElement);
+    convertChapterFromXml.book = _books
+        .firstWhere((b) => b.name.toLowerCase() == bookName.toLowerCase());
 
     return convertChapterFromXml;
   }
 
   Chapter _convertChapterFromXml(xml.XmlElement item) {
-    var chapter = new Chapter(number: int.parse(item.getAttribute("num")));
+    var chapterElement = item.findElements("chapter").first;
+    var chapter =
+        new Chapter(number: int.parse(chapterElement.getAttribute("num")));
     List<IChapterElement> elements = _getChatperElements(item);
     //elements.removeWhere((e) => e is EmptyElement);
     chapter.elements = elements;
