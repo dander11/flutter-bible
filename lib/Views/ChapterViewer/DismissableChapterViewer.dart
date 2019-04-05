@@ -2,6 +2,7 @@ import 'package:bible_bloc/InheritedBlocs.dart';
 import 'package:bible_bloc/Models/Book.dart';
 import 'package:bible_bloc/Models/Chapter.dart';
 import 'package:bible_bloc/Models/ChapterElements/IChapterElement.dart';
+import 'package:bible_bloc/Models/ChapterReference.dart';
 import 'package:bible_bloc/Views/ChapterViewer/VerseText.dart';
 import 'package:bible_bloc/Views/LoadingColumn.dart';
 import 'package:flutter/material.dart';
@@ -9,14 +10,18 @@ import 'package:flutter/material.dart';
 class DismissableChapterViewer extends StatelessWidget {
   final Chapter chapter;
   final Book book;
+  final int verseNumber;
   final bool addBackgrounds;
   final bool showVerseNumbers;
+  final Function scrollToVerseMethod;
 
   DismissableChapterViewer({
     this.chapter,
     this.book,
     this.addBackgrounds,
     this.showVerseNumbers,
+    this.verseNumber,
+    this.scrollToVerseMethod,
   });
 
   Widget build(BuildContext context) {
@@ -43,18 +48,26 @@ class DismissableChapterViewer extends StatelessWidget {
         if (swipeDetails == DismissDirection.endToStart) {
           var nextChapter =
               await InheritedBlocs.of(context).bibleBloc.nextChapter.first;
-          InheritedBlocs.of(context).bibleBloc.currentChapter.add(nextChapter);
+          InheritedBlocs.of(context)
+              .bibleBloc
+              .currentChapterReference
+              .add(ChapterReference(chapter: nextChapter));
         } else {
           var previousChapter =
               await InheritedBlocs.of(context).bibleBloc.previousChapter.first;
           InheritedBlocs.of(context)
               .bibleBloc
-              .currentChapter
-              .add(previousChapter);
+              .currentChapterReference
+              .add(ChapterReference(chapter: previousChapter));
         }
       },
-      child:
-          new VerseText(book: book, chapter: chapter, chapterText: chapterText),
+      child: new VerseText(
+        book: book,
+        chapter: chapter,
+        chapterText: chapterText,
+        verseNumber: verseNumber,
+        scrollToVerseMethod: scrollToVerseMethod,
+      ),
       key: new ValueKey(chapter.number),
     );
   }
@@ -72,9 +85,11 @@ class _NextChapter extends StatelessWidget {
   const _NextChapter({
     Key key,
     @required this.showVerseNumbers,
+    this.scrollToVerseMethod,
   }) : super(key: key);
 
   final bool showVerseNumbers;
+  final Function scrollToVerseMethod;
 
   @override
   Widget build(BuildContext context) {
@@ -88,6 +103,7 @@ class _NextChapter extends StatelessWidget {
             book: chapter.data.book,
             addBackgrounds: false,
             showVerseNumbers: this.showVerseNumbers,
+            scrollToVerseMethod: scrollToVerseMethod,
           );
         } else {
           return LoadingColumn();
@@ -101,9 +117,11 @@ class _PreviousChapter extends StatelessWidget {
   const _PreviousChapter({
     Key key,
     @required this.showVerseNumbers,
+    this.scrollToVerseMethod,
   }) : super(key: key);
 
   final bool showVerseNumbers;
+  final Function scrollToVerseMethod;
 
   @override
   Widget build(BuildContext context) {
@@ -117,6 +135,7 @@ class _PreviousChapter extends StatelessWidget {
             book: chapter.data.book,
             addBackgrounds: false,
             showVerseNumbers: this.showVerseNumbers,
+            scrollToVerseMethod: scrollToVerseMethod,
           );
         } else {
           return LoadingColumn();

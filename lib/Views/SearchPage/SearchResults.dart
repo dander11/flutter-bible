@@ -1,5 +1,6 @@
 import 'package:bible_bloc/InheritedBlocs.dart';
 import 'package:bible_bloc/Models/ChapterElements/Verse.dart';
+import 'package:bible_bloc/Models/ChapterReference.dart';
 
 import 'package:collection/collection.dart';
 import 'package:flutter/material.dart';
@@ -25,10 +26,12 @@ class SearchResults extends StatelessWidget {
             subtitle: Text(
                 "${verse.chapter.book.name} ${verse.chapter.number}:${verse.number}"),
             onTap: () async {
-              InheritedBlocs.of(context)
-                  .bibleBloc
-                  .currentChapter
-                  .add(verse.chapter);
+              InheritedBlocs.of(context).bibleBloc.currentChapterReference.add(
+                    ChapterReference(
+                      chapter: verse.chapter,
+                      verseNumber: verse.number,
+                    ),
+                  );
               Navigator.of(context).pop();
             },
           );

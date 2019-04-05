@@ -4,6 +4,7 @@ import 'package:bible_bloc/Models/Book.dart';
 import 'package:bible_bloc/Models/Chapter.dart';
 import 'package:bible_bloc/Models/ChapterElements/IChapterElement.dart';
 import 'package:bible_bloc/Models/ChapterElements/Verse.dart';
+import 'package:bible_bloc/Models/ChapterReference.dart';
 
 import 'package:bible_bloc/Models/SearchQuery.dart';
 
@@ -31,11 +32,12 @@ class BibleBloc {
   final _chapterElementsSubject =
       BehaviorSubject<UnmodifiableListView<IChapterElement>>();
 
-  Sink<Chapter> get currentChapter => _currentChapterController.sink;
-  final _currentChapterController = StreamController<Chapter>();
+  Sink<ChapterReference> get currentChapterReference =>
+      _currentChapterController.sink;
+  final _currentChapterController = StreamController<ChapterReference>();
 
-  Stream<Chapter> get chapter => _currentChapter.stream;
-  final _currentChapter = BehaviorSubject<Chapter>();
+  Stream<ChapterReference> get chapterReference => _currentChapter.stream;
+  final _currentChapter = BehaviorSubject<ChapterReference>();
 
   Stream<Chapter> get nextChapter => _nextChapter.stream;
   final _nextChapter = BehaviorSubject<Chapter>();
@@ -113,14 +115,15 @@ class BibleBloc {
     }
   }
 
-  Future _updateChapters(Chapter currentChapter) async {
+  Future _updateChapters(ChapterReference currentChapter) async {
     var chapter = await _importer.getChapter(
-        currentChapter.book.name, currentChapter.number);
+        currentChapter.chapter.book.name, currentChapter.chapter.number);
     _chapterElementsSubject.add(UnmodifiableListView(chapter.elements));
-    currentChapter.elements = chapter.elements;
-    await _updatePreviousChapter(currentChapter);
+    currentChapter.chapter.elements = chapter.elements;
+    await _updatePreviousChapter(currentChapter.chapter);
 
-    await _updateNextChapter(currentChapter);
+    await _updateNextChapter(currentChapter.chapter);
+
     _currentChapter.add(currentChapter);
 
     _saveCurrentBookAndChapter();
@@ -175,16 +178,23 @@ class BibleBloc {
     if (currentChapterString != null && currentChapterString.contains("_")) {
       var bookName = currentChapterString.split("_")[0];
       var chapterNumber = int.parse(currentChapterString.split("_")[1]);
-      currentChapter.add(await _importer.getChapter(bookName, chapterNumber));
+      // var verseNumber = int.tryParse(currentChapterString.split("_")[2]);
+      var chapterReference = ChapterReference(
+        chapter: await _importer.getChapter(bookName, chapterNumber),
+        //verseNumber: verseNumber,
+      );
+      currentChapterReference.add(chapterReference);
     } else {
-      currentChapter.add(await _importer.getChapter(_books.first.name, 1));
+      var chapterReference = ChapterReference(
+          chapter: await _importer.getChapter(_books.first.name, 1));
+      currentChapterReference.add(chapterReference);
     }
   }
 
   void _saveCurrentBookAndChapter() async {
     SharedPreferences sp = await SharedPreferences.getInstance();
     var currentChapter = _currentChapter.value;
-    sp.setString(
-        membershipKey, "${currentChapter.book.name}_${currentChapter.number}");
+    sp.setString(membershipKey,
+        "${currentChapter.chapter.book.name}_${currentChapter.chapter.number}_${currentChapter.verseNumber}");
   }
 }

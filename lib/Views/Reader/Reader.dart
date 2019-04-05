@@ -1,15 +1,20 @@
 import 'package:bible_bloc/InheritedBlocs.dart';
+import 'package:bible_bloc/Models/ChapterReference.dart';
 import 'package:bible_bloc/Views/ChapterViewer/DismissableChapterViewer.dart';
 import 'package:bible_bloc/Views/LoadingColumn.dart';
 import 'package:flutter/material.dart';
 
 class Reader extends StatelessWidget {
+  final Function scrollToVerseMethod;
+
+  const Reader({Key key, this.scrollToVerseMethod}) : super(key: key);
   @override
   Widget build(BuildContext context) {
-    return StreamBuilder(
-      stream: InheritedBlocs.of(context).bibleBloc.chapter,
-      builder: (BuildContext context, AsyncSnapshot snapshot) {
-        if (snapshot.hasData) {
+    return StreamBuilder<ChapterReference>(
+      stream: InheritedBlocs.of(context).bibleBloc.chapterReference,
+      builder: (BuildContext context,
+          AsyncSnapshot<ChapterReference> chapterReference) {
+        if (chapterReference.hasData) {
           return StreamBuilder<bool>(
             stream: InheritedBlocs.of(context).settingsBloc.showVerseNumbers,
             initialData: false,
@@ -17,16 +22,18 @@ class Reader extends StatelessWidget {
               if (setting.hasData) {
                 return DismissableChapterViewer(
                   addBackgrounds: true,
-                  book: snapshot.data.book,
-                  chapter: snapshot.data,
+                  book: chapterReference.data.chapter.book,
+                  chapter: chapterReference.data.chapter,
                   showVerseNumbers: setting.data,
+                  scrollToVerseMethod: scrollToVerseMethod,
                 );
               } else {
                 return DismissableChapterViewer(
                   addBackgrounds: true,
-                  book: snapshot.data.book,
-                  chapter: snapshot.data,
+                  book: chapterReference.data.chapter.book,
+                  chapter: chapterReference.data.chapter,
                   showVerseNumbers: true,
+                  scrollToVerseMethod: scrollToVerseMethod,
                 );
               }
             },

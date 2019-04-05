@@ -21,6 +21,7 @@ dependencies:
   global_configuration: ^0.1.4
   shared_preferences: ^0.4.2
   flutter_slidable: ^0.4.9
+  after_layout: ^1.0.7
   intl: any  
   zefyr: 
     git:

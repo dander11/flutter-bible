@@ -1,5 +1,5 @@
 import 'package:bible_bloc/InheritedBlocs.dart';
-import 'package:bible_bloc/Models/Chapter.dart';
+import 'package:bible_bloc/Models/ChapterReference.dart';
 import 'package:bible_bloc/Views/BookDrawer/BooksList.dart';
 import 'package:bible_bloc/Views/SearchPage/BibleSearchDelegate.dart';
 import 'package:bible_bloc/Views/Settings/SettingPopupMenu.dart';
@@ -30,14 +30,16 @@ class BibleReaderAppBar extends StatelessWidget {
                 return Container(child: BooksList());
               });
         },
-        child: StreamBuilder<Chapter>(
-          stream: InheritedBlocs.of(context).bibleBloc.chapter,
-          builder: (BuildContext context, AsyncSnapshot<Chapter> snapshot) {
+        child: StreamBuilder<ChapterReference>(
+          stream: InheritedBlocs.of(context).bibleBloc.chapterReference,
+          builder:
+              (BuildContext context, AsyncSnapshot<ChapterReference> snapshot) {
             if (snapshot.hasData) {
               return Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
-                  Text("${snapshot.data.book.name} ${snapshot.data.number}"),
+                  Text(
+                      "${snapshot.data.chapter.book.name} ${snapshot.data.chapter.number}"),
                   Icon(Icons.arrow_drop_down),
                 ],
               );
