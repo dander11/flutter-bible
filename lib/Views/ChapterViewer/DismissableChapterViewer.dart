@@ -66,50 +66,6 @@ class DismissableChapterViewer extends StatelessWidget {
             : [e])
         .toList();
   }
-
-  Future<Chapter> _getPrevChapter(BuildContext context) async {
-    var previousChapter =
-        await InheritedBlocs.of(context).bibleBloc.previousChapter.first;
-    return previousChapter;
-    /* return StreamBuilder<Chapter>(
-        stream: InheritedBlocs.of(context).bibleBloc.previousChapter,
-        initialData:
-            await InheritedBlocs.of(context).bibleBloc.previousChapter.last,
-        builder: (context, snapshot) {
-          if (snapshot.hasData) {
-            return new DismissableChapterViewer(
-              chapter: snapshot.data,
-              book: snapshot.data.book,
-              addBackgrounds: false,
-              showVerseNumbers: this.showVerseNumbers,
-            );
-          } else {
-            return LoadingColumn();
-          }
-        }); */
-  }
-
-  Future<Chapter> _getNextChapter(BuildContext context) async {
-    var nextChapter =
-        await InheritedBlocs.of(context).bibleBloc.nextChapter.first;
-    return nextChapter;
-    /* return StreamBuilder<Chapter>(
-        stream: InheritedBlocs.of(context).bibleBloc.nextChapter,
-        initialData:
-            await InheritedBlocs.of(context).bibleBloc.nextChapter.last,
-        builder: (context, snapshot) {
-          if (snapshot.hasData) {
-            return new DismissableChapterViewer(
-              chapter: snapshot.data,
-              book: snapshot.data.book,
-              addBackgrounds: false,
-              showVerseNumbers: this.showVerseNumbers,
-            );
-          } else {
-            return LoadingColumn();
-          }
-        }); */
-  }
 }
 
 class _NextChapter extends StatelessWidget {
