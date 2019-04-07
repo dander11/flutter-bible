@@ -39,6 +39,13 @@ class BibleBloc {
   Stream<ChapterReference> get chapterReference => _currentChapter.stream;
   final _currentChapter = BehaviorSubject<ChapterReference>();
 
+  Sink<ChapterReference> get currentPopupChapterReference =>
+      _currentPopupChapterController.sink;
+  final _currentPopupChapterController = StreamController<ChapterReference>();
+
+  Stream<ChapterReference> get popupChapterReference => _popupChapter.stream;
+  final _popupChapter = BehaviorSubject<ChapterReference>();
+
   Stream<Chapter> get nextChapter => _nextChapter.stream;
   final _nextChapter = BehaviorSubject<Chapter>();
 
@@ -72,6 +79,10 @@ class BibleBloc {
       _updateChapters(currentChapter);
     });
 
+    _currentPopupChapterController.stream.listen((popupReference) async {
+      _updatePopupChapter(popupReference);
+    });
+
     _searchTermController.stream.listen((search) {
       _updateSearchResults(search);
     });
@@ -88,8 +99,9 @@ class BibleBloc {
               ._books
               .where((book) =>
                   book.name.toLowerCase() == search.book.toLowerCase())
+              .expand((b) => [b.name])
               .toList()
-          : this._books;
+          : this._books.expand((b) => [b.name]).toList();
       _searchProvider
           .getSearchResults(search.queryText, booksToSearch)
           .then((results) {
@@ -105,8 +117,9 @@ class BibleBloc {
               ._books
               .where((book) =>
                   book.name.toLowerCase() == search.book.toLowerCase())
+              .expand((b) => [b.name])
               .toList()
-          : this._books;
+          : this._books.expand((b) => [b.name]).toList();
       _searchProvider
           .getSearchResults(search.queryText, booksToSearch)
           .then((results) {
@@ -170,6 +183,7 @@ class BibleBloc {
     _suggestionSearchTermController.close();
     _previousChapter.close();
     _nextChapter.close();
+    _currentPopupChapterController.close();
   }
 
   void _initCurrentBook() async {
@@ -196,5 +210,14 @@ class BibleBloc {
     var currentChapter = _currentChapter.value;
     sp.setString(membershipKey,
         "${currentChapter.chapter.book.name}_${currentChapter.chapter.number}_${currentChapter.verseNumber}");
+  }
+
+  Future _updatePopupChapter(ChapterReference popupReference) async {
+    var chapter = await _importer.getChapter(
+        popupReference.chapter.book.name, popupReference.chapter.number);
+    _chapterElementsSubject.add(UnmodifiableListView(chapter.elements));
+    popupReference.chapter.elements = chapter.elements;
+
+    _popupChapter.add(popupReference);
   }
 }

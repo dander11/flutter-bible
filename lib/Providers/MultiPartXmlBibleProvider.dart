@@ -72,8 +72,11 @@ class MultiPartXmlBibleProvider extends IBibleProvider {
     xml.XmlDocument chapterDoc = await loadDocument(path);
     xml.XmlElement chapterElement = chapterDoc.findAllElements("book").first;
     Chapter convertChapterFromXml = _convertChapterFromXml(chapterElement);
+
     convertChapterFromXml.book = _books
         .firstWhere((b) => b.name.toLowerCase() == bookName.toLowerCase());
+    convertChapterFromXml.elements
+        .forEach((e) => e.chapter = convertChapterFromXml);
 
     return convertChapterFromXml;
   }
@@ -84,8 +87,18 @@ class MultiPartXmlBibleProvider extends IBibleProvider {
         new Chapter(number: int.parse(chapterElement.getAttribute("num")));
     List<IChapterElement> elements = _getChatperElements(item);
     //elements.removeWhere((e) => e is EmptyElement);
-    chapter.elements = elements;
+
+    chapter.elements = _flattenList(elements);
     return chapter;
+  }
+
+  List<IChapterElement> _flattenList(List<IChapterElement> iterable) {
+    return iterable
+        .expand((IChapterElement e) =>
+            e.elements != null && e.elements.length > 0 && (e is EmptyElement)
+                ? _flattenList(e.elements)
+                : [e])
+        .toList();
   }
 
   List<IChapterElement> _getChatperElements(xml.XmlElement node) {

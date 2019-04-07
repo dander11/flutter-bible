@@ -41,9 +41,8 @@ class XmlBibleProvider extends IBibleProvider implements ISearchProvider {
   Book _convertBookFromXml(xml.XmlElement item) {
     var book = new Book(
       name: item.getAttribute("n"),
-      chapters: _getChapters(item),
     );
-    book.chapters.forEach((c) => c.book = book);
+    book.chapters = _getChapters(item, book);
     return book;
   }
 
@@ -58,27 +57,31 @@ class XmlBibleProvider extends IBibleProvider implements ISearchProvider {
     return this._getBook(bookName).chapters[chapterNumber - 1];
   }
 
-  List<Chapter> _getChapters(xml.XmlElement xmlBook) {
+  List<Chapter> _getChapters(xml.XmlElement xmlBook, Book book) {
     var xmlChapters = xmlBook.findAllElements("c");
     List<Chapter> chapters = new List<Chapter>();
     for (var item in xmlChapters) {
       var chapter = new Chapter(
-          number: int.parse(item.getAttribute("n")),
-          elements: this._getVerses(item));
-      chapter.elements.forEach((v) => v.chapter = chapter);
+        number: int.parse(item.getAttribute("n")),
+        book: book,
+      );
+
+      chapter.elements = this._getVerses(item, chapter);
+
       chapters.add(chapter);
     }
 
     return chapters;
   }
 
-  List<Verse> _getVerses(xml.XmlElement xmlChapter) {
+  List<Verse> _getVerses(xml.XmlElement xmlChapter, Chapter chapter) {
     var xmlVerses = xmlChapter.findAllElements("v");
     List<Verse> verses = new List<Verse>();
     for (var item in xmlVerses) {
       var verse = new Verse(
         number: int.parse(item.getAttribute("n")),
         text: item.text,
+        chapter: chapter,
       );
       verses.add(verse);
     }
@@ -86,10 +89,9 @@ class XmlBibleProvider extends IBibleProvider implements ISearchProvider {
   }
 
   Future<List<Verse>> getSearchResults(
-      String searchTerm, List<Book> booksToSearch) async {
-    var books = this
-        ._searchableBooks
-        .where((b) => booksToSearch.any((book) => book.name == b.name));
+      String searchTerm, List<String> booksToSearch) async {
+    var books = this._searchableBooks.where((b) => booksToSearch
+        .any((book) => book.toLowerCase() == b.name.toLowerCase()));
     var chapters = books.expand((book) => book.chapters);
 
     var verses = chapters.expand((c) => c.elements.whereType<Verse>());

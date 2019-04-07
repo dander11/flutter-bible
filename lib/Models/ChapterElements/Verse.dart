@@ -8,7 +8,7 @@ class Verse extends IChapterElement {
   final int number;
   Chapter chapter;
 
-  Verse({this.number, this.text}) : super();
+  Verse({this.number, this.text, this.chapter}) : super(chapter: chapter);
 
   @override
   List<Text> toTextWidget(BuildContext context) {

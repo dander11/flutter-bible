@@ -1,5 +1,8 @@
+import 'package:bible_bloc/Blocs/navigation_bloc.dart';
 import 'package:bible_bloc/Blocs/notes_bloc.dart';
 import 'package:bible_bloc/InheritedBlocs.dart';
+import 'package:bible_bloc/Models/ChapterReference.dart';
+import 'package:bible_bloc/Views/Reader/ReaderPage.dart';
 import 'package:flutter/material.dart';
 import 'package:quill_delta/quill_delta.dart';
 import 'package:zefyr/zefyr.dart';
@@ -73,6 +76,30 @@ class NotePageState extends State<NotePage> {
     return Scaffold(
       appBar: AppBar(
         title: Text(note.title),
+        actions: <Widget>[
+          IconButton(
+            icon: Icon(Icons.view_agenda),
+            onPressed: () async {
+              ChapterReference reference = await InheritedBlocs.of(context)
+                  .bibleBloc
+                  .chapterReference
+                  .first;
+              InheritedBlocs.of(context)
+                  .bibleBloc
+                  .currentPopupChapterReference
+                  .add(reference);
+              InheritedBlocs.of(context)
+                  .showReferenceInBottomSheet(context)
+                  .then((shouldReturnToReader) {
+                Navigator.of(context).pop();
+                InheritedBlocs.of(context)
+                    .navigationBloc
+                    .nextPage
+                    .add(AppPage.readerPage);
+              });
+            },
+          )
+        ],
       ),
       body: Padding(
         padding: const EdgeInsets.all(8.0),
