@@ -69,6 +69,7 @@ class _MyHomePageState extends State<MyHomePage> {
             case AppPage.notesPage:
               return NotesPage();
               break;
+
             case AppPage.historyPage:
               return ReaderPage();
               break;

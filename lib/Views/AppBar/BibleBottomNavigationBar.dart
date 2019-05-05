@@ -36,6 +36,9 @@ class BibleBottomNavigationBar extends StatelessWidget {
                             return Container(child: BooksList());
                           });
                     } else {
+                      if (Navigator.of(context).canPop()) {
+                        Navigator.of(context).pop();
+                      }
                       InheritedBlocs.of(context)
                           .navigationBloc
                           .nextPage
@@ -44,16 +47,27 @@ class BibleBottomNavigationBar extends StatelessWidget {
 
                     break;
                   case 1:
+                    if (Navigator.of(context).canPop()) {
+                      Navigator.of(context).pop();
+                    }
                     InheritedBlocs.of(context)
                         .navigationBloc
                         .nextPage
                         .add(AppPage.notesPage);
                     break;
                   case 2:
-                    showSearch(
-                      context: context,
-                      delegate: BibleSearchDelegate(),
-                    );
+                    if (lastPage == index) {
+                    } else {
+                      InheritedBlocs.of(context)
+                          .navigationBloc
+                          .nextPage
+                          .add(AppPage.searchPage);
+                      showSearch(
+                        context: context,
+                        delegate: BibleSearchDelegate(),
+                      );
+                    }
+
                     break;
                   case 3:
                     InheritedBlocs.of(context)

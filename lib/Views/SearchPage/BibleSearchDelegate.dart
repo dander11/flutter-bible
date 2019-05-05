@@ -38,7 +38,9 @@ class BibleSearchDelegate extends SearchDelegate<Chapter> {
   Widget buildResults(BuildContext context) {
     return Scaffold(
       body: searchResultsBody(context: context),
-      bottomNavigationBar: BibleBottomNavigationBar(),
+      /* bottomNavigationBar: BibleBottomNavigationBar(
+        context: context,
+      ), */
     );
   }
 
@@ -155,7 +157,9 @@ class BibleSearchDelegate extends SearchDelegate<Chapter> {
   Widget buildSuggestions(BuildContext context) {
     return Scaffold(
       body: Column(),
-      //bottomNavigationBar: BibleBottomNavigationBar(),
+      /* bottomNavigationBar: BibleBottomNavigationBar(
+        context: context,
+      ), */
     );
   }
 }
