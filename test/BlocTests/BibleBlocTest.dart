@@ -9,7 +9,6 @@ import 'package:bible_bloc/Providers/IBibleProvider.dart';
 import 'package:bible_bloc/Providers/ISearchProvider.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
-import 'package:rxdart/rxdart.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class MockBibleProvider extends Mock implements IBibleProvider {}

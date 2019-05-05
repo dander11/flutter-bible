@@ -1,8 +1,37 @@
+import 'package:bible_bloc/Models/Book.dart';
 import 'package:bible_bloc/Models/Chapter.dart';
+import 'package:flutter/material.dart';
 
 class ChapterReference {
-  final Chapter chapter;
-  final int verseNumber;
+  Chapter chapter;
+  int verseNumber;
 
-  ChapterReference({this.chapter, this.verseNumber = 1});
+  ChapterReference({@required this.chapter, this.verseNumber = 1});
+
+  ChapterReference.fromJson(Map<String, dynamic> json) {
+    Book book = Book(name: json['book']);
+    Chapter aChapter = Chapter(
+      book: book,
+      number: json[chapter],
+    );
+    ChapterReference(chapter: aChapter, verseNumber: json['verse']);
+  }
+
+  Map<String, dynamic> toJson() => {
+        'chapter': chapter.number,
+        'verse': verseNumber,
+        'book': chapter.book.name
+      };
+
+  @override
+  String toString() {
+    return "${chapter.book.name} ${chapter.number}: $verseNumber";
+  }
+
+  @override
+  int get hashCode {
+    return ("${chapter.book.name} + ${chapter.number} + $verseNumber").hashCode;
+  }
+
+  operator ==(Object other) => hashCode == other.hashCode;
 }

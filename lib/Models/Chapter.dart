@@ -12,4 +12,16 @@ class Chapter {
       elements = List<IChapterElement>();
     }
   }
+
+  @override
+  String toString() {
+    return "${book.name} $number";
+  }
+
+  @override
+  int get hashCode {
+    return ("${book.name} + $number").hashCode;
+  }
+
+  operator ==(Object other) => hashCode == other.hashCode;
 }

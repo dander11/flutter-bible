@@ -10,8 +10,6 @@ import 'package:bible_bloc/Models/SearchQuery.dart';
 
 import 'package:bible_bloc/Providers/IBibleProvider.dart';
 import 'package:bible_bloc/Providers/ISearchProvider.dart';
-import 'package:bible_bloc/Providers/MultiPartXmlBibleProvider.dart';
-import 'package:bible_bloc/Providers/XmlBibleProvider.dart';
 import 'package:rxdart/rxdart.dart';
 import 'dart:collection';
 
@@ -46,6 +44,9 @@ class BibleBloc {
   Stream<ChapterReference> get popupChapterReference => _popupChapter.stream;
   final _popupChapter = BehaviorSubject<ChapterReference>();
 
+  Observable<ChapterReference> get chapterHistory => _chapterHistory.stream;
+  final _chapterHistory = BehaviorSubject<ChapterReference>();
+
   Stream<Chapter> get nextChapter => _nextChapter.stream;
   final _nextChapter = BehaviorSubject<Chapter>();
 
@@ -68,16 +69,22 @@ class BibleBloc {
   final _suggestionSearchResultsSubject =
       BehaviorSubject<UnmodifiableListView<Verse>>();
 
-  BibleBloc() {
-    _importer = MultiPartXmlBibleProvider();
+  BibleBloc(IBibleProvider bibleProvider, ISearchProvider searchProvider) {
+    _importer = bibleProvider;
     _getBooks().then((n) => _initCurrentBook());
 
-    _searchProvider = XmlBibleProvider();
+    _searchProvider = searchProvider;
     _searchProvider.init();
 
     _currentChapterController.stream.listen((currentChapter) async {
       _updateChapters(currentChapter);
     });
+
+    /* _chapterHistory.stream.listen((_) {
+      _chapterHistory.toList().then((history) {
+        _saveHistoryToFile(history);
+      });
+    }); */
 
     _currentPopupChapterController.stream.listen((popupReference) async {
       _updatePopupChapter(popupReference);
@@ -139,11 +146,15 @@ class BibleBloc {
 
     _currentChapter.add(currentChapter);
 
+    _chapterHistory.add(currentChapter);
+    chapterHistory.toList().then((history) {
+      print(history.length);
+    });
     _saveCurrentBookAndChapter();
   }
 
   Future _updateNextChapter(Chapter currentChapter) async {
-    if (currentChapter.number != currentChapter.book.chapters.length - 1) {
+    if (currentChapter.number != currentChapter.book.chapters.length) {
       var nextChapter = await _importer.getChapter(
           currentChapter.book.name, currentChapter.number + 1);
       _nextChapter.add(nextChapter);
@@ -184,6 +195,7 @@ class BibleBloc {
     _previousChapter.close();
     _nextChapter.close();
     _currentPopupChapterController.close();
+    _chapterHistory.close();
   }
 
   void _initCurrentBook() async {
@@ -213,11 +225,15 @@ class BibleBloc {
   }
 
   Future _updatePopupChapter(ChapterReference popupReference) async {
-    var chapter = await _importer.getChapter(
-        popupReference.chapter.book.name, popupReference.chapter.number);
-    _chapterElementsSubject.add(UnmodifiableListView(chapter.elements));
-    popupReference.chapter.elements = chapter.elements;
+    if (popupReference != null) {
+      var chapter = await _importer.getChapter(
+          popupReference.chapter.book.name, popupReference.chapter.number);
+      _chapterElementsSubject.add(UnmodifiableListView(chapter.elements));
+      popupReference.chapter.elements = chapter.elements;
+    }
 
     _popupChapter.add(popupReference);
   }
+
+  void _saveHistoryToFile(List<ChapterReference> history) {}
 }

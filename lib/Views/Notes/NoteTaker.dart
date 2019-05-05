@@ -2,7 +2,6 @@ import 'package:bible_bloc/Blocs/navigation_bloc.dart';
 import 'package:bible_bloc/Blocs/notes_bloc.dart';
 import 'package:bible_bloc/InheritedBlocs.dart';
 import 'package:bible_bloc/Models/ChapterReference.dart';
-import 'package:bible_bloc/Views/Reader/ReaderPage.dart';
 import 'package:flutter/material.dart';
 import 'package:quill_delta/quill_delta.dart';
 import 'package:zefyr/zefyr.dart';

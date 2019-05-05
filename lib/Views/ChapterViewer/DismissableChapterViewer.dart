@@ -1,7 +1,6 @@
 import 'package:bible_bloc/InheritedBlocs.dart';
 import 'package:bible_bloc/Models/Book.dart';
 import 'package:bible_bloc/Models/Chapter.dart';
-import 'package:bible_bloc/Models/ChapterElements/IChapterElement.dart';
 import 'package:bible_bloc/Models/ChapterReference.dart';
 import 'package:bible_bloc/Views/ChapterViewer/VerseText.dart';
 import 'package:bible_bloc/Views/LoadingColumn.dart';
@@ -9,6 +8,8 @@ import 'package:flutter/material.dart';
 
 class DismissableChapterViewer extends StatelessWidget {
   final Chapter chapter;
+  final Chapter previousChapter;
+  final Chapter nextChapter;
   final Book book;
   final int verseNumber;
   final bool addBackgrounds;
@@ -22,39 +23,36 @@ class DismissableChapterViewer extends StatelessWidget {
     this.showVerseNumbers,
     this.verseNumber,
     this.scrollToVerseMethod,
+    this.previousChapter,
+    this.nextChapter,
   });
 
   Widget build(BuildContext context) {
-    TextSpan chapterText = TextSpan(
-      children: [],
-      style: Theme.of(context).textTheme.body2,
-    );
-    for (IChapterElement verse in chapter.elements) {
-      chapterText.children.add(verse.toTextSpanWidget(context));
-    }
-    var expandedChapterText = _flattenTextSpans(chapterText.children);
-    chapterText.children.clear();
-    chapterText.children.addAll(expandedChapterText);
-
     return new Dismissible(
       secondaryBackground: this.addBackgrounds
-          ? _NextChapter(showVerseNumbers: showVerseNumbers)
+          ? VerseText(
+              book: book,
+              chapter: nextChapter,
+              verseNumber: 1,
+              scrollToVerseMethod: scrollToVerseMethod,
+            )
           : LoadingColumn(),
       background: this.addBackgrounds
-          ? _PreviousChapter(showVerseNumbers: showVerseNumbers)
+          ? VerseText(
+              book: book,
+              chapter: previousChapter,
+              verseNumber: 1,
+              scrollToVerseMethod: scrollToVerseMethod,
+            )
           : LoadingColumn(),
       resizeDuration: null,
       onDismissed: (DismissDirection swipeDetails) async {
         if (swipeDetails == DismissDirection.endToStart) {
-          var nextChapter =
-              await InheritedBlocs.of(context).bibleBloc.nextChapter.first;
           InheritedBlocs.of(context)
               .bibleBloc
               .currentChapterReference
               .add(ChapterReference(chapter: nextChapter));
         } else {
-          var previousChapter =
-              await InheritedBlocs.of(context).bibleBloc.previousChapter.first;
           InheritedBlocs.of(context)
               .bibleBloc
               .currentChapterReference
@@ -64,20 +62,11 @@ class DismissableChapterViewer extends StatelessWidget {
       child: new VerseText(
         book: book,
         chapter: chapter,
-        chapterText: chapterText,
         verseNumber: verseNumber,
         scrollToVerseMethod: scrollToVerseMethod,
       ),
       key: new ValueKey(chapter.number),
     );
-  }
-
-  List<TextSpan> _flattenTextSpans(List<TextSpan> iterable) {
-    return iterable
-        .expand((TextSpan e) => e.children != null && e.children.length > 0
-            ? _flattenTextSpans(e.children)
-            : [e])
-        .toList();
   }
 }
 

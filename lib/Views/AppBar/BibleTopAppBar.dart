@@ -15,13 +15,13 @@ class BibleReaderAppBar extends StatelessWidget {
     return SliverAppBar(
       floating: true,
       centerTitle: true,
-      leading: IconButton(
+      /* leading: IconButton(
         icon: Icon(Icons.search),
         onPressed: () => showSearch(
               context: context,
               delegate: BibleSearchDelegate(),
             ),
-      ),
+      ), */
       title: GestureDetector(
         onTap: () {
           showModalBottomSheet<void>(
@@ -52,10 +52,10 @@ class BibleReaderAppBar extends StatelessWidget {
           },
         ),
       ),
-      actions: <Widget>[
+      /* actions: <Widget>[
         SettingsPopupMenu(),
       ],
-      /* actions: <Widget>[
+       actions: <Widget>[
         IconButton(
           icon: Icon(Icons.search),
           onPressed: () => showSearch(

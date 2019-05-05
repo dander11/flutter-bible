@@ -162,26 +162,26 @@ class MultiPartXmlBibleProvider extends IBibleProvider {
         aNode.attributes.any((a) => a.value == "divine-name");
   }
 
-  ChaperText _convertQuotationMark(xml.XmlElement aNode) {
+  ChapterText _convertQuotationMark(xml.XmlElement aNode) {
     switch (aNode.attributes.firstWhere((a) => a.name.local == "class").value) {
       case "begin-double":
-        return ChaperText(text: " ${String.fromCharCode(8220)}");
+        return ChapterText(text: " ${String.fromCharCode(8220)}");
 
         break;
       case "end-double":
-        return ChaperText(text: "${String.fromCharCode(8221)}");
+        return ChapterText(text: "${String.fromCharCode(8221)}");
 
         break;
       case "begin-single":
-        return ChaperText(text: " ${String.fromCharCode(8216)}");
+        return ChapterText(text: " ${String.fromCharCode(8216)}");
 
         break;
       case "end-single":
-        return ChaperText(text: "${String.fromCharCode(8217)}");
+        return ChapterText(text: "${String.fromCharCode(8217)}");
 
         break;
       default:
-        return ChaperText(text: " ${String.fromCharCode(8220)}");
+        return ChapterText(text: " ${String.fromCharCode(8220)}");
     }
   }
 
@@ -196,7 +196,7 @@ class MultiPartXmlBibleProvider extends IBibleProvider {
     return verse;
   }
 
-  ChaperText _convertTextElement(xml.XmlText node) {
+  ChapterText _convertTextElement(xml.XmlText node) {
     var spaceBeforePunctuation = RegExp(" [.!?\\-]");
     var punctuation = RegExp("[.!?\\-]");
     if (node.previousSibling != null &&
@@ -209,18 +209,18 @@ class MultiPartXmlBibleProvider extends IBibleProvider {
                 .any((a) => a.value == "begin-single") ||
             node.previousSibling.attributes
                 .any((a) => a.value == "end-single"))) {
-      return ChaperText(
+      return ChapterText(
           text: '''${node.text.replaceAll(_multipleSpaces, "").trim()}''');
     } else if (node.text.contains(spaceBeforePunctuation)) {
-      return ChaperText(
+      return ChapterText(
           text:
               ''' ${node.text.replaceAll(_multipleSpaces, "").replaceAll(spaceBeforePunctuation, "").trim()}''');
     } else if (node.text.replaceAll(_multipleSpaces, "").length == 1 &&
         node.text.contains(punctuation)) {
-      return ChaperText(
+      return ChapterText(
           text: '''${node.text.replaceAll(_multipleSpaces, "").trim()}''');
     } else {
-      return ChaperText(
+      return ChapterText(
           text: ''' ${node.text.replaceAll(_multipleSpaces, "").trim()}''');
     }
   }

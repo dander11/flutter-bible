@@ -81,6 +81,7 @@ class InheritedBlocs extends InheritedWidget {
                     builder: (context, reference) {
                       if (reference.hasData) {
                         return Reader(
+                          canSwipeToNextChapter: false,
                           controller: _controller,
                           chapterReference: reference.data,
                         );

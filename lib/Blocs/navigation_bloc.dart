@@ -5,6 +5,7 @@ enum AppPage {
   readerPage,
   notesPage,
   searchPage,
+  historyPage,
 }
 
 class NavigationBloc {
@@ -12,7 +13,7 @@ class NavigationBloc {
   final _nextPageController = StreamController<AppPage>();
 
   Stream<AppPage> get currentPage => _currentPage.stream;
-  final _currentPage = BehaviorSubject<AppPage>(seedValue: AppPage.readerPage);
+  final _currentPage = BehaviorSubject<AppPage>.seeded(AppPage.readerPage);
 
   NavigationBloc() {
     _nextPageController.stream.listen(

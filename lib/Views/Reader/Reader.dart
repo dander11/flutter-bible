@@ -1,15 +1,26 @@
 import 'package:bible_bloc/InheritedBlocs.dart';
+import 'package:bible_bloc/Models/Chapter.dart';
 import 'package:bible_bloc/Models/ChapterElements/IChapterElement.dart';
 import 'package:bible_bloc/Models/ChapterElements/Verse.dart';
 import 'package:bible_bloc/Models/ChapterReference.dart';
 import 'package:bible_bloc/Views/ChapterViewer/DismissableChapterViewer.dart';
+import 'package:bible_bloc/Views/ChapterViewer/VerseText.dart';
 import 'package:flutter/material.dart';
 
 class Reader extends StatelessWidget {
   final ChapterReference chapterReference;
+  final Chapter previousChapter;
+  final Chapter nextChapter;
   final ScrollController controller;
+  final bool canSwipeToNextChapter;
 
-  const Reader({Key key, this.chapterReference, this.controller})
+  const Reader(
+      {Key key,
+      this.chapterReference,
+      this.controller,
+      this.canSwipeToNextChapter = true,
+      this.previousChapter,
+      this.nextChapter})
       : super(key: key);
   @override
   Widget build(BuildContext context) {
@@ -18,21 +29,35 @@ class Reader extends StatelessWidget {
       initialData: false,
       builder: (BuildContext context, AsyncSnapshot<bool> setting) {
         if (setting.hasData) {
-          return DismissableChapterViewer(
-            addBackgrounds: true,
-            book: chapterReference.chapter.book,
-            chapter: chapterReference.chapter,
-            showVerseNumbers: setting.data,
-            scrollToVerseMethod: _scrollToVerse,
-          );
+          return this.canSwipeToNextChapter
+              ? DismissableChapterViewer(
+                  addBackgrounds: true,
+                  book: chapterReference.chapter.book,
+                  nextChapter: nextChapter,
+                  previousChapter: previousChapter,
+                  chapter: chapterReference.chapter,
+                  showVerseNumbers: setting.data,
+                  scrollToVerseMethod: _scrollToVerse,
+                )
+              : VerseText(
+                  book: chapterReference.chapter.book,
+                  chapter: chapterReference.chapter,
+                  scrollToVerseMethod: _scrollToVerse,
+                );
         } else {
-          return DismissableChapterViewer(
-            addBackgrounds: true,
-            book: chapterReference.chapter.book,
-            chapter: chapterReference.chapter,
-            showVerseNumbers: true,
-            scrollToVerseMethod: _scrollToVerse,
-          );
+          return canSwipeToNextChapter
+              ? DismissableChapterViewer(
+                  addBackgrounds: true,
+                  book: chapterReference.chapter.book,
+                  chapter: chapterReference.chapter,
+                  showVerseNumbers: true,
+                  scrollToVerseMethod: _scrollToVerse,
+                )
+              : VerseText(
+                  book: chapterReference.chapter.book,
+                  chapter: chapterReference.chapter,
+                  scrollToVerseMethod: _scrollToVerse,
+                );
         }
       },
     );
@@ -65,12 +90,8 @@ class Reader extends StatelessWidget {
       var scrollPercentage =
           _getScrollOffset(verses.length, chapterReference.verseNumber);
       var positon = controller.position.maxScrollExtent * scrollPercentage;
-      controller.animateTo(
+      controller.jumpTo(
         positon,
-        duration: Duration(
-          milliseconds: 100,
-        ),
-        curve: Curves.bounceInOut,
       );
     }
   }

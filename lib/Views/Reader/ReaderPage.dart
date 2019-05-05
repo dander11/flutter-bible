@@ -17,7 +17,6 @@ class ReaderPage extends StatefulWidget {
 
 class _ReaderPageState extends State<ReaderPage> {
   ScrollController controller = ScrollController();
-  ChapterReference chapterReference;
   bool hasScrolled;
 
   @override
@@ -30,37 +29,49 @@ class _ReaderPageState extends State<ReaderPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: StreamBuilder<ChapterReference>(
-          stream: InheritedBlocs.of(context).bibleBloc.chapterReference,
-          builder: (context, AsyncSnapshot<ChapterReference> chapterReference) {
-            if (chapterReference.hasData) {
-              this.chapterReference = chapterReference.data;
-
-              return CustomScrollView(
-                controller: controller,
-                slivers: <Widget>[
-                  BibleReaderAppBar(),
-                  SliverToBoxAdapter(
-                    child: Reader(
-                      chapterReference: chapterReference.data,
-                      controller: controller,
-                      //scrollToVerseMethod: _scrollToVerse,
-                    ),
-                  ),
-                ],
-              );
-            } else {
-              return CustomScrollView(
-                controller: controller,
-                slivers: <Widget>[
-                  BibleReaderAppBar(),
-                  SliverToBoxAdapter(
-                    child: LoadingColumn(),
-                  ),
-                ],
-              );
-            }
-          }),
+      body: StreamBuilder(
+        stream: InheritedBlocs.of(context).bibleBloc.previousChapter,
+        builder: (_, prevChapter) => StreamBuilder(
+              stream: InheritedBlocs.of(context).bibleBloc.nextChapter,
+              builder: (_, nextChapter) {
+                return StreamBuilder<ChapterReference>(
+                    stream:
+                        InheritedBlocs.of(context).bibleBloc.chapterReference,
+                    builder: (context,
+                        AsyncSnapshot<ChapterReference> chapterReference) {
+                      if (chapterReference.hasData &&
+                          prevChapter.hasData &&
+                          nextChapter.hasData) {
+                        return CustomScrollView(
+                          controller: controller,
+                          slivers: <Widget>[
+                            BibleReaderAppBar(),
+                            SliverToBoxAdapter(
+                              child: Reader(
+                                nextChapter: nextChapter.data,
+                                previousChapter: prevChapter.data,
+                                chapterReference: chapterReference.data,
+                                controller: controller,
+                                //scrollToVerseMethod: _scrollToVerse,
+                              ),
+                            ),
+                          ],
+                        );
+                      } else {
+                        return CustomScrollView(
+                          controller: controller,
+                          slivers: <Widget>[
+                            BibleReaderAppBar(),
+                            SliverToBoxAdapter(
+                              child: LoadingColumn(),
+                            ),
+                          ],
+                        );
+                      }
+                    });
+              },
+            ),
+      ),
       bottomNavigationBar: new BibleBottomNavigationBar(context: context),
     );
   }

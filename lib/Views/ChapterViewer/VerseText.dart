@@ -1,5 +1,6 @@
 import 'package:bible_bloc/Models/Book.dart';
 import 'package:bible_bloc/Models/Chapter.dart';
+import 'package:bible_bloc/Models/ChapterElements/IChapterElement.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:after_layout/after_layout.dart';
@@ -7,7 +8,6 @@ import 'package:after_layout/after_layout.dart';
 class VerseText extends StatefulWidget {
   final Book book;
   final Chapter chapter;
-  final TextSpan chapterText;
   final Function scrollToVerseMethod;
   final int verseNumber;
 
@@ -15,14 +15,17 @@ class VerseText extends StatefulWidget {
       {Key key,
       @required this.book,
       @required this.chapter,
-      @required this.chapterText,
       this.verseNumber,
       this.scrollToVerseMethod})
       : super(key: key);
 
   @override
-  _VerseTextState createState() =>
-      _VerseTextState(scrollToVerseMethod: scrollToVerseMethod);
+  _VerseTextState createState() => _VerseTextState(
+        scrollToVerseMethod: scrollToVerseMethod,
+        book: book,
+        chapter: chapter,
+        verseNumber: verseNumber,
+      );
 }
 
 class _VerseTextState extends State<VerseText>
@@ -41,20 +44,41 @@ class _VerseTextState extends State<VerseText>
       this.verseNumber});
   @override
   Widget build(BuildContext context) {
+    TextSpan chapterText = TextSpan(
+      children: [],
+      style: Theme.of(context).textTheme.body2,
+    );
+    for (IChapterElement verse in chapter.elements) {
+      chapterText.children.add(verse.toTextSpanWidget(context));
+    }
+    var expandedChapterText = _flattenTextSpans(chapterText.children);
+    chapterText.children.clear();
+    chapterText.children.addAll(expandedChapterText);
+
     var width = MediaQuery.of(context).size.width;
     return Container(
       width: width,
       child: Padding(
         padding: const EdgeInsets.all(8.0),
         child: RichText(
-          text: widget.chapterText,
+          text: chapterText,
         ),
       ),
     );
   }
 
+  List<TextSpan> _flattenTextSpans(List<TextSpan> iterable) {
+    return iterable
+        .expand((TextSpan e) => e.children != null && e.children.length > 0
+            ? _flattenTextSpans(e.children)
+            : [e])
+        .toList();
+  }
+
   @override
   void afterFirstLayout(BuildContext context) {
-    scrollToVerseMethod();
+    if (scrollToVerseMethod != null) {
+      scrollToVerseMethod();
+    }
   }
 }

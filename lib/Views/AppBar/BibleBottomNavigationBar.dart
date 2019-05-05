@@ -55,6 +55,12 @@ class BibleBottomNavigationBar extends StatelessWidget {
                       delegate: BibleSearchDelegate(),
                     );
                     break;
+                  case 3:
+                    InheritedBlocs.of(context)
+                        .navigationBloc
+                        .nextPage
+                        .add(AppPage.historyPage);
+                    break;
                   default:
                 }
               },
@@ -67,10 +73,14 @@ class BibleBottomNavigationBar extends StatelessWidget {
                   title: Text("Notes"),
                   icon: Icon(MdiIcons.notebook),
                 ),
+                BottomNavigationBarItem(
+                  title: Text("Search"),
+                  icon: Icon(Icons.search),
+                ),
                 /* BottomNavigationBarItem(
-                title: Text("Search"),
-                icon: Icon(Icons.search),
-              ), */
+                  title: Text("History"),
+                  icon: Icon(Icons.history),
+                ), */
               ],
             ),
           );

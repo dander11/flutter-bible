@@ -1,9 +1,6 @@
 import 'package:bible_bloc/InheritedBlocs.dart';
 import 'package:bible_bloc/Models/ChapterElements/Verse.dart';
 import 'package:bible_bloc/Models/ChapterReference.dart';
-import 'package:bible_bloc/Views/LoadingColumn.dart';
-import 'package:bible_bloc/Views/Reader/Reader.dart';
-
 import 'package:collection/collection.dart';
 import 'package:flutter/material.dart';
 
@@ -45,6 +42,11 @@ class SearchResults extends StatelessWidget {
                 if (shouldReturnToReaderPage != null &&
                     shouldReturnToReaderPage) {
                   Navigator.of(context).pop();
+                } else {
+                  InheritedBlocs.of(context)
+                      .bibleBloc
+                      .currentPopupChapterReference
+                      .add(null);
                 }
               });
               /* InheritedBlocs.of(context).bibleBloc.currentChapterReference.add(

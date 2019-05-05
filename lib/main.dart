@@ -4,6 +4,8 @@ import 'package:bible_bloc/Blocs/settings_bloc.dart';
 import 'package:bible_bloc/Blocs/bible_bloc.dart';
 import 'package:bible_bloc/Designs/DarkDesign.dart';
 import 'package:bible_bloc/InheritedBlocs.dart';
+import 'package:bible_bloc/Providers/MultiPartXmlBibleProvider.dart';
+import 'package:bible_bloc/Providers/XmlBibleProvider.dart';
 import 'package:bible_bloc/Views/Notes/NotesPage.dart';
 import 'package:bible_bloc/Views/Reader/ReaderPage.dart';
 import 'package:flutter/material.dart';
@@ -11,7 +13,7 @@ import 'package:global_configuration/global_configuration.dart';
 
 void main() async {
   await GlobalConfiguration().loadFromAsset("app_settings");
-  final bibleBloc = BibleBloc();
+  final bibleBloc = BibleBloc(MultiPartXmlBibleProvider(), XmlBibleProvider());
   runApp(MyApp(
     bibleBloc: bibleBloc,
     settingsBloc: SettingsBloc(),
@@ -67,9 +69,11 @@ class _MyHomePageState extends State<MyHomePage> {
             case AppPage.notesPage:
               return NotesPage();
               break;
-
+            case AppPage.historyPage:
+              return ReaderPage();
+              break;
             default:
-              return new ReaderPage();
+              return ReaderPage();
               break;
           }
         });

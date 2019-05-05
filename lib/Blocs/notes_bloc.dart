@@ -13,10 +13,10 @@ class NotesBloc {
   final _addNoteController = StreamController<Note>();
 
   Stream<List<Note>> get savedNotes => _notes.stream;
-  final _notes = BehaviorSubject<List<Note>>(seedValue: List<Note>());
+  final _notes = BehaviorSubject<List<Note>>.seeded(List<Note>());
 
   Stream<int> get highestNoteId => _highestNoteId.stream;
-  final _highestNoteId = BehaviorSubject<int>(seedValue: 0);
+  final _highestNoteId = BehaviorSubject<int>.seeded(0);
 
   NotesBloc() {
     loadInitialNotes();
