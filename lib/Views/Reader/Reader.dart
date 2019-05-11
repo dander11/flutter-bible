@@ -24,43 +24,21 @@ class Reader extends StatelessWidget {
       : super(key: key);
   @override
   Widget build(BuildContext context) {
-    return StreamBuilder<bool>(
-      stream: InheritedBlocs.of(context).settingsBloc.showVerseNumbers,
-      initialData: false,
-      builder: (BuildContext context, AsyncSnapshot<bool> setting) {
-        if (setting.hasData) {
-          return this.canSwipeToNextChapter
-              ? DismissableChapterViewer(
-                  addBackgrounds: true,
-                  book: chapterReference.chapter.book,
-                  nextChapter: nextChapter,
-                  previousChapter: previousChapter,
-                  chapter: chapterReference.chapter,
-                  showVerseNumbers: setting.data,
-                  scrollToVerseMethod: _scrollToVerse,
-                )
-              : VerseText(
-                  book: chapterReference.chapter.book,
-                  chapter: chapterReference.chapter,
-                  scrollToVerseMethod: _scrollToVerse,
-                );
-        } else {
-          return canSwipeToNextChapter
-              ? DismissableChapterViewer(
-                  addBackgrounds: true,
-                  book: chapterReference.chapter.book,
-                  chapter: chapterReference.chapter,
-                  showVerseNumbers: true,
-                  scrollToVerseMethod: _scrollToVerse,
-                )
-              : VerseText(
-                  book: chapterReference.chapter.book,
-                  chapter: chapterReference.chapter,
-                  scrollToVerseMethod: _scrollToVerse,
-                );
-        }
-      },
-    );
+    return this.canSwipeToNextChapter
+        ? DismissableChapterViewer(
+            shouldHaveBackgrounds: true,
+            book: chapterReference.chapter.book,
+            nextChapter: nextChapter,
+            previousChapter: previousChapter,
+            chapter: chapterReference.chapter,
+            showVerseNumbers: true,
+            scrollToVerseMethod: _scrollToVerse,
+          )
+        : VerseText(
+            book: chapterReference.chapter.book,
+            chapter: chapterReference.chapter,
+            scrollToVerseMethod: _scrollToVerse,
+          );
   }
 
   double _getScrollOffset(int length, int verseNumber) {

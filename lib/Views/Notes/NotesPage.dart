@@ -12,6 +12,7 @@ class NotesPage extends StatelessWidget {
     return Scaffold(
       body: NotesIndex(),
       floatingActionButton: FloatingActionButton(
+        backgroundColor: Theme.of(context).accentIconTheme.color,
         onPressed: () {
           showCreateNoteDialog(context);
         },

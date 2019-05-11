@@ -6,14 +6,16 @@ import 'package:bible_bloc/Views/Settings/SettingPopupMenu.dart';
 import 'package:flutter/material.dart';
 
 class BibleReaderAppBar extends StatelessWidget {
+  final String title;
   const BibleReaderAppBar({
     Key key,
+    this.title,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return SliverAppBar(
-      floating: true,
+      pinned: true,
       centerTitle: true,
       /* leading: IconButton(
         icon: Icon(Icons.search),
@@ -30,32 +32,18 @@ class BibleReaderAppBar extends StatelessWidget {
                 return Container(child: BooksList());
               });
         },
-        child: StreamBuilder<ChapterReference>(
-          stream: InheritedBlocs.of(context).bibleBloc.chapterReference,
-          builder:
-              (BuildContext context, AsyncSnapshot<ChapterReference> snapshot) {
-            if (snapshot.hasData) {
-              return Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: <Widget>[
-                  Text(
-                      "${snapshot.data.chapter.book.name} ${snapshot.data.chapter.number}"),
-                  Icon(Icons.arrow_drop_down),
-                ],
-              );
-            } else {
-              return Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [Text("Select Chapter"), Icon(Icons.arrow_drop_down)],
-              );
-            }
-          },
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            Text(title),
+            Icon(Icons.arrow_drop_down),
+          ],
         ),
       ),
       /* actions: <Widget>[
         SettingsPopupMenu(),
-      ],
-       actions: <Widget>[
+      ],*/
+      actions: <Widget>[
         IconButton(
           icon: Icon(Icons.search),
           onPressed: () => showSearch(
@@ -63,8 +51,7 @@ class BibleReaderAppBar extends StatelessWidget {
                 delegate: BibleSearchDelegate(),
               ),
         ),
-        SettingsPopupMenu(),
-      ], */
+      ],
     );
   }
 }

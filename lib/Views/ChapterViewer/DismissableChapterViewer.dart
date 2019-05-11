@@ -12,14 +12,14 @@ class DismissableChapterViewer extends StatelessWidget {
   final Chapter nextChapter;
   final Book book;
   final int verseNumber;
-  final bool addBackgrounds;
+  final bool shouldHaveBackgrounds;
   final bool showVerseNumbers;
   final Function scrollToVerseMethod;
 
   DismissableChapterViewer({
     this.chapter,
     this.book,
-    this.addBackgrounds,
+    this.shouldHaveBackgrounds,
     this.showVerseNumbers,
     this.verseNumber,
     this.scrollToVerseMethod,
@@ -29,7 +29,7 @@ class DismissableChapterViewer extends StatelessWidget {
 
   Widget build(BuildContext context) {
     return new Dismissible(
-      secondaryBackground: this.addBackgrounds
+      secondaryBackground: this.shouldHaveBackgrounds
           ? VerseText(
               book: book,
               chapter: nextChapter,
@@ -37,7 +37,7 @@ class DismissableChapterViewer extends StatelessWidget {
               scrollToVerseMethod: scrollToVerseMethod,
             )
           : LoadingColumn(),
-      background: this.addBackgrounds
+      background: this.shouldHaveBackgrounds
           ? VerseText(
               book: book,
               chapter: previousChapter,
@@ -48,15 +48,12 @@ class DismissableChapterViewer extends StatelessWidget {
       resizeDuration: null,
       onDismissed: (DismissDirection swipeDetails) async {
         if (swipeDetails == DismissDirection.endToStart) {
-          InheritedBlocs.of(context)
-              .bibleBloc
-              .currentChapterReference
-              .add(ChapterReference(chapter: nextChapter));
+          InheritedBlocs.of(context).bibleBloc.goToNextChapter(this.chapter);
         } else {
           InheritedBlocs.of(context)
               .bibleBloc
-              .currentChapterReference
-              .add(ChapterReference(chapter: previousChapter));
+              .goToPreviousChapter(this.chapter);
+          print(this.chapter);
         }
       },
       child: new VerseText(
@@ -66,70 +63,6 @@ class DismissableChapterViewer extends StatelessWidget {
         scrollToVerseMethod: scrollToVerseMethod,
       ),
       key: new ValueKey(chapter.number),
-    );
-  }
-}
-
-class _NextChapter extends StatelessWidget {
-  const _NextChapter({
-    Key key,
-    @required this.showVerseNumbers,
-    this.scrollToVerseMethod,
-  }) : super(key: key);
-
-  final bool showVerseNumbers;
-  final Function scrollToVerseMethod;
-
-  @override
-  Widget build(BuildContext context) {
-    return StreamBuilder(
-      stream: InheritedBlocs.of(context).bibleBloc.nextChapter,
-      initialData: null,
-      builder: (BuildContext _, chapter) {
-        if (chapter.hasData) {
-          return new DismissableChapterViewer(
-            chapter: chapter.data,
-            book: chapter.data.book,
-            addBackgrounds: false,
-            showVerseNumbers: this.showVerseNumbers,
-            scrollToVerseMethod: scrollToVerseMethod,
-          );
-        } else {
-          return LoadingColumn();
-        }
-      },
-    );
-  }
-}
-
-class _PreviousChapter extends StatelessWidget {
-  const _PreviousChapter({
-    Key key,
-    @required this.showVerseNumbers,
-    this.scrollToVerseMethod,
-  }) : super(key: key);
-
-  final bool showVerseNumbers;
-  final Function scrollToVerseMethod;
-
-  @override
-  Widget build(BuildContext context) {
-    return StreamBuilder(
-      stream: InheritedBlocs.of(context).bibleBloc.previousChapter,
-      initialData: null,
-      builder: (BuildContext _, chapter) {
-        if (chapter.hasData) {
-          return new DismissableChapterViewer(
-            chapter: chapter.data,
-            book: chapter.data.book,
-            addBackgrounds: false,
-            showVerseNumbers: this.showVerseNumbers,
-            scrollToVerseMethod: scrollToVerseMethod,
-          );
-        } else {
-          return LoadingColumn();
-        }
-      },
     );
   }
 }

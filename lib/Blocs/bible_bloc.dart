@@ -77,7 +77,7 @@ class BibleBloc {
     _searchProvider.init();
 
     _currentChapterController.stream.listen((currentChapter) async {
-      _updateChapters(currentChapter);
+      _goToChapter(currentChapter);
     });
 
     /* _chapterHistory.stream.listen((_) {
@@ -135,7 +135,7 @@ class BibleBloc {
     }
   }
 
-  Future _updateChapters(ChapterReference currentChapter) async {
+  Future _goToChapter(ChapterReference currentChapter) async {
     var chapter = await _importer.getChapter(
         currentChapter.chapter.book.name, currentChapter.chapter.number);
     _chapterElementsSubject.add(UnmodifiableListView(chapter.elements));
@@ -154,32 +154,42 @@ class BibleBloc {
   }
 
   Future _updateNextChapter(Chapter currentChapter) async {
+    var nextChapter = await _getNextChapter(currentChapter);
+    _nextChapter.add(nextChapter);
+  }
+
+  Future<Chapter> _getNextChapter(Chapter currentChapter) async {
+    Chapter nextChapter;
     if (currentChapter.number != currentChapter.book.chapters.length) {
-      var nextChapter = await _importer.getChapter(
+      nextChapter = await _importer.getChapter(
           currentChapter.book.name, currentChapter.number + 1);
-      _nextChapter.add(nextChapter);
     } else {
       var nextBook = _books.indexOf(currentChapter.book) != (_books.length - 1)
           ? _books[_books.indexOf(currentChapter.book) + 1]
           : _books.first;
-      var nextChapter = await _importer.getChapter(nextBook.name, 1);
-      _nextChapter.add(nextChapter);
+      nextChapter = await _importer.getChapter(nextBook.name, 1);
     }
+    return nextChapter;
   }
 
   Future _updatePreviousChapter(Chapter currentChapter) async {
+    Chapter prevChapter = await _getPreviousChapter(currentChapter);
+    _previousChapter.add(prevChapter);
+  }
+
+  Future<Chapter> _getPreviousChapter(Chapter currentChapter) async {
+    Chapter prevChapter;
     if (currentChapter.number != 1) {
-      var prevChapter = await _importer.getChapter(
+      prevChapter = await _importer.getChapter(
           currentChapter.book.name, currentChapter.number - 1);
-      _previousChapter.add(prevChapter);
     } else {
       var prevBook = _books.indexOf(currentChapter.book) != 0
           ? _books[_books.indexOf(currentChapter.book) - 1]
           : _books.last;
-      var prevChapter =
+      prevChapter =
           await _importer.getChapter(prevBook.name, prevBook.chapters.length);
-      _previousChapter.add(prevChapter);
     }
+    return prevChapter;
   }
 
   Future<Null> _getBooks() async {
@@ -236,4 +246,14 @@ class BibleBloc {
   }
 
   void _saveHistoryToFile(List<ChapterReference> history) {}
+
+  Future goToNextChapter(Chapter currentChapter) async {
+    var nextChapter = await _getNextChapter(currentChapter);
+    _goToChapter(ChapterReference(chapter: nextChapter));
+  }
+
+  Future goToPreviousChapter(Chapter currentChapter) async {
+    var previousChapter = await _getPreviousChapter(currentChapter);
+    _goToChapter(ChapterReference(chapter: previousChapter));
+  }
 }

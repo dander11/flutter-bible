@@ -45,7 +45,9 @@ class _ReaderPageState extends State<ReaderPage> {
                         return CustomScrollView(
                           controller: controller,
                           slivers: <Widget>[
-                            BibleReaderAppBar(),
+                            BibleReaderAppBar(
+                                title:
+                                    "${chapterReference.data.chapter.book.name} ${chapterReference.data.chapter.number}"),
                             SliverToBoxAdapter(
                               child: Reader(
                                 nextChapter: nextChapter.data,
@@ -61,7 +63,9 @@ class _ReaderPageState extends State<ReaderPage> {
                         return CustomScrollView(
                           controller: controller,
                           slivers: <Widget>[
-                            BibleReaderAppBar(),
+                            BibleReaderAppBar(
+                              title: "Loading...",
+                            ),
                             SliverToBoxAdapter(
                               child: LoadingColumn(),
                             ),

@@ -20,43 +20,50 @@ class SearchResults extends StatelessWidget {
         itemCount: results.length,
         itemBuilder: (BuildContext context, int index) {
           var verse = results[index];
-          return ListTile(
-            title: Text(verse.text),
-            subtitle: Text(
-                "${verse.chapter.book.name} ${verse.chapter.number}:${verse.number}"),
-            onTap: () async {
-              InheritedBlocs.of(context)
-                  .bibleBloc
-                  .currentPopupChapterReference
-                  .add(
-                    ChapterReference(
-                      chapter: verse.chapter,
-                      verseNumber: verse.number,
-                    ),
-                  );
-              InheritedBlocs.of(context)
-                  .showReferenceInBottomSheet(
-                context,
-              )
-                  .then((shouldReturnToReaderPage) {
-                if (shouldReturnToReaderPage != null &&
-                    shouldReturnToReaderPage) {
-                  Navigator.of(context).pop();
-                } else {
-                  InheritedBlocs.of(context)
-                      .bibleBloc
-                      .currentPopupChapterReference
-                      .add(null);
-                }
-              });
-              /* InheritedBlocs.of(context).bibleBloc.currentChapterReference.add(
-                    ChapterReference(
-                      chapter: verse.chapter,
-                      verseNumber: verse.number,
-                    ),
-                  ); 
-              Navigator.of(context).pop();*/
-            },
+          return Container(
+            decoration: BoxDecoration(
+              border: BorderDirectional(
+                bottom: BorderSide(color: Colors.white10),
+              ),
+            ),
+            child: ListTile(
+              title: Text(verse.text),
+              subtitle: Text(
+                  "${verse.chapter.book.name} ${verse.chapter.number}:${verse.number}"),
+              onTap: () async {
+                InheritedBlocs.of(context)
+                    .bibleBloc
+                    .currentPopupChapterReference
+                    .add(
+                      ChapterReference(
+                        chapter: verse.chapter,
+                        verseNumber: verse.number,
+                      ),
+                    );
+                InheritedBlocs.of(context)
+                    .showReferenceInBottomSheet(
+                  context,
+                )
+                    .then((shouldReturnToReaderPage) {
+                  if (shouldReturnToReaderPage != null &&
+                      shouldReturnToReaderPage) {
+                    Navigator.of(context).pop();
+                  } else {
+                    InheritedBlocs.of(context)
+                        .bibleBloc
+                        .currentPopupChapterReference
+                        .add(null);
+                  }
+                });
+                /* InheritedBlocs.of(context).bibleBloc.currentChapterReference.add(
+                      ChapterReference(
+                        chapter: verse.chapter,
+                        verseNumber: verse.number,
+                      ),
+                    ); 
+                Navigator.of(context).pop();*/
+              },
+            ),
           );
         },
       ),

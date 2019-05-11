@@ -282,6 +282,48 @@ void main() {
           );
         },
       );
+      test(
+        'calling goToPrevious Chapter works',
+        () {
+          scheduleMicrotask(() async {
+            bloc.currentChapterReference
+                .add(ChapterReference(chapter: exodus.chapters[1]));
+            await bloc.goToPreviousChapter(exodus.chapters[1]);
+            await bloc.goToPreviousChapter(exodus.chapters[0]);
+          });
+          expect(
+            bloc.chapterReference,
+            emitsInOrder(
+              [
+                ChapterReference(chapter: exodus.chapters[1]),
+                ChapterReference(chapter: exodus.chapters[0]),
+                ChapterReference(chapter: genesis.chapters.last),
+              ],
+            ),
+          );
+        },
+      );
+      test(
+        'calling goToNext Chapter works',
+        () {
+          scheduleMicrotask(() async {
+            bloc.currentChapterReference
+                .add(ChapterReference(chapter: genesis.chapters[1]));
+            await bloc.goToNextChapter(genesis.chapters[1]);
+            await bloc.goToNextChapter(genesis.chapters[2]);
+          });
+          expect(
+            bloc.chapterReference,
+            emitsInOrder(
+              [
+                ChapterReference(chapter: genesis.chapters[1]),
+                ChapterReference(chapter: genesis.chapters[2]),
+                ChapterReference(chapter: genesis.chapters[3]),
+              ],
+            ),
+          );
+        },
+      );
     },
   );
 }
