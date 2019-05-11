@@ -8,7 +8,7 @@ class BookDrawer extends StatelessWidget {
   Widget build(BuildContext context) {
     return Drawer(
       semanticLabel: "Books",
-      child: new BooksList(),
+      child: BooksList(),
     );
   }
 }

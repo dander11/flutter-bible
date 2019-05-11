@@ -18,7 +18,7 @@ class ChapterCircle extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return new RaisedButton(
+    return RaisedButton(
       child: Text(
         chapter.number.toString(),
         style: Theme.of(context).textTheme.display1,

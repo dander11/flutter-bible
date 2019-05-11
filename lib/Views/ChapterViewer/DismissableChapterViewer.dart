@@ -1,7 +1,6 @@
 import 'package:bible_bloc/InheritedBlocs.dart';
 import 'package:bible_bloc/Models/Book.dart';
 import 'package:bible_bloc/Models/Chapter.dart';
-import 'package:bible_bloc/Models/ChapterReference.dart';
 import 'package:bible_bloc/Views/ChapterViewer/VerseText.dart';
 import 'package:bible_bloc/Views/LoadingColumn.dart';
 import 'package:flutter/material.dart';
@@ -28,7 +27,7 @@ class DismissableChapterViewer extends StatelessWidget {
   });
 
   Widget build(BuildContext context) {
-    return new Dismissible(
+    return Dismissible(
       secondaryBackground: this.shouldHaveBackgrounds
           ? VerseText(
               book: book,
@@ -56,13 +55,13 @@ class DismissableChapterViewer extends StatelessWidget {
           print(this.chapter);
         }
       },
-      child: new VerseText(
+      child: VerseText(
         book: book,
         chapter: chapter,
         verseNumber: verseNumber,
         scrollToVerseMethod: scrollToVerseMethod,
       ),
-      key: new ValueKey(chapter.number),
+      key: ValueKey(chapter.number),
     );
   }
 }

@@ -20,7 +20,7 @@ class NotesIndex extends StatelessWidget {
                 itemCount: notes.length,
                 itemBuilder: (context, index) {
                   var note = notes[index];
-                  return new NoteTile(note: note);
+                  return NoteTile(note: note);
                 },
               );
             },

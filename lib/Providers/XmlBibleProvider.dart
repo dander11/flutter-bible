@@ -15,7 +15,7 @@ class XmlBibleProvider extends IBibleProvider implements ISearchProvider {
   List<Book> _searchableBooks;
 
   XmlBibleProvider() {
-    _cfg = new GlobalConfiguration();
+    _cfg = GlobalConfiguration();
   }
   Future init() async {
     var path = _cfg.getString("xmlBiblePath");
@@ -30,7 +30,7 @@ class XmlBibleProvider extends IBibleProvider implements ISearchProvider {
 
   Future<List<Book>> getAllBooks() async {
     var xmlBooks = xmlDocument.findAllElements("b");
-    var books = new List<Book>();
+    var books = List<Book>();
     for (var item in xmlBooks) {
       var book = _convertBookFromXml(item);
       books.add(book);
@@ -39,7 +39,7 @@ class XmlBibleProvider extends IBibleProvider implements ISearchProvider {
   }
 
   Book _convertBookFromXml(xml.XmlElement item) {
-    var book = new Book(
+    var book = Book(
       name: item.getAttribute("n"),
     );
     book.chapters = _getChapters(item, book);
@@ -59,9 +59,9 @@ class XmlBibleProvider extends IBibleProvider implements ISearchProvider {
 
   List<Chapter> _getChapters(xml.XmlElement xmlBook, Book book) {
     var xmlChapters = xmlBook.findAllElements("c");
-    List<Chapter> chapters = new List<Chapter>();
+    List<Chapter> chapters = List<Chapter>();
     for (var item in xmlChapters) {
-      var chapter = new Chapter(
+      var chapter = Chapter(
         number: int.parse(item.getAttribute("n")),
         book: book,
       );
@@ -76,9 +76,9 @@ class XmlBibleProvider extends IBibleProvider implements ISearchProvider {
 
   List<Verse> _getVerses(xml.XmlElement xmlChapter, Chapter chapter) {
     var xmlVerses = xmlChapter.findAllElements("v");
-    List<Verse> verses = new List<Verse>();
+    List<Verse> verses = List<Verse>();
     for (var item in xmlVerses) {
-      var verse = new Verse(
+      var verse = Verse(
         number: int.parse(item.getAttribute("n")),
         text: item.text,
         chapter: chapter,

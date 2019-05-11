@@ -7,7 +7,7 @@ abstract class IChapterElement {
   List<IChapterElement> elements;
 
   IChapterElement({this.chapter, this.id}) {
-    elements = new List<IChapterElement>();
+    elements = List<IChapterElement>();
   }
 
   List<Text> toTextWidget(BuildContext context);

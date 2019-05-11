@@ -9,7 +9,7 @@ class BeginParagraph extends IChapterElement {
     return [
       Text(
         '''\t''',
-        style: new TextStyle(fontWeight: FontWeight.normal),
+        style: TextStyle(fontWeight: FontWeight.normal),
       ),
     ];
   }
@@ -20,7 +20,7 @@ class BeginParagraph extends IChapterElement {
       children: [
         TextSpan(
           text: '''   ''',
-          style: new TextStyle(fontWeight: FontWeight.normal),
+          style: TextStyle(fontWeight: FontWeight.normal),
         ),
       ],
     );

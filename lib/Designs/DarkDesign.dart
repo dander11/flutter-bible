@@ -3,16 +3,16 @@ import 'package:flutter/material.dart';
 class Designs {
   static ThemeData darkTheme = getDarkTheme();
 
-  static TextTheme darkTextTheme = new TextTheme(
-      body2: new TextStyle(color: Colors.white70, fontSize: 18.0));
+  static TextTheme darkTextTheme =
+      TextTheme(body2: TextStyle(color: Colors.white70, fontSize: 18.0));
 
-  static ThemeData defaultTheme = new ThemeData(
+  static ThemeData defaultTheme = ThemeData(
     primarySwatch: Colors.grey,
     primaryColor: Colors.grey.shade100,
   );
 
   static ThemeData getDarkTheme() {
-    ThemeData darkTheme = new ThemeData.dark();
+    ThemeData darkTheme = ThemeData.dark();
     return darkTheme.copyWith(
       textTheme: darkTheme.textTheme.copyWith(
         body2: darkTheme.textTheme.body2.copyWith(

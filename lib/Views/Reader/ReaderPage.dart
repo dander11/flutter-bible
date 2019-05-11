@@ -76,7 +76,7 @@ class _ReaderPageState extends State<ReaderPage> {
               },
             ),
       ),
-      bottomNavigationBar: new BibleBottomNavigationBar(context: context),
+      bottomNavigationBar: BibleBottomNavigationBar(context: context),
     );
   }
 }

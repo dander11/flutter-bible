@@ -10,7 +10,7 @@ class DivineName extends IChapterElement {
     return [
       Text(
         ''' ${this.text.trim()} ''',
-        style: new TextStyle(fontWeight: FontWeight.normal),
+        style: TextStyle(fontWeight: FontWeight.normal),
       ),
     ];
   }

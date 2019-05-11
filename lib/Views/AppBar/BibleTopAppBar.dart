@@ -1,8 +1,5 @@
-import 'package:bible_bloc/InheritedBlocs.dart';
-import 'package:bible_bloc/Models/ChapterReference.dart';
 import 'package:bible_bloc/Views/BookDrawer/BooksList.dart';
 import 'package:bible_bloc/Views/SearchPage/BibleSearchDelegate.dart';
-import 'package:bible_bloc/Views/Settings/SettingPopupMenu.dart';
 import 'package:flutter/material.dart';
 
 class BibleReaderAppBar extends StatelessWidget {

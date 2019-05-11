@@ -1,4 +1,3 @@
-import 'package:bible_bloc/InheritedBlocs.dart';
 import 'package:bible_bloc/Models/Chapter.dart';
 import 'package:bible_bloc/Models/ChapterElements/IChapterElement.dart';
 import 'package:bible_bloc/Models/ChapterElements/Verse.dart';

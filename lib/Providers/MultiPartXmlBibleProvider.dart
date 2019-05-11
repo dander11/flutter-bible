@@ -24,7 +24,7 @@ class MultiPartXmlBibleProvider extends IBibleProvider {
   List<Book> _books;
 
   MultiPartXmlBibleProvider() {
-    _cfg = new GlobalConfiguration();
+    _cfg = GlobalConfiguration();
   }
 
   @override
@@ -37,7 +37,7 @@ class MultiPartXmlBibleProvider extends IBibleProvider {
   @override
   Future<List<Book>> getAllBooks() async {
     var xmlBooks = _booksDirectory.findAllElements("book");
-    _books = new List<Book>();
+    _books = List<Book>();
     for (var item in xmlBooks) {
       var book = _convertBookFromXml(item);
       _books.add(book);
@@ -46,7 +46,7 @@ class MultiPartXmlBibleProvider extends IBibleProvider {
   }
 
   Book _convertBookFromXml(xml.XmlElement item) {
-    var book = new Book(
+    var book = Book(
       name: item.getAttribute("title"),
       chapters: _getChapters(item),
     );
@@ -56,9 +56,9 @@ class MultiPartXmlBibleProvider extends IBibleProvider {
 
   List<Chapter> _getChapters(xml.XmlElement xmlBook) {
     var xmlChapters = xmlBook.findAllElements("chapter");
-    List<Chapter> chapters = new List<Chapter>();
+    List<Chapter> chapters = List<Chapter>();
     for (var item in xmlChapters) {
-      var chapter = new Chapter(number: int.parse(item.getAttribute("number")));
+      var chapter = Chapter(number: int.parse(item.getAttribute("number")));
       chapters.add(chapter);
     }
 
@@ -84,7 +84,7 @@ class MultiPartXmlBibleProvider extends IBibleProvider {
   Chapter _convertChapterFromXml(xml.XmlElement item) {
     var chapterElement = item.findElements("chapter").first;
     var chapter =
-        new Chapter(number: int.parse(chapterElement.getAttribute("num")));
+        Chapter(number: int.parse(chapterElement.getAttribute("num")));
     List<IChapterElement> elements = _getChatperElements(item);
     //elements.removeWhere((e) => e is EmptyElement);
 

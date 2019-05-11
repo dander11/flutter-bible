@@ -7,7 +7,7 @@ import 'package:queries/collections.dart';
 import 'package:rxdart/rxdart.dart';
 
 class NotesBloc {
-  INotesProvider _notesProvider = new NotesProvider();
+  INotesProvider _notesProvider = NotesProvider();
 
   Sink<Note> get addUpdateNote => _addNoteController.sink;
   final _addNoteController = StreamController<Note>();

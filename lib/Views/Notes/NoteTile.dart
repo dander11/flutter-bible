@@ -18,7 +18,7 @@ class NoteTile extends StatefulWidget {
 class _NoteTileState extends State<NoteTile> {
   var _selected = false;
   final _slideKey = GlobalKey();
-  final SlidableController slidableController = new SlidableController();
+  final SlidableController slidableController = SlidableController();
 
   @override
   Widget build(BuildContext context) {
@@ -26,26 +26,26 @@ class _NoteTileState extends State<NoteTile> {
     return Slidable.builder(
       key: _slideKey,
       controller: slidableController,
-      delegate: new SlidableDrawerDelegate(),
+      delegate: SlidableDrawerDelegate(),
       actionExtentRatio: 0.25,
-      slideToDismissDelegate: new SlideToDismissDrawerDelegate(
+      slideToDismissDelegate: SlideToDismissDrawerDelegate(
         onWillDismiss: (actionType) {
           return showDialog<bool>(
             context: context,
             builder: (context) {
-              return new AlertDialog(
-                title: new Text('Delete'),
-                content: new Text('Item will be deleted'),
+              return AlertDialog(
+                title: Text('Delete'),
+                content: Text('Item will be deleted'),
                 actions: <Widget>[
-                  new FlatButton(
-                    child: new Text('Cancel'),
+                  FlatButton(
+                    child: Text('Cancel'),
                     onPressed: () {
                       Navigator.of(context).pop(false);
                       //Slidable.of(context).close();
                     },
                   ),
-                  new FlatButton(
-                    child: new Text('Ok'),
+                  FlatButton(
+                    child: Text('Ok'),
                     onPressed: () {
                       Navigator.of(context).pop(true);
                     },

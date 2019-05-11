@@ -14,7 +14,7 @@ class Verse extends IChapterElement {
   List<Text> toTextWidget(BuildContext context) {
     List<Text> span = [
       Text(''' ${this.number} ${this.text}''',
-          style: new TextStyle(fontWeight: FontWeight.bold)),
+          style: TextStyle(fontWeight: FontWeight.bold)),
     ];
     for (var verseElement in this.elements) {
       span.addAll(verseElement.toTextWidget(context));
@@ -27,7 +27,7 @@ class Verse extends IChapterElement {
     TextSpan span = TextSpan(children: [
       TextSpan(
         text: ''' ${this.number}.''',
-        style: new TextStyle(
+        style: TextStyle(
           fontWeight: FontWeight.w400,
         ),
       ),

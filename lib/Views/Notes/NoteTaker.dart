@@ -25,8 +25,8 @@ class NotePageState extends State<NotePage> {
   @override
   void initState() {
     super.initState();
-    _controller = new ZefyrController(note.doc);
-    _focusNode = new FocusNode();
+    _controller = ZefyrController(note.doc);
+    _focusNode = FocusNode();
     originalDelta = _controller.document.toDelta();
     _controller.addListener(
       () {
@@ -37,14 +37,14 @@ class NotePageState extends State<NotePage> {
           note.lastUpdated = DateTime.now();
           var json = delta.toJson();
           String text = jsonEncode(json);
-          //var rule = new ResolveInlineFormatRule();
+          //var rule =  ResolveInlineFormatRule();
           if (getVerseIndex(text) > -1) {
             /* int index = getVerseIndex(text);
             var preVerse = text.replaceAll("John 2:1-3",
                 " \"}, {\"insert\":\"John 2:1-3\",\"attributes\": {\"a\":\"https://bible.com\"}}, {\"insert\":\"");
             var post = jsonDecode(preVerse);
             var doc = NotusDocument.fromJson(post);
-            var newDelta = Delta.fromJson(post); */
+            var Delta = Delta.fromJson(post); */
             var change = _controller.document.format(
                 getVerseIndex(text),
                 getVerseLength(text),
@@ -62,7 +62,7 @@ class NotePageState extends State<NotePage> {
 
   @override
   Widget build(BuildContext context) {
-    final theme = new ZefyrThemeData(
+    final theme = ZefyrThemeData(
       //textColor: Colors.white70,
       cursorColor: Colors.blue,
       toolbarTheme: ZefyrToolbarTheme.fallback(context).copyWith(

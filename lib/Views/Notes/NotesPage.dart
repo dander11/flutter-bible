@@ -21,7 +21,7 @@ class NotesPage extends StatelessWidget {
           color: Colors.white,
         ),
       ),
-      bottomNavigationBar: new BibleBottomNavigationBar(context: context),
+      bottomNavigationBar: BibleBottomNavigationBar(context: context),
     );
   }
 

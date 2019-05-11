@@ -51,7 +51,7 @@ class NotesProvider extends INotesProvider {
   Future saveNotes(List<Note> notes) async {
     final directory = await getApplicationDocumentsDirectory();
     for (var note in notes) {
-      var formatter = new DateFormat('yyyy-MM-dd');
+      var formatter = DateFormat('yyyy-MM-dd');
       String formatted = formatter.format(note.lastUpdated);
       var file = File(
           '${directory.path}/notes/${note.id}_${note.title}_$formatted.txt');

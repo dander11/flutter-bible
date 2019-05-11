@@ -9,7 +9,7 @@ class EndParagraph extends IChapterElement {
     return [
       Text(
         '''\n\r''',
-        style: new TextStyle(fontWeight: FontWeight.normal),
+        style: TextStyle(fontWeight: FontWeight.normal),
       ),
     ];
   }
@@ -20,7 +20,7 @@ class EndParagraph extends IChapterElement {
       children: [
         TextSpan(
           text: '''\n\r''',
-          style: new TextStyle(fontWeight: FontWeight.normal),
+          style: TextStyle(fontWeight: FontWeight.normal),
         ),
       ],
     );

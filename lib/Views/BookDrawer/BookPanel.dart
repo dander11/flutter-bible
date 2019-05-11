@@ -10,9 +10,9 @@ class BookPanel extends StatelessWidget {
   Widget build(BuildContext context) {
     return ExpansionTile(
       key: PageStorageKey(book.name),
-      title: new Padding(
+      title: Padding(
         padding: const EdgeInsets.all(10.0),
-        child: new Text(
+        child: Text(
           book.name,
           textAlign: TextAlign.left,
           style: Theme.of(context).textTheme.display1,
