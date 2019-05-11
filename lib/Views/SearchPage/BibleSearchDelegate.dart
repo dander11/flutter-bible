@@ -63,20 +63,21 @@ class BibleSearchDelegate extends SearchDelegate<Chapter> {
       );
     }
     InheritedBlocs.of(context)
-        .bibleBloc
+        .searchBloc
         .searchTerm
         .add(SearchQuery(queryText: query, book: ""));
 
     InheritedBlocs.of(context)
-        .bibleBloc
+        .searchBloc
         .suggestionSearchTerm
         .add(SearchQuery(queryText: query, book: ""));
 
     return Column(
       children: <Widget>[
         StreamBuilder<UnmodifiableListView<Verse>>(
-          stream:
-              InheritedBlocs.of(context).bibleBloc.suggestionSearchearchResults,
+          stream: InheritedBlocs.of(context)
+              .searchBloc
+              .suggestionSearchearchResults,
           initialData: UnmodifiableListView([]),
           builder: (BuildContext context,
               AsyncSnapshot<UnmodifiableListView<Verse>> snapshot) {
@@ -93,7 +94,7 @@ class BibleSearchDelegate extends SearchDelegate<Chapter> {
           },
         ),
         StreamBuilder<UnmodifiableListView<Verse>>(
-          stream: InheritedBlocs.of(context).bibleBloc.searchResults,
+          stream: InheritedBlocs.of(context).searchBloc.searchResults,
           builder: (BuildContext context,
               AsyncSnapshot<UnmodifiableListView<Verse>> snapshot) {
             if (!snapshot.hasData || snapshot.data.length == 0) {
@@ -125,7 +126,7 @@ class BibleSearchDelegate extends SearchDelegate<Chapter> {
         ),
         Divider(),
         StreamBuilder(
-          stream: InheritedBlocs.of(context).bibleBloc.searchResults,
+          stream: InheritedBlocs.of(context).searchBloc.searchResults,
           builder:
               (context, AsyncSnapshot<UnmodifiableListView<Verse>> snapshot) {
             if (!snapshot.hasData) {

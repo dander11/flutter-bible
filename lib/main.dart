@@ -1,5 +1,6 @@
 import 'package:bible_bloc/Blocs/navigation_bloc.dart';
 import 'package:bible_bloc/Blocs/notes_bloc.dart';
+import 'package:bible_bloc/Blocs/search_bloc.dart';
 import 'package:bible_bloc/Blocs/settings_bloc.dart';
 import 'package:bible_bloc/Blocs/bible_bloc.dart';
 import 'package:bible_bloc/Designs/DarkDesign.dart';
@@ -13,7 +14,7 @@ import 'package:global_configuration/global_configuration.dart';
 
 void main() async {
   await GlobalConfiguration().loadFromAsset("app_settings");
-  final bibleBloc = BibleBloc(MultiPartXmlBibleProvider(), XmlBibleProvider());
+  final bibleBloc = BibleBloc(MultiPartXmlBibleProvider());
   runApp(MyApp(
     bibleBloc: bibleBloc,
     settingsBloc: SettingsBloc(),
@@ -34,6 +35,7 @@ class MyApp extends StatelessWidget {
       settingsBloc: settingsBloc,
       notesBloc: NotesBloc(),
       navigationBloc: NavigationBloc(),
+      searchBloc: SearchBloc(XmlBibleProvider()),
       child: MaterialApp(
         title: 'Flutter Demo',
         theme: Designs.darkTheme,

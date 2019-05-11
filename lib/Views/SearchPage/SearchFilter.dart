@@ -53,7 +53,7 @@ class SearchFilter extends StatelessWidget {
       isExpanded: true,
       onChanged: (value) {
         InheritedBlocs.of(context)
-            .bibleBloc
+            .searchBloc
             .searchTerm
             .add(SearchQuery(queryText: query, book: value));
       },

@@ -54,7 +54,6 @@ class _ReaderPageState extends State<ReaderPage> {
                                 previousChapter: prevChapter.data,
                                 chapterReference: chapterReference.data,
                                 controller: controller,
-                                //scrollToVerseMethod: _scrollToVerse,
                               ),
                             ),
                           ],

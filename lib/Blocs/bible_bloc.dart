@@ -2,11 +2,7 @@ import 'dart:async';
 
 import 'package:bible_bloc/Models/Book.dart';
 import 'package:bible_bloc/Models/Chapter.dart';
-import 'package:bible_bloc/Models/ChapterElements/IChapterElement.dart';
-import 'package:bible_bloc/Models/ChapterElements/Verse.dart';
 import 'package:bible_bloc/Models/ChapterReference.dart';
-
-import 'package:bible_bloc/Models/SearchQuery.dart';
 
 import 'package:bible_bloc/Providers/IBibleProvider.dart';
 import 'package:bible_bloc/Providers/ISearchProvider.dart';
@@ -17,18 +13,12 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 class BibleBloc {
   IBibleProvider _importer;
-  ISearchProvider _searchProvider;
   List<Book> _books;
 
   final String membershipKey = 'david.anderson.bibleapp';
 
   Stream<UnmodifiableListView<Book>> get books => _booksSubject.stream;
   final _booksSubject = BehaviorSubject<UnmodifiableListView<Book>>();
-
-  Stream<UnmodifiableListView<IChapterElement>> get chapterElements =>
-      _chapterElementsSubject.stream;
-  final _chapterElementsSubject =
-      BehaviorSubject<UnmodifiableListView<IChapterElement>>();
 
   Sink<ChapterReference> get currentChapterReference =>
       _currentChapterController.sink;
@@ -53,52 +43,19 @@ class BibleBloc {
   Stream<Chapter> get previousChapter => _previousChapter.stream;
   final _previousChapter = BehaviorSubject<Chapter>();
 
-  Sink<SearchQuery> get searchTerm => _searchTermController.sink;
-  final _searchTermController = StreamController<SearchQuery>();
-
-  Stream<UnmodifiableListView<Verse>> get searchResults =>
-      _searchResultsSubject.stream;
-  final _searchResultsSubject = BehaviorSubject<UnmodifiableListView<Verse>>();
-
-  Sink<SearchQuery> get suggestionSearchTerm =>
-      _suggestionSearchTermController.sink;
-  final _suggestionSearchTermController = StreamController<SearchQuery>();
-
-  Stream<UnmodifiableListView<Verse>> get suggestionSearchearchResults =>
-      _suggestionSearchResultsSubject.stream;
-  final _suggestionSearchResultsSubject =
-      BehaviorSubject<UnmodifiableListView<Verse>>();
-
-  BibleBloc(IBibleProvider bibleProvider, ISearchProvider searchProvider) {
+  BibleBloc(IBibleProvider bibleProvider) {
     _importer = bibleProvider;
     _getBooks().then((n) => _initCurrentBook());
-
-    _searchProvider = searchProvider;
-    _searchProvider.init();
 
     _currentChapterController.stream.listen((currentChapter) async {
       _goToChapter(currentChapter);
     });
 
-    /* _chapterHistory.stream.listen((_) {
-      _chapterHistory.toList().then((history) {
-        _saveHistoryToFile(history);
-      });
-    }); */
-
     _currentPopupChapterController.stream.listen((popupReference) async {
       _updatePopupChapter(popupReference);
     });
-
-    _searchTermController.stream.listen((search) {
-      _updateSearchResults(search);
-    });
-
-    _suggestionSearchTermController.stream.listen((search) {
-      _updateSearchSuggestions(search);
-    });
   }
-
+/* 
   void _updateSearchSuggestions(SearchQuery search) {
     if (search.queryText.length > 2) {
       var booksToSearch = search.book.isNotEmpty
@@ -133,12 +90,11 @@ class BibleBloc {
         _searchResultsSubject.add(UnmodifiableListView(results));
       });
     }
-  }
+  } */
 
   Future _goToChapter(ChapterReference currentChapter) async {
     var chapter = await _importer.getChapter(
         currentChapter.chapter.book.name, currentChapter.chapter.number);
-    _chapterElementsSubject.add(UnmodifiableListView(chapter.elements));
     currentChapter.chapter.elements = chapter.elements;
     await _updatePreviousChapter(currentChapter.chapter);
 
@@ -200,8 +156,6 @@ class BibleBloc {
 
   dispose() {
     _currentChapterController.close();
-    _searchTermController.close();
-    _suggestionSearchTermController.close();
     _previousChapter.close();
     _nextChapter.close();
     _currentPopupChapterController.close();
@@ -235,14 +189,16 @@ class BibleBloc {
   }
 
   Future _updatePopupChapter(ChapterReference popupReference) async {
-    if (popupReference != null) {
+    if (popupReference == null) {
+      _popupChapter.add(popupReference);
+    } else {
       var chapter = await _importer.getChapter(
           popupReference.chapter.book.name, popupReference.chapter.number);
-      _chapterElementsSubject.add(UnmodifiableListView(chapter.elements));
-      popupReference.chapter.elements = chapter.elements;
+      _popupChapter.add(ChapterReference(
+        chapter: chapter,
+        verseNumber: popupReference.verseNumber,
+      ));
     }
-
-    _popupChapter.add(popupReference);
   }
 
   void _saveHistoryToFile(List<ChapterReference> history) {}

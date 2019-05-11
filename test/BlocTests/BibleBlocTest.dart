@@ -145,7 +145,7 @@ void main() {
         SharedPreferences.setMockInitialValues({});
         final prefs = await SharedPreferences.getInstance();
         await prefs.setString('david.anderson.bibleapp', null);
-        bloc = BibleBloc(bibleProvider, searchProvider);
+        bloc = BibleBloc(bibleProvider);
       });
       tearDown(() {
         bloc.dispose();

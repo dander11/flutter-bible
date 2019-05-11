@@ -1,6 +1,7 @@
 import 'package:bible_bloc/Blocs/bible_bloc.dart';
 import 'package:bible_bloc/Blocs/navigation_bloc.dart';
 import 'package:bible_bloc/Blocs/notes_bloc.dart';
+import 'package:bible_bloc/Blocs/search_bloc.dart';
 import 'package:bible_bloc/Blocs/settings_bloc.dart';
 import 'package:bible_bloc/Models/ChapterReference.dart';
 import 'package:bible_bloc/Views/LoadingColumn.dart';
@@ -11,6 +12,7 @@ import 'package:flutter/material.dart';
 class InheritedBlocs extends InheritedWidget {
   InheritedBlocs(
       {Key key,
+      this.searchBloc,
       this.bibleBloc,
       this.settingsBloc,
       this.notesBloc,
@@ -23,6 +25,7 @@ class InheritedBlocs extends InheritedWidget {
   final SettingsBloc settingsBloc;
   final NotesBloc notesBloc;
   final NavigationBloc navigationBloc;
+  final SearchBloc searchBloc;
 
   static InheritedBlocs of(BuildContext context) {
     return (context.inheritFromWidgetOfExactType(InheritedBlocs)

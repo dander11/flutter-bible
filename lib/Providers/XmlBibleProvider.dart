@@ -90,8 +90,11 @@ class XmlBibleProvider extends IBibleProvider implements ISearchProvider {
 
   Future<List<Verse>> getSearchResults(
       String searchTerm, List<String> booksToSearch) async {
-    var books = this._searchableBooks.where((b) => booksToSearch
-        .any((book) => book.toLowerCase() == b.name.toLowerCase()));
+    var books = booksToSearch.isNotEmpty
+        ? this._searchableBooks.where((b) => booksToSearch
+            .any((book) => book.toLowerCase() == b.name.toLowerCase()))
+        : this._searchableBooks;
+
     var chapters = books.expand((book) => book.chapters);
 
     var verses = chapters.expand((c) => c.elements.whereType<Verse>());
