@@ -67,9 +67,9 @@ class _VerseTextState extends State<VerseText>
     );
   }
 
-  List<TextSpan> _flattenTextSpans(List<TextSpan> iterable) {
+  List<InlineSpan> _flattenTextSpans(List<InlineSpan> iterable) {
     return iterable
-        .expand((TextSpan e) => e.children != null && e.children.length > 0
+        .expand((InlineSpan e) => e.children != null && e.children.length > 0
             ? _flattenTextSpans(e.children)
             : [e])
         .toList();
