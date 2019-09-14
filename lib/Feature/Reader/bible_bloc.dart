@@ -31,8 +31,9 @@ class BibleBloc {
   Stream<ChapterReference> get popupChapterReference => _popupChapter.stream;
   final _popupChapter = BehaviorSubject<ChapterReference>();
 
-  Observable<ChapterReference> get chapterHistory => _chapterHistory.stream;
-  final _chapterHistory = BehaviorSubject<ChapterReference>();
+  Observable<List<ChapterReference>> get chapterHistory =>
+      _chapterHistory.stream;
+  final _chapterHistory = BehaviorSubject<List<ChapterReference>>();
 
   Stream<Chapter> get nextChapter => _nextChapter.stream;
   final _nextChapter = BehaviorSubject<Chapter>();
@@ -99,10 +100,10 @@ class BibleBloc {
 
     _currentChapter.add(currentChapter);
 
-    _chapterHistory.add(currentChapter);
-    chapterHistory.toList().then((history) {
-      print(history.length);
-    });
+    var updatedHistory = _chapterHistory.value ?? List<ChapterReference>();
+    updatedHistory.add(currentChapter);
+    _chapterHistory.add(updatedHistory);
+
     _saveCurrentBookAndChapter();
   }
 

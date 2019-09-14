@@ -11,7 +11,10 @@ import 'package:bible_bloc/Project/Pages/ReaderPage.dart';
 import 'package:flutter/material.dart';
 import 'package:global_configuration/global_configuration.dart';
 
+import 'Project/Pages/HistoryPage.dart';
+
 void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
   await GlobalConfiguration().loadFromAsset("app_settings");
   final bibleBloc = BibleBloc(MultiPartXmlBibleProvider());
   runApp(MyApp(
@@ -58,8 +61,8 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return StreamBuilder<AppPage>(
       stream: InheritedBlocs.of(context).navigationBloc.currentPage,
-      builder: (context, snapshot) {
-        switch (snapshot.data) {
+      builder: (context, currentPageSnapshot) {
+        switch (currentPageSnapshot.data) {
           case AppPage.readerPage:
             return ReaderPage();
             break;
@@ -69,7 +72,7 @@ class _MyHomePageState extends State<MyHomePage> {
             break;
 
           case AppPage.historyPage:
-            return ReaderPage();
+            return HistoryPage();
             break;
           default:
             return ReaderPage();

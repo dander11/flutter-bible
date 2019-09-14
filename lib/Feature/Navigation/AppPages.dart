@@ -1,6 +1,6 @@
 enum AppPage {
   readerPage,
   notesPage,
-  searchPage,
   historyPage,
+  searchPage,
 }

@@ -1,4 +1,3 @@
-
 import 'package:bible_bloc/Feature/InheritedBlocs.dart';
 import 'package:bible_bloc/Feature/Reader/reader_feature.dart';
 import 'package:bible_bloc/Feature/Search/search_feature.dart';
@@ -29,55 +28,47 @@ class BibleBottomNavigationBar extends StatelessWidget {
               fixedColor: Colors.white,
               currentIndex: snapshot.data.index,
               onTap: (index) {
-                switch (index) {
-                  case 0:
-                    if (lastPage == index) {
-                      showModalBottomSheet<void>(
-                          context: context,
-                          builder: (BuildContext context) {
-                            return Container(child: BooksList());
-                          });
-                    } else {
-                      if (Navigator.of(context).canPop()) {
-                        Navigator.of(context).pop();
-                      }
-                      InheritedBlocs.of(context)
-                          .navigationBloc
-                          .nextPage
-                          .add(AppPage.readerPage);
-                    }
-
-                    break;
-                  case 1:
+                if (index == AppPage.readerPage.index) {
+                  if (lastPage == index) {
+                    showModalBottomSheet<void>(
+                        context: context,
+                        builder: (BuildContext context) {
+                          return Container(child: BooksList());
+                        });
+                  } else {
                     if (Navigator.of(context).canPop()) {
                       Navigator.of(context).pop();
                     }
                     InheritedBlocs.of(context)
                         .navigationBloc
                         .nextPage
-                        .add(AppPage.notesPage);
-                    break;
-                  case 2:
-                    if (lastPage == index) {
-                    } else {
-                      InheritedBlocs.of(context)
-                          .navigationBloc
-                          .nextPage
-                          .add(AppPage.searchPage);
-                      showSearch(
-                        context: context,
-                        delegate: BibleSearchDelegate(),
-                      );
-                    }
-
-                    break;
-                  case 3:
+                        .add(AppPage.readerPage);
+                  }
+                } else if (index == AppPage.notesPage.index) {
+                  if (Navigator.of(context).canPop()) {
+                    Navigator.of(context).pop();
+                  }
+                  InheritedBlocs.of(context)
+                      .navigationBloc
+                      .nextPage
+                      .add(AppPage.notesPage);
+                } else if (index == AppPage.searchPage.index) {
+                  if (lastPage == index) {
+                  } else {
                     InheritedBlocs.of(context)
                         .navigationBloc
                         .nextPage
-                        .add(AppPage.historyPage);
-                    break;
-                  default:
+                        .add(AppPage.searchPage);
+                    showSearch(
+                      context: context,
+                      delegate: BibleSearchDelegate(),
+                    );
+                  }
+                } else if (index == AppPage.historyPage.index) {
+                  InheritedBlocs.of(context)
+                      .navigationBloc
+                      .nextPage
+                      .add(AppPage.historyPage);
                 }
               },
               items: [
@@ -92,11 +83,11 @@ class BibleBottomNavigationBar extends StatelessWidget {
                 /* BottomNavigationBarItem(
                   title: Text("Search"),
                   icon: Icon(Icons.search),
-                ),
-                 BottomNavigationBarItem(
+                ),*/
+                BottomNavigationBarItem(
                   title: Text("History"),
                   icon: Icon(Icons.history),
-                ), */
+                ),
               ],
             ),
           );

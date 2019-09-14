@@ -14,6 +14,8 @@ class Designs {
   static ThemeData getDarkTheme() {
     ThemeData darkTheme = ThemeData.dark();
     return darkTheme.copyWith(
+      textSelectionColor: Colors.blueAccent.shade200,
+      textSelectionHandleColor: Colors.white,
       textTheme: darkTheme.textTheme.copyWith(
         body2: darkTheme.textTheme.body2.copyWith(
           color: Colors.white70,

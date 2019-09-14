@@ -51,7 +51,6 @@ class DismissableChapterViewer extends StatelessWidget {
           InheritedBlocs.of(context)
               .bibleBloc
               .goToPreviousChapter(this.chapter);
-          print(this.chapter);
         }
       },
       child: VerseText(
