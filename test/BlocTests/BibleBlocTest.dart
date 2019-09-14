@@ -1,12 +1,6 @@
 import 'dart:async';
-
-import 'package:bible_bloc/Blocs/bible_bloc.dart';
-import 'package:bible_bloc/Models/Book.dart';
-import 'package:bible_bloc/Models/Chapter.dart';
-import 'package:bible_bloc/Models/ChapterElements/Text.dart';
-import 'package:bible_bloc/Models/ChapterReference.dart';
-import 'package:bible_bloc/Providers/IBibleProvider.dart';
-import 'package:bible_bloc/Providers/ISearchProvider.dart';
+import 'package:bible_bloc/Feature/Reader/reader_feature.dart';
+import 'package:bible_bloc/Foundation/foundation.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
 import 'package:shared_preferences/shared_preferences.dart';
