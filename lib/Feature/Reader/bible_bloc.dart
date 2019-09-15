@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'dart:convert';
 import 'package:bible_bloc/Foundation/Models/Book.dart';
 import 'package:bible_bloc/Foundation/Models/Chapter.dart';
 import 'package:bible_bloc/Foundation/Models/ChapterReference.dart';
@@ -44,7 +45,7 @@ class BibleBloc {
   BibleBloc(IBibleProvider bibleProvider) {
     _importer = bibleProvider;
     _getBooks().then((n) => _initCurrentBook());
-
+    _initHistoryList();
     _currentChapterController.stream.listen((currentChapter) async {
       _goToChapter(currentChapter);
     });
@@ -103,7 +104,7 @@ class BibleBloc {
     var updatedHistory = _chapterHistory.value ?? List<ChapterReference>();
     updatedHistory.add(currentChapter);
     _chapterHistory.add(updatedHistory);
-
+    _saveHistoryToFile();
     _saveCurrentBookAndChapter();
   }
 
@@ -153,6 +154,8 @@ class BibleBloc {
   }
 
   dispose() {
+    _saveHistoryToFile();
+    _saveCurrentBookAndChapter();
     _currentChapterController.close();
     _previousChapter.close();
     _nextChapter.close();
@@ -199,7 +202,21 @@ class BibleBloc {
     }
   }
 
-  void _saveHistoryToFile(List<ChapterReference> history) {}
+  void _initHistoryList() async {
+    SharedPreferences sp = await SharedPreferences.getInstance();
+    var historyJson = sp.getString((membershipKey + "-history"));
+    if (historyJson != null) {
+      var history = jsonDecode(historyJson) as List<ChapterReference>;
+      _chapterHistory.add(history);
+    }
+  }
+
+  Future _saveHistoryToFile() async {
+    var history = _chapterHistory.value;
+    SharedPreferences sp = await SharedPreferences.getInstance();
+    var historyJson = jsonEncode(history.map((e) => e.toJson()).toList());
+    sp.setString((membershipKey + "-history"), historyJson);
+  }
 
   Future goToNextChapter(Chapter currentChapter) async {
     var nextChapter = await _getNextChapter(currentChapter);
@@ -209,5 +226,9 @@ class BibleBloc {
   Future goToPreviousChapter(Chapter currentChapter) async {
     var previousChapter = await _getPreviousChapter(currentChapter);
     _goToChapter(ChapterReference(chapter: previousChapter));
+  }
+
+  clearHistory() {
+    _chapterHistory.add(List<ChapterReference>());
   }
 }

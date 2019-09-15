@@ -59,13 +59,13 @@ class NotesProvider extends INotesProvider {
       var existingPath = await _getFilePathWithId(note.id);
       if (existingPath.isEmpty) {
         file = await file.create(recursive: true);
-       // file.writeAsString(jsonEncode(note.doc.toJson()));
+        // file.writeAsString(jsonEncode(note.doc.toJson()));
       } else if (!existingPath.contains(note.title) ||
           !existingPath.contains(formatted)) {
         File existingFile = File(existingPath);
         existingFile.deleteSync();
       } else {
-       // file.writeAsString(jsonEncode(note.doc.toJson()));
+        // file.writeAsString(jsonEncode(note.doc.toJson()));
       }
     }
   }
