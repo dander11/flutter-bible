@@ -76,11 +76,11 @@ class BibleBottomNavigationBar extends StatelessWidget {
                   title: Text("Bible"),
                   icon: Icon(Icons.library_books),
                 ),
-                BottomNavigationBarItem(
+                /*BottomNavigationBarItem(
                   title: Text("Notes"),
                   icon: Icon(MdiIcons.notebook),
                 ),
-                /* BottomNavigationBarItem(
+                 BottomNavigationBarItem(
                   title: Text("Search"),
                   icon: Icon(Icons.search),
                 ),*/
