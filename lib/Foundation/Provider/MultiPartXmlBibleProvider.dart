@@ -228,7 +228,7 @@ class MultiPartXmlBibleProvider extends IBibleProvider {
   String _getChapterPath(String bookName, int chapterNumber) {
     var chapters = _booksDirectory.findAllElements("chapter");
     xml.XmlElement chapterResourceName;
-    if (bookName.contains(RegExp("[0-2]"))) {
+    if (bookName.contains(RegExp("[0-3]"))) {
       var number = bookName.split(" ")[0];
       var name = bookName.split(" ")[1];
       chapterResourceName = chapters.firstWhere((b) =>
