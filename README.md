@@ -1,4 +1,4 @@
-# bible_bloc
+# Bible
 
 A new Flutter project.
 

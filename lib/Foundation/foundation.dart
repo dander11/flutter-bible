@@ -1,0 +1,25 @@
+library foundation;
+
+export './Models/ChapterElements/DivineName.dart';
+export './Models/ChapterElements/BeginParagraph.dart';
+export './Models/ChapterElements/EmptyElement.dart';
+export './Models/ChapterElements/EndParagraph.dart';
+export './Models/ChapterElements/Heading.dart';
+export './Models/ChapterElements/IChapterElement.dart';
+export './Models/ChapterElements/Subheading.dart';
+export './Models/ChapterElements/Text.dart';
+export './Models/ChapterElements/Verse.dart';
+export './Models/ChapterElements/WordsOfChrist.dart';
+export './Models/Book.dart';
+export './Models/Chapter.dart';
+export './Models/ChapterReference.dart';
+export './Models/Note.dart';
+export './Models/SearchQuery.dart';
+export './Provider/IBibleProvider.dart';
+export './Provider/INotesProvider.dart';
+export './Provider/MultiPartXmlBibleProvider.dart';
+export './Provider/NotesProvider.dart';
+export './Provider/TestNotesProvider.dart';
+export './Search/ISearchProvider.dart';
+export './Search/XmlBibleProvider.dart';
+export './Views/LoadingColumn.dart';

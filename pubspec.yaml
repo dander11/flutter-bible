@@ -14,19 +14,15 @@ environment:
 
 dependencies:
   path_provider: ^0.4.1
-  sqflite: ^0.13.0+1
   queries: ^0.1.4
   xml: "^3.0.0"
-  rxdart: ^0.19.0
+  rxdart: ^0.22.0
   global_configuration: ^0.1.4
-  shared_preferences: ^0.4.2
+  shared_preferences: ^0.4.2 
   flutter_slidable: ^0.4.9
+  after_layout: ^1.0.7
   intl: any  
-  zefyr: 
-    git:
-      url: https://github.com/memspace/zefyr.git
-      path: packages/zefyr
-      ref: flutter-master
+  #zefyr: ^0.5.0
   material_design_icons_flutter: ^3.2.3595 
   flutter:
     sdk: flutter
@@ -38,11 +34,13 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  faker: ^1.0.0
+  faker: ^1.0.0  
+  flutter_launcher_icons: "^0.7.0"
+  mockito: "^4.0.0"
   
 flutter_icons:
   android: true 
-  image_path: "resources/icon/icon.png"
+  image_path: "resources/icon/launch_icon.png"
 
 # For information on the generic Dart part of this file, see the
 # following page: https://www.dartlang.org/tools/pub/pubspec
@@ -51,7 +49,7 @@ flutter_icons:
 flutter:
   assets:
     - assets/cfg/
-    - resources/BibleDb.db
+    #- resources/BibleDb.db
     - resources/esv.xml
     - resources/xml/
 
