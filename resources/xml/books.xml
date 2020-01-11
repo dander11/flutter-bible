@@ -1,2513 +1,2513 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <books>
 	<book title="Genesis" number="1">
-		<chapter number="1" resourceName="genesis_1">
+		<chapter number="1" resourceName="genesis_1" referenceName="genesis_1">
 		</chapter>
-		<chapter number="2" resourceName="genesis_2">
+		<chapter number="2" resourceName="genesis_2" referenceName="genesis_2">
 		</chapter>
-		<chapter number="3" resourceName="genesis_3">
+		<chapter number="3" resourceName="genesis_3" referenceName="genesis_3">
 		</chapter>
-		<chapter number="4" resourceName="genesis_4">
+		<chapter number="4" resourceName="genesis_4" referenceName="genesis_4">
 		</chapter>
-		<chapter number="5" resourceName="genesis_5">
+		<chapter number="5" resourceName="genesis_5" referenceName="genesis_5">
 		</chapter>
-		<chapter number="6" resourceName="genesis_6">
+		<chapter number="6" resourceName="genesis_6" referenceName="genesis_6">
 		</chapter>
-		<chapter number="7" resourceName="genesis_7">
+		<chapter number="7" resourceName="genesis_7" referenceName="genesis_7">
 		</chapter>
-		<chapter number="8" resourceName="genesis_8">
+		<chapter number="8" resourceName="genesis_8" referenceName="genesis_8">
 		</chapter>
-		<chapter number="9" resourceName="genesis_9">
+		<chapter number="9" resourceName="genesis_9" referenceName="genesis_9">
 		</chapter>
-		<chapter number="10" resourceName="genesis_10">
+		<chapter number="10" resourceName="genesis_10" referenceName="genesis_10">
 		</chapter>
-		<chapter number="11" resourceName="genesis_11">
+		<chapter number="11" resourceName="genesis_11" referenceName="genesis_11">
 		</chapter>
-		<chapter number="12" resourceName="genesis_12">
+		<chapter number="12" resourceName="genesis_12" referenceName="genesis_12">
 		</chapter>
-		<chapter number="13" resourceName="genesis_13">
+		<chapter number="13" resourceName="genesis_13" referenceName="genesis_13">
 		</chapter>
-		<chapter number="14" resourceName="genesis_14">
+		<chapter number="14" resourceName="genesis_14" referenceName="genesis_14">
 		</chapter>
-		<chapter number="15" resourceName="genesis_15">
+		<chapter number="15" resourceName="genesis_15" referenceName="genesis_15">
 		</chapter>
-		<chapter number="16" resourceName="genesis_16">
+		<chapter number="16" resourceName="genesis_16" referenceName="genesis_16">
 		</chapter>
-		<chapter number="17" resourceName="genesis_17">
+		<chapter number="17" resourceName="genesis_17" referenceName="genesis_17">
 		</chapter>
-		<chapter number="18" resourceName="genesis_18">
+		<chapter number="18" resourceName="genesis_18" referenceName="genesis_18">
 		</chapter>
-		<chapter number="19" resourceName="genesis_19">
+		<chapter number="19" resourceName="genesis_19" referenceName="genesis_19">
 		</chapter>
-		<chapter number="20" resourceName="genesis_20">
+		<chapter number="20" resourceName="genesis_20" referenceName="genesis_20">
 		</chapter>
-		<chapter number="21" resourceName="genesis_21">
+		<chapter number="21" resourceName="genesis_21" referenceName="genesis_21">
 		</chapter>
-		<chapter number="22" resourceName="genesis_22">
+		<chapter number="22" resourceName="genesis_22" referenceName="genesis_22">
 		</chapter>
-		<chapter number="23" resourceName="genesis_23">
+		<chapter number="23" resourceName="genesis_23" referenceName="genesis_23">
 		</chapter>
-		<chapter number="24" resourceName="genesis_24">
+		<chapter number="24" resourceName="genesis_24" referenceName="genesis_24">
 		</chapter>
-		<chapter number="25" resourceName="genesis_25">
+		<chapter number="25" resourceName="genesis_25" referenceName="genesis_25">
 		</chapter>
-		<chapter number="26" resourceName="genesis_26">
+		<chapter number="26" resourceName="genesis_26" referenceName="genesis_26">
 		</chapter>
-		<chapter number="27" resourceName="genesis_27">
+		<chapter number="27" resourceName="genesis_27" referenceName="genesis_27">
 		</chapter>
-		<chapter number="28" resourceName="genesis_28">
+		<chapter number="28" resourceName="genesis_28" referenceName="genesis_28">
 		</chapter>
-		<chapter number="29" resourceName="genesis_29">
+		<chapter number="29" resourceName="genesis_29" referenceName="genesis_29">
 		</chapter>
-		<chapter number="30" resourceName="genesis_30">
+		<chapter number="30" resourceName="genesis_30" referenceName="genesis_30">
 		</chapter>
-		<chapter number="31" resourceName="genesis_31">
+		<chapter number="31" resourceName="genesis_31" referenceName="genesis_31">
 		</chapter>
-		<chapter number="32" resourceName="genesis_32">
+		<chapter number="32" resourceName="genesis_32" referenceName="genesis_32">
 		</chapter>
-		<chapter number="33" resourceName="genesis_33">
+		<chapter number="33" resourceName="genesis_33" referenceName="genesis_33">
 		</chapter>
-		<chapter number="34" resourceName="genesis_34">
+		<chapter number="34" resourceName="genesis_34" referenceName="genesis_34">
 		</chapter>
-		<chapter number="35" resourceName="genesis_35">
+		<chapter number="35" resourceName="genesis_35" referenceName="genesis_35">
 		</chapter>
-		<chapter number="36" resourceName="genesis_36">
+		<chapter number="36" resourceName="genesis_36" referenceName="genesis_36">
 		</chapter>
-		<chapter number="37" resourceName="genesis_37">
+		<chapter number="37" resourceName="genesis_37" referenceName="genesis_37">
 		</chapter>
-		<chapter number="38" resourceName="genesis_38">
+		<chapter number="38" resourceName="genesis_38" referenceName="genesis_38">
 		</chapter>
-		<chapter number="39" resourceName="genesis_39">
+		<chapter number="39" resourceName="genesis_39" referenceName="genesis_39">
 		</chapter>
-		<chapter number="40" resourceName="genesis_40">
+		<chapter number="40" resourceName="genesis_40" referenceName="genesis_40">
 		</chapter>
-		<chapter number="41" resourceName="genesis_41">
+		<chapter number="41" resourceName="genesis_41" referenceName="genesis_41">
 		</chapter>
-		<chapter number="42" resourceName="genesis_42">
+		<chapter number="42" resourceName="genesis_42" referenceName="genesis_42">
 		</chapter>
-		<chapter number="43" resourceName="genesis_43">
+		<chapter number="43" resourceName="genesis_43" referenceName="genesis_43">
 		</chapter>
-		<chapter number="44" resourceName="genesis_44">
+		<chapter number="44" resourceName="genesis_44" referenceName="genesis_44">
 		</chapter>
-		<chapter number="45" resourceName="genesis_45">
+		<chapter number="45" resourceName="genesis_45" referenceName="genesis_45">
 		</chapter>
-		<chapter number="46" resourceName="genesis_46">
+		<chapter number="46" resourceName="genesis_46" referenceName="genesis_46">
 		</chapter>
-		<chapter number="47" resourceName="genesis_47">
+		<chapter number="47" resourceName="genesis_47" referenceName="genesis_47">
 		</chapter>
-		<chapter number="48" resourceName="genesis_48">
+		<chapter number="48" resourceName="genesis_48" referenceName="genesis_48">
 		</chapter>
-		<chapter number="49" resourceName="genesis_49">
+		<chapter number="49" resourceName="genesis_49" referenceName="genesis_49">
 		</chapter>
-		<chapter number="50" resourceName="genesis_50">
+		<chapter number="50" resourceName="genesis_50" referenceName="genesis_50">
 		</chapter>
 	</book>
 	<book title="Exodus" number="2">
-		<chapter number="1" resourceName="exodus_1">
+		<chapter number="1" resourceName="exodus_1" referenceName="exodus_1">
 		</chapter>
-		<chapter number="2" resourceName="exodus_2">
+		<chapter number="2" resourceName="exodus_2" referenceName="exodus_2">
 		</chapter>
-		<chapter number="3" resourceName="exodus_3">
+		<chapter number="3" resourceName="exodus_3" referenceName="exodus_3">
 		</chapter>
-		<chapter number="4" resourceName="exodus_4">
+		<chapter number="4" resourceName="exodus_4" referenceName="exodus_4">
 		</chapter>
-		<chapter number="5" resourceName="exodus_5">
+		<chapter number="5" resourceName="exodus_5" referenceName="exodus_5">
 		</chapter>
-		<chapter number="6" resourceName="exodus_6">
+		<chapter number="6" resourceName="exodus_6" referenceName="exodus_6">
 		</chapter>
-		<chapter number="7" resourceName="exodus_7">
+		<chapter number="7" resourceName="exodus_7" referenceName="exodus_7">
 		</chapter>
-		<chapter number="8" resourceName="exodus_8">
+		<chapter number="8" resourceName="exodus_8" referenceName="exodus_8">
 		</chapter>
-		<chapter number="9" resourceName="exodus_9">
+		<chapter number="9" resourceName="exodus_9" referenceName="exodus_9">
 		</chapter>
-		<chapter number="10" resourceName="exodus_10">
+		<chapter number="10" resourceName="exodus_10" referenceName="exodus_10">
 		</chapter>
-		<chapter number="11" resourceName="exodus_11">
+		<chapter number="11" resourceName="exodus_11" referenceName="exodus_11">
 		</chapter>
-		<chapter number="12" resourceName="exodus_12">
+		<chapter number="12" resourceName="exodus_12" referenceName="exodus_12">
 		</chapter>
-		<chapter number="13" resourceName="exodus_13">
+		<chapter number="13" resourceName="exodus_13" referenceName="exodus_13">
 		</chapter>
-		<chapter number="14" resourceName="exodus_14">
+		<chapter number="14" resourceName="exodus_14" referenceName="exodus_14">
 		</chapter>
-		<chapter number="15" resourceName="exodus_15">
+		<chapter number="15" resourceName="exodus_15" referenceName="exodus_15">
 		</chapter>
-		<chapter number="16" resourceName="exodus_16">
+		<chapter number="16" resourceName="exodus_16" referenceName="exodus_16">
 		</chapter>
-		<chapter number="17" resourceName="exodus_17">
+		<chapter number="17" resourceName="exodus_17" referenceName="exodus_17">
 		</chapter>
-		<chapter number="18" resourceName="exodus_18">
+		<chapter number="18" resourceName="exodus_18" referenceName="exodus_18">
 		</chapter>
-		<chapter number="19" resourceName="exodus_19">
+		<chapter number="19" resourceName="exodus_19" referenceName="exodus_19">
 		</chapter>
-		<chapter number="20" resourceName="exodus_20">
+		<chapter number="20" resourceName="exodus_20" referenceName="exodus_20">
 		</chapter>
-		<chapter number="21" resourceName="exodus_21">
+		<chapter number="21" resourceName="exodus_21" referenceName="exodus_21">
 		</chapter>
-		<chapter number="22" resourceName="exodus_22">
+		<chapter number="22" resourceName="exodus_22" referenceName="exodus_22">
 		</chapter>
-		<chapter number="23" resourceName="exodus_23">
+		<chapter number="23" resourceName="exodus_23" referenceName="exodus_23">
 		</chapter>
-		<chapter number="24" resourceName="exodus_24">
+		<chapter number="24" resourceName="exodus_24" referenceName="exodus_24">
 		</chapter>
-		<chapter number="25" resourceName="exodus_25">
+		<chapter number="25" resourceName="exodus_25" referenceName="exodus_25">
 		</chapter>
-		<chapter number="26" resourceName="exodus_26">
+		<chapter number="26" resourceName="exodus_26" referenceName="exodus_26">
 		</chapter>
-		<chapter number="27" resourceName="exodus_27">
+		<chapter number="27" resourceName="exodus_27" referenceName="exodus_27">
 		</chapter>
-		<chapter number="28" resourceName="exodus_28">
+		<chapter number="28" resourceName="exodus_28" referenceName="exodus_28">
 		</chapter>
-		<chapter number="29" resourceName="exodus_29">
+		<chapter number="29" resourceName="exodus_29" referenceName="exodus_29">
 		</chapter>
-		<chapter number="30" resourceName="exodus_30">
+		<chapter number="30" resourceName="exodus_30" referenceName="exodus_30">
 		</chapter>
-		<chapter number="31" resourceName="exodus_31">
+		<chapter number="31" resourceName="exodus_31" referenceName="exodus_31">
 		</chapter>
-		<chapter number="32" resourceName="exodus_32">
+		<chapter number="32" resourceName="exodus_32" referenceName="exodus_32">
 		</chapter>
-		<chapter number="33" resourceName="exodus_33">
+		<chapter number="33" resourceName="exodus_33" referenceName="exodus_33">
 		</chapter>
-		<chapter number="34" resourceName="exodus_34">
+		<chapter number="34" resourceName="exodus_34" referenceName="exodus_34">
 		</chapter>
-		<chapter number="35" resourceName="exodus_35">
+		<chapter number="35" resourceName="exodus_35" referenceName="exodus_35">
 		</chapter>
-		<chapter number="36" resourceName="exodus_36">
+		<chapter number="36" resourceName="exodus_36" referenceName="exodus_36">
 		</chapter>
-		<chapter number="37" resourceName="exodus_37">
+		<chapter number="37" resourceName="exodus_37" referenceName="exodus_37">
 		</chapter>
-		<chapter number="38" resourceName="exodus_38">
+		<chapter number="38" resourceName="exodus_38" referenceName="exodus_38">
 		</chapter>
-		<chapter number="39" resourceName="exodus_39">
+		<chapter number="39" resourceName="exodus_39" referenceName="exodus_39">
 		</chapter>
-		<chapter number="40" resourceName="exodus_40">
+		<chapter number="40" resourceName="exodus_40" referenceName="exodus_40">
 		</chapter>
 	</book>
 	<book title="Leviticus" number="3">
-		<chapter number="1" resourceName="leviticus_1">
+		<chapter number="1" resourceName="leviticus_1" referenceName="leviticus_1">
 		</chapter>
-		<chapter number="2" resourceName="leviticus_2">
+		<chapter number="2" resourceName="leviticus_2" referenceName="leviticus_2">
 		</chapter>
-		<chapter number="3" resourceName="leviticus_3">
+		<chapter number="3" resourceName="leviticus_3" referenceName="leviticus_3">
 		</chapter>
-		<chapter number="4" resourceName="leviticus_4">
+		<chapter number="4" resourceName="leviticus_4" referenceName="leviticus_4">
 		</chapter>
-		<chapter number="5" resourceName="leviticus_5">
+		<chapter number="5" resourceName="leviticus_5" referenceName="leviticus_5">
 		</chapter>
-		<chapter number="6" resourceName="leviticus_6">
+		<chapter number="6" resourceName="leviticus_6" referenceName="leviticus_6">
 		</chapter>
-		<chapter number="7" resourceName="leviticus_7">
+		<chapter number="7" resourceName="leviticus_7" referenceName="leviticus_7">
 		</chapter>
-		<chapter number="8" resourceName="leviticus_8">
+		<chapter number="8" resourceName="leviticus_8" referenceName="leviticus_8">
 		</chapter>
-		<chapter number="9" resourceName="leviticus_9">
+		<chapter number="9" resourceName="leviticus_9" referenceName="leviticus_9">
 		</chapter>
-		<chapter number="10" resourceName="leviticus_10">
+		<chapter number="10" resourceName="leviticus_10" referenceName="leviticus_10">
 		</chapter>
-		<chapter number="11" resourceName="leviticus_11">
+		<chapter number="11" resourceName="leviticus_11" referenceName="leviticus_11">
 		</chapter>
-		<chapter number="12" resourceName="leviticus_12">
+		<chapter number="12" resourceName="leviticus_12" referenceName="leviticus_12">
 		</chapter>
-		<chapter number="13" resourceName="leviticus_13">
+		<chapter number="13" resourceName="leviticus_13" referenceName="leviticus_13">
 		</chapter>
-		<chapter number="14" resourceName="leviticus_14">
+		<chapter number="14" resourceName="leviticus_14" referenceName="leviticus_14">
 		</chapter>
-		<chapter number="15" resourceName="leviticus_15">
+		<chapter number="15" resourceName="leviticus_15" referenceName="leviticus_15">
 		</chapter>
-		<chapter number="16" resourceName="leviticus_16">
+		<chapter number="16" resourceName="leviticus_16" referenceName="leviticus_16">
 		</chapter>
-		<chapter number="17" resourceName="leviticus_17">
+		<chapter number="17" resourceName="leviticus_17" referenceName="leviticus_17">
 		</chapter>
-		<chapter number="18" resourceName="leviticus_18">
+		<chapter number="18" resourceName="leviticus_18" referenceName="leviticus_18">
 		</chapter>
-		<chapter number="19" resourceName="leviticus_19">
+		<chapter number="19" resourceName="leviticus_19" referenceName="leviticus_19">
 		</chapter>
-		<chapter number="20" resourceName="leviticus_20">
+		<chapter number="20" resourceName="leviticus_20" referenceName="leviticus_20">
 		</chapter>
-		<chapter number="21" resourceName="leviticus_21">
+		<chapter number="21" resourceName="leviticus_21" referenceName="leviticus_21">
 		</chapter>
-		<chapter number="22" resourceName="leviticus_22">
+		<chapter number="22" resourceName="leviticus_22" referenceName="leviticus_22">
 		</chapter>
-		<chapter number="23" resourceName="leviticus_23">
+		<chapter number="23" resourceName="leviticus_23" referenceName="leviticus_23">
 		</chapter>
-		<chapter number="24" resourceName="leviticus_24">
+		<chapter number="24" resourceName="leviticus_24" referenceName="leviticus_24">
 		</chapter>
-		<chapter number="25" resourceName="leviticus_25">
+		<chapter number="25" resourceName="leviticus_25" referenceName="leviticus_25">
 		</chapter>
-		<chapter number="26" resourceName="leviticus_26">
+		<chapter number="26" resourceName="leviticus_26" referenceName="leviticus_26">
 		</chapter>
-		<chapter number="27" resourceName="leviticus_27">
+		<chapter number="27" resourceName="leviticus_27" referenceName="leviticus_27">
 		</chapter>
 	</book>
 	<book title="Numbers" number="4">
-		<chapter number="1" resourceName="numbers_1">
+		<chapter number="1" resourceName="numbers_1" referenceName="numbers_1">
 		</chapter>
-		<chapter number="2" resourceName="numbers_2">
+		<chapter number="2" resourceName="numbers_2" referenceName="numbers_2">
 		</chapter>
-		<chapter number="3" resourceName="numbers_3">
+		<chapter number="3" resourceName="numbers_3" referenceName="numbers_3">
 		</chapter>
-		<chapter number="4" resourceName="numbers_4">
+		<chapter number="4" resourceName="numbers_4" referenceName="numbers_4">
 		</chapter>
-		<chapter number="5" resourceName="numbers_5">
+		<chapter number="5" resourceName="numbers_5" referenceName="numbers_5">
 		</chapter>
-		<chapter number="6" resourceName="numbers_6">
+		<chapter number="6" resourceName="numbers_6" referenceName="numbers_6">
 		</chapter>
-		<chapter number="7" resourceName="numbers_7">
+		<chapter number="7" resourceName="numbers_7" referenceName="numbers_7">
 		</chapter>
-		<chapter number="8" resourceName="numbers_8">
+		<chapter number="8" resourceName="numbers_8" referenceName="numbers_8">
 		</chapter>
-		<chapter number="9" resourceName="numbers_9">
+		<chapter number="9" resourceName="numbers_9" referenceName="numbers_9">
 		</chapter>
-		<chapter number="10" resourceName="numbers_10">
+		<chapter number="10" resourceName="numbers_10" referenceName="numbers_10">
 		</chapter>
-		<chapter number="11" resourceName="numbers_11">
+		<chapter number="11" resourceName="numbers_11" referenceName="numbers_11">
 		</chapter>
-		<chapter number="12" resourceName="numbers_12">
+		<chapter number="12" resourceName="numbers_12" referenceName="numbers_12">
 		</chapter>
-		<chapter number="13" resourceName="numbers_13">
+		<chapter number="13" resourceName="numbers_13" referenceName="numbers_13">
 		</chapter>
-		<chapter number="14" resourceName="numbers_14">
+		<chapter number="14" resourceName="numbers_14" referenceName="numbers_14">
 		</chapter>
-		<chapter number="15" resourceName="numbers_15">
+		<chapter number="15" resourceName="numbers_15" referenceName="numbers_15">
 		</chapter>
-		<chapter number="16" resourceName="numbers_16">
+		<chapter number="16" resourceName="numbers_16" referenceName="numbers_16">
 		</chapter>
-		<chapter number="17" resourceName="numbers_17">
+		<chapter number="17" resourceName="numbers_17" referenceName="numbers_17">
 		</chapter>
-		<chapter number="18" resourceName="numbers_18">
+		<chapter number="18" resourceName="numbers_18" referenceName="numbers_18">
 		</chapter>
-		<chapter number="19" resourceName="numbers_19">
+		<chapter number="19" resourceName="numbers_19" referenceName="numbers_19">
 		</chapter>
-		<chapter number="20" resourceName="numbers_20">
+		<chapter number="20" resourceName="numbers_20" referenceName="numbers_20">
 		</chapter>
-		<chapter number="21" resourceName="numbers_21">
+		<chapter number="21" resourceName="numbers_21" referenceName="numbers_21">
 		</chapter>
-		<chapter number="22" resourceName="numbers_22">
+		<chapter number="22" resourceName="numbers_22" referenceName="numbers_22">
 		</chapter>
-		<chapter number="23" resourceName="numbers_23">
+		<chapter number="23" resourceName="numbers_23" referenceName="numbers_23">
 		</chapter>
-		<chapter number="24" resourceName="numbers_24">
+		<chapter number="24" resourceName="numbers_24" referenceName="numbers_24">
 		</chapter>
-		<chapter number="25" resourceName="numbers_25">
+		<chapter number="25" resourceName="numbers_25" referenceName="numbers_25">
 		</chapter>
-		<chapter number="26" resourceName="numbers_26">
+		<chapter number="26" resourceName="numbers_26" referenceName="numbers_26">
 		</chapter>
-		<chapter number="27" resourceName="numbers_27">
+		<chapter number="27" resourceName="numbers_27" referenceName="numbers_27">
 		</chapter>
-		<chapter number="28" resourceName="numbers_28">
+		<chapter number="28" resourceName="numbers_28" referenceName="numbers_28">
 		</chapter>
-		<chapter number="29" resourceName="numbers_29">
+		<chapter number="29" resourceName="numbers_29" referenceName="numbers_29">
 		</chapter>
-		<chapter number="30" resourceName="numbers_30">
+		<chapter number="30" resourceName="numbers_30" referenceName="numbers_30">
 		</chapter>
-		<chapter number="31" resourceName="numbers_31">
+		<chapter number="31" resourceName="numbers_31" referenceName="numbers_31">
 		</chapter>
-		<chapter number="32" resourceName="numbers_32">
+		<chapter number="32" resourceName="numbers_32" referenceName="numbers_32">
 		</chapter>
-		<chapter number="33" resourceName="numbers_33">
+		<chapter number="33" resourceName="numbers_33" referenceName="numbers_33">
 		</chapter>
-		<chapter number="34" resourceName="numbers_34">
+		<chapter number="34" resourceName="numbers_34" referenceName="numbers_34">
 		</chapter>
-		<chapter number="35" resourceName="numbers_35">
+		<chapter number="35" resourceName="numbers_35" referenceName="numbers_35">
 		</chapter>
-		<chapter number="36" resourceName="numbers_36">
+		<chapter number="36" resourceName="numbers_36" referenceName="numbers_36">
 		</chapter>
 	</book>
 	<book title="Deuteronomy" number="5">
-		<chapter number="1" resourceName="deuteronomy_1">
+		<chapter number="1" resourceName="deuteronomy_1" referenceName="deuteronomy_1">
 		</chapter>
-		<chapter number="2" resourceName="deuteronomy_2">
+		<chapter number="2" resourceName="deuteronomy_2" referenceName="deuteronomy_2">
 		</chapter>
-		<chapter number="3" resourceName="deuteronomy_3">
+		<chapter number="3" resourceName="deuteronomy_3" referenceName="deuteronomy_3">
 		</chapter>
-		<chapter number="4" resourceName="deuteronomy_4">
+		<chapter number="4" resourceName="deuteronomy_4" referenceName="deuteronomy_4">
 		</chapter>
-		<chapter number="5" resourceName="deuteronomy_5">
+		<chapter number="5" resourceName="deuteronomy_5" referenceName="deuteronomy_5">
 		</chapter>
-		<chapter number="6" resourceName="deuteronomy_6">
+		<chapter number="6" resourceName="deuteronomy_6" referenceName="deuteronomy_6">
 		</chapter>
-		<chapter number="7" resourceName="deuteronomy_7">
+		<chapter number="7" resourceName="deuteronomy_7" referenceName="deuteronomy_7">
 		</chapter>
-		<chapter number="8" resourceName="deuteronomy_8">
+		<chapter number="8" resourceName="deuteronomy_8" referenceName="deuteronomy_8">
 		</chapter>
-		<chapter number="9" resourceName="deuteronomy_9">
+		<chapter number="9" resourceName="deuteronomy_9" referenceName="deuteronomy_9">
 		</chapter>
-		<chapter number="10" resourceName="deuteronomy_10">
+		<chapter number="10" resourceName="deuteronomy_10" referenceName="deuteronomy_10">
 		</chapter>
-		<chapter number="11" resourceName="deuteronomy_11">
+		<chapter number="11" resourceName="deuteronomy_11" referenceName="deuteronomy_11">
 		</chapter>
-		<chapter number="12" resourceName="deuteronomy_12">
+		<chapter number="12" resourceName="deuteronomy_12" referenceName="deuteronomy_12">
 		</chapter>
-		<chapter number="13" resourceName="deuteronomy_13">
+		<chapter number="13" resourceName="deuteronomy_13" referenceName="deuteronomy_13">
 		</chapter>
-		<chapter number="14" resourceName="deuteronomy_14">
+		<chapter number="14" resourceName="deuteronomy_14" referenceName="deuteronomy_14">
 		</chapter>
-		<chapter number="15" resourceName="deuteronomy_15">
+		<chapter number="15" resourceName="deuteronomy_15" referenceName="deuteronomy_15">
 		</chapter>
-		<chapter number="16" resourceName="deuteronomy_16">
+		<chapter number="16" resourceName="deuteronomy_16" referenceName="deuteronomy_16">
 		</chapter>
-		<chapter number="17" resourceName="deuteronomy_17">
+		<chapter number="17" resourceName="deuteronomy_17" referenceName="deuteronomy_17">
 		</chapter>
-		<chapter number="18" resourceName="deuteronomy_18">
+		<chapter number="18" resourceName="deuteronomy_18" referenceName="deuteronomy_18">
 		</chapter>
-		<chapter number="19" resourceName="deuteronomy_19">
+		<chapter number="19" resourceName="deuteronomy_19" referenceName="deuteronomy_19">
 		</chapter>
-		<chapter number="20" resourceName="deuteronomy_20">
+		<chapter number="20" resourceName="deuteronomy_20" referenceName="deuteronomy_20">
 		</chapter>
-		<chapter number="21" resourceName="deuteronomy_21">
+		<chapter number="21" resourceName="deuteronomy_21" referenceName="deuteronomy_21">
 		</chapter>
-		<chapter number="22" resourceName="deuteronomy_22">
+		<chapter number="22" resourceName="deuteronomy_22" referenceName="deuteronomy_22">
 		</chapter>
-		<chapter number="23" resourceName="deuteronomy_23">
+		<chapter number="23" resourceName="deuteronomy_23" referenceName="deuteronomy_23">
 		</chapter>
-		<chapter number="24" resourceName="deuteronomy_24">
+		<chapter number="24" resourceName="deuteronomy_24" referenceName="deuteronomy_24">
 		</chapter>
-		<chapter number="25" resourceName="deuteronomy_25">
+		<chapter number="25" resourceName="deuteronomy_25" referenceName="deuteronomy_25">
 		</chapter>
-		<chapter number="26" resourceName="deuteronomy_26">
+		<chapter number="26" resourceName="deuteronomy_26" referenceName="deuteronomy_26">
 		</chapter>
-		<chapter number="27" resourceName="deuteronomy_27">
+		<chapter number="27" resourceName="deuteronomy_27" referenceName="deuteronomy_27">
 		</chapter>
-		<chapter number="28" resourceName="deuteronomy_28">
+		<chapter number="28" resourceName="deuteronomy_28" referenceName="deuteronomy_28">
 		</chapter>
-		<chapter number="29" resourceName="deuteronomy_29">
+		<chapter number="29" resourceName="deuteronomy_29" referenceName="deuteronomy_29">
 		</chapter>
-		<chapter number="30" resourceName="deuteronomy_30">
+		<chapter number="30" resourceName="deuteronomy_30" referenceName="deuteronomy_30">
 		</chapter>
-		<chapter number="31" resourceName="deuteronomy_31">
+		<chapter number="31" resourceName="deuteronomy_31" referenceName="deuteronomy_31">
 		</chapter>
-		<chapter number="32" resourceName="deuteronomy_32">
+		<chapter number="32" resourceName="deuteronomy_32" referenceName="deuteronomy_32">
 		</chapter>
-		<chapter number="33" resourceName="deuteronomy_33">
+		<chapter number="33" resourceName="deuteronomy_33" referenceName="deuteronomy_33">
 		</chapter>
-		<chapter number="34" resourceName="deuteronomy_34">
+		<chapter number="34" resourceName="deuteronomy_34" referenceName="deuteronomy_34">
 		</chapter>
 	</book>
 	<book title="Joshua" number="6">
-		<chapter number="1" resourceName="joshua_1">
+		<chapter number="1" resourceName="joshua_1" referenceName="joshua_1">
 		</chapter>
-		<chapter number="2" resourceName="joshua_2">
+		<chapter number="2" resourceName="joshua_2" referenceName="joshua_2">
 		</chapter>
-		<chapter number="3" resourceName="joshua_3">
+		<chapter number="3" resourceName="joshua_3" referenceName="joshua_3">
 		</chapter>
-		<chapter number="4" resourceName="joshua_4">
+		<chapter number="4" resourceName="joshua_4" referenceName="joshua_4">
 		</chapter>
-		<chapter number="5" resourceName="joshua_5">
+		<chapter number="5" resourceName="joshua_5" referenceName="joshua_5">
 		</chapter>
-		<chapter number="6" resourceName="joshua_6">
+		<chapter number="6" resourceName="joshua_6" referenceName="joshua_6">
 		</chapter>
-		<chapter number="7" resourceName="joshua_7">
+		<chapter number="7" resourceName="joshua_7" referenceName="joshua_7">
 		</chapter>
-		<chapter number="8" resourceName="joshua_8">
+		<chapter number="8" resourceName="joshua_8" referenceName="joshua_8">
 		</chapter>
-		<chapter number="9" resourceName="joshua_9">
+		<chapter number="9" resourceName="joshua_9" referenceName="joshua_9">
 		</chapter>
-		<chapter number="10" resourceName="joshua_10">
+		<chapter number="10" resourceName="joshua_10" referenceName="joshua_10">
 		</chapter>
-		<chapter number="11" resourceName="joshua_11">
+		<chapter number="11" resourceName="joshua_11" referenceName="joshua_11">
 		</chapter>
-		<chapter number="12" resourceName="joshua_12">
+		<chapter number="12" resourceName="joshua_12" referenceName="joshua_12">
 		</chapter>
-		<chapter number="13" resourceName="joshua_13">
+		<chapter number="13" resourceName="joshua_13" referenceName="joshua_13">
 		</chapter>
-		<chapter number="14" resourceName="joshua_14">
+		<chapter number="14" resourceName="joshua_14" referenceName="joshua_14">
 		</chapter>
-		<chapter number="15" resourceName="joshua_15">
+		<chapter number="15" resourceName="joshua_15" referenceName="joshua_15">
 		</chapter>
-		<chapter number="16" resourceName="joshua_16">
+		<chapter number="16" resourceName="joshua_16" referenceName="joshua_16">
 		</chapter>
-		<chapter number="17" resourceName="joshua_17">
+		<chapter number="17" resourceName="joshua_17" referenceName="joshua_17">
 		</chapter>
-		<chapter number="18" resourceName="joshua_18">
+		<chapter number="18" resourceName="joshua_18" referenceName="joshua_18">
 		</chapter>
-		<chapter number="19" resourceName="joshua_19">
+		<chapter number="19" resourceName="joshua_19" referenceName="joshua_19">
 		</chapter>
-		<chapter number="20" resourceName="joshua_20">
+		<chapter number="20" resourceName="joshua_20" referenceName="joshua_20">
 		</chapter>
-		<chapter number="21" resourceName="joshua_21">
+		<chapter number="21" resourceName="joshua_21" referenceName="joshua_21">
 		</chapter>
-		<chapter number="22" resourceName="joshua_22">
+		<chapter number="22" resourceName="joshua_22" referenceName="joshua_22">
 		</chapter>
-		<chapter number="23" resourceName="joshua_23">
+		<chapter number="23" resourceName="joshua_23" referenceName="joshua_23">
 		</chapter>
-		<chapter number="24" resourceName="joshua_24">
+		<chapter number="24" resourceName="joshua_24" referenceName="joshua_24">
 		</chapter>
 	</book>
 	<book title="Judges" number="7">
-		<chapter number="1" resourceName="judges_1">
+		<chapter number="1" resourceName="judges_1" referenceName="judges_1">
 		</chapter>
-		<chapter number="2" resourceName="judges_2">
+		<chapter number="2" resourceName="judges_2" referenceName="judges_2">
 		</chapter>
-		<chapter number="3" resourceName="judges_3">
+		<chapter number="3" resourceName="judges_3" referenceName="judges_3">
 		</chapter>
-		<chapter number="4" resourceName="judges_4">
+		<chapter number="4" resourceName="judges_4" referenceName="judges_4">
 		</chapter>
-		<chapter number="5" resourceName="judges_5">
+		<chapter number="5" resourceName="judges_5" referenceName="judges_5">
 		</chapter>
-		<chapter number="6" resourceName="judges_6">
+		<chapter number="6" resourceName="judges_6" referenceName="judges_6">
 		</chapter>
-		<chapter number="7" resourceName="judges_7">
+		<chapter number="7" resourceName="judges_7" referenceName="judges_7">
 		</chapter>
-		<chapter number="8" resourceName="judges_8">
+		<chapter number="8" resourceName="judges_8" referenceName="judges_8">
 		</chapter>
-		<chapter number="9" resourceName="judges_9">
+		<chapter number="9" resourceName="judges_9" referenceName="judges_9">
 		</chapter>
-		<chapter number="10" resourceName="judges_10">
+		<chapter number="10" resourceName="judges_10" referenceName="judges_10">
 		</chapter>
-		<chapter number="11" resourceName="judges_11">
+		<chapter number="11" resourceName="judges_11" referenceName="judges_11">
 		</chapter>
-		<chapter number="12" resourceName="judges_12">
+		<chapter number="12" resourceName="judges_12" referenceName="judges_12">
 		</chapter>
-		<chapter number="13" resourceName="judges_13">
+		<chapter number="13" resourceName="judges_13" referenceName="judges_13">
 		</chapter>
-		<chapter number="14" resourceName="judges_14">
+		<chapter number="14" resourceName="judges_14" referenceName="judges_14">
 		</chapter>
-		<chapter number="15" resourceName="judges_15">
+		<chapter number="15" resourceName="judges_15" referenceName="judges_15">
 		</chapter>
-		<chapter number="16" resourceName="judges_16">
+		<chapter number="16" resourceName="judges_16" referenceName="judges_16">
 		</chapter>
-		<chapter number="17" resourceName="judges_17">
+		<chapter number="17" resourceName="judges_17" referenceName="judges_17">
 		</chapter>
-		<chapter number="18" resourceName="judges_18">
+		<chapter number="18" resourceName="judges_18" referenceName="judges_18">
 		</chapter>
-		<chapter number="19" resourceName="judges_19">
+		<chapter number="19" resourceName="judges_19" referenceName="judges_19">
 		</chapter>
-		<chapter number="20" resourceName="judges_20">
+		<chapter number="20" resourceName="judges_20" referenceName="judges_20">
 		</chapter>
-		<chapter number="21" resourceName="judges_21">
+		<chapter number="21" resourceName="judges_21" referenceName="judges_21">
 		</chapter>
 	</book>
 	<book title="Ruth" number="8">
-		<chapter number="1" resourceName="ruth_1">
+		<chapter number="1" resourceName="ruth_1" referenceName="ruth_1">
 		</chapter>
-		<chapter number="2" resourceName="ruth_2">
+		<chapter number="2" resourceName="ruth_2" referenceName="ruth_2">
 		</chapter>
-		<chapter number="3" resourceName="ruth_3">
+		<chapter number="3" resourceName="ruth_3" referenceName="ruth_3">
 		</chapter>
-		<chapter number="4" resourceName="ruth_4">
+		<chapter number="4" resourceName="ruth_4" referenceName="ruth_4">
 		</chapter>
 	</book>
 	<book title="1 Samuel" number="9">
-		<chapter number="1" resourceName="samuel_1_1">
+		<chapter number="1" resourceName="samuel_1_1" referenceName="1_samuel_1">
 		</chapter>
-		<chapter number="2" resourceName="samuel_1_2">
+		<chapter number="2" resourceName="samuel_1_2" referenceName="1_samuel_2">
 		</chapter>
-		<chapter number="3" resourceName="samuel_1_3">
+		<chapter number="3" resourceName="samuel_1_3" referenceName="1_samuel_3">
 		</chapter>
-		<chapter number="4" resourceName="samuel_1_4">
+		<chapter number="4" resourceName="samuel_1_4" referenceName="1_samuel_4">
 		</chapter>
-		<chapter number="5" resourceName="samuel_1_5">
+		<chapter number="5" resourceName="samuel_1_5" referenceName="1_samuel_5">
 		</chapter>
-		<chapter number="6" resourceName="samuel_1_6">
+		<chapter number="6" resourceName="samuel_1_6" referenceName="1_samuel_6">
 		</chapter>
-		<chapter number="7" resourceName="samuel_1_7">
+		<chapter number="7" resourceName="samuel_1_7" referenceName="1_samuel_7">
 		</chapter>
-		<chapter number="8" resourceName="samuel_1_8">
+		<chapter number="8" resourceName="samuel_1_8" referenceName="1_samuel_8">
 		</chapter>
-		<chapter number="9" resourceName="samuel_1_9">
+		<chapter number="9" resourceName="samuel_1_9" referenceName="1_samuel_9">
 		</chapter>
-		<chapter number="10" resourceName="samuel_1_10">
+		<chapter number="10" resourceName="samuel_1_10" referenceName="1_samuel_10">
 		</chapter>
-		<chapter number="11" resourceName="samuel_1_11">
+		<chapter number="11" resourceName="samuel_1_11" referenceName="1_samuel_11">
 		</chapter>
-		<chapter number="12" resourceName="samuel_1_12">
+		<chapter number="12" resourceName="samuel_1_12" referenceName="1_samuel_12">
 		</chapter>
-		<chapter number="13" resourceName="samuel_1_13">
+		<chapter number="13" resourceName="samuel_1_13" referenceName="1_samuel_13">
 		</chapter>
-		<chapter number="14" resourceName="samuel_1_14">
+		<chapter number="14" resourceName="samuel_1_14" referenceName="1_samuel_14">
 		</chapter>
-		<chapter number="15" resourceName="samuel_1_15">
+		<chapter number="15" resourceName="samuel_1_15" referenceName="1_samuel_15">
 		</chapter>
-		<chapter number="16" resourceName="samuel_1_16">
+		<chapter number="16" resourceName="samuel_1_16" referenceName="1_samuel_16">
 		</chapter>
-		<chapter number="17" resourceName="samuel_1_17">
+		<chapter number="17" resourceName="samuel_1_17" referenceName="1_samuel_17">
 		</chapter>
-		<chapter number="18" resourceName="samuel_1_18">
+		<chapter number="18" resourceName="samuel_1_18" referenceName="1_samuel_18">
 		</chapter>
-		<chapter number="19" resourceName="samuel_1_19">
+		<chapter number="19" resourceName="samuel_1_19" referenceName="1_samuel_19">
 		</chapter>
-		<chapter number="20" resourceName="samuel_1_20">
+		<chapter number="20" resourceName="samuel_1_20" referenceName="1_samuel_20">
 		</chapter>
-		<chapter number="21" resourceName="samuel_1_21">
+		<chapter number="21" resourceName="samuel_1_21" referenceName="1_samuel_21">
 		</chapter>
-		<chapter number="22" resourceName="samuel_1_22">
+		<chapter number="22" resourceName="samuel_1_22" referenceName="1_samuel_22">
 		</chapter>
-		<chapter number="23" resourceName="samuel_1_23">
+		<chapter number="23" resourceName="samuel_1_23" referenceName="1_samuel_23">
 		</chapter>
-		<chapter number="24" resourceName="samuel_1_24">
+		<chapter number="24" resourceName="samuel_1_24" referenceName="1_samuel_24">
 		</chapter>
-		<chapter number="25" resourceName="samuel_1_25">
+		<chapter number="25" resourceName="samuel_1_25" referenceName="1_samuel_25">
 		</chapter>
-		<chapter number="26" resourceName="samuel_1_26">
+		<chapter number="26" resourceName="samuel_1_26" referenceName="1_samuel_26">
 		</chapter>
-		<chapter number="27" resourceName="samuel_1_27">
+		<chapter number="27" resourceName="samuel_1_27" referenceName="1_samuel_27">
 		</chapter>
-		<chapter number="28" resourceName="samuel_1_28">
+		<chapter number="28" resourceName="samuel_1_28" referenceName="1_samuel_28">
 		</chapter>
-		<chapter number="29" resourceName="samuel_1_29">
+		<chapter number="29" resourceName="samuel_1_29" referenceName="1_samuel_29">
 		</chapter>
-		<chapter number="30" resourceName="samuel_1_30">
+		<chapter number="30" resourceName="samuel_1_30" referenceName="1_samuel_30">
 		</chapter>
-		<chapter number="31" resourceName="samuel_1_31">
+		<chapter number="31" resourceName="samuel_1_31" referenceName="1_samuel_31">
 		</chapter>
 	</book>
 	<book title="2 Samuel" number="10">
-		<chapter number="1" resourceName="samuel_2_1">
+		<chapter number="1" resourceName="samuel_2_1" referenceName="2_samuel_1">
 		</chapter>
-		<chapter number="2" resourceName="samuel_2_2">
+		<chapter number="2" resourceName="samuel_2_2" referenceName="2_samuel_2">
 		</chapter>
-		<chapter number="3" resourceName="samuel_2_3">
+		<chapter number="3" resourceName="samuel_2_3" referenceName="2_samuel_3">
 		</chapter>
-		<chapter number="4" resourceName="samuel_2_4">
+		<chapter number="4" resourceName="samuel_2_4" referenceName="2_samuel_4">
 		</chapter>
-		<chapter number="5" resourceName="samuel_2_5">
+		<chapter number="5" resourceName="samuel_2_5" referenceName="2_samuel_5">
 		</chapter>
-		<chapter number="6" resourceName="samuel_2_6">
+		<chapter number="6" resourceName="samuel_2_6" referenceName="2_samuel_6">
 		</chapter>
-		<chapter number="7" resourceName="samuel_2_7">
+		<chapter number="7" resourceName="samuel_2_7" referenceName="2_samuel_7">
 		</chapter>
-		<chapter number="8" resourceName="samuel_2_8">
+		<chapter number="8" resourceName="samuel_2_8" referenceName="2_samuel_8">
 		</chapter>
-		<chapter number="9" resourceName="samuel_2_9">
+		<chapter number="9" resourceName="samuel_2_9" referenceName="2_samuel_9">
 		</chapter>
-		<chapter number="10" resourceName="samuel_2_10">
+		<chapter number="10" resourceName="samuel_2_10" referenceName="2_samuel_10">
 		</chapter>
-		<chapter number="11" resourceName="samuel_2_11">
+		<chapter number="11" resourceName="samuel_2_11" referenceName="2_samuel_11">
 		</chapter>
-		<chapter number="12" resourceName="samuel_2_12">
+		<chapter number="12" resourceName="samuel_2_12" referenceName="2_samuel_12">
 		</chapter>
-		<chapter number="13" resourceName="samuel_2_13">
+		<chapter number="13" resourceName="samuel_2_13" referenceName="2_samuel_13">
 		</chapter>
-		<chapter number="14" resourceName="samuel_2_14">
+		<chapter number="14" resourceName="samuel_2_14" referenceName="2_samuel_14">
 		</chapter>
-		<chapter number="15" resourceName="samuel_2_15">
+		<chapter number="15" resourceName="samuel_2_15" referenceName="2_samuel_15">
 		</chapter>
-		<chapter number="16" resourceName="samuel_2_16">
+		<chapter number="16" resourceName="samuel_2_16" referenceName="2_samuel_16">
 		</chapter>
-		<chapter number="17" resourceName="samuel_2_17">
+		<chapter number="17" resourceName="samuel_2_17" referenceName="2_samuel_17">
 		</chapter>
-		<chapter number="18" resourceName="samuel_2_18">
+		<chapter number="18" resourceName="samuel_2_18" referenceName="2_samuel_18">
 		</chapter>
-		<chapter number="19" resourceName="samuel_2_19">
+		<chapter number="19" resourceName="samuel_2_19" referenceName="2_samuel_19">
 		</chapter>
-		<chapter number="20" resourceName="samuel_2_20">
+		<chapter number="20" resourceName="samuel_2_20" referenceName="2_samuel_20">
 		</chapter>
-		<chapter number="21" resourceName="samuel_2_21">
+		<chapter number="21" resourceName="samuel_2_21" referenceName="2_samuel_21">
 		</chapter>
-		<chapter number="22" resourceName="samuel_2_22">
+		<chapter number="22" resourceName="samuel_2_22" referenceName="2_samuel_22">
 		</chapter>
-		<chapter number="23" resourceName="samuel_2_23">
+		<chapter number="23" resourceName="samuel_2_23" referenceName="2_samuel_23">
 		</chapter>
-		<chapter number="24" resourceName="samuel_2_24">
+		<chapter number="24" resourceName="samuel_2_24" referenceName="2_samuel_24">
 		</chapter>
 	</book>
 	<book title="1 Kings" number="11">
-		<chapter number="1" resourceName="kings_1_1">
+		<chapter number="1" resourceName="kings_1_1" referenceName="1_kings_1">
 		</chapter>
-		<chapter number="2" resourceName="kings_1_2">
+		<chapter number="2" resourceName="kings_1_2" referenceName="1_kings_2">
 		</chapter>
-		<chapter number="3" resourceName="kings_1_3">
+		<chapter number="3" resourceName="kings_1_3" referenceName="1_kings_3">
 		</chapter>
-		<chapter number="4" resourceName="kings_1_4">
+		<chapter number="4" resourceName="kings_1_4" referenceName="1_kings_4">
 		</chapter>
-		<chapter number="5" resourceName="kings_1_5">
+		<chapter number="5" resourceName="kings_1_5" referenceName="1_kings_5">
 		</chapter>
-		<chapter number="6" resourceName="kings_1_6">
+		<chapter number="6" resourceName="kings_1_6" referenceName="1_kings_6">
 		</chapter>
-		<chapter number="7" resourceName="kings_1_7">
+		<chapter number="7" resourceName="kings_1_7" referenceName="1_kings_7">
 		</chapter>
-		<chapter number="8" resourceName="kings_1_8">
+		<chapter number="8" resourceName="kings_1_8" referenceName="1_kings_8">
 		</chapter>
-		<chapter number="9" resourceName="kings_1_9">
+		<chapter number="9" resourceName="kings_1_9" referenceName="1_kings_9">
 		</chapter>
-		<chapter number="10" resourceName="kings_1_10">
+		<chapter number="10" resourceName="kings_1_10" referenceName="1_kings_10">
 		</chapter>
-		<chapter number="11" resourceName="kings_1_11">
+		<chapter number="11" resourceName="kings_1_11" referenceName="1_kings_11">
 		</chapter>
-		<chapter number="12" resourceName="kings_1_12">
+		<chapter number="12" resourceName="kings_1_12" referenceName="1_kings_12">
 		</chapter>
-		<chapter number="13" resourceName="kings_1_13">
+		<chapter number="13" resourceName="kings_1_13" referenceName="1_kings_13">
 		</chapter>
-		<chapter number="14" resourceName="kings_1_14">
+		<chapter number="14" resourceName="kings_1_14" referenceName="1_kings_14">
 		</chapter>
-		<chapter number="15" resourceName="kings_1_15">
+		<chapter number="15" resourceName="kings_1_15" referenceName="1_kings_15">
 		</chapter>
-		<chapter number="16" resourceName="kings_1_16">
+		<chapter number="16" resourceName="kings_1_16" referenceName="1_kings_16">
 		</chapter>
-		<chapter number="17" resourceName="kings_1_17">
+		<chapter number="17" resourceName="kings_1_17" referenceName="1_kings_17">
 		</chapter>
-		<chapter number="18" resourceName="kings_1_18">
+		<chapter number="18" resourceName="kings_1_18" referenceName="1_kings_18">
 		</chapter>
-		<chapter number="19" resourceName="kings_1_19">
+		<chapter number="19" resourceName="kings_1_19" referenceName="1_kings_19">
 		</chapter>
-		<chapter number="20" resourceName="kings_1_20">
+		<chapter number="20" resourceName="kings_1_20" referenceName="1_kings_20">
 		</chapter>
-		<chapter number="21" resourceName="kings_1_21">
+		<chapter number="21" resourceName="kings_1_21" referenceName="1_kings_21">
 		</chapter>
-		<chapter number="22" resourceName="kings_1_22">
+		<chapter number="22" resourceName="kings_1_22" referenceName="1_kings_22">
 		</chapter>
 	</book>
 	<book title="2 Kings" number="12">
-		<chapter number="1" resourceName="kings_2_1">
+		<chapter number="1" resourceName="kings_2_1" referenceName="2_kings_1">
 		</chapter>
-		<chapter number="2" resourceName="kings_2_2">
+		<chapter number="2" resourceName="kings_2_2" referenceName="2_kings_2">
 		</chapter>
-		<chapter number="3" resourceName="kings_2_3">
+		<chapter number="3" resourceName="kings_2_3" referenceName="2_kings_3">
 		</chapter>
-		<chapter number="4" resourceName="kings_2_4">
+		<chapter number="4" resourceName="kings_2_4" referenceName="2_kings_4">
 		</chapter>
-		<chapter number="5" resourceName="kings_2_5">
+		<chapter number="5" resourceName="kings_2_5" referenceName="2_kings_5">
 		</chapter>
-		<chapter number="6" resourceName="kings_2_6">
+		<chapter number="6" resourceName="kings_2_6" referenceName="2_kings_6">
 		</chapter>
-		<chapter number="7" resourceName="kings_2_7">
+		<chapter number="7" resourceName="kings_2_7" referenceName="2_kings_7">
 		</chapter>
-		<chapter number="8" resourceName="kings_2_8">
+		<chapter number="8" resourceName="kings_2_8" referenceName="2_kings_8">
 		</chapter>
-		<chapter number="9" resourceName="kings_2_9">
+		<chapter number="9" resourceName="kings_2_9" referenceName="2_kings_9">
 		</chapter>
-		<chapter number="10" resourceName="kings_2_10">
+		<chapter number="10" resourceName="kings_2_10" referenceName="2_kings_10">
 		</chapter>
-		<chapter number="11" resourceName="kings_2_11">
+		<chapter number="11" resourceName="kings_2_11" referenceName="2_kings_11">
 		</chapter>
-		<chapter number="12" resourceName="kings_2_12">
+		<chapter number="12" resourceName="kings_2_12" referenceName="2_kings_12">
 		</chapter>
-		<chapter number="13" resourceName="kings_2_13">
+		<chapter number="13" resourceName="kings_2_13" referenceName="2_kings_13">
 		</chapter>
-		<chapter number="14" resourceName="kings_2_14">
+		<chapter number="14" resourceName="kings_2_14" referenceName="2_kings_14">
 		</chapter>
-		<chapter number="15" resourceName="kings_2_15">
+		<chapter number="15" resourceName="kings_2_15" referenceName="2_kings_15">
 		</chapter>
-		<chapter number="16" resourceName="kings_2_16">
+		<chapter number="16" resourceName="kings_2_16" referenceName="2_kings_16">
 		</chapter>
-		<chapter number="17" resourceName="kings_2_17">
+		<chapter number="17" resourceName="kings_2_17" referenceName="2_kings_17">
 		</chapter>
-		<chapter number="18" resourceName="kings_2_18">
+		<chapter number="18" resourceName="kings_2_18" referenceName="2_kings_18">
 		</chapter>
-		<chapter number="19" resourceName="kings_2_19">
+		<chapter number="19" resourceName="kings_2_19" referenceName="2_kings_19">
 		</chapter>
-		<chapter number="20" resourceName="kings_2_20">
+		<chapter number="20" resourceName="kings_2_20" referenceName="2_kings_20">
 		</chapter>
-		<chapter number="21" resourceName="kings_2_21">
+		<chapter number="21" resourceName="kings_2_21" referenceName="2_kings_21">
 		</chapter>
-		<chapter number="22" resourceName="kings_2_22">
+		<chapter number="22" resourceName="kings_2_22" referenceName="2_kings_22">
 		</chapter>
-		<chapter number="23" resourceName="kings_2_23">
+		<chapter number="23" resourceName="kings_2_23" referenceName="2_kings_23">
 		</chapter>
-		<chapter number="24" resourceName="kings_2_24">
+		<chapter number="24" resourceName="kings_2_24" referenceName="2_kings_24">
 		</chapter>
-		<chapter number="25" resourceName="kings_2_25">
+		<chapter number="25" resourceName="kings_2_25" referenceName="2_kings_25">
 		</chapter>
 	</book>
 	<book title="1 Chronicles" number="13">
-		<chapter number="1" resourceName="chronicles_1_1">
+		<chapter number="1" resourceName="chronicles_1_1" referenceName="1_chronicles_1">
 		</chapter>
-		<chapter number="2" resourceName="chronicles_1_2">
+		<chapter number="2" resourceName="chronicles_1_2" referenceName="1_chronicles_2">
 		</chapter>
-		<chapter number="3" resourceName="chronicles_1_3">
+		<chapter number="3" resourceName="chronicles_1_3" referenceName="1_chronicles_3">
 		</chapter>
-		<chapter number="4" resourceName="chronicles_1_4">
+		<chapter number="4" resourceName="chronicles_1_4" referenceName="1_chronicles_4">
 		</chapter>
-		<chapter number="5" resourceName="chronicles_1_5">
+		<chapter number="5" resourceName="chronicles_1_5" referenceName="1_chronicles_5">
 		</chapter>
-		<chapter number="6" resourceName="chronicles_1_6">
+		<chapter number="6" resourceName="chronicles_1_6" referenceName="1_chronicles_6">
 		</chapter>
-		<chapter number="7" resourceName="chronicles_1_7">
+		<chapter number="7" resourceName="chronicles_1_7" referenceName="1_chronicles_7">
 		</chapter>
-		<chapter number="8" resourceName="chronicles_1_8">
+		<chapter number="8" resourceName="chronicles_1_8" referenceName="1_chronicles_8">
 		</chapter>
-		<chapter number="9" resourceName="chronicles_1_9">
+		<chapter number="9" resourceName="chronicles_1_9" referenceName="1_chronicles_9">
 		</chapter>
-		<chapter number="10" resourceName="chronicles_1_10">
+		<chapter number="10" resourceName="chronicles_1_10" referenceName="1_chronicles_10">
 		</chapter>
-		<chapter number="11" resourceName="chronicles_1_11">
+		<chapter number="11" resourceName="chronicles_1_11" referenceName="1_chronicles_11">
 		</chapter>
-		<chapter number="12" resourceName="chronicles_1_12">
+		<chapter number="12" resourceName="chronicles_1_12" referenceName="1_chronicles_12">
 		</chapter>
-		<chapter number="13" resourceName="chronicles_1_13">
+		<chapter number="13" resourceName="chronicles_1_13" referenceName="1_chronicles_13">
 		</chapter>
-		<chapter number="14" resourceName="chronicles_1_14">
+		<chapter number="14" resourceName="chronicles_1_14" referenceName="1_chronicles_14">
 		</chapter>
-		<chapter number="15" resourceName="chronicles_1_15">
+		<chapter number="15" resourceName="chronicles_1_15" referenceName="1_chronicles_15">
 		</chapter>
-		<chapter number="16" resourceName="chronicles_1_16">
+		<chapter number="16" resourceName="chronicles_1_16" referenceName="1_chronicles_16">
 		</chapter>
-		<chapter number="17" resourceName="chronicles_1_17">
+		<chapter number="17" resourceName="chronicles_1_17" referenceName="1_chronicles_17">
 		</chapter>
-		<chapter number="18" resourceName="chronicles_1_18">
+		<chapter number="18" resourceName="chronicles_1_18" referenceName="1_chronicles_18">
 		</chapter>
-		<chapter number="19" resourceName="chronicles_1_19">
+		<chapter number="19" resourceName="chronicles_1_19" referenceName="1_chronicles_19">
 		</chapter>
-		<chapter number="20" resourceName="chronicles_1_20">
+		<chapter number="20" resourceName="chronicles_1_20" referenceName="1_chronicles_20">
 		</chapter>
-		<chapter number="21" resourceName="chronicles_1_21">
+		<chapter number="21" resourceName="chronicles_1_21" referenceName="1_chronicles_21">
 		</chapter>
-		<chapter number="22" resourceName="chronicles_1_22">
+		<chapter number="22" resourceName="chronicles_1_22" referenceName="1_chronicles_22">
 		</chapter>
-		<chapter number="23" resourceName="chronicles_1_23">
+		<chapter number="23" resourceName="chronicles_1_23" referenceName="1_chronicles_23">
 		</chapter>
-		<chapter number="24" resourceName="chronicles_1_24">
+		<chapter number="24" resourceName="chronicles_1_24" referenceName="1_chronicles_24">
 		</chapter>
-		<chapter number="25" resourceName="chronicles_1_25">
+		<chapter number="25" resourceName="chronicles_1_25" referenceName="1_chronicles_25">
 		</chapter>
-		<chapter number="26" resourceName="chronicles_1_26">
+		<chapter number="26" resourceName="chronicles_1_26" referenceName="1_chronicles_26">
 		</chapter>
-		<chapter number="27" resourceName="chronicles_1_27">
+		<chapter number="27" resourceName="chronicles_1_27" referenceName="1_chronicles_27">
 		</chapter>
-		<chapter number="28" resourceName="chronicles_1_28">
+		<chapter number="28" resourceName="chronicles_1_28" referenceName="1_chronicles_28">
 		</chapter>
-		<chapter number="29" resourceName="chronicles_1_29">
+		<chapter number="29" resourceName="chronicles_1_29" referenceName="1_chronicles_29">
 		</chapter>
 	</book>
 	<book title="2 Chronicles" number="14">
-		<chapter number="1" resourceName="chronicles_2_1">
+		<chapter number="1" resourceName="chronicles_2_1" referenceName="2_chronicles_1">
 		</chapter>
-		<chapter number="2" resourceName="chronicles_2_2">
+		<chapter number="2" resourceName="chronicles_2_2" referenceName="2_chronicles_2">
 		</chapter>
-		<chapter number="3" resourceName="chronicles_2_3">
+		<chapter number="3" resourceName="chronicles_2_3" referenceName="2_chronicles_3">
 		</chapter>
-		<chapter number="4" resourceName="chronicles_2_4">
+		<chapter number="4" resourceName="chronicles_2_4" referenceName="2_chronicles_4">
 		</chapter>
-		<chapter number="5" resourceName="chronicles_2_5">
+		<chapter number="5" resourceName="chronicles_2_5" referenceName="2_chronicles_5">
 		</chapter>
-		<chapter number="6" resourceName="chronicles_2_6">
+		<chapter number="6" resourceName="chronicles_2_6" referenceName="2_chronicles_6">
 		</chapter>
-		<chapter number="7" resourceName="chronicles_2_7">
+		<chapter number="7" resourceName="chronicles_2_7" referenceName="2_chronicles_7">
 		</chapter>
-		<chapter number="8" resourceName="chronicles_2_8">
+		<chapter number="8" resourceName="chronicles_2_8" referenceName="2_chronicles_8">
 		</chapter>
-		<chapter number="9" resourceName="chronicles_2_9">
+		<chapter number="9" resourceName="chronicles_2_9" referenceName="2_chronicles_9">
 		</chapter>
-		<chapter number="10" resourceName="chronicles_2_10">
+		<chapter number="10" resourceName="chronicles_2_10" referenceName="2_chronicles_10">
 		</chapter>
-		<chapter number="11" resourceName="chronicles_2_11">
+		<chapter number="11" resourceName="chronicles_2_11" referenceName="2_chronicles_11">
 		</chapter>
-		<chapter number="12" resourceName="chronicles_2_12">
+		<chapter number="12" resourceName="chronicles_2_12" referenceName="2_chronicles_12">
 		</chapter>
-		<chapter number="13" resourceName="chronicles_2_13">
+		<chapter number="13" resourceName="chronicles_2_13" referenceName="2_chronicles_13">
 		</chapter>
-		<chapter number="14" resourceName="chronicles_2_14">
+		<chapter number="14" resourceName="chronicles_2_14" referenceName="2_chronicles_14">
 		</chapter>
-		<chapter number="15" resourceName="chronicles_2_15">
+		<chapter number="15" resourceName="chronicles_2_15" referenceName="2_chronicles_15">
 		</chapter>
-		<chapter number="16" resourceName="chronicles_2_16">
+		<chapter number="16" resourceName="chronicles_2_16" referenceName="2_chronicles_16">
 		</chapter>
-		<chapter number="17" resourceName="chronicles_2_17">
+		<chapter number="17" resourceName="chronicles_2_17" referenceName="2_chronicles_17">
 		</chapter>
-		<chapter number="18" resourceName="chronicles_2_18">
+		<chapter number="18" resourceName="chronicles_2_18" referenceName="2_chronicles_18">
 		</chapter>
-		<chapter number="19" resourceName="chronicles_2_19">
+		<chapter number="19" resourceName="chronicles_2_19" referenceName="2_chronicles_19">
 		</chapter>
-		<chapter number="20" resourceName="chronicles_2_20">
+		<chapter number="20" resourceName="chronicles_2_20" referenceName="2_chronicles_20">
 		</chapter>
-		<chapter number="21" resourceName="chronicles_2_21">
+		<chapter number="21" resourceName="chronicles_2_21" referenceName="2_chronicles_21">
 		</chapter>
-		<chapter number="22" resourceName="chronicles_2_22">
+		<chapter number="22" resourceName="chronicles_2_22" referenceName="2_chronicles_22">
 		</chapter>
-		<chapter number="23" resourceName="chronicles_2_23">
+		<chapter number="23" resourceName="chronicles_2_23" referenceName="2_chronicles_23">
 		</chapter>
-		<chapter number="24" resourceName="chronicles_2_24">
+		<chapter number="24" resourceName="chronicles_2_24" referenceName="2_chronicles_24">
 		</chapter>
-		<chapter number="25" resourceName="chronicles_2_25">
+		<chapter number="25" resourceName="chronicles_2_25" referenceName="2_chronicles_25">
 		</chapter>
-		<chapter number="26" resourceName="chronicles_2_26">
+		<chapter number="26" resourceName="chronicles_2_26" referenceName="2_chronicles_26">
 		</chapter>
-		<chapter number="27" resourceName="chronicles_2_27">
+		<chapter number="27" resourceName="chronicles_2_27" referenceName="2_chronicles_27">
 		</chapter>
-		<chapter number="28" resourceName="chronicles_2_28">
+		<chapter number="28" resourceName="chronicles_2_28" referenceName="2_chronicles_28">
 		</chapter>
-		<chapter number="29" resourceName="chronicles_2_29">
+		<chapter number="29" resourceName="chronicles_2_29" referenceName="2_chronicles_29">
 		</chapter>
-		<chapter number="30" resourceName="chronicles_2_30">
+		<chapter number="30" resourceName="chronicles_2_30" referenceName="2_chronicles_30">
 		</chapter>
-		<chapter number="31" resourceName="chronicles_2_31">
+		<chapter number="31" resourceName="chronicles_2_31" referenceName="2_chronicles_31">
 		</chapter>
-		<chapter number="32" resourceName="chronicles_2_32">
+		<chapter number="32" resourceName="chronicles_2_32" referenceName="2_chronicles_32">
 		</chapter>
-		<chapter number="33" resourceName="chronicles_2_33">
+		<chapter number="33" resourceName="chronicles_2_33" referenceName="2_chronicles_33">
 		</chapter>
-		<chapter number="34" resourceName="chronicles_2_34">
+		<chapter number="34" resourceName="chronicles_2_34" referenceName="2_chronicles_34">
 		</chapter>
-		<chapter number="35" resourceName="chronicles_2_35">
+		<chapter number="35" resourceName="chronicles_2_35" referenceName="2_chronicles_35">
 		</chapter>
-		<chapter number="36" resourceName="chronicles_2_36">
+		<chapter number="36" resourceName="chronicles_2_36" referenceName="2_chronicles_36">
 		</chapter>
 	</book>
 	<book title="Ezra" number="15">
-		<chapter number="1" resourceName="ezra_1">
+		<chapter number="1" resourceName="ezra_1" referenceName="ezra_1">
 		</chapter>
-		<chapter number="2" resourceName="ezra_2">
+		<chapter number="2" resourceName="ezra_2" referenceName="ezra_2">
 		</chapter>
-		<chapter number="3" resourceName="ezra_3">
+		<chapter number="3" resourceName="ezra_3" referenceName="ezra_3">
 		</chapter>
-		<chapter number="4" resourceName="ezra_4">
+		<chapter number="4" resourceName="ezra_4" referenceName="ezra_4">
 		</chapter>
-		<chapter number="5" resourceName="ezra_5">
+		<chapter number="5" resourceName="ezra_5" referenceName="ezra_5">
 		</chapter>
-		<chapter number="6" resourceName="ezra_6">
+		<chapter number="6" resourceName="ezra_6" referenceName="ezra_6">
 		</chapter>
-		<chapter number="7" resourceName="ezra_7">
+		<chapter number="7" resourceName="ezra_7" referenceName="ezra_7">
 		</chapter>
-		<chapter number="8" resourceName="ezra_8">
+		<chapter number="8" resourceName="ezra_8" referenceName="ezra_8">
 		</chapter>
-		<chapter number="9" resourceName="ezra_9">
+		<chapter number="9" resourceName="ezra_9" referenceName="ezra_9">
 		</chapter>
-		<chapter number="10" resourceName="ezra_10">
+		<chapter number="10" resourceName="ezra_10" referenceName="ezra_10">
 		</chapter>
 	</book>
 	<book title="Nehemiah" number="16">
-		<chapter number="1" resourceName="nehemiah_1">
+		<chapter number="1" resourceName="nehemiah_1" referenceName="nehemiah_1">
 		</chapter>
-		<chapter number="2" resourceName="nehemiah_2">
+		<chapter number="2" resourceName="nehemiah_2" referenceName="nehemiah_2">
 		</chapter>
-		<chapter number="3" resourceName="nehemiah_3">
+		<chapter number="3" resourceName="nehemiah_3" referenceName="nehemiah_3">
 		</chapter>
-		<chapter number="4" resourceName="nehemiah_4">
+		<chapter number="4" resourceName="nehemiah_4" referenceName="nehemiah_4">
 		</chapter>
-		<chapter number="5" resourceName="nehemiah_5">
+		<chapter number="5" resourceName="nehemiah_5" referenceName="nehemiah_5">
 		</chapter>
-		<chapter number="6" resourceName="nehemiah_6">
+		<chapter number="6" resourceName="nehemiah_6" referenceName="nehemiah_6">
 		</chapter>
-		<chapter number="7" resourceName="nehemiah_7">
+		<chapter number="7" resourceName="nehemiah_7" referenceName="nehemiah_7">
 		</chapter>
-		<chapter number="8" resourceName="nehemiah_8">
+		<chapter number="8" resourceName="nehemiah_8" referenceName="nehemiah_8">
 		</chapter>
-		<chapter number="9" resourceName="nehemiah_9">
+		<chapter number="9" resourceName="nehemiah_9" referenceName="nehemiah_9">
 		</chapter>
-		<chapter number="10" resourceName="nehemiah_10">
+		<chapter number="10" resourceName="nehemiah_10" referenceName="nehemiah_10">
 		</chapter>
-		<chapter number="11" resourceName="nehemiah_11">
+		<chapter number="11" resourceName="nehemiah_11" referenceName="nehemiah_11">
 		</chapter>
-		<chapter number="12" resourceName="nehemiah_12">
+		<chapter number="12" resourceName="nehemiah_12" referenceName="nehemiah_12">
 		</chapter>
-		<chapter number="13" resourceName="nehemiah_13">
+		<chapter number="13" resourceName="nehemiah_13" referenceName="nehemiah_13">
 		</chapter>
 	</book>
 	<book title="Esther" number="17">
-		<chapter number="1" resourceName="esther_1">
+		<chapter number="1" resourceName="esther_1" referenceName="esther_1">
 		</chapter>
-		<chapter number="2" resourceName="esther_2">
+		<chapter number="2" resourceName="esther_2" referenceName="esther_2">
 		</chapter>
-		<chapter number="3" resourceName="esther_3">
+		<chapter number="3" resourceName="esther_3" referenceName="esther_3">
 		</chapter>
-		<chapter number="4" resourceName="esther_4">
+		<chapter number="4" resourceName="esther_4" referenceName="esther_4">
 		</chapter>
-		<chapter number="5" resourceName="esther_5">
+		<chapter number="5" resourceName="esther_5" referenceName="esther_5">
 		</chapter>
-		<chapter number="6" resourceName="esther_6">
+		<chapter number="6" resourceName="esther_6" referenceName="esther_6">
 		</chapter>
-		<chapter number="7" resourceName="esther_7">
+		<chapter number="7" resourceName="esther_7" referenceName="esther_7">
 		</chapter>
-		<chapter number="8" resourceName="esther_8">
+		<chapter number="8" resourceName="esther_8" referenceName="esther_8">
 		</chapter>
-		<chapter number="9" resourceName="esther_9">
+		<chapter number="9" resourceName="esther_9" referenceName="esther_9">
 		</chapter>
-		<chapter number="10" resourceName="esther_10">
+		<chapter number="10" resourceName="esther_10" referenceName="esther_10">
 		</chapter>
 	</book>
 	<book title="Job" number="18">
-		<chapter number="1" resourceName="job_1">
+		<chapter number="1" resourceName="job_1" referenceName="job_1">
 		</chapter>
-		<chapter number="2" resourceName="job_2">
+		<chapter number="2" resourceName="job_2" referenceName="job_2">
 		</chapter>
-		<chapter number="3" resourceName="job_3">
+		<chapter number="3" resourceName="job_3" referenceName="job_3">
 		</chapter>
-		<chapter number="4" resourceName="job_4">
+		<chapter number="4" resourceName="job_4" referenceName="job_4">
 		</chapter>
-		<chapter number="5" resourceName="job_5">
+		<chapter number="5" resourceName="job_5" referenceName="job_5">
 		</chapter>
-		<chapter number="6" resourceName="job_6">
+		<chapter number="6" resourceName="job_6" referenceName="job_6">
 		</chapter>
-		<chapter number="7" resourceName="job_7">
+		<chapter number="7" resourceName="job_7" referenceName="job_7">
 		</chapter>
-		<chapter number="8" resourceName="job_8">
+		<chapter number="8" resourceName="job_8" referenceName="job_8">
 		</chapter>
-		<chapter number="9" resourceName="job_9">
+		<chapter number="9" resourceName="job_9" referenceName="job_9">
 		</chapter>
-		<chapter number="10" resourceName="job_10">
+		<chapter number="10" resourceName="job_10" referenceName="job_10">
 		</chapter>
-		<chapter number="11" resourceName="job_11">
+		<chapter number="11" resourceName="job_11" referenceName="job_11">
 		</chapter>
-		<chapter number="12" resourceName="job_12">
+		<chapter number="12" resourceName="job_12" referenceName="job_12">
 		</chapter>
-		<chapter number="13" resourceName="job_13">
+		<chapter number="13" resourceName="job_13" referenceName="job_13">
 		</chapter>
-		<chapter number="14" resourceName="job_14">
+		<chapter number="14" resourceName="job_14" referenceName="job_14">
 		</chapter>
-		<chapter number="15" resourceName="job_15">
+		<chapter number="15" resourceName="job_15" referenceName="job_15">
 		</chapter>
-		<chapter number="16" resourceName="job_16">
+		<chapter number="16" resourceName="job_16" referenceName="job_16">
 		</chapter>
-		<chapter number="17" resourceName="job_17">
+		<chapter number="17" resourceName="job_17" referenceName="job_17">
 		</chapter>
-		<chapter number="18" resourceName="job_18">
+		<chapter number="18" resourceName="job_18" referenceName="job_18">
 		</chapter>
-		<chapter number="19" resourceName="job_19">
+		<chapter number="19" resourceName="job_19" referenceName="job_19">
 		</chapter>
-		<chapter number="20" resourceName="job_20">
+		<chapter number="20" resourceName="job_20" referenceName="job_20">
 		</chapter>
-		<chapter number="21" resourceName="job_21">
+		<chapter number="21" resourceName="job_21" referenceName="job_21">
 		</chapter>
-		<chapter number="22" resourceName="job_22">
+		<chapter number="22" resourceName="job_22" referenceName="job_22">
 		</chapter>
-		<chapter number="23" resourceName="job_23">
+		<chapter number="23" resourceName="job_23" referenceName="job_23">
 		</chapter>
-		<chapter number="24" resourceName="job_24">
+		<chapter number="24" resourceName="job_24" referenceName="job_24">
 		</chapter>
-		<chapter number="25" resourceName="job_25">
+		<chapter number="25" resourceName="job_25" referenceName="job_25">
 		</chapter>
-		<chapter number="26" resourceName="job_26">
+		<chapter number="26" resourceName="job_26" referenceName="job_26">
 		</chapter>
-		<chapter number="27" resourceName="job_27">
+		<chapter number="27" resourceName="job_27" referenceName="job_27">
 		</chapter>
-		<chapter number="28" resourceName="job_28">
+		<chapter number="28" resourceName="job_28" referenceName="job_28">
 		</chapter>
-		<chapter number="29" resourceName="job_29">
+		<chapter number="29" resourceName="job_29" referenceName="job_29">
 		</chapter>
-		<chapter number="30" resourceName="job_30">
+		<chapter number="30" resourceName="job_30" referenceName="job_30">
 		</chapter>
-		<chapter number="31" resourceName="job_31">
+		<chapter number="31" resourceName="job_31" referenceName="job_31">
 		</chapter>
-		<chapter number="32" resourceName="job_32">
+		<chapter number="32" resourceName="job_32" referenceName="job_32">
 		</chapter>
-		<chapter number="33" resourceName="job_33">
+		<chapter number="33" resourceName="job_33" referenceName="job_33">
 		</chapter>
-		<chapter number="34" resourceName="job_34">
+		<chapter number="34" resourceName="job_34" referenceName="job_34">
 		</chapter>
-		<chapter number="35" resourceName="job_35">
+		<chapter number="35" resourceName="job_35" referenceName="job_35">
 		</chapter>
-		<chapter number="36" resourceName="job_36">
+		<chapter number="36" resourceName="job_36" referenceName="job_36">
 		</chapter>
-		<chapter number="37" resourceName="job_37">
+		<chapter number="37" resourceName="job_37" referenceName="job_37">
 		</chapter>
-		<chapter number="38" resourceName="job_38">
+		<chapter number="38" resourceName="job_38" referenceName="job_38">
 		</chapter>
-		<chapter number="39" resourceName="job_39">
+		<chapter number="39" resourceName="job_39" referenceName="job_39">
 		</chapter>
-		<chapter number="40" resourceName="job_40">
+		<chapter number="40" resourceName="job_40" referenceName="job_40">
 		</chapter>
-		<chapter number="41" resourceName="job_41">
+		<chapter number="41" resourceName="job_41" referenceName="job_41">
 		</chapter>
-		<chapter number="42" resourceName="job_42">
+		<chapter number="42" resourceName="job_42" referenceName="job_42">
 		</chapter>
 	</book>
 	<book title="Psalms" number="19">
-		<chapter number="1" resourceName="psalms_1">
+		<chapter number="1" resourceName="psalms_1" referenceName="psalms_1">
 		</chapter>
-		<chapter number="2" resourceName="psalms_2">
+		<chapter number="2" resourceName="psalms_2" referenceName="psalms_2">
 		</chapter>
-		<chapter number="3" resourceName="psalms_3">
+		<chapter number="3" resourceName="psalms_3" referenceName="psalms_3">
 		</chapter>
-		<chapter number="4" resourceName="psalms_4">
+		<chapter number="4" resourceName="psalms_4" referenceName="psalms_4">
 		</chapter>
-		<chapter number="5" resourceName="psalms_5">
+		<chapter number="5" resourceName="psalms_5" referenceName="psalms_5">
 		</chapter>
-		<chapter number="6" resourceName="psalms_6">
+		<chapter number="6" resourceName="psalms_6" referenceName="psalms_6">
 		</chapter>
-		<chapter number="7" resourceName="psalms_7">
+		<chapter number="7" resourceName="psalms_7" referenceName="psalms_7">
 		</chapter>
-		<chapter number="8" resourceName="psalms_8">
+		<chapter number="8" resourceName="psalms_8" referenceName="psalms_8">
 		</chapter>
-		<chapter number="9" resourceName="psalms_9">
+		<chapter number="9" resourceName="psalms_9" referenceName="psalms_9">
 		</chapter>
-		<chapter number="10" resourceName="psalms_10">
+		<chapter number="10" resourceName="psalms_10" referenceName="psalms_10">
 		</chapter>
-		<chapter number="11" resourceName="psalms_11">
+		<chapter number="11" resourceName="psalms_11" referenceName="psalms_11">
 		</chapter>
-		<chapter number="12" resourceName="psalms_12">
+		<chapter number="12" resourceName="psalms_12" referenceName="psalms_12">
 		</chapter>
-		<chapter number="13" resourceName="psalms_13">
+		<chapter number="13" resourceName="psalms_13" referenceName="psalms_13">
 		</chapter>
-		<chapter number="14" resourceName="psalms_14">
+		<chapter number="14" resourceName="psalms_14" referenceName="psalms_14">
 		</chapter>
-		<chapter number="15" resourceName="psalms_15">
+		<chapter number="15" resourceName="psalms_15" referenceName="psalms_15">
 		</chapter>
-		<chapter number="16" resourceName="psalms_16">
+		<chapter number="16" resourceName="psalms_16" referenceName="psalms_16">
 		</chapter>
-		<chapter number="17" resourceName="psalms_17">
+		<chapter number="17" resourceName="psalms_17" referenceName="psalms_17">
 		</chapter>
-		<chapter number="18" resourceName="psalms_18">
+		<chapter number="18" resourceName="psalms_18" referenceName="psalms_18">
 		</chapter>
-		<chapter number="19" resourceName="psalms_19">
+		<chapter number="19" resourceName="psalms_19" referenceName="psalms_19">
 		</chapter>
-		<chapter number="20" resourceName="psalms_20">
+		<chapter number="20" resourceName="psalms_20" referenceName="psalms_20">
 		</chapter>
-		<chapter number="21" resourceName="psalms_21">
+		<chapter number="21" resourceName="psalms_21" referenceName="psalms_21">
 		</chapter>
-		<chapter number="22" resourceName="psalms_22">
+		<chapter number="22" resourceName="psalms_22" referenceName="psalms_22">
 		</chapter>
-		<chapter number="23" resourceName="psalms_23">
+		<chapter number="23" resourceName="psalms_23" referenceName="psalms_23">
 		</chapter>
-		<chapter number="24" resourceName="psalms_24">
+		<chapter number="24" resourceName="psalms_24" referenceName="psalms_24">
 		</chapter>
-		<chapter number="25" resourceName="psalms_25">
+		<chapter number="25" resourceName="psalms_25" referenceName="psalms_25">
 		</chapter>
-		<chapter number="26" resourceName="psalms_26">
+		<chapter number="26" resourceName="psalms_26" referenceName="psalms_26">
 		</chapter>
-		<chapter number="27" resourceName="psalms_27">
+		<chapter number="27" resourceName="psalms_27" referenceName="psalms_27">
 		</chapter>
-		<chapter number="28" resourceName="psalms_28">
+		<chapter number="28" resourceName="psalms_28" referenceName="psalms_28">
 		</chapter>
-		<chapter number="29" resourceName="psalms_29">
+		<chapter number="29" resourceName="psalms_29" referenceName="psalms_29">
 		</chapter>
-		<chapter number="30" resourceName="psalms_30">
+		<chapter number="30" resourceName="psalms_30" referenceName="psalms_30">
 		</chapter>
-		<chapter number="31" resourceName="psalms_31">
+		<chapter number="31" resourceName="psalms_31" referenceName="psalms_31">
 		</chapter>
-		<chapter number="32" resourceName="psalms_32">
+		<chapter number="32" resourceName="psalms_32" referenceName="psalms_32">
 		</chapter>
-		<chapter number="33" resourceName="psalms_33">
+		<chapter number="33" resourceName="psalms_33" referenceName="psalms_33">
 		</chapter>
-		<chapter number="34" resourceName="psalms_34">
+		<chapter number="34" resourceName="psalms_34" referenceName="psalms_34">
 		</chapter>
-		<chapter number="35" resourceName="psalms_35">
+		<chapter number="35" resourceName="psalms_35" referenceName="psalms_35">
 		</chapter>
-		<chapter number="36" resourceName="psalms_36">
+		<chapter number="36" resourceName="psalms_36" referenceName="psalms_36">
 		</chapter>
-		<chapter number="37" resourceName="psalms_37">
+		<chapter number="37" resourceName="psalms_37" referenceName="psalms_37">
 		</chapter>
-		<chapter number="38" resourceName="psalms_38">
+		<chapter number="38" resourceName="psalms_38" referenceName="psalms_38">
 		</chapter>
-		<chapter number="39" resourceName="psalms_39">
+		<chapter number="39" resourceName="psalms_39" referenceName="psalms_39">
 		</chapter>
-		<chapter number="40" resourceName="psalms_40">
+		<chapter number="40" resourceName="psalms_40" referenceName="psalms_40">
 		</chapter>
-		<chapter number="41" resourceName="psalms_41">
+		<chapter number="41" resourceName="psalms_41" referenceName="psalms_41">
 		</chapter>
-		<chapter number="42" resourceName="psalms_42">
+		<chapter number="42" resourceName="psalms_42" referenceName="psalms_42">
 		</chapter>
-		<chapter number="43" resourceName="psalms_43">
+		<chapter number="43" resourceName="psalms_43" referenceName="psalms_43">
 		</chapter>
-		<chapter number="44" resourceName="psalms_44">
+		<chapter number="44" resourceName="psalms_44" referenceName="psalms_44">
 		</chapter>
-		<chapter number="45" resourceName="psalms_45">
+		<chapter number="45" resourceName="psalms_45" referenceName="psalms_45">
 		</chapter>
-		<chapter number="46" resourceName="psalms_46">
+		<chapter number="46" resourceName="psalms_46" referenceName="psalms_46">
 		</chapter>
-		<chapter number="47" resourceName="psalms_47">
+		<chapter number="47" resourceName="psalms_47" referenceName="psalms_47">
 		</chapter>
-		<chapter number="48" resourceName="psalms_48">
+		<chapter number="48" resourceName="psalms_48" referenceName="psalms_48">
 		</chapter>
-		<chapter number="49" resourceName="psalms_49">
+		<chapter number="49" resourceName="psalms_49" referenceName="psalms_49">
 		</chapter>
-		<chapter number="50" resourceName="psalms_50">
+		<chapter number="50" resourceName="psalms_50" referenceName="psalms_50">
 		</chapter>
-		<chapter number="51" resourceName="psalms_51">
+		<chapter number="51" resourceName="psalms_51" referenceName="psalms_51">
 		</chapter>
-		<chapter number="52" resourceName="psalms_52">
+		<chapter number="52" resourceName="psalms_52" referenceName="psalms_52">
 		</chapter>
-		<chapter number="53" resourceName="psalms_53">
+		<chapter number="53" resourceName="psalms_53" referenceName="psalms_53">
 		</chapter>
-		<chapter number="54" resourceName="psalms_54">
+		<chapter number="54" resourceName="psalms_54" referenceName="psalms_54">
 		</chapter>
-		<chapter number="55" resourceName="psalms_55">
+		<chapter number="55" resourceName="psalms_55" referenceName="psalms_55">
 		</chapter>
-		<chapter number="56" resourceName="psalms_56">
+		<chapter number="56" resourceName="psalms_56" referenceName="psalms_56">
 		</chapter>
-		<chapter number="57" resourceName="psalms_57">
+		<chapter number="57" resourceName="psalms_57" referenceName="psalms_57">
 		</chapter>
-		<chapter number="58" resourceName="psalms_58">
+		<chapter number="58" resourceName="psalms_58" referenceName="psalms_58">
 		</chapter>
-		<chapter number="59" resourceName="psalms_59">
+		<chapter number="59" resourceName="psalms_59" referenceName="psalms_59">
 		</chapter>
-		<chapter number="60" resourceName="psalms_60">
+		<chapter number="60" resourceName="psalms_60" referenceName="psalms_60">
 		</chapter>
-		<chapter number="61" resourceName="psalms_61">
+		<chapter number="61" resourceName="psalms_61" referenceName="psalms_61">
 		</chapter>
-		<chapter number="62" resourceName="psalms_62">
+		<chapter number="62" resourceName="psalms_62" referenceName="psalms_62">
 		</chapter>
-		<chapter number="63" resourceName="psalms_63">
+		<chapter number="63" resourceName="psalms_63" referenceName="psalms_63">
 		</chapter>
-		<chapter number="64" resourceName="psalms_64">
+		<chapter number="64" resourceName="psalms_64" referenceName="psalms_64">
 		</chapter>
-		<chapter number="65" resourceName="psalms_65">
+		<chapter number="65" resourceName="psalms_65" referenceName="psalms_65">
 		</chapter>
-		<chapter number="66" resourceName="psalms_66">
+		<chapter number="66" resourceName="psalms_66" referenceName="psalms_66">
 		</chapter>
-		<chapter number="67" resourceName="psalms_67">
+		<chapter number="67" resourceName="psalms_67" referenceName="psalms_67">
 		</chapter>
-		<chapter number="68" resourceName="psalms_68">
+		<chapter number="68" resourceName="psalms_68" referenceName="psalms_68">
 		</chapter>
-		<chapter number="69" resourceName="psalms_69">
+		<chapter number="69" resourceName="psalms_69" referenceName="psalms_69">
 		</chapter>
-		<chapter number="70" resourceName="psalms_70">
+		<chapter number="70" resourceName="psalms_70" referenceName="psalms_70">
 		</chapter>
-		<chapter number="71" resourceName="psalms_71">
+		<chapter number="71" resourceName="psalms_71" referenceName="psalms_71">
 		</chapter>
-		<chapter number="72" resourceName="psalms_72">
+		<chapter number="72" resourceName="psalms_72" referenceName="psalms_72">
 		</chapter>
-		<chapter number="73" resourceName="psalms_73">
+		<chapter number="73" resourceName="psalms_73" referenceName="psalms_73">
 		</chapter>
-		<chapter number="74" resourceName="psalms_74">
+		<chapter number="74" resourceName="psalms_74" referenceName="psalms_74">
 		</chapter>
-		<chapter number="75" resourceName="psalms_75">
+		<chapter number="75" resourceName="psalms_75" referenceName="psalms_75">
 		</chapter>
-		<chapter number="76" resourceName="psalms_76">
+		<chapter number="76" resourceName="psalms_76" referenceName="psalms_76">
 		</chapter>
-		<chapter number="77" resourceName="psalms_77">
+		<chapter number="77" resourceName="psalms_77" referenceName="psalms_77">
 		</chapter>
-		<chapter number="78" resourceName="psalms_78">
+		<chapter number="78" resourceName="psalms_78" referenceName="psalms_78">
 		</chapter>
-		<chapter number="79" resourceName="psalms_79">
+		<chapter number="79" resourceName="psalms_79" referenceName="psalms_79">
 		</chapter>
-		<chapter number="80" resourceName="psalms_80">
+		<chapter number="80" resourceName="psalms_80" referenceName="psalms_80">
 		</chapter>
-		<chapter number="81" resourceName="psalms_81">
+		<chapter number="81" resourceName="psalms_81" referenceName="psalms_81">
 		</chapter>
-		<chapter number="82" resourceName="psalms_82">
+		<chapter number="82" resourceName="psalms_82" referenceName="psalms_82">
 		</chapter>
-		<chapter number="83" resourceName="psalms_83">
+		<chapter number="83" resourceName="psalms_83" referenceName="psalms_83">
 		</chapter>
-		<chapter number="84" resourceName="psalms_84">
+		<chapter number="84" resourceName="psalms_84" referenceName="psalms_84">
 		</chapter>
-		<chapter number="85" resourceName="psalms_85">
+		<chapter number="85" resourceName="psalms_85" referenceName="psalms_85">
 		</chapter>
-		<chapter number="86" resourceName="psalms_86">
+		<chapter number="86" resourceName="psalms_86" referenceName="psalms_86">
 		</chapter>
-		<chapter number="87" resourceName="psalms_87">
+		<chapter number="87" resourceName="psalms_87" referenceName="psalms_87">
 		</chapter>
-		<chapter number="88" resourceName="psalms_88">
+		<chapter number="88" resourceName="psalms_88" referenceName="psalms_88">
 		</chapter>
-		<chapter number="89" resourceName="psalms_89">
+		<chapter number="89" resourceName="psalms_89" referenceName="psalms_89">
 		</chapter>
-		<chapter number="90" resourceName="psalms_90">
+		<chapter number="90" resourceName="psalms_90" referenceName="psalms_90">
 		</chapter>
-		<chapter number="91" resourceName="psalms_91">
+		<chapter number="91" resourceName="psalms_91" referenceName="psalms_91">
 		</chapter>
-		<chapter number="92" resourceName="psalms_92">
+		<chapter number="92" resourceName="psalms_92" referenceName="psalms_92">
 		</chapter>
-		<chapter number="93" resourceName="psalms_93">
+		<chapter number="93" resourceName="psalms_93" referenceName="psalms_93">
 		</chapter>
-		<chapter number="94" resourceName="psalms_94">
+		<chapter number="94" resourceName="psalms_94" referenceName="psalms_94">
 		</chapter>
-		<chapter number="95" resourceName="psalms_95">
+		<chapter number="95" resourceName="psalms_95" referenceName="psalms_95">
 		</chapter>
-		<chapter number="96" resourceName="psalms_96">
+		<chapter number="96" resourceName="psalms_96" referenceName="psalms_96">
 		</chapter>
-		<chapter number="97" resourceName="psalms_97">
+		<chapter number="97" resourceName="psalms_97" referenceName="psalms_97">
 		</chapter>
-		<chapter number="98" resourceName="psalms_98">
+		<chapter number="98" resourceName="psalms_98" referenceName="psalms_98">
 		</chapter>
-		<chapter number="99" resourceName="psalms_99">
+		<chapter number="99" resourceName="psalms_99" referenceName="psalms_99">
 		</chapter>
-		<chapter number="100" resourceName="psalms_100">
+		<chapter number="100" resourceName="psalms_100" referenceName="psalms_100">
 		</chapter>
-		<chapter number="101" resourceName="psalms_101">
+		<chapter number="101" resourceName="psalms_101" referenceName="psalms_101">
 		</chapter>
-		<chapter number="102" resourceName="psalms_102">
+		<chapter number="102" resourceName="psalms_102" referenceName="psalms_102">
 		</chapter>
-		<chapter number="103" resourceName="psalms_103">
+		<chapter number="103" resourceName="psalms_103" referenceName="psalms_103">
 		</chapter>
-		<chapter number="104" resourceName="psalms_104">
+		<chapter number="104" resourceName="psalms_104" referenceName="psalms_104">
 		</chapter>
-		<chapter number="105" resourceName="psalms_105">
+		<chapter number="105" resourceName="psalms_105" referenceName="psalms_105">
 		</chapter>
-		<chapter number="106" resourceName="psalms_106">
+		<chapter number="106" resourceName="psalms_106" referenceName="psalms_106">
 		</chapter>
-		<chapter number="107" resourceName="psalms_107">
+		<chapter number="107" resourceName="psalms_107" referenceName="psalms_107">
 		</chapter>
-		<chapter number="108" resourceName="psalms_108">
+		<chapter number="108" resourceName="psalms_108" referenceName="psalms_108">
 		</chapter>
-		<chapter number="109" resourceName="psalms_109">
+		<chapter number="109" resourceName="psalms_109" referenceName="psalms_109">
 		</chapter>
-		<chapter number="110" resourceName="psalms_110">
+		<chapter number="110" resourceName="psalms_110" referenceName="psalms_110">
 		</chapter>
-		<chapter number="111" resourceName="psalms_111">
+		<chapter number="111" resourceName="psalms_111" referenceName="psalms_111">
 		</chapter>
-		<chapter number="112" resourceName="psalms_112">
+		<chapter number="112" resourceName="psalms_112" referenceName="psalms_112">
 		</chapter>
-		<chapter number="113" resourceName="psalms_113">
+		<chapter number="113" resourceName="psalms_113" referenceName="psalms_113">
 		</chapter>
-		<chapter number="114" resourceName="psalms_114">
+		<chapter number="114" resourceName="psalms_114" referenceName="psalms_114">
 		</chapter>
-		<chapter number="115" resourceName="psalms_115">
+		<chapter number="115" resourceName="psalms_115" referenceName="psalms_115">
 		</chapter>
-		<chapter number="116" resourceName="psalms_116">
+		<chapter number="116" resourceName="psalms_116" referenceName="psalms_116">
 		</chapter>
-		<chapter number="117" resourceName="psalms_117">
+		<chapter number="117" resourceName="psalms_117" referenceName="psalms_117">
 		</chapter>
-		<chapter number="118" resourceName="psalms_118">
+		<chapter number="118" resourceName="psalms_118" referenceName="psalms_118">
 		</chapter>
-		<chapter number="119" resourceName="psalms_119">
+		<chapter number="119" resourceName="psalms_119" referenceName="psalms_119">
 		</chapter>
-		<chapter number="120" resourceName="psalms_120">
+		<chapter number="120" resourceName="psalms_120" referenceName="psalms_120">
 		</chapter>
-		<chapter number="121" resourceName="psalms_121">
+		<chapter number="121" resourceName="psalms_121" referenceName="psalms_121">
 		</chapter>
-		<chapter number="122" resourceName="psalms_122">
+		<chapter number="122" resourceName="psalms_122" referenceName="psalms_122">
 		</chapter>
-		<chapter number="123" resourceName="psalms_123">
+		<chapter number="123" resourceName="psalms_123" referenceName="psalms_123">
 		</chapter>
-		<chapter number="124" resourceName="psalms_124">
+		<chapter number="124" resourceName="psalms_124" referenceName="psalms_124">
 		</chapter>
-		<chapter number="125" resourceName="psalms_125">
+		<chapter number="125" resourceName="psalms_125" referenceName="psalms_125">
 		</chapter>
-		<chapter number="126" resourceName="psalms_126">
+		<chapter number="126" resourceName="psalms_126" referenceName="psalms_126">
 		</chapter>
-		<chapter number="127" resourceName="psalms_127">
+		<chapter number="127" resourceName="psalms_127" referenceName="psalms_127">
 		</chapter>
-		<chapter number="128" resourceName="psalms_128">
+		<chapter number="128" resourceName="psalms_128" referenceName="psalms_128">
 		</chapter>
-		<chapter number="129" resourceName="psalms_129">
+		<chapter number="129" resourceName="psalms_129" referenceName="psalms_129">
 		</chapter>
-		<chapter number="130" resourceName="psalms_130">
+		<chapter number="130" resourceName="psalms_130" referenceName="psalms_130">
 		</chapter>
-		<chapter number="131" resourceName="psalms_131">
+		<chapter number="131" resourceName="psalms_131" referenceName="psalms_131">
 		</chapter>
-		<chapter number="132" resourceName="psalms_132">
+		<chapter number="132" resourceName="psalms_132" referenceName="psalms_132">
 		</chapter>
-		<chapter number="133" resourceName="psalms_133">
+		<chapter number="133" resourceName="psalms_133" referenceName="psalms_133">
 		</chapter>
-		<chapter number="134" resourceName="psalms_134">
+		<chapter number="134" resourceName="psalms_134" referenceName="psalms_134">
 		</chapter>
-		<chapter number="135" resourceName="psalms_135">
+		<chapter number="135" resourceName="psalms_135" referenceName="psalms_135">
 		</chapter>
-		<chapter number="136" resourceName="psalms_136">
+		<chapter number="136" resourceName="psalms_136" referenceName="psalms_136">
 		</chapter>
-		<chapter number="137" resourceName="psalms_137">
+		<chapter number="137" resourceName="psalms_137" referenceName="psalms_137">
 		</chapter>
-		<chapter number="138" resourceName="psalms_138">
+		<chapter number="138" resourceName="psalms_138" referenceName="psalms_138">
 		</chapter>
-		<chapter number="139" resourceName="psalms_139">
+		<chapter number="139" resourceName="psalms_139" referenceName="psalms_139">
 		</chapter>
-		<chapter number="140" resourceName="psalms_140">
+		<chapter number="140" resourceName="psalms_140" referenceName="psalms_140">
 		</chapter>
-		<chapter number="141" resourceName="psalms_141">
+		<chapter number="141" resourceName="psalms_141" referenceName="psalms_141">
 		</chapter>
-		<chapter number="142" resourceName="psalms_142">
+		<chapter number="142" resourceName="psalms_142" referenceName="psalms_142">
 		</chapter>
-		<chapter number="143" resourceName="psalms_143">
+		<chapter number="143" resourceName="psalms_143" referenceName="psalms_143">
 		</chapter>
-		<chapter number="144" resourceName="psalms_144">
+		<chapter number="144" resourceName="psalms_144" referenceName="psalms_144">
 		</chapter>
-		<chapter number="145" resourceName="psalms_145">
+		<chapter number="145" resourceName="psalms_145" referenceName="psalms_145">
 		</chapter>
-		<chapter number="146" resourceName="psalms_146">
+		<chapter number="146" resourceName="psalms_146" referenceName="psalms_146">
 		</chapter>
-		<chapter number="147" resourceName="psalms_147">
+		<chapter number="147" resourceName="psalms_147" referenceName="psalms_147">
 		</chapter>
-		<chapter number="148" resourceName="psalms_148">
+		<chapter number="148" resourceName="psalms_148" referenceName="psalms_148">
 		</chapter>
-		<chapter number="149" resourceName="psalms_149">
+		<chapter number="149" resourceName="psalms_149" referenceName="psalms_149">
 		</chapter>
-		<chapter number="150" resourceName="psalms_150">
+		<chapter number="150" resourceName="psalms_150" referenceName="psalms_150">
 		</chapter>
 	</book>
 	<book title="Proverbs" number="20">
-		<chapter number="1" resourceName="proverbs_1">
+		<chapter number="1" resourceName="proverbs_1" referenceName="proverbs_1">
 		</chapter>
-		<chapter number="2" resourceName="proverbs_2">
+		<chapter number="2" resourceName="proverbs_2" referenceName="proverbs_2">
 		</chapter>
-		<chapter number="3" resourceName="proverbs_3">
+		<chapter number="3" resourceName="proverbs_3" referenceName="proverbs_3">
 		</chapter>
-		<chapter number="4" resourceName="proverbs_4">
+		<chapter number="4" resourceName="proverbs_4" referenceName="proverbs_4">
 		</chapter>
-		<chapter number="5" resourceName="proverbs_5">
+		<chapter number="5" resourceName="proverbs_5" referenceName="proverbs_5">
 		</chapter>
-		<chapter number="6" resourceName="proverbs_6">
+		<chapter number="6" resourceName="proverbs_6" referenceName="proverbs_6">
 		</chapter>
-		<chapter number="7" resourceName="proverbs_7">
+		<chapter number="7" resourceName="proverbs_7" referenceName="proverbs_7">
 		</chapter>
-		<chapter number="8" resourceName="proverbs_8">
+		<chapter number="8" resourceName="proverbs_8" referenceName="proverbs_8">
 		</chapter>
-		<chapter number="9" resourceName="proverbs_9">
+		<chapter number="9" resourceName="proverbs_9" referenceName="proverbs_9">
 		</chapter>
-		<chapter number="10" resourceName="proverbs_10">
+		<chapter number="10" resourceName="proverbs_10" referenceName="proverbs_10">
 		</chapter>
-		<chapter number="11" resourceName="proverbs_11">
+		<chapter number="11" resourceName="proverbs_11" referenceName="proverbs_11">
 		</chapter>
-		<chapter number="12" resourceName="proverbs_12">
+		<chapter number="12" resourceName="proverbs_12" referenceName="proverbs_12">
 		</chapter>
-		<chapter number="13" resourceName="proverbs_13">
+		<chapter number="13" resourceName="proverbs_13" referenceName="proverbs_13">
 		</chapter>
-		<chapter number="14" resourceName="proverbs_14">
+		<chapter number="14" resourceName="proverbs_14" referenceName="proverbs_14">
 		</chapter>
-		<chapter number="15" resourceName="proverbs_15">
+		<chapter number="15" resourceName="proverbs_15" referenceName="proverbs_15">
 		</chapter>
-		<chapter number="16" resourceName="proverbs_16">
+		<chapter number="16" resourceName="proverbs_16" referenceName="proverbs_16">
 		</chapter>
-		<chapter number="17" resourceName="proverbs_17">
+		<chapter number="17" resourceName="proverbs_17" referenceName="proverbs_17">
 		</chapter>
-		<chapter number="18" resourceName="proverbs_18">
+		<chapter number="18" resourceName="proverbs_18" referenceName="proverbs_18">
 		</chapter>
-		<chapter number="19" resourceName="proverbs_19">
+		<chapter number="19" resourceName="proverbs_19" referenceName="proverbs_19">
 		</chapter>
-		<chapter number="20" resourceName="proverbs_20">
+		<chapter number="20" resourceName="proverbs_20" referenceName="proverbs_20">
 		</chapter>
-		<chapter number="21" resourceName="proverbs_21">
+		<chapter number="21" resourceName="proverbs_21" referenceName="proverbs_21">
 		</chapter>
-		<chapter number="22" resourceName="proverbs_22">
+		<chapter number="22" resourceName="proverbs_22" referenceName="proverbs_22">
 		</chapter>
-		<chapter number="23" resourceName="proverbs_23">
+		<chapter number="23" resourceName="proverbs_23" referenceName="proverbs_23">
 		</chapter>
-		<chapter number="24" resourceName="proverbs_24">
+		<chapter number="24" resourceName="proverbs_24" referenceName="proverbs_24">
 		</chapter>
-		<chapter number="25" resourceName="proverbs_25">
+		<chapter number="25" resourceName="proverbs_25" referenceName="proverbs_25">
 		</chapter>
-		<chapter number="26" resourceName="proverbs_26">
+		<chapter number="26" resourceName="proverbs_26" referenceName="proverbs_26">
 		</chapter>
-		<chapter number="27" resourceName="proverbs_27">
+		<chapter number="27" resourceName="proverbs_27" referenceName="proverbs_27">
 		</chapter>
-		<chapter number="28" resourceName="proverbs_28">
+		<chapter number="28" resourceName="proverbs_28" referenceName="proverbs_28">
 		</chapter>
-		<chapter number="29" resourceName="proverbs_29">
+		<chapter number="29" resourceName="proverbs_29" referenceName="proverbs_29">
 		</chapter>
-		<chapter number="30" resourceName="proverbs_30">
+		<chapter number="30" resourceName="proverbs_30" referenceName="proverbs_30">
 		</chapter>
-		<chapter number="31" resourceName="proverbs_31">
+		<chapter number="31" resourceName="proverbs_31" referenceName="proverbs_31">
 		</chapter>
 	</book>
 	<book title="Ecclesiastes" number="21">
-		<chapter number="1" resourceName="ecclesiastes_1">
+		<chapter number="1" resourceName="ecclesiastes_1" referenceName="ecclesiastes_1">
 		</chapter>
-		<chapter number="2" resourceName="ecclesiastes_2">
+		<chapter number="2" resourceName="ecclesiastes_2" referenceName="ecclesiastes_2">
 		</chapter>
-		<chapter number="3" resourceName="ecclesiastes_3">
+		<chapter number="3" resourceName="ecclesiastes_3" referenceName="ecclesiastes_3">
 		</chapter>
-		<chapter number="4" resourceName="ecclesiastes_4">
+		<chapter number="4" resourceName="ecclesiastes_4" referenceName="ecclesiastes_4">
 		</chapter>
-		<chapter number="5" resourceName="ecclesiastes_5">
+		<chapter number="5" resourceName="ecclesiastes_5" referenceName="ecclesiastes_5">
 		</chapter>
-		<chapter number="6" resourceName="ecclesiastes_6">
+		<chapter number="6" resourceName="ecclesiastes_6" referenceName="ecclesiastes_6">
 		</chapter>
-		<chapter number="7" resourceName="ecclesiastes_7">
+		<chapter number="7" resourceName="ecclesiastes_7" referenceName="ecclesiastes_7">
 		</chapter>
-		<chapter number="8" resourceName="ecclesiastes_8">
+		<chapter number="8" resourceName="ecclesiastes_8" referenceName="ecclesiastes_8">
 		</chapter>
-		<chapter number="9" resourceName="ecclesiastes_9">
+		<chapter number="9" resourceName="ecclesiastes_9" referenceName="ecclesiastes_9">
 		</chapter>
-		<chapter number="10" resourceName="ecclesiastes_10">
+		<chapter number="10" resourceName="ecclesiastes_10" referenceName="ecclesiastes_10">
 		</chapter>
-		<chapter number="11" resourceName="ecclesiastes_11">
+		<chapter number="11" resourceName="ecclesiastes_11" referenceName="ecclesiastes_11">
 		</chapter>
-		<chapter number="12" resourceName="ecclesiastes_12">
+		<chapter number="12" resourceName="ecclesiastes_12" referenceName="ecclesiastes_12">
 		</chapter>
 	</book>
 	<book title="Song of Solomon" number="22">
-		<chapter number="1" resourceName="song_of_solomon_1">
+		<chapter number="1" resourceName="song_of_solomon_1" referenceName="song_of_solomon_1">
 		</chapter>
-		<chapter number="2" resourceName="song_of_solomon_2">
+		<chapter number="2" resourceName="song_of_solomon_2" referenceName="song_of_solomon_2">
 		</chapter>
-		<chapter number="3" resourceName="song_of_solomon_3">
+		<chapter number="3" resourceName="song_of_solomon_3" referenceName="song_of_solomon_3">
 		</chapter>
-		<chapter number="4" resourceName="song_of_solomon_4">
+		<chapter number="4" resourceName="song_of_solomon_4" referenceName="song_of_solomon_4">
 		</chapter>
-		<chapter number="5" resourceName="song_of_solomon_5">
+		<chapter number="5" resourceName="song_of_solomon_5" referenceName="song_of_solomon_5">
 		</chapter>
-		<chapter number="6" resourceName="song_of_solomon_6">
+		<chapter number="6" resourceName="song_of_solomon_6" referenceName="song_of_solomon_6">
 		</chapter>
-		<chapter number="7" resourceName="song_of_solomon_7">
+		<chapter number="7" resourceName="song_of_solomon_7" referenceName="song_of_solomon_7">
 		</chapter>
-		<chapter number="8" resourceName="song_of_solomon_8">
+		<chapter number="8" resourceName="song_of_solomon_8" referenceName="song_of_solomon_8">
 		</chapter>
 	</book>
 	<book title="Isaiah" number="23">
-		<chapter number="1" resourceName="isaiah_1">
+		<chapter number="1" resourceName="isaiah_1" referenceName="isaiah_1">
 		</chapter>
-		<chapter number="2" resourceName="isaiah_2">
+		<chapter number="2" resourceName="isaiah_2" referenceName="isaiah_2">
 		</chapter>
-		<chapter number="3" resourceName="isaiah_3">
+		<chapter number="3" resourceName="isaiah_3" referenceName="isaiah_3">
 		</chapter>
-		<chapter number="4" resourceName="isaiah_4">
+		<chapter number="4" resourceName="isaiah_4" referenceName="isaiah_4">
 		</chapter>
-		<chapter number="5" resourceName="isaiah_5">
+		<chapter number="5" resourceName="isaiah_5" referenceName="isaiah_5">
 		</chapter>
-		<chapter number="6" resourceName="isaiah_6">
+		<chapter number="6" resourceName="isaiah_6" referenceName="isaiah_6">
 		</chapter>
-		<chapter number="7" resourceName="isaiah_7">
+		<chapter number="7" resourceName="isaiah_7" referenceName="isaiah_7">
 		</chapter>
-		<chapter number="8" resourceName="isaiah_8">
+		<chapter number="8" resourceName="isaiah_8" referenceName="isaiah_8">
 		</chapter>
-		<chapter number="9" resourceName="isaiah_9">
+		<chapter number="9" resourceName="isaiah_9" referenceName="isaiah_9">
 		</chapter>
-		<chapter number="10" resourceName="isaiah_10">
+		<chapter number="10" resourceName="isaiah_10" referenceName="isaiah_10">
 		</chapter>
-		<chapter number="11" resourceName="isaiah_11">
+		<chapter number="11" resourceName="isaiah_11" referenceName="isaiah_11">
 		</chapter>
-		<chapter number="12" resourceName="isaiah_12">
+		<chapter number="12" resourceName="isaiah_12" referenceName="isaiah_12">
 		</chapter>
-		<chapter number="13" resourceName="isaiah_13">
+		<chapter number="13" resourceName="isaiah_13" referenceName="isaiah_13">
 		</chapter>
-		<chapter number="14" resourceName="isaiah_14">
+		<chapter number="14" resourceName="isaiah_14" referenceName="isaiah_14">
 		</chapter>
-		<chapter number="15" resourceName="isaiah_15">
+		<chapter number="15" resourceName="isaiah_15" referenceName="isaiah_15">
 		</chapter>
-		<chapter number="16" resourceName="isaiah_16">
+		<chapter number="16" resourceName="isaiah_16" referenceName="isaiah_16">
 		</chapter>
-		<chapter number="17" resourceName="isaiah_17">
+		<chapter number="17" resourceName="isaiah_17" referenceName="isaiah_17">
 		</chapter>
-		<chapter number="18" resourceName="isaiah_18">
+		<chapter number="18" resourceName="isaiah_18" referenceName="isaiah_18">
 		</chapter>
-		<chapter number="19" resourceName="isaiah_19">
+		<chapter number="19" resourceName="isaiah_19" referenceName="isaiah_19">
 		</chapter>
-		<chapter number="20" resourceName="isaiah_20">
+		<chapter number="20" resourceName="isaiah_20" referenceName="isaiah_20">
 		</chapter>
-		<chapter number="21" resourceName="isaiah_21">
+		<chapter number="21" resourceName="isaiah_21" referenceName="isaiah_21">
 		</chapter>
-		<chapter number="22" resourceName="isaiah_22">
+		<chapter number="22" resourceName="isaiah_22" referenceName="isaiah_22">
 		</chapter>
-		<chapter number="23" resourceName="isaiah_23">
+		<chapter number="23" resourceName="isaiah_23" referenceName="isaiah_23">
 		</chapter>
-		<chapter number="24" resourceName="isaiah_24">
+		<chapter number="24" resourceName="isaiah_24" referenceName="isaiah_24">
 		</chapter>
-		<chapter number="25" resourceName="isaiah_25">
+		<chapter number="25" resourceName="isaiah_25" referenceName="isaiah_25">
 		</chapter>
-		<chapter number="26" resourceName="isaiah_26">
+		<chapter number="26" resourceName="isaiah_26" referenceName="isaiah_26">
 		</chapter>
-		<chapter number="27" resourceName="isaiah_27">
+		<chapter number="27" resourceName="isaiah_27" referenceName="isaiah_27">
 		</chapter>
-		<chapter number="28" resourceName="isaiah_28">
+		<chapter number="28" resourceName="isaiah_28" referenceName="isaiah_28">
 		</chapter>
-		<chapter number="29" resourceName="isaiah_29">
+		<chapter number="29" resourceName="isaiah_29" referenceName="isaiah_29">
 		</chapter>
-		<chapter number="30" resourceName="isaiah_30">
+		<chapter number="30" resourceName="isaiah_30" referenceName="isaiah_30">
 		</chapter>
-		<chapter number="31" resourceName="isaiah_31">
+		<chapter number="31" resourceName="isaiah_31" referenceName="isaiah_31">
 		</chapter>
-		<chapter number="32" resourceName="isaiah_32">
+		<chapter number="32" resourceName="isaiah_32" referenceName="isaiah_32">
 		</chapter>
-		<chapter number="33" resourceName="isaiah_33">
+		<chapter number="33" resourceName="isaiah_33" referenceName="isaiah_33">
 		</chapter>
-		<chapter number="34" resourceName="isaiah_34">
+		<chapter number="34" resourceName="isaiah_34" referenceName="isaiah_34">
 		</chapter>
-		<chapter number="35" resourceName="isaiah_35">
+		<chapter number="35" resourceName="isaiah_35" referenceName="isaiah_35">
 		</chapter>
-		<chapter number="36" resourceName="isaiah_36">
+		<chapter number="36" resourceName="isaiah_36" referenceName="isaiah_36">
 		</chapter>
-		<chapter number="37" resourceName="isaiah_37">
+		<chapter number="37" resourceName="isaiah_37" referenceName="isaiah_37">
 		</chapter>
-		<chapter number="38" resourceName="isaiah_38">
+		<chapter number="38" resourceName="isaiah_38" referenceName="isaiah_38">
 		</chapter>
-		<chapter number="39" resourceName="isaiah_39">
+		<chapter number="39" resourceName="isaiah_39" referenceName="isaiah_39">
 		</chapter>
-		<chapter number="40" resourceName="isaiah_40">
+		<chapter number="40" resourceName="isaiah_40" referenceName="isaiah_40">
 		</chapter>
-		<chapter number="41" resourceName="isaiah_41">
+		<chapter number="41" resourceName="isaiah_41" referenceName="isaiah_41">
 		</chapter>
-		<chapter number="42" resourceName="isaiah_42">
+		<chapter number="42" resourceName="isaiah_42" referenceName="isaiah_42">
 		</chapter>
-		<chapter number="43" resourceName="isaiah_43">
+		<chapter number="43" resourceName="isaiah_43" referenceName="isaiah_43">
 		</chapter>
-		<chapter number="44" resourceName="isaiah_44">
+		<chapter number="44" resourceName="isaiah_44" referenceName="isaiah_44">
 		</chapter>
-		<chapter number="45" resourceName="isaiah_45">
+		<chapter number="45" resourceName="isaiah_45" referenceName="isaiah_45">
 		</chapter>
-		<chapter number="46" resourceName="isaiah_46">
+		<chapter number="46" resourceName="isaiah_46" referenceName="isaiah_46">
 		</chapter>
-		<chapter number="47" resourceName="isaiah_47">
+		<chapter number="47" resourceName="isaiah_47" referenceName="isaiah_47">
 		</chapter>
-		<chapter number="48" resourceName="isaiah_48">
+		<chapter number="48" resourceName="isaiah_48" referenceName="isaiah_48">
 		</chapter>
-		<chapter number="49" resourceName="isaiah_49">
+		<chapter number="49" resourceName="isaiah_49" referenceName="isaiah_49">
 		</chapter>
-		<chapter number="50" resourceName="isaiah_50">
+		<chapter number="50" resourceName="isaiah_50" referenceName="isaiah_50">
 		</chapter>
-		<chapter number="51" resourceName="isaiah_51">
+		<chapter number="51" resourceName="isaiah_51" referenceName="isaiah_51">
 		</chapter>
-		<chapter number="52" resourceName="isaiah_52">
+		<chapter number="52" resourceName="isaiah_52" referenceName="isaiah_52">
 		</chapter>
-		<chapter number="53" resourceName="isaiah_53">
+		<chapter number="53" resourceName="isaiah_53" referenceName="isaiah_53">
 		</chapter>
-		<chapter number="54" resourceName="isaiah_54">
+		<chapter number="54" resourceName="isaiah_54" referenceName="isaiah_54">
 		</chapter>
-		<chapter number="55" resourceName="isaiah_55">
+		<chapter number="55" resourceName="isaiah_55" referenceName="isaiah_55">
 		</chapter>
-		<chapter number="56" resourceName="isaiah_56">
+		<chapter number="56" resourceName="isaiah_56" referenceName="isaiah_56">
 		</chapter>
-		<chapter number="57" resourceName="isaiah_57">
+		<chapter number="57" resourceName="isaiah_57" referenceName="isaiah_57">
 		</chapter>
-		<chapter number="58" resourceName="isaiah_58">
+		<chapter number="58" resourceName="isaiah_58" referenceName="isaiah_58">
 		</chapter>
-		<chapter number="59" resourceName="isaiah_59">
+		<chapter number="59" resourceName="isaiah_59" referenceName="isaiah_59">
 		</chapter>
-		<chapter number="60" resourceName="isaiah_60">
+		<chapter number="60" resourceName="isaiah_60" referenceName="isaiah_60">
 		</chapter>
-		<chapter number="61" resourceName="isaiah_61">
+		<chapter number="61" resourceName="isaiah_61" referenceName="isaiah_61">
 		</chapter>
-		<chapter number="62" resourceName="isaiah_62">
+		<chapter number="62" resourceName="isaiah_62" referenceName="isaiah_62">
 		</chapter>
-		<chapter number="63" resourceName="isaiah_63">
+		<chapter number="63" resourceName="isaiah_63" referenceName="isaiah_63">
 		</chapter>
-		<chapter number="64" resourceName="isaiah_64">
+		<chapter number="64" resourceName="isaiah_64" referenceName="isaiah_64">
 		</chapter>
-		<chapter number="65" resourceName="isaiah_65">
+		<chapter number="65" resourceName="isaiah_65" referenceName="isaiah_65">
 		</chapter>
-		<chapter number="66" resourceName="isaiah_66">
+		<chapter number="66" resourceName="isaiah_66" referenceName="isaiah_66">
 		</chapter>
 	</book>
 	<book title="Jeremiah" number="24">
-		<chapter number="1" resourceName="jeremiah_1">
+		<chapter number="1" resourceName="jeremiah_1" referenceName="jeremiah_1">
 		</chapter>
-		<chapter number="2" resourceName="jeremiah_2">
+		<chapter number="2" resourceName="jeremiah_2" referenceName="jeremiah_2">
 		</chapter>
-		<chapter number="3" resourceName="jeremiah_3">
+		<chapter number="3" resourceName="jeremiah_3" referenceName="jeremiah_3">
 		</chapter>
-		<chapter number="4" resourceName="jeremiah_4">
+		<chapter number="4" resourceName="jeremiah_4" referenceName="jeremiah_4">
 		</chapter>
-		<chapter number="5" resourceName="jeremiah_5">
+		<chapter number="5" resourceName="jeremiah_5" referenceName="jeremiah_5">
 		</chapter>
-		<chapter number="6" resourceName="jeremiah_6">
+		<chapter number="6" resourceName="jeremiah_6" referenceName="jeremiah_6">
 		</chapter>
-		<chapter number="7" resourceName="jeremiah_7">
+		<chapter number="7" resourceName="jeremiah_7" referenceName="jeremiah_7">
 		</chapter>
-		<chapter number="8" resourceName="jeremiah_8">
+		<chapter number="8" resourceName="jeremiah_8" referenceName="jeremiah_8">
 		</chapter>
-		<chapter number="9" resourceName="jeremiah_9">
+		<chapter number="9" resourceName="jeremiah_9" referenceName="jeremiah_9">
 		</chapter>
-		<chapter number="10" resourceName="jeremiah_10">
+		<chapter number="10" resourceName="jeremiah_10" referenceName="jeremiah_10">
 		</chapter>
-		<chapter number="11" resourceName="jeremiah_11">
+		<chapter number="11" resourceName="jeremiah_11" referenceName="jeremiah_11">
 		</chapter>
-		<chapter number="12" resourceName="jeremiah_12">
+		<chapter number="12" resourceName="jeremiah_12" referenceName="jeremiah_12">
 		</chapter>
-		<chapter number="13" resourceName="jeremiah_13">
+		<chapter number="13" resourceName="jeremiah_13" referenceName="jeremiah_13">
 		</chapter>
-		<chapter number="14" resourceName="jeremiah_14">
+		<chapter number="14" resourceName="jeremiah_14" referenceName="jeremiah_14">
 		</chapter>
-		<chapter number="15" resourceName="jeremiah_15">
+		<chapter number="15" resourceName="jeremiah_15" referenceName="jeremiah_15">
 		</chapter>
-		<chapter number="16" resourceName="jeremiah_16">
+		<chapter number="16" resourceName="jeremiah_16" referenceName="jeremiah_16">
 		</chapter>
-		<chapter number="17" resourceName="jeremiah_17">
+		<chapter number="17" resourceName="jeremiah_17" referenceName="jeremiah_17">
 		</chapter>
-		<chapter number="18" resourceName="jeremiah_18">
+		<chapter number="18" resourceName="jeremiah_18" referenceName="jeremiah_18">
 		</chapter>
-		<chapter number="19" resourceName="jeremiah_19">
+		<chapter number="19" resourceName="jeremiah_19" referenceName="jeremiah_19">
 		</chapter>
-		<chapter number="20" resourceName="jeremiah_20">
+		<chapter number="20" resourceName="jeremiah_20" referenceName="jeremiah_20">
 		</chapter>
-		<chapter number="21" resourceName="jeremiah_21">
+		<chapter number="21" resourceName="jeremiah_21" referenceName="jeremiah_21">
 		</chapter>
-		<chapter number="22" resourceName="jeremiah_22">
+		<chapter number="22" resourceName="jeremiah_22" referenceName="jeremiah_22">
 		</chapter>
-		<chapter number="23" resourceName="jeremiah_23">
+		<chapter number="23" resourceName="jeremiah_23" referenceName="jeremiah_23">
 		</chapter>
-		<chapter number="24" resourceName="jeremiah_24">
+		<chapter number="24" resourceName="jeremiah_24" referenceName="jeremiah_24">
 		</chapter>
-		<chapter number="25" resourceName="jeremiah_25">
+		<chapter number="25" resourceName="jeremiah_25" referenceName="jeremiah_25">
 		</chapter>
-		<chapter number="26" resourceName="jeremiah_26">
+		<chapter number="26" resourceName="jeremiah_26" referenceName="jeremiah_26">
 		</chapter>
-		<chapter number="27" resourceName="jeremiah_27">
+		<chapter number="27" resourceName="jeremiah_27" referenceName="jeremiah_27">
 		</chapter>
-		<chapter number="28" resourceName="jeremiah_28">
+		<chapter number="28" resourceName="jeremiah_28" referenceName="jeremiah_28">
 		</chapter>
-		<chapter number="29" resourceName="jeremiah_29">
+		<chapter number="29" resourceName="jeremiah_29" referenceName="jeremiah_29">
 		</chapter>
-		<chapter number="30" resourceName="jeremiah_30">
+		<chapter number="30" resourceName="jeremiah_30" referenceName="jeremiah_30">
 		</chapter>
-		<chapter number="31" resourceName="jeremiah_31">
+		<chapter number="31" resourceName="jeremiah_31" referenceName="jeremiah_31">
 		</chapter>
-		<chapter number="32" resourceName="jeremiah_32">
+		<chapter number="32" resourceName="jeremiah_32" referenceName="jeremiah_32">
 		</chapter>
-		<chapter number="33" resourceName="jeremiah_33">
+		<chapter number="33" resourceName="jeremiah_33" referenceName="jeremiah_33">
 		</chapter>
-		<chapter number="34" resourceName="jeremiah_34">
+		<chapter number="34" resourceName="jeremiah_34" referenceName="jeremiah_34">
 		</chapter>
-		<chapter number="35" resourceName="jeremiah_35">
+		<chapter number="35" resourceName="jeremiah_35" referenceName="jeremiah_35">
 		</chapter>
-		<chapter number="36" resourceName="jeremiah_36">
+		<chapter number="36" resourceName="jeremiah_36" referenceName="jeremiah_36">
 		</chapter>
-		<chapter number="37" resourceName="jeremiah_37">
+		<chapter number="37" resourceName="jeremiah_37" referenceName="jeremiah_37">
 		</chapter>
-		<chapter number="38" resourceName="jeremiah_38">
+		<chapter number="38" resourceName="jeremiah_38" referenceName="jeremiah_38">
 		</chapter>
-		<chapter number="39" resourceName="jeremiah_39">
+		<chapter number="39" resourceName="jeremiah_39" referenceName="jeremiah_39">
 		</chapter>
-		<chapter number="40" resourceName="jeremiah_40">
+		<chapter number="40" resourceName="jeremiah_40" referenceName="jeremiah_40">
 		</chapter>
-		<chapter number="41" resourceName="jeremiah_41">
+		<chapter number="41" resourceName="jeremiah_41" referenceName="jeremiah_41">
 		</chapter>
-		<chapter number="42" resourceName="jeremiah_42">
+		<chapter number="42" resourceName="jeremiah_42" referenceName="jeremiah_42">
 		</chapter>
-		<chapter number="43" resourceName="jeremiah_43">
+		<chapter number="43" resourceName="jeremiah_43" referenceName="jeremiah_43">
 		</chapter>
-		<chapter number="44" resourceName="jeremiah_44">
+		<chapter number="44" resourceName="jeremiah_44" referenceName="jeremiah_44">
 		</chapter>
-		<chapter number="45" resourceName="jeremiah_45">
+		<chapter number="45" resourceName="jeremiah_45" referenceName="jeremiah_45">
 		</chapter>
-		<chapter number="46" resourceName="jeremiah_46">
+		<chapter number="46" resourceName="jeremiah_46" referenceName="jeremiah_46">
 		</chapter>
-		<chapter number="47" resourceName="jeremiah_47">
+		<chapter number="47" resourceName="jeremiah_47" referenceName="jeremiah_47">
 		</chapter>
-		<chapter number="48" resourceName="jeremiah_48">
+		<chapter number="48" resourceName="jeremiah_48" referenceName="jeremiah_48">
 		</chapter>
-		<chapter number="49" resourceName="jeremiah_49">
+		<chapter number="49" resourceName="jeremiah_49" referenceName="jeremiah_49">
 		</chapter>
-		<chapter number="50" resourceName="jeremiah_50">
+		<chapter number="50" resourceName="jeremiah_50" referenceName="jeremiah_50">
 		</chapter>
-		<chapter number="51" resourceName="jeremiah_51">
+		<chapter number="51" resourceName="jeremiah_51" referenceName="jeremiah_51">
 		</chapter>
-		<chapter number="52" resourceName="jeremiah_52">
+		<chapter number="52" resourceName="jeremiah_52" referenceName="jeremiah_52">
 		</chapter>
 	</book>
 	<book title="Lamentations" number="25">
-		<chapter number="1" resourceName="lamentations_1">
+		<chapter number="1" resourceName="lamentations_1" referenceName="lamentations_1">
 		</chapter>
-		<chapter number="2" resourceName="lamentations_2">
+		<chapter number="2" resourceName="lamentations_2" referenceName="lamentations_2">
 		</chapter>
-		<chapter number="3" resourceName="lamentations_3">
+		<chapter number="3" resourceName="lamentations_3" referenceName="lamentations_3">
 		</chapter>
-		<chapter number="4" resourceName="lamentations_4">
+		<chapter number="4" resourceName="lamentations_4" referenceName="lamentations_4">
 		</chapter>
-		<chapter number="5" resourceName="lamentations_5">
+		<chapter number="5" resourceName="lamentations_5" referenceName="lamentations_5">
 		</chapter>
 	</book>
 	<book title="Ezekiel" number="26">
-		<chapter number="1" resourceName="ezekiel_1">
+		<chapter number="1" resourceName="ezekiel_1" referenceName="ezekiel_1">
 		</chapter>
-		<chapter number="2" resourceName="ezekiel_2">
+		<chapter number="2" resourceName="ezekiel_2" referenceName="ezekiel_2">
 		</chapter>
-		<chapter number="3" resourceName="ezekiel_3">
+		<chapter number="3" resourceName="ezekiel_3" referenceName="ezekiel_3">
 		</chapter>
-		<chapter number="4" resourceName="ezekiel_4">
+		<chapter number="4" resourceName="ezekiel_4" referenceName="ezekiel_4">
 		</chapter>
-		<chapter number="5" resourceName="ezekiel_5">
+		<chapter number="5" resourceName="ezekiel_5" referenceName="ezekiel_5">
 		</chapter>
-		<chapter number="6" resourceName="ezekiel_6">
+		<chapter number="6" resourceName="ezekiel_6" referenceName="ezekiel_6">
 		</chapter>
-		<chapter number="7" resourceName="ezekiel_7">
+		<chapter number="7" resourceName="ezekiel_7" referenceName="ezekiel_7">
 		</chapter>
-		<chapter number="8" resourceName="ezekiel_8">
+		<chapter number="8" resourceName="ezekiel_8" referenceName="ezekiel_8">
 		</chapter>
-		<chapter number="9" resourceName="ezekiel_9">
+		<chapter number="9" resourceName="ezekiel_9" referenceName="ezekiel_9">
 		</chapter>
-		<chapter number="10" resourceName="ezekiel_10">
+		<chapter number="10" resourceName="ezekiel_10" referenceName="ezekiel_10">
 		</chapter>
-		<chapter number="11" resourceName="ezekiel_11">
+		<chapter number="11" resourceName="ezekiel_11" referenceName="ezekiel_11">
 		</chapter>
-		<chapter number="12" resourceName="ezekiel_12">
+		<chapter number="12" resourceName="ezekiel_12" referenceName="ezekiel_12">
 		</chapter>
-		<chapter number="13" resourceName="ezekiel_13">
+		<chapter number="13" resourceName="ezekiel_13" referenceName="ezekiel_13">
 		</chapter>
-		<chapter number="14" resourceName="ezekiel_14">
+		<chapter number="14" resourceName="ezekiel_14" referenceName="ezekiel_14">
 		</chapter>
-		<chapter number="15" resourceName="ezekiel_15">
+		<chapter number="15" resourceName="ezekiel_15" referenceName="ezekiel_15">
 		</chapter>
-		<chapter number="16" resourceName="ezekiel_16">
+		<chapter number="16" resourceName="ezekiel_16" referenceName="ezekiel_16">
 		</chapter>
-		<chapter number="17" resourceName="ezekiel_17">
+		<chapter number="17" resourceName="ezekiel_17" referenceName="ezekiel_17">
 		</chapter>
-		<chapter number="18" resourceName="ezekiel_18">
+		<chapter number="18" resourceName="ezekiel_18" referenceName="ezekiel_18">
 		</chapter>
-		<chapter number="19" resourceName="ezekiel_19">
+		<chapter number="19" resourceName="ezekiel_19" referenceName="ezekiel_19">
 		</chapter>
-		<chapter number="20" resourceName="ezekiel_20">
+		<chapter number="20" resourceName="ezekiel_20" referenceName="ezekiel_20">
 		</chapter>
-		<chapter number="21" resourceName="ezekiel_21">
+		<chapter number="21" resourceName="ezekiel_21" referenceName="ezekiel_21">
 		</chapter>
-		<chapter number="22" resourceName="ezekiel_22">
+		<chapter number="22" resourceName="ezekiel_22" referenceName="ezekiel_22">
 		</chapter>
-		<chapter number="23" resourceName="ezekiel_23">
+		<chapter number="23" resourceName="ezekiel_23" referenceName="ezekiel_23">
 		</chapter>
-		<chapter number="24" resourceName="ezekiel_24">
+		<chapter number="24" resourceName="ezekiel_24" referenceName="ezekiel_24">
 		</chapter>
-		<chapter number="25" resourceName="ezekiel_25">
+		<chapter number="25" resourceName="ezekiel_25" referenceName="ezekiel_25">
 		</chapter>
-		<chapter number="26" resourceName="ezekiel_26">
+		<chapter number="26" resourceName="ezekiel_26" referenceName="ezekiel_26">
 		</chapter>
-		<chapter number="27" resourceName="ezekiel_27">
+		<chapter number="27" resourceName="ezekiel_27" referenceName="ezekiel_27">
 		</chapter>
-		<chapter number="28" resourceName="ezekiel_28">
+		<chapter number="28" resourceName="ezekiel_28" referenceName="ezekiel_28">
 		</chapter>
-		<chapter number="29" resourceName="ezekiel_29">
+		<chapter number="29" resourceName="ezekiel_29" referenceName="ezekiel_29">
 		</chapter>
-		<chapter number="30" resourceName="ezekiel_30">
+		<chapter number="30" resourceName="ezekiel_30" referenceName="ezekiel_30">
 		</chapter>
-		<chapter number="31" resourceName="ezekiel_31">
+		<chapter number="31" resourceName="ezekiel_31" referenceName="ezekiel_31">
 		</chapter>
-		<chapter number="32" resourceName="ezekiel_32">
+		<chapter number="32" resourceName="ezekiel_32" referenceName="ezekiel_32">
 		</chapter>
-		<chapter number="33" resourceName="ezekiel_33">
+		<chapter number="33" resourceName="ezekiel_33" referenceName="ezekiel_33">
 		</chapter>
-		<chapter number="34" resourceName="ezekiel_34">
+		<chapter number="34" resourceName="ezekiel_34" referenceName="ezekiel_34">
 		</chapter>
-		<chapter number="35" resourceName="ezekiel_35">
+		<chapter number="35" resourceName="ezekiel_35" referenceName="ezekiel_35">
 		</chapter>
-		<chapter number="36" resourceName="ezekiel_36">
+		<chapter number="36" resourceName="ezekiel_36" referenceName="ezekiel_36">
 		</chapter>
-		<chapter number="37" resourceName="ezekiel_37">
+		<chapter number="37" resourceName="ezekiel_37" referenceName="ezekiel_37">
 		</chapter>
-		<chapter number="38" resourceName="ezekiel_38">
+		<chapter number="38" resourceName="ezekiel_38" referenceName="ezekiel_38">
 		</chapter>
-		<chapter number="39" resourceName="ezekiel_39">
+		<chapter number="39" resourceName="ezekiel_39" referenceName="ezekiel_39">
 		</chapter>
-		<chapter number="40" resourceName="ezekiel_40">
+		<chapter number="40" resourceName="ezekiel_40" referenceName="ezekiel_40">
 		</chapter>
-		<chapter number="41" resourceName="ezekiel_41">
+		<chapter number="41" resourceName="ezekiel_41" referenceName="ezekiel_41">
 		</chapter>
-		<chapter number="42" resourceName="ezekiel_42">
+		<chapter number="42" resourceName="ezekiel_42" referenceName="ezekiel_42">
 		</chapter>
-		<chapter number="43" resourceName="ezekiel_43">
+		<chapter number="43" resourceName="ezekiel_43" referenceName="ezekiel_43">
 		</chapter>
-		<chapter number="44" resourceName="ezekiel_44">
+		<chapter number="44" resourceName="ezekiel_44" referenceName="ezekiel_44">
 		</chapter>
-		<chapter number="45" resourceName="ezekiel_45">
+		<chapter number="45" resourceName="ezekiel_45" referenceName="ezekiel_45">
 		</chapter>
-		<chapter number="46" resourceName="ezekiel_46">
+		<chapter number="46" resourceName="ezekiel_46" referenceName="ezekiel_46">
 		</chapter>
-		<chapter number="47" resourceName="ezekiel_47">
+		<chapter number="47" resourceName="ezekiel_47" referenceName="ezekiel_47">
 		</chapter>
-		<chapter number="48" resourceName="ezekiel_48">
+		<chapter number="48" resourceName="ezekiel_48" referenceName="ezekiel_48">
 		</chapter>
 	</book>
 	<book title="Daniel" number="27">
-		<chapter number="1" resourceName="daniel_1">
+		<chapter number="1" resourceName="daniel_1" referenceName="daniel_1">
 		</chapter>
-		<chapter number="2" resourceName="daniel_2">
+		<chapter number="2" resourceName="daniel_2" referenceName="daniel_2">
 		</chapter>
-		<chapter number="3" resourceName="daniel_3">
+		<chapter number="3" resourceName="daniel_3" referenceName="daniel_3">
 		</chapter>
-		<chapter number="4" resourceName="daniel_4">
+		<chapter number="4" resourceName="daniel_4" referenceName="daniel_4">
 		</chapter>
-		<chapter number="5" resourceName="daniel_5">
+		<chapter number="5" resourceName="daniel_5" referenceName="daniel_5">
 		</chapter>
-		<chapter number="6" resourceName="daniel_6">
+		<chapter number="6" resourceName="daniel_6" referenceName="daniel_6">
 		</chapter>
-		<chapter number="7" resourceName="daniel_7">
+		<chapter number="7" resourceName="daniel_7" referenceName="daniel_7">
 		</chapter>
-		<chapter number="8" resourceName="daniel_8">
+		<chapter number="8" resourceName="daniel_8" referenceName="daniel_8">
 		</chapter>
-		<chapter number="9" resourceName="daniel_9">
+		<chapter number="9" resourceName="daniel_9" referenceName="daniel_9">
 		</chapter>
-		<chapter number="10" resourceName="daniel_10">
+		<chapter number="10" resourceName="daniel_10" referenceName="daniel_10">
 		</chapter>
-		<chapter number="11" resourceName="daniel_11">
+		<chapter number="11" resourceName="daniel_11" referenceName="daniel_11">
 		</chapter>
-		<chapter number="12" resourceName="daniel_12">
+		<chapter number="12" resourceName="daniel_12" referenceName="daniel_12">
 		</chapter>
 	</book>
 	<book title="Hosea" number="28">
-		<chapter number="1" resourceName="hosea_1">
+		<chapter number="1" resourceName="hosea_1" referenceName="hosea_1">
 		</chapter>
-		<chapter number="2" resourceName="hosea_2">
+		<chapter number="2" resourceName="hosea_2" referenceName="hosea_2">
 		</chapter>
-		<chapter number="3" resourceName="hosea_3">
+		<chapter number="3" resourceName="hosea_3" referenceName="hosea_3">
 		</chapter>
-		<chapter number="4" resourceName="hosea_4">
+		<chapter number="4" resourceName="hosea_4" referenceName="hosea_4">
 		</chapter>
-		<chapter number="5" resourceName="hosea_5">
+		<chapter number="5" resourceName="hosea_5" referenceName="hosea_5">
 		</chapter>
-		<chapter number="6" resourceName="hosea_6">
+		<chapter number="6" resourceName="hosea_6" referenceName="hosea_6">
 		</chapter>
-		<chapter number="7" resourceName="hosea_7">
+		<chapter number="7" resourceName="hosea_7" referenceName="hosea_7">
 		</chapter>
-		<chapter number="8" resourceName="hosea_8">
+		<chapter number="8" resourceName="hosea_8" referenceName="hosea_8">
 		</chapter>
-		<chapter number="9" resourceName="hosea_9">
+		<chapter number="9" resourceName="hosea_9" referenceName="hosea_9">
 		</chapter>
-		<chapter number="10" resourceName="hosea_10">
+		<chapter number="10" resourceName="hosea_10" referenceName="hosea_10">
 		</chapter>
-		<chapter number="11" resourceName="hosea_11">
+		<chapter number="11" resourceName="hosea_11" referenceName="hosea_11">
 		</chapter>
-		<chapter number="12" resourceName="hosea_12">
+		<chapter number="12" resourceName="hosea_12" referenceName="hosea_12">
 		</chapter>
-		<chapter number="13" resourceName="hosea_13">
+		<chapter number="13" resourceName="hosea_13" referenceName="hosea_13">
 		</chapter>
-		<chapter number="14" resourceName="hosea_14">
+		<chapter number="14" resourceName="hosea_14" referenceName="hosea_14">
 		</chapter>
 	</book>
 	<book title="Joel" number="29">
-		<chapter number="1" resourceName="joel_1">
+		<chapter number="1" resourceName="joel_1" referenceName="joel_1">
 		</chapter>
-		<chapter number="2" resourceName="joel_2">
+		<chapter number="2" resourceName="joel_2" referenceName="joel_2">
 		</chapter>
-		<chapter number="3" resourceName="joel_3">
+		<chapter number="3" resourceName="joel_3" referenceName="joel_3">
 		</chapter>
 	</book>
 	<book title="Amos" number="30">
-		<chapter number="1" resourceName="amos_1">
+		<chapter number="1" resourceName="amos_1" referenceName="amos_1">
 		</chapter>
-		<chapter number="2" resourceName="amos_2">
+		<chapter number="2" resourceName="amos_2" referenceName="amos_2">
 		</chapter>
-		<chapter number="3" resourceName="amos_3">
+		<chapter number="3" resourceName="amos_3" referenceName="amos_3">
 		</chapter>
-		<chapter number="4" resourceName="amos_4">
+		<chapter number="4" resourceName="amos_4" referenceName="amos_4">
 		</chapter>
-		<chapter number="5" resourceName="amos_5">
+		<chapter number="5" resourceName="amos_5" referenceName="amos_5">
 		</chapter>
-		<chapter number="6" resourceName="amos_6">
+		<chapter number="6" resourceName="amos_6" referenceName="amos_6">
 		</chapter>
-		<chapter number="7" resourceName="amos_7">
+		<chapter number="7" resourceName="amos_7" referenceName="amos_7">
 		</chapter>
-		<chapter number="8" resourceName="amos_8">
+		<chapter number="8" resourceName="amos_8" referenceName="amos_8">
 		</chapter>
-		<chapter number="9" resourceName="amos_9">
+		<chapter number="9" resourceName="amos_9" referenceName="amos_9">
 		</chapter>
 	</book>
 	<book title="Obadiah" number="31">
-		<chapter number="1" resourceName="obadiah_1">
+		<chapter number="1" resourceName="obadiah_1" referenceName="obadiah_1">
 		</chapter>
 	</book>
 	<book title="Jonah" number="32">
-		<chapter number="1" resourceName="jonah_1">
+		<chapter number="1" resourceName="jonah_1" referenceName="jonah_1">
 		</chapter>
-		<chapter number="2" resourceName="jonah_2">
+		<chapter number="2" resourceName="jonah_2" referenceName="jonah_2">
 		</chapter>
-		<chapter number="3" resourceName="jonah_3">
+		<chapter number="3" resourceName="jonah_3" referenceName="jonah_3">
 		</chapter>
-		<chapter number="4" resourceName="jonah_4">
+		<chapter number="4" resourceName="jonah_4" referenceName="jonah_4">
 		</chapter>
 	</book>
 	<book title="Micah" number="33">
-		<chapter number="1" resourceName="micah_1">
+		<chapter number="1" resourceName="micah_1" referenceName="micah_1">
 		</chapter>
-		<chapter number="2" resourceName="micah_2">
+		<chapter number="2" resourceName="micah_2" referenceName="micah_2">
 		</chapter>
-		<chapter number="3" resourceName="micah_3">
+		<chapter number="3" resourceName="micah_3" referenceName="micah_3">
 		</chapter>
-		<chapter number="4" resourceName="micah_4">
+		<chapter number="4" resourceName="micah_4" referenceName="micah_4">
 		</chapter>
-		<chapter number="5" resourceName="micah_5">
+		<chapter number="5" resourceName="micah_5" referenceName="micah_5">
 		</chapter>
-		<chapter number="6" resourceName="micah_6">
+		<chapter number="6" resourceName="micah_6" referenceName="micah_6">
 		</chapter>
-		<chapter number="7" resourceName="micah_7">
+		<chapter number="7" resourceName="micah_7" referenceName="micah_7">
 		</chapter>
 	</book>
 	<book title="Nahum" number="34">
-		<chapter number="1" resourceName="nahum_1">
+		<chapter number="1" resourceName="nahum_1" referenceName="nahum_1">
 		</chapter>
-		<chapter number="2" resourceName="nahum_2">
+		<chapter number="2" resourceName="nahum_2" referenceName="nahum_2">
 		</chapter>
-		<chapter number="3" resourceName="nahum_3">
+		<chapter number="3" resourceName="nahum_3" referenceName="nahum_3">
 		</chapter>
 	</book>
 	<book title="Habakkuk" number="35">
-		<chapter number="1" resourceName="habakkuk_1">
+		<chapter number="1" resourceName="habakkuk_1" referenceName="habakkuk_1">
 		</chapter>
-		<chapter number="2" resourceName="habakkuk_2">
+		<chapter number="2" resourceName="habakkuk_2" referenceName="habakkuk_2">
 		</chapter>
-		<chapter number="3" resourceName="habakkuk_3">
+		<chapter number="3" resourceName="habakkuk_3" referenceName="habakkuk_3">
 		</chapter>
 	</book>
 	<book title="Zephaniah" number="36">
-		<chapter number="1" resourceName="zephaniah_1">
+		<chapter number="1" resourceName="zephaniah_1" referenceName="zephaniah_1">
 		</chapter>
-		<chapter number="2" resourceName="zephaniah_2">
+		<chapter number="2" resourceName="zephaniah_2" referenceName="zephaniah_2">
 		</chapter>
-		<chapter number="3" resourceName="zephaniah_3">
+		<chapter number="3" resourceName="zephaniah_3" referenceName="zephaniah_3">
 		</chapter>
 	</book>
 	<book title="Haggai" number="37">
-		<chapter number="1" resourceName="haggai_1">
+		<chapter number="1" resourceName="haggai_1" referenceName="haggai_1">
 		</chapter>
-		<chapter number="2" resourceName="haggai_2">
+		<chapter number="2" resourceName="haggai_2" referenceName="haggai_2">
 		</chapter>
 	</book>
 	<book title="Zechariah" number="38">
-		<chapter number="1" resourceName="zechariah_1">
+		<chapter number="1" resourceName="zechariah_1" referenceName="zechariah_1">
 		</chapter>
-		<chapter number="2" resourceName="zechariah_2">
+		<chapter number="2" resourceName="zechariah_2" referenceName="zechariah_2">
 		</chapter>
-		<chapter number="3" resourceName="zechariah_3">
+		<chapter number="3" resourceName="zechariah_3" referenceName="zechariah_3">
 		</chapter>
-		<chapter number="4" resourceName="zechariah_4">
+		<chapter number="4" resourceName="zechariah_4" referenceName="zechariah_4">
 		</chapter>
-		<chapter number="5" resourceName="zechariah_5">
+		<chapter number="5" resourceName="zechariah_5" referenceName="zechariah_5">
 		</chapter>
-		<chapter number="6" resourceName="zechariah_6">
+		<chapter number="6" resourceName="zechariah_6" referenceName="zechariah_6">
 		</chapter>
-		<chapter number="7" resourceName="zechariah_7">
+		<chapter number="7" resourceName="zechariah_7" referenceName="zechariah_7">
 		</chapter>
-		<chapter number="8" resourceName="zechariah_8">
+		<chapter number="8" resourceName="zechariah_8" referenceName="zechariah_8">
 		</chapter>
-		<chapter number="9" resourceName="zechariah_9">
+		<chapter number="9" resourceName="zechariah_9" referenceName="zechariah_9">
 		</chapter>
-		<chapter number="10" resourceName="zechariah_10">
+		<chapter number="10" resourceName="zechariah_10" referenceName="zechariah_10">
 		</chapter>
-		<chapter number="11" resourceName="zechariah_11">
+		<chapter number="11" resourceName="zechariah_11" referenceName="zechariah_11">
 		</chapter>
-		<chapter number="12" resourceName="zechariah_12">
+		<chapter number="12" resourceName="zechariah_12" referenceName="zechariah_12">
 		</chapter>
-		<chapter number="13" resourceName="zechariah_13">
+		<chapter number="13" resourceName="zechariah_13" referenceName="zechariah_13">
 		</chapter>
-		<chapter number="14" resourceName="zechariah_14">
+		<chapter number="14" resourceName="zechariah_14" referenceName="zechariah_14">
 		</chapter>
 	</book>
 	<book title="Malachi" number="39">
-		<chapter number="1" resourceName="malachi_1">
+		<chapter number="1" resourceName="malachi_1" referenceName="malachi_1">
 		</chapter>
-		<chapter number="2" resourceName="malachi_2">
+		<chapter number="2" resourceName="malachi_2" referenceName="malachi_2">
 		</chapter>
-		<chapter number="3" resourceName="malachi_3">
+		<chapter number="3" resourceName="malachi_3" referenceName="malachi_3">
 		</chapter>
-		<chapter number="4" resourceName="malachi_4">
+		<chapter number="4" resourceName="malachi_4" referenceName="malachi_4">
 		</chapter>
 	</book>
 	<book title="Matthew" number="40">
-		<chapter number="1" resourceName="matthew_1">
+		<chapter number="1" resourceName="matthew_1" referenceName="matthew_1">
 		</chapter>
-		<chapter number="2" resourceName="matthew_2">
+		<chapter number="2" resourceName="matthew_2" referenceName="matthew_2">
 		</chapter>
-		<chapter number="3" resourceName="matthew_3">
+		<chapter number="3" resourceName="matthew_3" referenceName="matthew_3">
 		</chapter>
-		<chapter number="4" resourceName="matthew_4">
+		<chapter number="4" resourceName="matthew_4" referenceName="matthew_4">
 		</chapter>
-		<chapter number="5" resourceName="matthew_5">
+		<chapter number="5" resourceName="matthew_5" referenceName="matthew_5">
 		</chapter>
-		<chapter number="6" resourceName="matthew_6">
+		<chapter number="6" resourceName="matthew_6" referenceName="matthew_6">
 		</chapter>
-		<chapter number="7" resourceName="matthew_7">
+		<chapter number="7" resourceName="matthew_7" referenceName="matthew_7">
 		</chapter>
-		<chapter number="8" resourceName="matthew_8">
+		<chapter number="8" resourceName="matthew_8" referenceName="matthew_8">
 		</chapter>
-		<chapter number="9" resourceName="matthew_9">
+		<chapter number="9" resourceName="matthew_9" referenceName="matthew_9">
 		</chapter>
-		<chapter number="10" resourceName="matthew_10">
+		<chapter number="10" resourceName="matthew_10" referenceName="matthew_10">
 		</chapter>
-		<chapter number="11" resourceName="matthew_11">
+		<chapter number="11" resourceName="matthew_11" referenceName="matthew_11">
 		</chapter>
-		<chapter number="12" resourceName="matthew_12">
+		<chapter number="12" resourceName="matthew_12" referenceName="matthew_12">
 		</chapter>
-		<chapter number="13" resourceName="matthew_13">
+		<chapter number="13" resourceName="matthew_13" referenceName="matthew_13">
 		</chapter>
-		<chapter number="14" resourceName="matthew_14">
+		<chapter number="14" resourceName="matthew_14" referenceName="matthew_14">
 		</chapter>
-		<chapter number="15" resourceName="matthew_15">
+		<chapter number="15" resourceName="matthew_15" referenceName="matthew_15">
 		</chapter>
-		<chapter number="16" resourceName="matthew_16">
+		<chapter number="16" resourceName="matthew_16" referenceName="matthew_16">
 		</chapter>
-		<chapter number="17" resourceName="matthew_17">
+		<chapter number="17" resourceName="matthew_17" referenceName="matthew_17">
 		</chapter>
-		<chapter number="18" resourceName="matthew_18">
+		<chapter number="18" resourceName="matthew_18" referenceName="matthew_18">
 		</chapter>
-		<chapter number="19" resourceName="matthew_19">
+		<chapter number="19" resourceName="matthew_19" referenceName="matthew_19">
 		</chapter>
-		<chapter number="20" resourceName="matthew_20">
+		<chapter number="20" resourceName="matthew_20" referenceName="matthew_20">
 		</chapter>
-		<chapter number="21" resourceName="matthew_21">
+		<chapter number="21" resourceName="matthew_21" referenceName="matthew_21">
 		</chapter>
-		<chapter number="22" resourceName="matthew_22">
+		<chapter number="22" resourceName="matthew_22" referenceName="matthew_22">
 		</chapter>
-		<chapter number="23" resourceName="matthew_23">
+		<chapter number="23" resourceName="matthew_23" referenceName="matthew_23">
 		</chapter>
-		<chapter number="24" resourceName="matthew_24">
+		<chapter number="24" resourceName="matthew_24" referenceName="matthew_24">
 		</chapter>
-		<chapter number="25" resourceName="matthew_25">
+		<chapter number="25" resourceName="matthew_25" referenceName="matthew_25">
 		</chapter>
-		<chapter number="26" resourceName="matthew_26">
+		<chapter number="26" resourceName="matthew_26" referenceName="matthew_26">
 		</chapter>
-		<chapter number="27" resourceName="matthew_27">
+		<chapter number="27" resourceName="matthew_27" referenceName="matthew_27">
 		</chapter>
-		<chapter number="28" resourceName="matthew_28">
+		<chapter number="28" resourceName="matthew_28" referenceName="matthew_28">
 		</chapter>
 	</book>
 	<book title="Mark" number="41">
-		<chapter number="1" resourceName="mark_1">
+		<chapter number="1" resourceName="mark_1" referenceName="mark_1">
 		</chapter>
-		<chapter number="2" resourceName="mark_2">
+		<chapter number="2" resourceName="mark_2" referenceName="mark_2">
 		</chapter>
-		<chapter number="3" resourceName="mark_3">
+		<chapter number="3" resourceName="mark_3" referenceName="mark_3">
 		</chapter>
-		<chapter number="4" resourceName="mark_4">
+		<chapter number="4" resourceName="mark_4" referenceName="mark_4">
 		</chapter>
-		<chapter number="5" resourceName="mark_5">
+		<chapter number="5" resourceName="mark_5" referenceName="mark_5">
 		</chapter>
-		<chapter number="6" resourceName="mark_6">
+		<chapter number="6" resourceName="mark_6" referenceName="mark_6">
 		</chapter>
-		<chapter number="7" resourceName="mark_7">
+		<chapter number="7" resourceName="mark_7" referenceName="mark_7">
 		</chapter>
-		<chapter number="8" resourceName="mark_8">
+		<chapter number="8" resourceName="mark_8" referenceName="mark_8">
 		</chapter>
-		<chapter number="9" resourceName="mark_9">
+		<chapter number="9" resourceName="mark_9" referenceName="mark_9">
 		</chapter>
-		<chapter number="10" resourceName="mark_10">
+		<chapter number="10" resourceName="mark_10" referenceName="mark_10">
 		</chapter>
-		<chapter number="11" resourceName="mark_11">
+		<chapter number="11" resourceName="mark_11" referenceName="mark_11">
 		</chapter>
-		<chapter number="12" resourceName="mark_12">
+		<chapter number="12" resourceName="mark_12" referenceName="mark_12">
 		</chapter>
-		<chapter number="13" resourceName="mark_13">
+		<chapter number="13" resourceName="mark_13" referenceName="mark_13">
 		</chapter>
-		<chapter number="14" resourceName="mark_14">
+		<chapter number="14" resourceName="mark_14" referenceName="mark_14">
 		</chapter>
-		<chapter number="15" resourceName="mark_15">
+		<chapter number="15" resourceName="mark_15" referenceName="mark_15">
 		</chapter>
-		<chapter number="16" resourceName="mark_16">
+		<chapter number="16" resourceName="mark_16" referenceName="mark_16">
 		</chapter>
 	</book>
 	<book title="Luke" number="42">
-		<chapter number="1" resourceName="luke_1">
+		<chapter number="1" resourceName="luke_1" referenceName="luke_1">
 		</chapter>
-		<chapter number="2" resourceName="luke_2">
+		<chapter number="2" resourceName="luke_2" referenceName="luke_2">
 		</chapter>
-		<chapter number="3" resourceName="luke_3">
+		<chapter number="3" resourceName="luke_3" referenceName="luke_3">
 		</chapter>
-		<chapter number="4" resourceName="luke_4">
+		<chapter number="4" resourceName="luke_4" referenceName="luke_4">
 		</chapter>
-		<chapter number="5" resourceName="luke_5">
+		<chapter number="5" resourceName="luke_5" referenceName="luke_5">
 		</chapter>
-		<chapter number="6" resourceName="luke_6">
+		<chapter number="6" resourceName="luke_6" referenceName="luke_6">
 		</chapter>
-		<chapter number="7" resourceName="luke_7">
+		<chapter number="7" resourceName="luke_7" referenceName="luke_7">
 		</chapter>
-		<chapter number="8" resourceName="luke_8">
+		<chapter number="8" resourceName="luke_8" referenceName="luke_8">
 		</chapter>
-		<chapter number="9" resourceName="luke_9">
+		<chapter number="9" resourceName="luke_9" referenceName="luke_9">
 		</chapter>
-		<chapter number="10" resourceName="luke_10">
+		<chapter number="10" resourceName="luke_10" referenceName="luke_10">
 		</chapter>
-		<chapter number="11" resourceName="luke_11">
+		<chapter number="11" resourceName="luke_11" referenceName="luke_11">
 		</chapter>
-		<chapter number="12" resourceName="luke_12">
+		<chapter number="12" resourceName="luke_12" referenceName="luke_12">
 		</chapter>
-		<chapter number="13" resourceName="luke_13">
+		<chapter number="13" resourceName="luke_13" referenceName="luke_13">
 		</chapter>
-		<chapter number="14" resourceName="luke_14">
+		<chapter number="14" resourceName="luke_14" referenceName="luke_14">
 		</chapter>
-		<chapter number="15" resourceName="luke_15">
+		<chapter number="15" resourceName="luke_15" referenceName="luke_15">
 		</chapter>
-		<chapter number="16" resourceName="luke_16">
+		<chapter number="16" resourceName="luke_16" referenceName="luke_16">
 		</chapter>
-		<chapter number="17" resourceName="luke_17">
+		<chapter number="17" resourceName="luke_17" referenceName="luke_17">
 		</chapter>
-		<chapter number="18" resourceName="luke_18">
+		<chapter number="18" resourceName="luke_18" referenceName="luke_18">
 		</chapter>
-		<chapter number="19" resourceName="luke_19">
+		<chapter number="19" resourceName="luke_19" referenceName="luke_19">
 		</chapter>
-		<chapter number="20" resourceName="luke_20">
+		<chapter number="20" resourceName="luke_20" referenceName="luke_20">
 		</chapter>
-		<chapter number="21" resourceName="luke_21">
+		<chapter number="21" resourceName="luke_21" referenceName="luke_21">
 		</chapter>
-		<chapter number="22" resourceName="luke_22">
+		<chapter number="22" resourceName="luke_22" referenceName="luke_22">
 		</chapter>
-		<chapter number="23" resourceName="luke_23">
+		<chapter number="23" resourceName="luke_23" referenceName="luke_23">
 		</chapter>
-		<chapter number="24" resourceName="luke_24">
+		<chapter number="24" resourceName="luke_24" referenceName="luke_24">
 		</chapter>
 	</book>
 	<book title="John" number="43">
-		<chapter number="1" resourceName="john_1">
+		<chapter number="1" resourceName="john_1" referenceName="john_1">
 		</chapter>
-		<chapter number="2" resourceName="john_2">
+		<chapter number="2" resourceName="john_2" referenceName="john_2">
 		</chapter>
-		<chapter number="3" resourceName="john_3">
+		<chapter number="3" resourceName="john_3" referenceName="john_3">
 		</chapter>
-		<chapter number="4" resourceName="john_4">
+		<chapter number="4" resourceName="john_4" referenceName="john_4">
 		</chapter>
-		<chapter number="5" resourceName="john_5">
+		<chapter number="5" resourceName="john_5" referenceName="john_5">
 		</chapter>
-		<chapter number="6" resourceName="john_6">
+		<chapter number="6" resourceName="john_6" referenceName="john_6">
 		</chapter>
-		<chapter number="7" resourceName="john_7">
+		<chapter number="7" resourceName="john_7" referenceName="john_7">
 		</chapter>
-		<chapter number="8" resourceName="john_8">
+		<chapter number="8" resourceName="john_8" referenceName="john_8">
 		</chapter>
-		<chapter number="9" resourceName="john_9">
+		<chapter number="9" resourceName="john_9" referenceName="john_9">
 		</chapter>
-		<chapter number="10" resourceName="john_10">
+		<chapter number="10" resourceName="john_10" referenceName="john_10">
 		</chapter>
-		<chapter number="11" resourceName="john_11">
+		<chapter number="11" resourceName="john_11" referenceName="john_11">
 		</chapter>
-		<chapter number="12" resourceName="john_12">
+		<chapter number="12" resourceName="john_12" referenceName="john_12">
 		</chapter>
-		<chapter number="13" resourceName="john_13">
+		<chapter number="13" resourceName="john_13" referenceName="john_13">
 		</chapter>
-		<chapter number="14" resourceName="john_14">
+		<chapter number="14" resourceName="john_14" referenceName="john_14">
 		</chapter>
-		<chapter number="15" resourceName="john_15">
+		<chapter number="15" resourceName="john_15" referenceName="john_15">
 		</chapter>
-		<chapter number="16" resourceName="john_16">
+		<chapter number="16" resourceName="john_16" referenceName="john_16">
 		</chapter>
-		<chapter number="17" resourceName="john_17">
+		<chapter number="17" resourceName="john_17" referenceName="john_17">
 		</chapter>
-		<chapter number="18" resourceName="john_18">
+		<chapter number="18" resourceName="john_18" referenceName="john_18">
 		</chapter>
-		<chapter number="19" resourceName="john_19">
+		<chapter number="19" resourceName="john_19" referenceName="john_19">
 		</chapter>
-		<chapter number="20" resourceName="john_20">
+		<chapter number="20" resourceName="john_20" referenceName="john_20">
 		</chapter>
-		<chapter number="21" resourceName="john_21">
+		<chapter number="21" resourceName="john_21" referenceName="john_21">
 		</chapter>
 	</book>
 	<book title="Acts" number="44">
-		<chapter number="1" resourceName="acts_1">
+		<chapter number="1" resourceName="acts_1" referenceName="acts_1">
 		</chapter>
-		<chapter number="2" resourceName="acts_2">
+		<chapter number="2" resourceName="acts_2" referenceName="acts_2">
 		</chapter>
-		<chapter number="3" resourceName="acts_3">
+		<chapter number="3" resourceName="acts_3" referenceName="acts_3">
 		</chapter>
-		<chapter number="4" resourceName="acts_4">
+		<chapter number="4" resourceName="acts_4" referenceName="acts_4">
 		</chapter>
-		<chapter number="5" resourceName="acts_5">
+		<chapter number="5" resourceName="acts_5" referenceName="acts_5">
 		</chapter>
-		<chapter number="6" resourceName="acts_6">
+		<chapter number="6" resourceName="acts_6" referenceName="acts_6">
 		</chapter>
-		<chapter number="7" resourceName="acts_7">
+		<chapter number="7" resourceName="acts_7" referenceName="acts_7">
 		</chapter>
-		<chapter number="8" resourceName="acts_8">
+		<chapter number="8" resourceName="acts_8" referenceName="acts_8">
 		</chapter>
-		<chapter number="9" resourceName="acts_9">
+		<chapter number="9" resourceName="acts_9" referenceName="acts_9">
 		</chapter>
-		<chapter number="10" resourceName="acts_10">
+		<chapter number="10" resourceName="acts_10" referenceName="acts_10">
 		</chapter>
-		<chapter number="11" resourceName="acts_11">
+		<chapter number="11" resourceName="acts_11" referenceName="acts_11">
 		</chapter>
-		<chapter number="12" resourceName="acts_12">
+		<chapter number="12" resourceName="acts_12" referenceName="acts_12">
 		</chapter>
-		<chapter number="13" resourceName="acts_13">
+		<chapter number="13" resourceName="acts_13" referenceName="acts_13">
 		</chapter>
-		<chapter number="14" resourceName="acts_14">
+		<chapter number="14" resourceName="acts_14" referenceName="acts_14">
 		</chapter>
-		<chapter number="15" resourceName="acts_15">
+		<chapter number="15" resourceName="acts_15" referenceName="acts_15">
 		</chapter>
-		<chapter number="16" resourceName="acts_16">
+		<chapter number="16" resourceName="acts_16" referenceName="acts_16">
 		</chapter>
-		<chapter number="17" resourceName="acts_17">
+		<chapter number="17" resourceName="acts_17" referenceName="acts_17">
 		</chapter>
-		<chapter number="18" resourceName="acts_18">
+		<chapter number="18" resourceName="acts_18" referenceName="acts_18">
 		</chapter>
-		<chapter number="19" resourceName="acts_19">
+		<chapter number="19" resourceName="acts_19" referenceName="acts_19">
 		</chapter>
-		<chapter number="20" resourceName="acts_20">
+		<chapter number="20" resourceName="acts_20" referenceName="acts_20">
 		</chapter>
-		<chapter number="21" resourceName="acts_21">
+		<chapter number="21" resourceName="acts_21" referenceName="acts_21">
 		</chapter>
-		<chapter number="22" resourceName="acts_22">
+		<chapter number="22" resourceName="acts_22" referenceName="acts_22">
 		</chapter>
-		<chapter number="23" resourceName="acts_23">
+		<chapter number="23" resourceName="acts_23" referenceName="acts_23">
 		</chapter>
-		<chapter number="24" resourceName="acts_24">
+		<chapter number="24" resourceName="acts_24" referenceName="acts_24">
 		</chapter>
-		<chapter number="25" resourceName="acts_25">
+		<chapter number="25" resourceName="acts_25" referenceName="acts_25">
 		</chapter>
-		<chapter number="26" resourceName="acts_26">
+		<chapter number="26" resourceName="acts_26" referenceName="acts_26">
 		</chapter>
-		<chapter number="27" resourceName="acts_27">
+		<chapter number="27" resourceName="acts_27" referenceName="acts_27">
 		</chapter>
-		<chapter number="28" resourceName="acts_28">
+		<chapter number="28" resourceName="acts_28" referenceName="acts_28">
 		</chapter>
 	</book>
 	<book title="Romans" number="45">
-		<chapter number="1" resourceName="romans_1">
+		<chapter number="1" resourceName="romans_1" referenceName="romans_1">
 		</chapter>
-		<chapter number="2" resourceName="romans_2">
+		<chapter number="2" resourceName="romans_2" referenceName="romans_2">
 		</chapter>
-		<chapter number="3" resourceName="romans_3">
+		<chapter number="3" resourceName="romans_3" referenceName="romans_3">
 		</chapter>
-		<chapter number="4" resourceName="romans_4">
+		<chapter number="4" resourceName="romans_4" referenceName="romans_4">
 		</chapter>
-		<chapter number="5" resourceName="romans_5">
+		<chapter number="5" resourceName="romans_5" referenceName="romans_5">
 		</chapter>
-		<chapter number="6" resourceName="romans_6">
+		<chapter number="6" resourceName="romans_6" referenceName="romans_6">
 		</chapter>
-		<chapter number="7" resourceName="romans_7">
+		<chapter number="7" resourceName="romans_7" referenceName="romans_7">
 		</chapter>
-		<chapter number="8" resourceName="romans_8">
+		<chapter number="8" resourceName="romans_8" referenceName="romans_8">
 		</chapter>
-		<chapter number="9" resourceName="romans_9">
+		<chapter number="9" resourceName="romans_9" referenceName="romans_9">
 		</chapter>
-		<chapter number="10" resourceName="romans_10">
+		<chapter number="10" resourceName="romans_10" referenceName="romans_10">
 		</chapter>
-		<chapter number="11" resourceName="romans_11">
+		<chapter number="11" resourceName="romans_11" referenceName="romans_11">
 		</chapter>
-		<chapter number="12" resourceName="romans_12">
+		<chapter number="12" resourceName="romans_12" referenceName="romans_12">
 		</chapter>
-		<chapter number="13" resourceName="romans_13">
+		<chapter number="13" resourceName="romans_13" referenceName="romans_13">
 		</chapter>
-		<chapter number="14" resourceName="romans_14">
+		<chapter number="14" resourceName="romans_14" referenceName="romans_14">
 		</chapter>
-		<chapter number="15" resourceName="romans_15">
+		<chapter number="15" resourceName="romans_15" referenceName="romans_15">
 		</chapter>
-		<chapter number="16" resourceName="romans_16">
+		<chapter number="16" resourceName="romans_16" referenceName="romans_16">
 		</chapter>
 	</book>
 	<book title="1 Corinthians" number="46">
-		<chapter number="1" resourceName="corinthians_1_1">
+		<chapter number="1" resourceName="corinthians_1_1" referenceName="1_corinthians_1">
 		</chapter>
-		<chapter number="2" resourceName="corinthians_1_2">
+		<chapter number="2" resourceName="corinthians_1_2" referenceName="1_corinthians_2">
 		</chapter>
-		<chapter number="3" resourceName="corinthians_1_3">
+		<chapter number="3" resourceName="corinthians_1_3" referenceName="1_corinthians_3">
 		</chapter>
-		<chapter number="4" resourceName="corinthians_1_4">
+		<chapter number="4" resourceName="corinthians_1_4" referenceName="1_corinthians_4">
 		</chapter>
-		<chapter number="5" resourceName="corinthians_1_5">
+		<chapter number="5" resourceName="corinthians_1_5" referenceName="1_corinthians_5">
 		</chapter>
-		<chapter number="6" resourceName="corinthians_1_6">
+		<chapter number="6" resourceName="corinthians_1_6" referenceName="1_corinthians_6">
 		</chapter>
-		<chapter number="7" resourceName="corinthians_1_7">
+		<chapter number="7" resourceName="corinthians_1_7" referenceName="1_corinthians_7">
 		</chapter>
-		<chapter number="8" resourceName="corinthians_1_8">
+		<chapter number="8" resourceName="corinthians_1_8" referenceName="1_corinthians_8">
 		</chapter>
-		<chapter number="9" resourceName="corinthians_1_9">
+		<chapter number="9" resourceName="corinthians_1_9" referenceName="1_corinthians_9">
 		</chapter>
-		<chapter number="10" resourceName="corinthians_1_10">
+		<chapter number="10" resourceName="corinthians_1_10" referenceName="1_corinthians_10">
 		</chapter>
-		<chapter number="11" resourceName="corinthians_1_11">
+		<chapter number="11" resourceName="corinthians_1_11" referenceName="1_corinthians_11">
 		</chapter>
-		<chapter number="12" resourceName="corinthians_1_12">
+		<chapter number="12" resourceName="corinthians_1_12" referenceName="1_corinthians_12">
 		</chapter>
-		<chapter number="13" resourceName="corinthians_1_13">
+		<chapter number="13" resourceName="corinthians_1_13" referenceName="1_corinthians_13">
 		</chapter>
-		<chapter number="14" resourceName="corinthians_1_14">
+		<chapter number="14" resourceName="corinthians_1_14" referenceName="1_corinthians_14">
 		</chapter>
-		<chapter number="15" resourceName="corinthians_1_15">
+		<chapter number="15" resourceName="corinthians_1_15" referenceName="1_corinthians_15">
 		</chapter>
-		<chapter number="16" resourceName="corinthians_1_16">
+		<chapter number="16" resourceName="corinthians_1_16" referenceName="1_corinthians_16">
 		</chapter>
 	</book>
 	<book title="2 Corinthians" number="47">
-		<chapter number="1" resourceName="corinthians_2_1">
+		<chapter number="1" resourceName="corinthians_2_1" referenceName="2_corinthians_1">
 		</chapter>
-		<chapter number="2" resourceName="corinthians_2_2">
+		<chapter number="2" resourceName="corinthians_2_2" referenceName="2_corinthians_2">
 		</chapter>
-		<chapter number="3" resourceName="corinthians_2_3">
+		<chapter number="3" resourceName="corinthians_2_3" referenceName="2_corinthians_3">
 		</chapter>
-		<chapter number="4" resourceName="corinthians_2_4">
+		<chapter number="4" resourceName="corinthians_2_4" referenceName="2_corinthians_4">
 		</chapter>
-		<chapter number="5" resourceName="corinthians_2_5">
+		<chapter number="5" resourceName="corinthians_2_5" referenceName="2_corinthians_5">
 		</chapter>
-		<chapter number="6" resourceName="corinthians_2_6">
+		<chapter number="6" resourceName="corinthians_2_6" referenceName="2_corinthians_6">
 		</chapter>
-		<chapter number="7" resourceName="corinthians_2_7">
+		<chapter number="7" resourceName="corinthians_2_7" referenceName="2_corinthians_7">
 		</chapter>
-		<chapter number="8" resourceName="corinthians_2_8">
+		<chapter number="8" resourceName="corinthians_2_8" referenceName="2_corinthians_8">
 		</chapter>
-		<chapter number="9" resourceName="corinthians_2_9">
+		<chapter number="9" resourceName="corinthians_2_9" referenceName="2_corinthians_9">
 		</chapter>
-		<chapter number="10" resourceName="corinthians_2_10">
+		<chapter number="10" resourceName="corinthians_2_10" referenceName="2_corinthians_10">
 		</chapter>
-		<chapter number="11" resourceName="corinthians_2_11">
+		<chapter number="11" resourceName="corinthians_2_11" referenceName="2_corinthians_11">
 		</chapter>
-		<chapter number="12" resourceName="corinthians_2_12">
+		<chapter number="12" resourceName="corinthians_2_12" referenceName="2_corinthians_12">
 		</chapter>
-		<chapter number="13" resourceName="corinthians_2_13">
+		<chapter number="13" resourceName="corinthians_2_13" referenceName="2_corinthians_13">
 		</chapter>
 	</book>
 	<book title="Galatians" number="48">
-		<chapter number="1" resourceName="galatians_1">
+		<chapter number="1" resourceName="galatians_1" referenceName="galatians_1">
 		</chapter>
-		<chapter number="2" resourceName="galatians_2">
+		<chapter number="2" resourceName="galatians_2" referenceName="galatians_2">
 		</chapter>
-		<chapter number="3" resourceName="galatians_3">
+		<chapter number="3" resourceName="galatians_3" referenceName="galatians_3">
 		</chapter>
-		<chapter number="4" resourceName="galatians_4">
+		<chapter number="4" resourceName="galatians_4" referenceName="galatians_4">
 		</chapter>
-		<chapter number="5" resourceName="galatians_5">
+		<chapter number="5" resourceName="galatians_5" referenceName="galatians_5">
 		</chapter>
-		<chapter number="6" resourceName="galatians_6">
+		<chapter number="6" resourceName="galatians_6" referenceName="galatians_6">
 		</chapter>
 	</book>
 	<book title="Ephesians" number="49">
-		<chapter number="1" resourceName="ephesians_1">
+		<chapter number="1" resourceName="ephesians_1" referenceName="ephesians_1">
 		</chapter>
-		<chapter number="2" resourceName="ephesians_2">
+		<chapter number="2" resourceName="ephesians_2" referenceName="ephesians_2">
 		</chapter>
-		<chapter number="3" resourceName="ephesians_3">
+		<chapter number="3" resourceName="ephesians_3" referenceName="ephesians_3">
 		</chapter>
-		<chapter number="4" resourceName="ephesians_4">
+		<chapter number="4" resourceName="ephesians_4" referenceName="ephesians_4">
 		</chapter>
-		<chapter number="5" resourceName="ephesians_5">
+		<chapter number="5" resourceName="ephesians_5" referenceName="ephesians_5">
 		</chapter>
-		<chapter number="6" resourceName="ephesians_6">
+		<chapter number="6" resourceName="ephesians_6" referenceName="ephesians_6">
 		</chapter>
 	</book>
 	<book title="Philippians" number="50">
-		<chapter number="1" resourceName="philippians_1">
+		<chapter number="1" resourceName="philippians_1" referenceName="philippians_1">
 		</chapter>
-		<chapter number="2" resourceName="philippians_2">
+		<chapter number="2" resourceName="philippians_2" referenceName="philippians_2">
 		</chapter>
-		<chapter number="3" resourceName="philippians_3">
+		<chapter number="3" resourceName="philippians_3" referenceName="philippians_3">
 		</chapter>
-		<chapter number="4" resourceName="philippians_4">
+		<chapter number="4" resourceName="philippians_4" referenceName="philippians_4">
 		</chapter>
 	</book>
 	<book title="Colossians" number="51">
-		<chapter number="1" resourceName="colossians_1">
+		<chapter number="1" resourceName="colossians_1" referenceName="colossians_1">
 		</chapter>
-		<chapter number="2" resourceName="colossians_2">
+		<chapter number="2" resourceName="colossians_2" referenceName="colossians_2">
 		</chapter>
-		<chapter number="3" resourceName="colossians_3">
+		<chapter number="3" resourceName="colossians_3" referenceName="colossians_3">
 		</chapter>
-		<chapter number="4" resourceName="colossians_4">
+		<chapter number="4" resourceName="colossians_4" referenceName="colossians_4">
 		</chapter>
 	</book>
 	<book title="1 Thessalonians" number="52">
-		<chapter number="1" resourceName="thessalonians_1_1">
+		<chapter number="1" resourceName="thessalonians_1_1" referenceName="1_thessalonians_1">
 		</chapter>
-		<chapter number="2" resourceName="thessalonians_1_2">
+		<chapter number="2" resourceName="thessalonians_1_2" referenceName="1_thessalonians_2">
 		</chapter>
-		<chapter number="3" resourceName="thessalonians_1_3">
+		<chapter number="3" resourceName="thessalonians_1_3" referenceName="1_thessalonians_3">
 		</chapter>
-		<chapter number="4" resourceName="thessalonians_1_4">
+		<chapter number="4" resourceName="thessalonians_1_4" referenceName="1_thessalonians_4">
 		</chapter>
-		<chapter number="5" resourceName="thessalonians_1_5">
+		<chapter number="5" resourceName="thessalonians_1_5" referenceName="1_thessalonians_5">
 		</chapter>
 	</book>
 	<book title="2 Thessalonians" number="53">
-		<chapter number="1" resourceName="thessalonians_2_1">
+		<chapter number="1" resourceName="thessalonians_2_1" referenceName="2_thessalonians_1">
 		</chapter>
-		<chapter number="2" resourceName="thessalonians_2_2">
+		<chapter number="2" resourceName="thessalonians_2_2" referenceName="2_thessalonians_2">
 		</chapter>
-		<chapter number="3" resourceName="thessalonians_2_3">
+		<chapter number="3" resourceName="thessalonians_2_3" referenceName="2_thessalonians_3">
 		</chapter>
 	</book>
 	<book title="1 Timothy" number="54">
-		<chapter number="1" resourceName="timothy_1_1">
+		<chapter number="1" resourceName="timothy_1_1" referenceName="1_timothy_1">
 		</chapter>
-		<chapter number="2" resourceName="timothy_1_2">
+		<chapter number="2" resourceName="timothy_1_2" referenceName="1_timothy_2">
 		</chapter>
-		<chapter number="3" resourceName="timothy_1_3">
+		<chapter number="3" resourceName="timothy_1_3" referenceName="1_timothy_3">
 		</chapter>
-		<chapter number="4" resourceName="timothy_1_4">
+		<chapter number="4" resourceName="timothy_1_4" referenceName="1_timothy_4">
 		</chapter>
-		<chapter number="5" resourceName="timothy_1_5">
+		<chapter number="5" resourceName="timothy_1_5" referenceName="1_timothy_5">
 		</chapter>
-		<chapter number="6" resourceName="timothy_1_6">
+		<chapter number="6" resourceName="timothy_1_6" referenceName="1_timothy_6">
 		</chapter>
 	</book>
 	<book title="2 Timothy" number="55">
-		<chapter number="1" resourceName="timothy_2_1">
+		<chapter number="1" resourceName="timothy_2_1" referenceName="2_timothy_1">
 		</chapter>
-		<chapter number="2" resourceName="timothy_2_2">
+		<chapter number="2" resourceName="timothy_2_2" referenceName="2_timothy_2">
 		</chapter>
-		<chapter number="3" resourceName="timothy_2_3">
+		<chapter number="3" resourceName="timothy_2_3" referenceName="2_timothy_3">
 		</chapter>
-		<chapter number="4" resourceName="timothy_2_4">
+		<chapter number="4" resourceName="timothy_2_4" referenceName="2_timothy_4">
 		</chapter>
 	</book>
 	<book title="Titus" number="56">
-		<chapter number="1" resourceName="titus_1">
+		<chapter number="1" resourceName="titus_1" referenceName="titus_1">
 		</chapter>
-		<chapter number="2" resourceName="titus_2">
+		<chapter number="2" resourceName="titus_2" referenceName="titus_2">
 		</chapter>
-		<chapter number="3" resourceName="titus_3">
+		<chapter number="3" resourceName="titus_3" referenceName="titus_3">
 		</chapter>
 	</book>
 	<book title="Philemon" number="57">
-		<chapter number="1" resourceName="philemon_1">
+		<chapter number="1" resourceName="philemon_1" referenceName="philemon_1">
 		</chapter>
 	</book>
 	<book title="Hebrews" number="58">
-		<chapter number="1" resourceName="hebrews_1">
+		<chapter number="1" resourceName="hebrews_1" referenceName="hebrews_1">
 		</chapter>
-		<chapter number="2" resourceName="hebrews_2">
+		<chapter number="2" resourceName="hebrews_2" referenceName="hebrews_2">
 		</chapter>
-		<chapter number="3" resourceName="hebrews_3">
+		<chapter number="3" resourceName="hebrews_3" referenceName="hebrews_3">
 		</chapter>
-		<chapter number="4" resourceName="hebrews_4">
+		<chapter number="4" resourceName="hebrews_4" referenceName="hebrews_4">
 		</chapter>
-		<chapter number="5" resourceName="hebrews_5">
+		<chapter number="5" resourceName="hebrews_5" referenceName="hebrews_5">
 		</chapter>
-		<chapter number="6" resourceName="hebrews_6">
+		<chapter number="6" resourceName="hebrews_6" referenceName="hebrews_6">
 		</chapter>
-		<chapter number="7" resourceName="hebrews_7">
+		<chapter number="7" resourceName="hebrews_7" referenceName="hebrews_7">
 		</chapter>
-		<chapter number="8" resourceName="hebrews_8">
+		<chapter number="8" resourceName="hebrews_8" referenceName="hebrews_8">
 		</chapter>
-		<chapter number="9" resourceName="hebrews_9">
+		<chapter number="9" resourceName="hebrews_9" referenceName="hebrews_9">
 		</chapter>
-		<chapter number="10" resourceName="hebrews_10">
+		<chapter number="10" resourceName="hebrews_10" referenceName="hebrews_10">
 		</chapter>
-		<chapter number="11" resourceName="hebrews_11">
+		<chapter number="11" resourceName="hebrews_11" referenceName="hebrews_11">
 		</chapter>
-		<chapter number="12" resourceName="hebrews_12">
+		<chapter number="12" resourceName="hebrews_12" referenceName="hebrews_12">
 		</chapter>
-		<chapter number="13" resourceName="hebrews_13">
+		<chapter number="13" resourceName="hebrews_13" referenceName="hebrews_13">
 		</chapter>
 	</book>
 	<book title="James" number="59">
-		<chapter number="1" resourceName="james_1">
+		<chapter number="1" resourceName="james_1" referenceName="james_1">
 		</chapter>
-		<chapter number="2" resourceName="james_2">
+		<chapter number="2" resourceName="james_2" referenceName="james_2">
 		</chapter>
-		<chapter number="3" resourceName="james_3">
+		<chapter number="3" resourceName="james_3" referenceName="james_3">
 		</chapter>
-		<chapter number="4" resourceName="james_4">
+		<chapter number="4" resourceName="james_4" referenceName="james_4">
 		</chapter>
-		<chapter number="5" resourceName="james_5">
+		<chapter number="5" resourceName="james_5" referenceName="james_5">
 		</chapter>
 	</book>
 	<book title="1 Peter" number="60">
-		<chapter number="1" resourceName="peter_1_1">
+		<chapter number="1" resourceName="peter_1_1" referenceName="1_peter_1">
 		</chapter>
-		<chapter number="2" resourceName="peter_1_2">
+		<chapter number="2" resourceName="peter_1_2" referenceName="1_peter_2">
 		</chapter>
-		<chapter number="3" resourceName="peter_1_3">
+		<chapter number="3" resourceName="peter_1_3" referenceName="1_peter_3">
 		</chapter>
-		<chapter number="4" resourceName="peter_1_4">
+		<chapter number="4" resourceName="peter_1_4" referenceName="1_peter_4">
 		</chapter>
-		<chapter number="5" resourceName="peter_1_5">
+		<chapter number="5" resourceName="peter_1_5" referenceName="1_peter_5">
 		</chapter>
 	</book>
 	<book title="2 Peter" number="61">
-		<chapter number="1" resourceName="peter_2_1">
+		<chapter number="1" resourceName="peter_2_1" referenceName="2_peter_1">
 		</chapter>
-		<chapter number="2" resourceName="peter_2_2">
+		<chapter number="2" resourceName="peter_2_2" referenceName="2_peter_2">
 		</chapter>
-		<chapter number="3" resourceName="peter_2_3">
+		<chapter number="3" resourceName="peter_2_3" referenceName="2_peter_3">
 		</chapter>
 	</book>
 	<book title="1 John" number="62">
-		<chapter number="1" resourceName="john_1_1">
+		<chapter number="1" resourceName="john_1_1" referenceName="1_john_1">
 		</chapter>
-		<chapter number="2" resourceName="john_1_2">
+		<chapter number="2" resourceName="john_1_2" referenceName="1_john_2">
 		</chapter>
-		<chapter number="3" resourceName="john_1_3">
+		<chapter number="3" resourceName="john_1_3" referenceName="1_john_3">
 		</chapter>
-		<chapter number="4" resourceName="john_1_4">
+		<chapter number="4" resourceName="john_1_4" referenceName="1_john_4">
 		</chapter>
-		<chapter number="5" resourceName="john_1_5">
+		<chapter number="5" resourceName="john_1_5" referenceName="1_john_5">
 		</chapter>
 	</book>
 	<book title="2 John" number="63">
-		<chapter number="1" resourceName="john_2_1">
+		<chapter number="1" resourceName="john_2_1" referenceName="2_john_1">
 		</chapter>
 	</book>
 	<book title="3 John" number="64">
-		<chapter number="1" resourceName="john_3_1">
+		<chapter number="1" resourceName="john_3_1" referenceName="3_john_1">
 		</chapter>
 	</book>
 	<book title="Jude" number="65">
-		<chapter number="1" resourceName="jude_1">
+		<chapter number="1" resourceName="jude_1" referenceName="jude_1">
 		</chapter>
 	</book>
 	<book title="Revelation" number="66">
-		<chapter number="1" resourceName="revelation_1">
+		<chapter number="1" resourceName="revelation_1" referenceName="revelation_1">
 		</chapter>
-		<chapter number="2" resourceName="revelation_2">
+		<chapter number="2" resourceName="revelation_2" referenceName="revelation_2">
 		</chapter>
-		<chapter number="3" resourceName="revelation_3">
+		<chapter number="3" resourceName="revelation_3" referenceName="revelation_3">
 		</chapter>
-		<chapter number="4" resourceName="revelation_4">
+		<chapter number="4" resourceName="revelation_4" referenceName="revelation_4">
 		</chapter>
-		<chapter number="5" resourceName="revelation_5">
+		<chapter number="5" resourceName="revelation_5" referenceName="revelation_5">
 		</chapter>
-		<chapter number="6" resourceName="revelation_6">
+		<chapter number="6" resourceName="revelation_6" referenceName="revelation_6">
 		</chapter>
-		<chapter number="7" resourceName="revelation_7">
+		<chapter number="7" resourceName="revelation_7" referenceName="revelation_7">
 		</chapter>
-		<chapter number="8" resourceName="revelation_8">
+		<chapter number="8" resourceName="revelation_8" referenceName="revelation_8">
 		</chapter>
-		<chapter number="9" resourceName="revelation_9">
+		<chapter number="9" resourceName="revelation_9" referenceName="revelation_9">
 		</chapter>
-		<chapter number="10" resourceName="revelation_10">
+		<chapter number="10" resourceName="revelation_10" referenceName="revelation_10">
 		</chapter>
-		<chapter number="11" resourceName="revelation_11">
+		<chapter number="11" resourceName="revelation_11" referenceName="revelation_11">
 		</chapter>
-		<chapter number="12" resourceName="revelation_12">
+		<chapter number="12" resourceName="revelation_12" referenceName="revelation_12">
 		</chapter>
-		<chapter number="13" resourceName="revelation_13">
+		<chapter number="13" resourceName="revelation_13" referenceName="revelation_13">
 		</chapter>
-		<chapter number="14" resourceName="revelation_14">
+		<chapter number="14" resourceName="revelation_14" referenceName="revelation_14">
 		</chapter>
-		<chapter number="15" resourceName="revelation_15">
+		<chapter number="15" resourceName="revelation_15" referenceName="revelation_15">
 		</chapter>
-		<chapter number="16" resourceName="revelation_16">
+		<chapter number="16" resourceName="revelation_16" referenceName="revelation_16">
 		</chapter>
-		<chapter number="17" resourceName="revelation_17">
+		<chapter number="17" resourceName="revelation_17" referenceName="revelation_17">
 		</chapter>
-		<chapter number="18" resourceName="revelation_18">
+		<chapter number="18" resourceName="revelation_18" referenceName="revelation_18">
 		</chapter>
-		<chapter number="19" resourceName="revelation_19">
+		<chapter number="19" resourceName="revelation_19" referenceName="revelation_19">
 		</chapter>
-		<chapter number="20" resourceName="revelation_20">
+		<chapter number="20" resourceName="revelation_20" referenceName="revelation_20">
 		</chapter>
-		<chapter number="21" resourceName="revelation_21">
+		<chapter number="21" resourceName="revelation_21" referenceName="revelation_21">
 		</chapter>
-		<chapter number="22" resourceName="revelation_22">
+		<chapter number="22" resourceName="revelation_22" referenceName="revelation_22">
 		</chapter>
 	</book>
 </books>

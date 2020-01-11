@@ -42,7 +42,7 @@ class _VerseTextState extends State<VerseText>
       this.verseNumber});
   @override
   Widget build(BuildContext context) {
-    List<TextSpan> versesText = List<TextSpan>();
+    List<InlineSpan> versesText = List<InlineSpan>();
 
     for (IChapterElement verse in chapter.elements) {
       versesText.add(verse.toTextSpanWidget(context));
@@ -59,6 +59,15 @@ class _VerseTextState extends State<VerseText>
       width: width,
       child: Padding(
         padding: const EdgeInsets.all(8.0),
+        child: Text.rich(
+          chapterText,
+        ),
+      ),
+    );
+    return Container(
+      width: width,
+      child: Padding(
+        padding: const EdgeInsets.all(8.0),
         child: SelectableText.rich(
           chapterText,
         ),
@@ -66,10 +75,10 @@ class _VerseTextState extends State<VerseText>
     );
   }
 
-  List<TextSpan> _flattenTextSpans(List<TextSpan> iterable) {
+  List<InlineSpan> _flattenTextSpans(List<InlineSpan> iterable) {
     return iterable
-        .expand((TextSpan e) => e.children != null && e.children.length > 0
-            ? _flattenTextSpans(e.children.whereType<TextSpan>().toList())
+        .expand((InlineSpan e) => e.children != null && e.children.length > 0
+            ? _flattenTextSpans(e.children.whereType<InlineSpan>().toList())
             : [e])
         .toList();
   }

@@ -16,7 +16,7 @@ class DivineName extends IChapterElement {
   }
 
   @override
-  TextSpan toTextSpanWidget(BuildContext context) {
+  InlineSpan toTextSpanWidget(BuildContext context) {
     //var reg = RegExp("\s[.!?\\-]", caseSensitive: false);
     //var text = this.text.replaceAllMapped(reg, (Match m) => "${m[1]}");
 

@@ -4,6 +4,8 @@ import 'package:bible_bloc/Foundation/Models/Book.dart';
 import 'package:bible_bloc/Foundation/Models/Chapter.dart';
 import 'package:bible_bloc/Foundation/Models/ChapterReference.dart';
 import 'package:bible_bloc/Foundation/Provider/IBibleProvider.dart';
+import 'package:bible_bloc/Foundation/Provider/IReferenceProvider.dart';
+import 'package:flutter/services.dart';
 import 'package:rxdart/rxdart.dart';
 import 'dart:collection';
 
@@ -11,6 +13,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 class BibleBloc {
   IBibleProvider _importer;
+  IReferenceProvider _referenceProvider;
   List<Book> _books;
 
   final String membershipKey = 'david.anderson.bibleapp';
@@ -42,8 +45,10 @@ class BibleBloc {
   Stream<Chapter> get previousChapter => _previousChapter.stream;
   final _previousChapter = BehaviorSubject<Chapter>();
 
-  BibleBloc(IBibleProvider bibleProvider) {
+  BibleBloc(
+      IBibleProvider bibleProvider, IReferenceProvider referenceProvider) {
     _importer = bibleProvider;
+    _referenceProvider = referenceProvider;
     _getBooks().then((n) => _initCurrentBook());
     _initHistoryList();
     _currentChapterController.stream.listen((currentChapter) async {
@@ -230,5 +235,54 @@ class BibleBloc {
 
   clearHistory() {
     _chapterHistory.add(List<ChapterReference>());
+  }
+
+  void addChapterReferenceFromId(String referenceId) async {
+    var bookNumber = referenceId.substring(1, 3);
+    var chapterNumber = referenceId.substring(3, 6);
+    var verseNumber = referenceId.substring(6, 9);
+    var referenceNumber = referenceId.split(".")[1];
+    var chapter = _books
+        .firstWhere((book) => book.number == int.parse(bookNumber))
+        .chapters
+        .firstWhere((chapter) => chapter.number == int.parse(chapterNumber));
+    //var chapter = _importer.getChapterByBookNumber(int.parse(bookNumber), int.parse(chapterNumber));
+    var fileData =
+        await rootBundle.loadString(chapter.referenceName, cache: false);
+    var fileLines = fileData.split("\r\n");
+    fileLines.forEach((f) => f.trim());
+    var referenceLine = fileLines.firstWhere((line) =>
+        line.startsWith("i") && line.split(" ")[1].contains(referenceId));
+    var nextReferenceStartLine = fileLines.firstWhere((line) =>
+        fileLines.indexOf(line) > fileLines.indexOf(referenceLine) &&
+        line.startsWith("c"));
+    var referenceLines = fileLines
+        .getRange(fileLines.indexOf(referenceLine),
+            fileLines.indexOf(nextReferenceStartLine))
+        .toList();
+
+    var userLines = "";
+    var referencedId = "";
+    for (var line in referenceLines) {
+      if (line.startsWith("i")) {
+      } else if (line.startsWith("m")) {
+        var text = line.split("m ")[1];
+        userLines += text;
+      } else if (line.startsWith("r")) {
+        var referenceIdOnLine = line.split(" ")[1];
+        referencedId = referenceIdOnLine;
+        var lineText = line.split(referenceIdOnLine)[1];
+        userLines += lineText;
+      } else if (line.startsWith("V")) {}
+    }
+    bookNumber = referencedId.substring(0, 2);
+    chapterNumber = referencedId.substring(2, 5);
+    verseNumber = referencedId.substring(5);
+    var refChapter = await _importer.getChapterByBookNumber(
+        int.parse(bookNumber), int.parse(chapterNumber));
+    _updatePopupChapter(ChapterReference(
+        chapter: refChapter, verseNumber: int.parse(verseNumber)));
+
+    print(userLines);
   }
 }

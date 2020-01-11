@@ -24,10 +24,10 @@ class InheritedBlocs extends InheritedWidget {
   final NotesBloc notesBloc;
   final NavigationBloc navigationBloc;
   final SearchBloc searchBloc;
+  
 
   static InheritedBlocs of(BuildContext context) {
-    return (context.inheritFromWidgetOfExactType(InheritedBlocs)
-        as InheritedBlocs);
+    return context.dependOnInheritedWidgetOfExactType<InheritedBlocs>();
   }
 
   @override
@@ -77,23 +77,30 @@ class InheritedBlocs extends InheritedWidget {
               ),
               SliverToBoxAdapter(
                 child: StreamBuilder<ChapterReference>(
-                    stream: InheritedBlocs.of(context)
-                        .bibleBloc
-                        .popupChapterReference,
-                    builder: (context, reference) {
-                      if (reference.hasData) {
-                        return Reader(
-                          canSwipeToNextChapter: false,
-                          controller: _controller,
-                          chapterReference: reference.data,
-                        );
-                      } else {
-                        return LoadingColumn();
-                      }
-                    }, initialData: null,),
+                  stream: InheritedBlocs.of(context)
+                      .bibleBloc
+                      .popupChapterReference,
+                  builder: (context, reference) {
+                    if (reference.hasData) {
+                      return Reader(
+                        canSwipeToNextChapter: false,
+                        controller: _controller,
+                        chapterReference: reference.data,
+                      );
+                    } else {
+                      return LoadingColumn();
+                    }
+                  },
+                  initialData: null,
+                ),
               ),
             ],
           ));
         });
+  }
+
+  Future<bool> openChapterReference(BuildContext context, String referenceId) {
+    this.bibleBloc.addChapterReferenceFromId(referenceId);
+    return this.showReferenceInBottomSheet(context);
   }
 }

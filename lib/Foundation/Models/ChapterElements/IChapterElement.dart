@@ -13,5 +13,5 @@ abstract class IChapterElement {
 
   List<Text> toTextWidget(BuildContext context);
 
-  TextSpan toTextSpanWidget(BuildContext context);
+  InlineSpan toTextSpanWidget(BuildContext context);
 }

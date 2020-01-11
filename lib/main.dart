@@ -4,6 +4,7 @@ import 'package:bible_bloc/Feature/Notes/notes_feature.dart';
 import 'package:bible_bloc/Feature/Reader/reader_feature.dart';
 import 'package:bible_bloc/Feature/Search/search_feature.dart';
 import 'package:bible_bloc/Feature/Settings/settings_feature.dart';
+import 'package:bible_bloc/Foundation/Provider/ReferenceProvider.dart';
 import 'package:bible_bloc/Foundation/foundation.dart';
 import 'package:bible_bloc/Project/Designs/DarkDesign.dart';
 import 'package:bible_bloc/Project/Pages/NotesPage.dart';
@@ -16,7 +17,7 @@ import 'Project/Pages/HistoryPage.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await GlobalConfiguration().loadFromAsset("app_settings");
-  final bibleBloc = BibleBloc(MultiPartXmlBibleProvider());
+  final bibleBloc = BibleBloc(MultiPartXmlBibleProvider(), ReferenceProvider());
   runApp(MyApp(
     bibleBloc: bibleBloc,
     settingsBloc: SettingsBloc(),

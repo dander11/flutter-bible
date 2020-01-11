@@ -15,7 +15,7 @@ class EndParagraph extends IChapterElement {
   }
 
   @override
-  TextSpan toTextSpanWidget(BuildContext context) {
+  InlineSpan toTextSpanWidget(BuildContext context) {
     return TextSpan(
       children: [
         TextSpan(

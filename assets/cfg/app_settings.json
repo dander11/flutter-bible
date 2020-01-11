@@ -1,4 +1,5 @@
 {
     "xmlBiblePath": "resources/esv.xml",
-    "multipartXmlBiblePath": "resources/xml/"
+    "multipartXmlBiblePath": "resources/xml/",
+    "bibleReferencePath": "resources/raw/refs_"
   }

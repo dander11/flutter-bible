@@ -23,7 +23,7 @@ class Verse extends IChapterElement {
   }
 
   @override
-  TextSpan toTextSpanWidget(BuildContext context) {
+  InlineSpan toTextSpanWidget(BuildContext context) {
     TextSpan span = TextSpan(children: [
       TextSpan(
         text: ''' ${this.number}.''',

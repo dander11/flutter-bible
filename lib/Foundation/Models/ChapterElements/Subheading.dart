@@ -17,7 +17,7 @@ class Subheading extends IChapterElement {
   }
 
   @override
-  TextSpan toTextSpanWidget(BuildContext context) {
+  InlineSpan toTextSpanWidget(BuildContext context) {
     var span = TextSpan(
       children: [
         TextSpan(

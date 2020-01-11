@@ -18,7 +18,7 @@ class EmptyElement extends IChapterElement {
   }
 
   @override
-  TextSpan toTextSpanWidget(BuildContext context) {
+  InlineSpan toTextSpanWidget(BuildContext context) {
     var span = TextSpan(children: []);
     if (this.elements.length > 0) {
       for (var verseElement in this.elements) {

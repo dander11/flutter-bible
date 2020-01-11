@@ -1,4 +1,4 @@
-package com.example.biblebloc;
+package com.dander11.flutterBible;
 
 import android.os.Bundle;
 import io.flutter.app.FlutterActivity;

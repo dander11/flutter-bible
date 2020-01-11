@@ -6,8 +6,9 @@ class Chapter {
   List<IChapterElement> elements;
   Book book;
   int number;
+  String referenceName;
 
-  Chapter({this.number, this.elements, this.book}) {
+  Chapter({this.number, this.elements, this.book, this.referenceName}) {
     if (this.elements == null) {
       elements = List<IChapterElement>();
     }
