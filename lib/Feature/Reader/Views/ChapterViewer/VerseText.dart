@@ -1,4 +1,3 @@
-import 'package:bible_bloc/Foundation/Models/ChapterElements/CrossReferenceElement.dart';
 import 'package:bible_bloc/Foundation/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
