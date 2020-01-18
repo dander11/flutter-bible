@@ -1,3 +1,4 @@
+import 'package:bible_bloc/Foundation/Models/ChapterElements/CrossReferenceElement.dart';
 import 'package:bible_bloc/Foundation/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
@@ -8,13 +9,15 @@ class VerseText extends StatefulWidget {
   final Chapter chapter;
   final Function scrollToVerseMethod;
   final int verseNumber;
+  final bool showReferences;
 
   const VerseText(
       {Key key,
       @required this.book,
       @required this.chapter,
       this.verseNumber,
-      this.scrollToVerseMethod})
+      this.scrollToVerseMethod,
+      this.showReferences})
       : super(key: key);
 
   @override
@@ -48,6 +51,10 @@ class _VerseTextState extends State<VerseText>
       versesText.add(verse.toTextSpanWidget(context));
     }
     var expandedChapterText = _flattenTextSpans(versesText);
+
+    if (!widget.showReferences) {
+      expandedChapterText.removeWhere((span) => span is WidgetSpan);
+    }
 
     TextSpan chapterText = TextSpan(
       children: expandedChapterText,

@@ -1,7 +1,7 @@
 import 'package:bible_bloc/Foundation/Models/Book.dart';
 import 'package:bible_bloc/Foundation/Models/Chapter.dart';
 import 'package:bible_bloc/Foundation/Models/ChapterElements/BeginParagraph.dart';
-import 'package:bible_bloc/Foundation/Models/ChapterElements/CrossReference.dart';
+import 'package:bible_bloc/Foundation/Models/ChapterElements/CrossReferenceElement.dart';
 import 'package:bible_bloc/Foundation/Models/ChapterElements/DivineName.dart';
 import 'package:bible_bloc/Foundation/Models/ChapterElements/EmptyElement.dart';
 import 'package:bible_bloc/Foundation/Models/ChapterElements/EndParagraph.dart';
@@ -172,7 +172,7 @@ class MultiPartXmlBibleProvider extends IBibleProvider {
     } else if (_isXmlElementADivineName(aNode)) {
       return DivineName(text: " ${aNode.text.trim()}");
     } else if (aNode.name.local == "crossref") {
-      return CrossReference(
+      return CrossReferenceElement(
           letter: node.getAttribute("let"),
           referenceId: node.getAttribute("cid"));
     } else {

@@ -9,15 +9,17 @@ class Reader extends StatelessWidget {
   final Chapter nextChapter;
   final ScrollController controller;
   final bool canSwipeToNextChapter;
+  final bool showReferences;
 
-  const Reader(
-      {Key key,
-      this.chapterReference,
-      this.controller,
-      this.canSwipeToNextChapter = true,
-      this.previousChapter,
-      this.nextChapter})
-      : super(key: key);
+  const Reader({
+    Key key,
+    this.chapterReference,
+    this.controller,
+    this.canSwipeToNextChapter = true,
+    this.previousChapter,
+    this.nextChapter,
+    this.showReferences = true,
+  }) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return this.canSwipeToNextChapter
@@ -29,11 +31,13 @@ class Reader extends StatelessWidget {
             chapter: chapterReference.chapter,
             showVerseNumbers: true,
             scrollToVerseMethod: _scrollToVerse,
+            showReferences: this.showReferences,
           )
         : VerseText(
             book: chapterReference.chapter.book,
             chapter: chapterReference.chapter,
             scrollToVerseMethod: _scrollToVerse,
+            showReferences: this.showReferences,
           );
   }
 

@@ -2,9 +2,16 @@ import 'dart:async';
 import 'dart:convert';
 import 'package:bible_bloc/Foundation/Models/Book.dart';
 import 'package:bible_bloc/Foundation/Models/Chapter.dart';
+import 'package:bible_bloc/Foundation/Models/ChapterElements/CrossReferenceElement.dart';
 import 'package:bible_bloc/Foundation/Models/ChapterReference.dart';
+import 'package:bible_bloc/Foundation/Models/CrossReference.dart';
+import 'package:bible_bloc/Foundation/Models/CrossReference.dart';
+import 'package:bible_bloc/Foundation/Models/CrossReferenceElements/ICrossReferenceElement.dart';
+import 'package:bible_bloc/Foundation/Models/CrossReferenceElements/PlainTextReferenceElement.dart';
+import 'package:bible_bloc/Foundation/Models/CrossReferenceElements/VerseReferenceElement.dart';
 import 'package:bible_bloc/Foundation/Provider/IBibleProvider.dart';
 import 'package:bible_bloc/Foundation/Provider/IReferenceProvider.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/services.dart';
 import 'package:rxdart/rxdart.dart';
 import 'dart:collection';
@@ -45,6 +52,9 @@ class BibleBloc {
   Stream<Chapter> get previousChapter => _previousChapter.stream;
   final _previousChapter = BehaviorSubject<Chapter>();
 
+  BehaviorSubject<CrossReference> get crossReference => _crossReference;
+  final _crossReference = BehaviorSubject<CrossReference>();
+
   BibleBloc(
       IBibleProvider bibleProvider, IReferenceProvider referenceProvider) {
     _importer = bibleProvider;
@@ -59,43 +69,6 @@ class BibleBloc {
       _updatePopupChapter(popupReference);
     });
   }
-/* 
-  void _updateSearchSuggestions(SearchQuery search) {
-    if (search.queryText.length > 2) {
-      var booksToSearch = search.book.isNotEmpty
-          ? this
-              ._books
-              .where((book) =>
-                  book.name.toLowerCase() == search.book.toLowerCase())
-              .expand((b) => [b.name])
-              .toList()
-          : this._books.expand((b) => [b.name]).toList();
-      _searchProvider
-          .getSearchResults(search.queryText, booksToSearch)
-          .then((results) {
-        _suggestionSearchResultsSubject.add(UnmodifiableListView(results));
-      });
-    }
-  }
-
-  void _updateSearchResults(SearchQuery search) {
-    if (search.queryText.length > 2) {
-      var booksToSearch = search.book.isNotEmpty
-          ? this
-              ._books
-              .where((book) =>
-                  book.name.toLowerCase() == search.book.toLowerCase())
-              .expand((b) => [b.name])
-              .toList()
-          : this._books.expand((b) => [b.name]).toList();
-      _searchProvider
-          .getSearchResults(search.queryText, booksToSearch)
-          .then((results) {
-        _searchResultsSubject.add(UnmodifiableListView(results));
-      });
-    }
-  } */
-
   Future _goToChapter(ChapterReference currentChapter) async {
     var chapter = await _importer.getChapter(
         currentChapter.chapter.book.name, currentChapter.chapter.number);
@@ -166,6 +139,7 @@ class BibleBloc {
     _nextChapter.close();
     _currentPopupChapterController.close();
     _chapterHistory.close();
+    _crossReference.close();
   }
 
   void _initCurrentBook() async {
@@ -248,34 +222,63 @@ class BibleBloc {
         .firstWhere((chapter) => chapter.number == int.parse(chapterNumber));
     //var chapter = _importer.getChapterByBookNumber(int.parse(bookNumber), int.parse(chapterNumber));
     var fileData =
-        await rootBundle.loadString(chapter.referenceName, cache: false);
+        await rootBundle.loadString(chapter.referenceName, cache: true);
     var fileLines = fileData.split("\r\n");
     fileLines.forEach((f) => f.trim());
     var referenceLine = fileLines.firstWhere((line) =>
         line.startsWith("i") && line.split(" ")[1].contains(referenceId));
-    var nextReferenceStartLine = fileLines.firstWhere((line) =>
-        fileLines.indexOf(line) > fileLines.indexOf(referenceLine) &&
-        line.startsWith("c"));
+    var nextReferenceStartLine = fileLines.firstWhere(
+      (line) =>
+          fileLines.indexOf(line) > fileLines.indexOf(referenceLine) &&
+          line.startsWith("c"),
+      orElse: () {
+        return fileLines.last;
+      },
+    );
     var referenceLines = fileLines
-        .getRange(fileLines.indexOf(referenceLine),
+        .getRange(fileLines.indexOf(referenceLine) - 1,
             fileLines.indexOf(nextReferenceStartLine))
         .toList();
 
+    CrossReference reference = CrossReference(
+      elements: List<ICrossReferenceElement>(),
+      id: referenceId,
+    );
     var userLines = "";
     var referencedId = "";
     for (var line in referenceLines) {
       if (line.startsWith("i")) {
+      } else if (line.startsWith("c")) {
+        var text = line.split("c ")[1];
+        reference.letter = text;
       } else if (line.startsWith("m")) {
         var text = line.split("m ")[1];
-        userLines += text;
+        reference.elements.add(
+          PlainTextReferenceElement(text: text),
+        );
       } else if (line.startsWith("r")) {
         var referenceIdOnLine = line.split(" ")[1];
         referencedId = referenceIdOnLine;
         var lineText = line.split(referenceIdOnLine)[1];
-        userLines += lineText;
+
+        var startingVerseId = referenceIdOnLine.contains("-")
+            ? referenceIdOnLine.split("-")[0]
+            : referenceIdOnLine.trim();
+        var endingVerseId = referenceIdOnLine.contains("-")
+            ? referenceIdOnLine.split("-")[1]
+            : referenceIdOnLine.trim();
+        reference.elements.add(
+          VerseReferenceElement(
+              text: lineText,
+              startingVerseId: startingVerseId,
+              endingVerseId: endingVerseId),
+        );
       } else if (line.startsWith("V")) {}
     }
-    bookNumber = referencedId.substring(0, 2);
+
+    _crossReference.add(reference);
+
+    /*  bookNumber = referencedId.substring(0, 2);
     chapterNumber = referencedId.substring(2, 5);
     verseNumber = referencedId.substring(5);
     var refChapter = await _importer.getChapterByBookNumber(
@@ -283,6 +286,17 @@ class BibleBloc {
     _updatePopupChapter(ChapterReference(
         chapter: refChapter, verseNumber: int.parse(verseNumber)));
 
-    print(userLines);
+    print(userLines); */
+  }
+
+  updatePopupReferenceFromCrossReference(
+      VerseReferenceElement reference) async {
+    var bookNumber = reference.startingVerseId.substring(0, 2);
+    var chapterNumber = reference.startingVerseId.substring(2, 5);
+    var verseNumber = reference.startingVerseId.substring(5);
+    var refChapter = await _importer.getChapterByBookNumber(
+        int.parse(bookNumber), int.parse(chapterNumber));
+    _updatePopupChapter(ChapterReference(
+        chapter: refChapter, verseNumber: int.parse(verseNumber)));
   }
 }

@@ -13,6 +13,7 @@ class DismissableChapterViewer extends StatelessWidget {
   final bool shouldHaveBackgrounds;
   final bool showVerseNumbers;
   final Function scrollToVerseMethod;
+  final bool showReferences;
 
   DismissableChapterViewer({
     this.chapter,
@@ -23,6 +24,7 @@ class DismissableChapterViewer extends StatelessWidget {
     this.scrollToVerseMethod,
     this.previousChapter,
     this.nextChapter,
+    this.showReferences,
   });
 
   Widget build(BuildContext context) {
@@ -33,6 +35,7 @@ class DismissableChapterViewer extends StatelessWidget {
               chapter: nextChapter,
               verseNumber: 1,
               scrollToVerseMethod: scrollToVerseMethod,
+              showReferences: this.showReferences,
             )
           : LoadingColumn(),
       background: this.shouldHaveBackgrounds
@@ -41,6 +44,7 @@ class DismissableChapterViewer extends StatelessWidget {
               chapter: previousChapter,
               verseNumber: 1,
               scrollToVerseMethod: scrollToVerseMethod,
+              showReferences: this.showReferences,
             )
           : LoadingColumn(),
       resizeDuration: null,
@@ -58,6 +62,7 @@ class DismissableChapterViewer extends StatelessWidget {
         chapter: chapter,
         verseNumber: verseNumber,
         scrollToVerseMethod: scrollToVerseMethod,
+        showReferences: this.showReferences,
       ),
       key: ValueKey(chapter.number),
     );
