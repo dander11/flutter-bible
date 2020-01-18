@@ -24,10 +24,11 @@ class _NoteTileState extends State<NoteTile> {
   @override
   Widget build(BuildContext context) {
     var lastUpdated = widget.note.lastUpdated.toLocal();
-    return Slidable.builder(
+    return Container();
+    /* return Slidable.builder(
       key: _slideKey,
       controller: slidableController,
-      delegate: SlidableDrawerDelegate(),
+      //delegate: SlidableDrawerDelegate(),
       actionExtentRatio: 0.25,
       slideToDismissDelegate: SlideToDismissDrawerDelegate(
         onWillDismiss: (actionType) {
@@ -88,5 +89,6 @@ class _NoteTileState extends State<NoteTile> {
             );
           }),
     );
+  */
   }
 }
