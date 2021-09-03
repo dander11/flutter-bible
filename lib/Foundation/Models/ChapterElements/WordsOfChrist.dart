@@ -26,12 +26,12 @@ class WordsOfChrist extends IChapterElement {
     if (text.length == 1 && text.contains(RegExp("[.!?\\-]"))) {
       span.children.add(TextSpan(
         text: '''${this.text.trim()}''',
-        style: Theme.of(context).textTheme.body2,
+        style: Theme.of(context).textTheme.bodyText2,
       ));
     } else {
       span.children.add(TextSpan(
         text: ''' ${this.text.trim()}''',
-        style: Theme.of(context).textTheme.body2,
+        style: Theme.of(context).textTheme.bodyText2,
       ));
     }
 

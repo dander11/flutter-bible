@@ -2,7 +2,6 @@ import 'package:bible_bloc/Feature/InheritedBlocs.dart';
 import 'package:bible_bloc/Feature/Reader/reader_feature.dart';
 import 'package:bible_bloc/Feature/Search/search_feature.dart';
 import 'package:flutter/material.dart';
-import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 
 import '../../AppPages.dart';
 

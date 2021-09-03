@@ -120,7 +120,7 @@ class InheritedBlocs extends InheritedWidget {
           return Container(
             child: Text.rich(
               reference.toInlineSpan(context),
-              style: Theme.of(context).textTheme.body2,
+              style: Theme.of(context).textTheme.bodyText2,
             ),
           );
         },

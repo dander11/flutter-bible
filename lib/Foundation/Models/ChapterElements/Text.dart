@@ -24,7 +24,7 @@ class ChapterText extends IChapterElement {
       children: [
         TextSpan(
           text: '''${this.text}''',
-          style: Theme.of(context).textTheme.body2,
+          style: Theme.of(context).textTheme.bodyText2,
         )
       ],
     );

@@ -26,7 +26,7 @@ class VerseReferenceElement extends ICrossReferenceElement {
               },
               child: Text(
                 '''${this.text}''',
-                style: Theme.of(context).textTheme.body2.copyWith(
+                style: Theme.of(context).textTheme.bodyText2.copyWith(
                       color: Colors.blue,
                     ),
               ),

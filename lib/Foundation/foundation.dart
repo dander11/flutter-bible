@@ -6,7 +6,6 @@ export './Models/ChapterElements/EmptyElement.dart';
 export './Models/ChapterElements/EndParagraph.dart';
 export './Models/ChapterElements/Heading.dart';
 export './Models/ChapterElements/IChapterElement.dart';
-export './Models/ChapterElements/Subheading.dart';
 export './Models/ChapterElements/Text.dart';
 export './Models/ChapterElements/Verse.dart';
 export './Models/ChapterElements/WordsOfChrist.dart';

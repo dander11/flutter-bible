@@ -16,7 +16,7 @@ class BookPanel extends StatelessWidget {
         child: Text(
           book.name,
           textAlign: TextAlign.left,
-          style: Theme.of(context).textTheme.display1,
+          style: Theme.of(context).textTheme.subtitle1,
         ),
       ),
       children: <Widget>[

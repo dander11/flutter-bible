@@ -44,7 +44,7 @@ class _VerseTextState extends State<VerseText>
   Widget build(BuildContext context) {
     TextSpan chapterText = TextSpan(
       children: [],
-      style: Theme.of(context).textTheme.body2,
+      style: Theme.of(context).textTheme.bodyText2,
     );
     for (IChapterElement verse in chapter.elements) {
       chapterText.children.add(verse.toTextSpanWidget(context));

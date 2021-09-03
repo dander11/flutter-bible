@@ -51,7 +51,7 @@ class BibleSearchDelegate extends SearchDelegate<Chapter> {
               textScaleFactor: 1.2,
               style: Theme.of(context)
                   .textTheme
-                  .subhead
+                  .subtitle1
                   .copyWith(color: Colors.red.shade300),
             ),
           ),
@@ -104,7 +104,7 @@ class BibleSearchDelegate extends SearchDelegate<Chapter> {
                 children: <Widget>[
                   Text(
                     "${snapshot.data.length} Results",
-                    style: Theme.of(context).textTheme.body1,
+                    style: Theme.of(context).textTheme.bodyText1,
                   ),
                   Collection(snapshot.data)
                               .select((v) => v.chapter.book)
@@ -114,7 +114,7 @@ class BibleSearchDelegate extends SearchDelegate<Chapter> {
                       ? Text("")
                       : Text(
                           " in ${Collection(snapshot.data).select((v) => v.chapter.book).distinct().toList().first.name}",
-                          style: Theme.of(context).textTheme.body1,
+                          style: Theme.of(context).textTheme.bodyText1,
                         ),
                 ],
               ),
@@ -135,7 +135,7 @@ class BibleSearchDelegate extends SearchDelegate<Chapter> {
                     "No Results Found.",
                     style: Theme.of(context)
                         .textTheme
-                        .subhead
+                        .subtitle1
                         .copyWith(color: Colors.red.shade300),
                   ),
                 ],

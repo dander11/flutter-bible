@@ -4,7 +4,7 @@ class Designs {
   static ThemeData darkTheme = getDarkTheme();
 
   static TextTheme darkTextTheme =
-      TextTheme(body2: TextStyle(color: Colors.white70, fontSize: 18.0));
+      TextTheme(bodyText2: TextStyle(color: Colors.white70, fontSize: 18.0));
 
   static ThemeData defaultTheme = ThemeData(
     primarySwatch: Colors.grey,
@@ -17,16 +17,16 @@ class Designs {
       textSelectionColor: Colors.blueAccent.shade200,
       textSelectionHandleColor: Colors.white,
       textTheme: darkTheme.textTheme.copyWith(
-        body2: darkTheme.textTheme.body2.copyWith(
+        bodyText2: darkTheme.textTheme.bodyText2.copyWith(
           color: Colors.white70,
           fontSize: 18.0,
           fontWeight: FontWeight.w300,
         ),
-        display1: darkTheme.textTheme.display1.copyWith(
+        subtitle1: darkTheme.textTheme.subtitle1.copyWith(
           color: Colors.white70,
           fontSize: 22.0,
         ),
-        title: darkTheme.textTheme.title.copyWith(
+        headline6: darkTheme.textTheme.headline6.copyWith(
           color: darkTheme.primaryColor,
         ),
       ),

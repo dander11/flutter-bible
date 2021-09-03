@@ -19,7 +19,7 @@ class ChapterCircle extends StatelessWidget {
     return RaisedButton(
       child: Text(
         chapter.number.toString(),
-        style: Theme.of(context).textTheme.display1,
+        style: Theme.of(context).textTheme.subtitle1,
       ),
       shape: CircleBorder(),
       padding: EdgeInsets.all(8.0),

@@ -44,7 +44,7 @@ class _VerseTextState extends State<VerseText>
       this.verseNumber});
   @override
   Widget build(BuildContext context) {
-    List<InlineSpan> versesText = List<InlineSpan>();
+    List<InlineSpan> versesText = <InlineSpan>[];
 
     for (IChapterElement verse in chapter.elements) {
       versesText.add(verse.toTextSpanWidget(context));
@@ -57,7 +57,7 @@ class _VerseTextState extends State<VerseText>
 
     TextSpan chapterText = TextSpan(
       children: expandedChapterText,
-      style: Theme.of(context).textTheme.body2,
+      style: Theme.of(context).textTheme.bodyText2,
     );
 
     var width = MediaQuery.of(context).size.width;
@@ -82,11 +82,12 @@ class _VerseTextState extends State<VerseText>
   }
 
   List<InlineSpan> _flattenTextSpans(List<InlineSpan> iterable) {
-    return iterable
+    return iterable;
+   /*  return iterable
         .expand((InlineSpan e) => e.children != null && e.children.length > 0
             ? _flattenTextSpans(e.children.whereType<InlineSpan>().toList())
             : [e])
-        .toList();
+        .toList(); */
   }
 
   @override

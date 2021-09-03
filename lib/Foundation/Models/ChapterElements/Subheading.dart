@@ -11,7 +11,7 @@ class Subheading extends IChapterElement {
     return [
       Text(
         this.text + '''\n''',
-        style: Theme.of(context).textTheme.subtitle,
+        style: Theme.of(context).textTheme.subtitle1,
       ),
     ];
   }
@@ -22,7 +22,7 @@ class Subheading extends IChapterElement {
       children: [
         TextSpan(
           text: '''${this.text}\n\r''',
-          style: Theme.of(context).textTheme.body2.copyWith(
+          style: Theme.of(context).textTheme.bodyText2.copyWith(
                 fontStyle: FontStyle.italic,
               ),
         ),

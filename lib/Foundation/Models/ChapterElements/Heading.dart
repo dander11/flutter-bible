@@ -11,7 +11,7 @@ class Heading extends IChapterElement {
     return [
       Text(
         this.text + '''\n''',
-        style: Theme.of(context).textTheme.subtitle,
+        style: Theme.of(context).textTheme.subtitle1,
       ),
     ];
   }
@@ -22,7 +22,7 @@ class Heading extends IChapterElement {
       children: [
         TextSpan(
           text: "\n\r" + this.text + "\n\r",
-          style: Theme.of(context).textTheme.display1.copyWith(
+          style: Theme.of(context).textTheme.subtitle1.copyWith(
                 fontWeight: FontWeight.w400,
                 fontSize: 18.0,
               ),
