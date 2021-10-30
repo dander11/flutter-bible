@@ -13,7 +13,7 @@ class ChapterReference {
     Book book = Book(name: json['book']);
     Chapter aChapter = Chapter(
       book: book,
-      number: json[chapter],
+      number: json["chapter"],
     );
     ChapterReference(chapter: aChapter, verseNumber: json['verse']);
   }

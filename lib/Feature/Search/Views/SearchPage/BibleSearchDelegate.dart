@@ -1,4 +1,6 @@
 import 'dart:collection';
+import 'package:bible_bloc/Feature/Search/search_feature.dart';
+
 import '../../../../Foundation/Models/Chapter.dart';
 import '../../../../Foundation/Models/ChapterElements/Verse.dart';
 import '../../../../Foundation/Models/SearchQuery.dart';
@@ -12,6 +14,18 @@ import 'SearchFilter.dart';
 import 'SearchResults.dart';
 
 class BibleSearchDelegate extends SearchDelegate<Chapter> {
+  BibleSearchDelegate({
+    String searchFieldLabel,
+    TextStyle searchFieldStyle,
+    InputDecorationTheme searchFieldDecorationTheme,
+    TextInputType keyboardType,
+    TextInputAction textInputAction = TextInputAction.search,
+  }) : super(
+            keyboardType: keyboardType,
+            searchFieldLabel: searchFieldLabel,
+            searchFieldDecorationTheme: searchFieldDecorationTheme,
+            searchFieldStyle: searchFieldStyle,
+            textInputAction: textInputAction);
   @override
   List<Widget> buildActions(BuildContext context) {
     return [
@@ -123,7 +137,8 @@ class BibleSearchDelegate extends SearchDelegate<Chapter> {
                 ],
               ),
             );
-          }, initialData: null,
+          },
+          initialData: null,
         ),
         Divider(),
         StreamBuilder(
@@ -148,7 +163,8 @@ class BibleSearchDelegate extends SearchDelegate<Chapter> {
               final results = snapshot.data;
               return SearchResults(results: results);
             }
-          }, initialData: null,
+          },
+          initialData: null,
         ),
       ],
     );

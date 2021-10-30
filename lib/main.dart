@@ -1,4 +1,6 @@
 import 'package:bible_bloc/Feature/Reader/bloc/verse_reference_bloc.dart';
+import 'package:hydrated_bloc/hydrated_bloc.dart';
+import 'package:path_provider/path_provider.dart';
 
 import 'Feature/Reader/bloc/reader_bloc.dart';
 import 'Foundation/Provider/MultiPartXmlBibleProvider.dart';
@@ -24,6 +26,10 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await GlobalConfiguration().loadFromAsset("app_settings");
   final bibleBloc = BibleBloc(MultiPartXmlBibleProvider(), ReferenceProvider());
+  HydratedBloc.storage = await HydratedStorage.build(
+    storageDirectory: await getTemporaryDirectory()
+  );
+
   runApp(MyApp(
     bibleBloc: bibleBloc,
     settingsBloc: SettingsBloc(),
@@ -59,6 +65,7 @@ class MyApp extends StatelessWidget {
         navigationBloc: NavigationBloc(),
         searchBloc: SearchBloc(XmlBibleProvider()),
         child: MaterialApp(
+          theme: Designs.darkTheme,
           home: MyHomePage(
             bibleBloc: bibleBloc,
           ),

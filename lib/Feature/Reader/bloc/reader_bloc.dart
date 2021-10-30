@@ -1,5 +1,8 @@
 import 'dart:async';
 
+import 'package:hydrated_bloc/hydrated_bloc.dart';
+import 'package:darq/darq.dart';
+
 import '../../../Foundation/Models/Book.dart';
 import '../../../Foundation/Models/Chapter.dart';
 import '../../../Foundation/Models/ChapterReference.dart';
@@ -8,43 +11,44 @@ import 'package:bloc/bloc.dart';
 
 import 'reader_event.dart';
 import 'reader_state.dart';
-class ReaderBloc extends Bloc<ReaderEvent, ReaderState> {
-  
+
+class ReaderBloc extends HydratedBloc<ReaderEvent, ReaderState> {
   final IBibleProvider importer;
   List<Book> _books;
   Chapter _currentChapter;
   Chapter _nextChapter;
   Chapter _prevChapter;
 
-  ReaderBloc(this.importer) : super(ReaderInitial()){
+  ReaderBloc(this.importer) : super(ReaderInitial()) {
     _getBooks();
     on<ReaderGoToChapter>(_goToChapter);
   }
 
-  FutureOr<void> _goToChapter(ReaderGoToChapter event, Emitter<ReaderState> emit)async{
-    if(event.reference.chapter != _nextChapter && event.reference.chapter != _prevChapter&&event.reference.chapter != _currentChapter){
-
+  FutureOr<void> _goToChapter(
+      ReaderGoToChapter event, Emitter<ReaderState> emit) async {
+    if (_books == null) {
+      await _getBooks();
+    }
+    if (event.reference.chapter != _nextChapter &&
+        event.reference.chapter != _prevChapter &&
+        event.reference.chapter != _currentChapter) {
       emit(ReaderLoading());
     }
-      _currentChapter = await _getChapter(event.reference);
-      var futures = await Future.wait([
-        _getNextChapter(_currentChapter),
-        _getPreviousChapter(_currentChapter),
-       ]);
-       _nextChapter = futures.first;
-       _prevChapter = futures.last;
+    _currentChapter = await _getChapter(event.reference);
+    var futures = await Future.wait([
+      _getNextChapter(_currentChapter),
+      _getPreviousChapter(_currentChapter),
+    ]);
+    _nextChapter = futures.first;
+    _prevChapter = futures.last;
 
-      emit(ReaderLoaded(
+    emit(ReaderLoaded(
         ChapterReference(chapter: _currentChapter, verseNumber: 1),
         _nextChapter,
-        _prevChapter
-      ));       
+        _prevChapter));
   }
 
-     
-
-
-    Future<Null> _getBooks() async {
+  Future<Null> _getBooks() async {
     await importer.init();
     _books = await importer.getAllBooks();
   }
@@ -56,7 +60,8 @@ class ReaderBloc extends Bloc<ReaderEvent, ReaderState> {
 
     return chapter;
   }
-   Future<Chapter> _getPreviousChapter(Chapter currentChapter) async {
+
+  Future<Chapter> _getPreviousChapter(Chapter currentChapter) async {
     Chapter prevChapter;
     if (currentChapter.number != 1) {
       prevChapter = await importer.getChapter(
@@ -85,4 +90,40 @@ class ReaderBloc extends Bloc<ReaderEvent, ReaderState> {
     return nextChapter;
   }
 
+  @override
+  ReaderState fromJson(Map<String, dynamic> json) {
+    try {
+      if (json.isNotEmpty && json.containsKey('currentChapter')) {
+        _getBooks().then((value) {
+          var reference = ChapterReference.fromJson(json['currentChapter']);
+          var chapter = _books
+              .firstWhere(
+                  (element) => element.name == reference.chapter.book.name)
+              .chapters
+              .firstWhere(
+                  (chapter) => chapter.number == reference.chapter.number);
+          reference = ChapterReference(
+              chapter: chapter, verseNumber: reference.verseNumber);
+        });
+      } else {
+        _getBooks().then((value) => this.add(ReaderGoToChapter(ChapterReference(
+            chapter: _books.first.chapters.first, verseNumber: 1))));
+      }
+    } catch (e) {
+      _getBooks().then((value) => this.add(ReaderGoToChapter(ChapterReference(
+          chapter: _books.first.chapters.first, verseNumber: 1))));
+    }
+
+    return ReaderLoading();
+  }
+
+  @override
+  Map<String, dynamic> toJson(ReaderState state) {
+    var json = <String, dynamic>{};
+    if (state is ReaderLoaded) {
+      json.putIfAbsent(
+          'currentChapter', () => state.currentChapterReference.toJson());
+    }
+    return json;
+  }
 }

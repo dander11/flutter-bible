@@ -14,8 +14,10 @@ class Designs {
   static ThemeData getDarkTheme() {
     ThemeData darkTheme = ThemeData.dark();
     return darkTheme.copyWith(
-      textSelectionColor: Colors.blueAccent.shade200,
-      textSelectionHandleColor: Colors.white,
+      textSelectionTheme: ThemeData.dark().textSelectionTheme.copyWith(
+        selectionColor: Colors.blueAccent.shade200,
+        selectionHandleColor: Colors.white,
+      ),
       textTheme: darkTheme.textTheme.copyWith(
         bodyText2: darkTheme.textTheme.bodyText2.copyWith(
           color: Colors.white70,
@@ -27,7 +29,7 @@ class Designs {
           fontSize: 22.0,
         ),
         headline6: darkTheme.textTheme.headline6.copyWith(
-          color: darkTheme.primaryColor,
+          color: Colors.white70,
         ),
       ),
       iconTheme: darkTheme.iconTheme.copyWith(color: Colors.white70),

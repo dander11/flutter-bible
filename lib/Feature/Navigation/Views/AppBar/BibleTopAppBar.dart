@@ -46,7 +46,10 @@ class BibleReaderAppBar extends StatelessWidget {
           icon: Icon(Icons.search),
           onPressed: () => showSearch(
                 context: context,
-                delegate: BibleSearchDelegate(),
+                delegate: BibleSearchDelegate(
+                  searchFieldDecorationTheme: Theme.of(context).inputDecorationTheme,
+                  //searchFieldStyle: 
+                ),
               ),
         ),
       ],
