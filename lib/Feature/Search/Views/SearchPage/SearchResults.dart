@@ -1,3 +1,7 @@
+import '../../../Reader/bloc/reader_event.dart';
+import '../../../Reader/bloc/verse_reference_bloc.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+
 import '../../../../Foundation/Models/ChapterReference.dart';
 
 import '../../../InheritedBlocs.dart';
@@ -32,15 +36,11 @@ class SearchResults extends StatelessWidget {
               subtitle: Text(
                   "${verse.chapter.book.name} ${verse.chapter.number}:${verse.number}"),
               onTap: () async {
-                InheritedBlocs.of(context)
-                    .bibleBloc
-                    .currentPopupChapterReference
-                    .add(
-                      ChapterReference(
+                BlocProvider.of<VerseReferenceBloc>(context).add(ReaderGoToChapter(ChapterReference(
                         chapter: verse.chapter,
                         verseNumber: verse.number,
-                      ),
-                    );
+                      )));
+                
                 InheritedBlocs.of(context)
                     .showReferenceInBottomSheet(
                   context,

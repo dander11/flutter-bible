@@ -1,3 +1,5 @@
+import 'package:bible_bloc/Feature/Reader/bloc/verse_reference_bloc.dart';
+
 import 'Feature/Reader/bloc/reader_bloc.dart';
 import 'Foundation/Provider/MultiPartXmlBibleProvider.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -37,8 +39,19 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (context) => ReaderBloc(MultiPartXmlBibleProvider()),
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider<ReaderBloc>(
+          create: (context) => ReaderBloc(
+            MultiPartXmlBibleProvider(),
+          ),
+        ),
+        BlocProvider<VerseReferenceBloc>(
+          create: (context) => VerseReferenceBloc(
+            MultiPartXmlBibleProvider(),
+          ),
+        ),
+      ],
       child: InheritedBlocs(
         bibleBloc: bibleBloc,
         settingsBloc: settingsBloc,
@@ -46,7 +59,6 @@ class MyApp extends StatelessWidget {
         navigationBloc: NavigationBloc(),
         searchBloc: SearchBloc(XmlBibleProvider()),
         child: MaterialApp(
-          theme: Designs.darkTheme,
           home: MyHomePage(
             bibleBloc: bibleBloc,
           ),

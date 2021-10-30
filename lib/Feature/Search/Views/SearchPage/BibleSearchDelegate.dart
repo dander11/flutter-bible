@@ -157,7 +157,7 @@ class BibleSearchDelegate extends SearchDelegate<Chapter> {
   @override
   Widget buildSuggestions(BuildContext context) {
     return Scaffold(
-      body: Column(),
+      body: searchResultsBody(context: context),
       /* bottomNavigationBar: BibleBottomNavigationBar(
         context: context,
       ), */

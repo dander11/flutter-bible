@@ -1,8 +1,14 @@
+import 'package:bible_bloc/Feature/Reader/bloc/verse_reference_bloc.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+
 import '../Foundation/Models/ChapterReference.dart';
 import '../Foundation/Views/LoadingColumn.dart';
 
 import 'Navigation/navigation_feature.dart';
 import 'Notes/notes_feature.dart';
+import 'Reader/bloc/reader_bloc.dart';
+import 'Reader/bloc/reader_event.dart';
+import 'Reader/bloc/reader_state.dart';
 import 'Reader/reader_feature.dart';
 import 'Search/search_feature.dart';
 import 'Settings/settings_feature.dart';
@@ -49,58 +55,45 @@ class InheritedBlocs extends InheritedWidget {
               child: CustomScrollView(
                 controller: _controller,
                 slivers: <Widget>[
-                  StreamBuilder<ChapterReference>(
-                    stream: InheritedBlocs.of(context)
-                        .bibleBloc
-                        .popupChapterReference,
-                    builder: (context, popUpReference) {
-                      if (popUpReference.hasData) {
-                        return SliverAppBar(
-                          pinned: true,
-                          actions: <Widget>[
-                            IconButton(
-                              icon: Icon(Icons.open_in_new),
-                              onPressed: () {
-                                InheritedBlocs.of(context)
-                                    .bibleBloc
-                                    .currentChapterReference
-                                    .add(
-                                      popUpReference.data,
-                                    );
-                                Navigator.of(context).pop(true);
-                              },
-                            )
-                          ],
-                        );
-                      } else {
-                        return SliverAppBar(
-                          pinned: true,
-                          actions: <Widget>[],
-                        );
-                      }
-                    },
-                    initialData: null,
-                  ),
-                  SliverToBoxAdapter(
-                    child: StreamBuilder<ChapterReference>(
-                      stream: InheritedBlocs.of(context)
-                          .bibleBloc
-                          .popupChapterReference,
-                      builder: (context, reference) {
-                        if (reference.hasData) {
-                          return Reader(
-                            canSwipeToNextChapter: false,
-                            controller: _controller,
-                            chapterReference: reference.data,
-                            showReferences: false,
-                          );
-                        } else {
-                          return LoadingColumn();
-                        }
-                      },
-                      initialData: null,
-                    ),
-                  ),
+                  BlocBuilder<VerseReferenceBloc, ReaderState>(
+                      builder: (context, state) {
+                    if (state is ReaderLoaded) {
+                      return SliverAppBar(
+                        pinned: true,
+                        actions: <Widget>[
+                          IconButton(
+                            icon: Icon(Icons.open_in_new),
+                            onPressed: () {
+                              BlocProvider.of<ReaderBloc>(context).add(
+                                  ReaderGoToChapter(
+                                      state.currentChapterReference));
+
+                              Navigator.of(context).pop(true);
+                            },
+                          )
+                        ],
+                      );
+                    } else {
+                      return SliverAppBar(
+                        pinned: true,
+                        actions: <Widget>[],
+                      );
+                    }
+                  }),
+                  SliverToBoxAdapter(child:
+                      BlocBuilder<VerseReferenceBloc, ReaderState>(
+                          builder: (context, state) {
+                    if (state is ReaderLoaded) {
+                      return Reader(
+                        canSwipeToNextChapter: false,
+                        controller: _controller,
+                        chapterReference: state.currentChapterReference,
+                        showReferences: false,
+                      );
+                    } else {
+                      return LoadingColumn();
+                    }
+                  })),
                 ],
               ));
         });

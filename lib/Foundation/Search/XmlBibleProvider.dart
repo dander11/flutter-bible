@@ -128,14 +128,14 @@ class XmlBibleProvider extends ISearchProvider {
           int chapterNumber = int.tryParse(chapter) ?? 1;
 
           possibleBookMatches = possibleBookMatches
-              .where((element) => element.chapters.length > chapterNumber)
+              .where((element) => element.chapters.length >= chapterNumber)
               .toList();
           var possiblechapters = possibleBookMatches
               .select((element, index) => element.chapters
                   .firstWhere((element) => element.number == chapterNumber))
               .toList();
           if (verseStart != null && verseStart.isNotEmpty) {
-            int verseNumber = int.tryParse(chapter) ?? 1;
+            int verseNumber = int.tryParse(verseStart) ?? 1;
 
             possiblechapters = possiblechapters
                 .where((element) =>
