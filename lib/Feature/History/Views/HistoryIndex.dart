@@ -1,9 +1,9 @@
-import 'package:bible_bloc/Feature/InheritedBlocs.dart';
-import 'package:bible_bloc/Feature/Navigation/AppPages.dart';
-import 'package:bible_bloc/Foundation/Models/ChapterElements/Verse.dart';
-import 'package:bible_bloc/Foundation/Models/ChapterReference.dart';
 import 'package:flutter/material.dart';
 
+import '../../../Foundation/Models/ChapterElements/Verse.dart';
+import '../../../Foundation/Models/ChapterReference.dart';
+import '../../InheritedBlocs.dart';
+import '../../Navigation/AppPages.dart';
 import 'HistoryAppBar.dart';
 
 class HistoryIndex extends StatelessWidget {

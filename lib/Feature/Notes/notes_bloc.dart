@@ -1,9 +1,11 @@
 import 'dart:async';
-import 'package:bible_bloc/Foundation/Models/Note.dart';
-import 'package:bible_bloc/Foundation/Provider/INotesProvider.dart';
-import 'package:bible_bloc/Foundation/Provider/NotesProvider.dart';
+
 import 'package:queries/collections.dart';
 import 'package:rxdart/rxdart.dart';
+
+import '../../Foundation/Models/Note.dart';
+import '../../Foundation/Provider/INotesProvider.dart';
+import '../../Foundation/Provider/NotesProvider.dart';
 
 class NotesBloc {
   INotesProvider _notesProvider = NotesProvider();

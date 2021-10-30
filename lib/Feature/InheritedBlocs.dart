@@ -1,11 +1,13 @@
-import 'package:bible_bloc/Feature/Navigation/navigation_feature.dart';
-import 'package:bible_bloc/Feature/Notes/notes_feature.dart';
-import 'package:bible_bloc/Feature/Reader/reader_feature.dart';
-import 'package:bible_bloc/Feature/Search/search_feature.dart';
-import 'package:bible_bloc/Feature/Settings/settings_feature.dart';
-import 'package:bible_bloc/Foundation/Models/CrossReference.dart';
-import 'package:bible_bloc/Foundation/Models/CrossReferenceElements/VerseReferenceElement.dart';
-import 'package:bible_bloc/Foundation/foundation.dart';
+import '../Foundation/Models/ChapterReference.dart';
+import '../Foundation/Views/LoadingColumn.dart';
+
+import 'Navigation/navigation_feature.dart';
+import 'Notes/notes_feature.dart';
+import 'Reader/reader_feature.dart';
+import 'Search/search_feature.dart';
+import 'Settings/settings_feature.dart';
+import '../Foundation/Models/CrossReference.dart';
+import '../Foundation/Models/CrossReferenceElements/VerseReferenceElement.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 

@@ -1,4 +1,5 @@
-import 'package:bible_bloc/Foundation/foundation.dart';
+
+import '../../../../Foundation/Models/Book.dart';
 import 'package:flutter/material.dart';
 
 import 'ChapterCircle.dart';

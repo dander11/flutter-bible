@@ -1,16 +1,16 @@
 import 'dart:async';
 import 'dart:convert';
-import 'package:bible_bloc/Foundation/Models/Book.dart';
-import 'package:bible_bloc/Foundation/Models/Chapter.dart';
-import 'package:bible_bloc/Foundation/Models/ChapterElements/CrossReferenceElement.dart';
-import 'package:bible_bloc/Foundation/Models/ChapterReference.dart';
-import 'package:bible_bloc/Foundation/Models/CrossReference.dart';
-import 'package:bible_bloc/Foundation/Models/CrossReference.dart';
-import 'package:bible_bloc/Foundation/Models/CrossReferenceElements/ICrossReferenceElement.dart';
-import 'package:bible_bloc/Foundation/Models/CrossReferenceElements/PlainTextReferenceElement.dart';
-import 'package:bible_bloc/Foundation/Models/CrossReferenceElements/VerseReferenceElement.dart';
-import 'package:bible_bloc/Foundation/Provider/IBibleProvider.dart';
-import 'package:bible_bloc/Foundation/Provider/IReferenceProvider.dart';
+import '../../Foundation/Models/Book.dart';
+import '../../Foundation/Models/Chapter.dart';
+import '../../Foundation/Models/ChapterElements/CrossReferenceElement.dart';
+import '../../Foundation/Models/ChapterReference.dart';
+import '../../Foundation/Models/CrossReference.dart';
+import '../../Foundation/Models/CrossReference.dart';
+import '../../Foundation/Models/CrossReferenceElements/ICrossReferenceElement.dart';
+import '../../Foundation/Models/CrossReferenceElements/PlainTextReferenceElement.dart';
+import '../../Foundation/Models/CrossReferenceElements/VerseReferenceElement.dart';
+import '../../Foundation/Provider/IBibleProvider.dart';
+import '../../Foundation/Provider/IReferenceProvider.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/services.dart';
 import 'package:rxdart/rxdart.dart';
@@ -62,7 +62,7 @@ class BibleBloc {
     _getBooks().then((n) => _initCurrentBook());
     _initHistoryList();
     _currentChapterController.stream.listen((currentChapter) async {
-      _goToChapter(currentChapter);
+      //_goToChapter(currentChapter);
     });
 
     _currentPopupChapterController.stream.listen((popupReference) async {
@@ -143,7 +143,8 @@ class BibleBloc {
   }
 
   void _initCurrentBook() async {
-    SharedPreferences sp = await SharedPreferences.getInstance();
+    try {
+       SharedPreferences sp = await SharedPreferences.getInstance();
     var currentChapterString = sp.getString(membershipKey);
     if (currentChapterString != null && currentChapterString.contains("_")) {
       var bookName = currentChapterString.split("_")[0];
@@ -155,10 +156,14 @@ class BibleBloc {
       );
       currentChapterReference.add(chapterReference);
     } else {
+     
+    }
+    } catch (e) {
       var chapterReference = ChapterReference(
           chapter: await _importer.getChapter(_books.first.name, 1));
       currentChapterReference.add(chapterReference);
-    }
+    } 
+   
   }
 
   void _saveCurrentBookAndChapter() async {

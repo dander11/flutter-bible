@@ -1,9 +1,11 @@
-import 'package:bible_bloc/Feature/InheritedBlocs.dart';
-import 'package:bible_bloc/Feature/Navigation/navigation_feature.dart';
-import 'package:bible_bloc/Feature/Reader/reader_feature.dart';
-import 'package:bible_bloc/Foundation/foundation.dart';
+import '../../Foundation/Views/LoadingColumn.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../../Feature/Navigation/navigation_feature.dart';
+import '../../Feature/Reader/bloc/reader_bloc.dart';
+import '../../Feature/Reader/bloc/reader_state.dart';
+import '../../Feature/Reader/reader_feature.dart';
 class ReaderPage extends StatefulWidget {
   const ReaderPage({
     Key key,
@@ -27,36 +29,30 @@ class _ReaderPageState extends State<ReaderPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: StreamBuilder(
-        stream: InheritedBlocs.of(context).bibleBloc.previousChapter,
-        builder: (_, prevChapter) => StreamBuilder(
-          stream: InheritedBlocs.of(context).bibleBloc.nextChapter,
-          builder: (_, nextChapter) {
-            return StreamBuilder<ChapterReference>(
-              stream: InheritedBlocs.of(context).bibleBloc.chapterReference,
-              builder:
-                  (context, AsyncSnapshot<ChapterReference> chapterReference) {
-                if (chapterReference.hasData &&
-                    prevChapter.hasData &&
-                    nextChapter.hasData) {
-                  return CustomScrollView(
+      body: BlocBuilder<ReaderBloc, ReaderState>(builder: (context, state) {
+              if (state is ReaderLoaded) {
+                var chapterReference = state.currentChapterReference;
+
+                 return CustomScrollView(
                     controller: controller,
                     slivers: <Widget>[
                       BibleReaderAppBar(
                           title:
-                              "${chapterReference.data.chapter.book.name} ${chapterReference.data.chapter.number}"),
+                              "${chapterReference.chapter.book.name} ${chapterReference.chapter.number}"),
                       SliverToBoxAdapter(
                         child: Reader(
-                          nextChapter: nextChapter.data,
-                          previousChapter: prevChapter.data,
-                          chapterReference: chapterReference.data,
+                          nextChapter: state.nextChapter,
+                          previousChapter: state.previousChapter,
+                          chapterReference: state.currentChapterReference,
                           controller: controller,
                         ),
                       ),
                     ],
                   );
-                } else {
-                  return CustomScrollView(
+                
+              }
+              else{
+                return  CustomScrollView(
                     controller: controller,
                     slivers: <Widget>[
                       BibleReaderAppBar(
@@ -67,15 +63,9 @@ class _ReaderPageState extends State<ReaderPage> {
                       ),
                     ],
                   );
-                }
-              },
-              initialData: null,
-            );
-          },
-          initialData: null,
-        ),
-        initialData: null,
-      ),
+              }
+            }),
+     
       bottomNavigationBar: BibleBottomNavigationBar(context: context),
     );
   }

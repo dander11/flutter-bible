@@ -1,4 +1,4 @@
-import 'package:bible_bloc/Foundation/Models/CrossReferenceElements/ICrossReferenceElement.dart';
+import 'ICrossReferenceElement.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/src/painting/inline_span.dart';
 

@@ -1,5 +1,6 @@
-import 'package:bible_bloc/Foundation/Models/CrossReferenceElements/ICrossReferenceElement.dart';
 import 'package:flutter/material.dart';
+
+import 'CrossReferenceElements/ICrossReferenceElement.dart';
 
 class CrossReference {
   String letter;

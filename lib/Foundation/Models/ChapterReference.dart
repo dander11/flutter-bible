@@ -1,6 +1,7 @@
+import 'package:flutter/material.dart';
+
 import 'Book.dart';
 import 'Chapter.dart';
-import 'package:flutter/material.dart';
 
 class ChapterReference {
   Chapter chapter;

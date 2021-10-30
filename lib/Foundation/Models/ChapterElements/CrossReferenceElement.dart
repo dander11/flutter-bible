@@ -1,4 +1,4 @@
-import 'package:bible_bloc/Feature/InheritedBlocs.dart';
+import '../../../Feature/InheritedBlocs.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';

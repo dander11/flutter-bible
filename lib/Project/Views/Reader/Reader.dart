@@ -1,5 +1,11 @@
-import 'package:bible_bloc/Feature/Reader/reader_feature.dart';
-import 'package:bible_bloc/Foundation/foundation.dart';
+import '../../../Foundation/Models/Chapter.dart';
+import '../../../Foundation/Models/ChapterElements/IChapterElement.dart';
+import '../../../Foundation/Models/ChapterElements/Verse.dart';
+import '../../../Foundation/Models/ChapterReference.dart';
+
+import '../../../Feature/BibleNavigation/Views/ChapterViewer/DismissableChapterViewer.dart';
+import '../../../Feature/BibleNavigation/Views/ChapterViewer/VerseText.dart';
+import '../../../Feature/Reader/reader_feature.dart';
 import 'package:flutter/material.dart';
 
 class Reader extends StatelessWidget {

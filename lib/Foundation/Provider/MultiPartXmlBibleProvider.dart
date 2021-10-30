@@ -1,20 +1,21 @@
-import 'package:bible_bloc/Foundation/Models/Book.dart';
-import 'package:bible_bloc/Foundation/Models/Chapter.dart';
-import 'package:bible_bloc/Foundation/Models/ChapterElements/BeginParagraph.dart';
-import 'package:bible_bloc/Foundation/Models/ChapterElements/CrossReferenceElement.dart';
-import 'package:bible_bloc/Foundation/Models/ChapterElements/DivineName.dart';
-import 'package:bible_bloc/Foundation/Models/ChapterElements/EmptyElement.dart';
-import 'package:bible_bloc/Foundation/Models/ChapterElements/EndParagraph.dart';
-import 'package:bible_bloc/Foundation/Models/ChapterElements/Heading.dart';
-import 'package:bible_bloc/Foundation/Models/ChapterElements/IChapterElement.dart';
-import 'package:bible_bloc/Foundation/Models/ChapterElements/Subheading.dart';
-import 'package:bible_bloc/Foundation/Models/ChapterElements/Text.dart';
-import 'package:bible_bloc/Foundation/Models/ChapterElements/Verse.dart';
-import 'package:bible_bloc/Foundation/Models/ChapterElements/WordsOfChrist.dart';
-import 'package:bible_bloc/Foundation/Provider/IBibleProvider.dart';
 import 'package:flutter/services.dart';
 import 'package:global_configuration/global_configuration.dart';
 import 'package:xml/xml.dart' as xml;
+
+import '../Models/Book.dart';
+import '../Models/Chapter.dart';
+import '../Models/ChapterElements/BeginParagraph.dart';
+import '../Models/ChapterElements/CrossReferenceElement.dart';
+import '../Models/ChapterElements/DivineName.dart';
+import '../Models/ChapterElements/EmptyElement.dart';
+import '../Models/ChapterElements/EndParagraph.dart';
+import '../Models/ChapterElements/Heading.dart';
+import '../Models/ChapterElements/IChapterElement.dart';
+import '../Models/ChapterElements/Subheading.dart';
+import '../Models/ChapterElements/Text.dart';
+import '../Models/ChapterElements/Verse.dart';
+import '../Models/ChapterElements/WordsOfChrist.dart';
+import 'IBibleProvider.dart';
 
 class MultiPartXmlBibleProvider extends IBibleProvider {
   xml.XmlDocument _booksDirectory;
@@ -50,7 +51,7 @@ class MultiPartXmlBibleProvider extends IBibleProvider {
         name: item.getAttribute("title"),
         chapters: _getChapters(item),
         number: int.parse(item.getAttribute("number")));
-    book.chapters.forEach((c) => c.book = book);
+    book.chapters?.forEach((c) => c.book = book);
     return book;
   }
 
@@ -65,7 +66,7 @@ class MultiPartXmlBibleProvider extends IBibleProvider {
             item.getAttribute("referenceName") +
             ".txt"),
       );
-      chapters.add(chapter);
+      chapters?.add(chapter);
     }
 
     return chapters;
@@ -254,11 +255,11 @@ class MultiPartXmlBibleProvider extends IBibleProvider {
     if (bookName.contains(RegExp("[0-3]"))) {
       var number = bookName.split(" ")[0];
       var name = bookName.split(" ")[1];
-      chapterResourceName = chapters.firstWhere((b) =>
+      chapterResourceName = chapters?.firstWhere((b) =>
           b.getAttribute("resourceName") ==
           "${name.toLowerCase()}_${number}_$chapterNumber");
     } else {
-      chapterResourceName = chapters.firstWhere((b) =>
+      chapterResourceName = chapters?.firstWhere((b) =>
           b.getAttribute("resourceName") ==
           "${bookName.toLowerCase().replaceAll(" ", "_")}_$chapterNumber");
     }
@@ -277,11 +278,11 @@ class MultiPartXmlBibleProvider extends IBibleProvider {
     if (bookName.contains(RegExp("[0-3]"))) {
       var number = bookName.split(" ")[0];
       var name = bookName.split(" ")[1];
-      chapterResourceName = chapters.firstWhere((b) =>
+      chapterResourceName = chapters?.firstWhere((b) =>
           b.getAttribute("resourceName") ==
           "${name.toLowerCase()}_${number}_$chapterNumber");
     } else {
-      chapterResourceName = chapters.firstWhere((b) =>
+      chapterResourceName = chapters?.firstWhere((b) =>
           b.getAttribute("resourceName") ==
           "${bookName.toLowerCase().replaceAll(" ", "_")}_$chapterNumber");
     }

@@ -1,4 +1,4 @@
-import 'package:bible_bloc/Foundation/Models/ChapterElements/Verse.dart';
+import '../Models/ChapterElements/Verse.dart';
 
 abstract class ISearchProvider {
   Future<List<Verse>> getSearchResults(

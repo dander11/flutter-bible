@@ -1,7 +1,7 @@
 import 'dart:async';
-import 'package:bible_bloc/Foundation/Models/ChapterElements/Verse.dart';
-import 'package:bible_bloc/Foundation/Models/SearchQuery.dart';
-import 'package:bible_bloc/Foundation/Search/ISearchProvider.dart';
+import '../../Foundation/Models/ChapterElements/Verse.dart';
+import '../../Foundation/Models/SearchQuery.dart';
+import '../../Foundation/Search/ISearchProvider.dart';
 import 'package:rxdart/rxdart.dart';
 import 'dart:collection';
 

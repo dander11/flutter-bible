@@ -1,5 +1,5 @@
-import 'package:bible_bloc/Foundation/Models/ChapterReference.dart';
-import 'package:bible_bloc/Foundation/Provider/IReferenceProvider.dart';
+import '../Models/ChapterReference.dart';
+import 'IReferenceProvider.dart';
 import 'package:flutter/services.dart';
 import 'package:global_configuration/global_configuration.dart';
 

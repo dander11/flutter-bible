@@ -1,4 +1,7 @@
-import 'package:bible_bloc/Foundation/foundation.dart';
+import '../../../Foundation/Models/Book.dart';
+import '../../../Foundation/Models/Chapter.dart';
+import '../../../Foundation/Models/ChapterElements/IChapterElement.dart';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:after_layout/after_layout.dart';

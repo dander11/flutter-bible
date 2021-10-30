@@ -1,5 +1,6 @@
-import 'IChapterElement.dart';
 import 'package:flutter/material.dart';
+
+import 'IChapterElement.dart';
 
 class WordsOfChrist extends IChapterElement {
   final String text;

@@ -1,5 +1,13 @@
-import 'package:bible_bloc/Feature/InheritedBlocs.dart';
-import 'package:bible_bloc/Foundation/foundation.dart';
+import '../../../Reader/bloc/reader_bloc.dart';
+import '../../../Reader/bloc/reader_event.dart';
+import '../../../Reader/bloc/reader_state.dart';
+import '../../../../Foundation/Models/Book.dart';
+import '../../../../Foundation/Models/Chapter.dart';
+import '../../../../Foundation/Models/ChapterReference.dart';
+import '../../../../Foundation/Views/LoadingColumn.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+
+import '../../../InheritedBlocs.dart';
 import 'package:flutter/material.dart';
 
 import 'VerseText.dart';
@@ -50,11 +58,11 @@ class DismissableChapterViewer extends StatelessWidget {
       resizeDuration: null,
       onDismissed: (DismissDirection swipeDetails) async {
         if (swipeDetails == DismissDirection.endToStart) {
-          InheritedBlocs.of(context).bibleBloc.goToNextChapter(this.chapter);
+          BlocProvider.of<ReaderBloc>(context).add(ReaderGoToChapter(ChapterReference(chapter:this.nextChapter, verseNumber: 1)));
+          //InheritedBlocs.of(context).bibleBloc.goToNextChapter(this.chapter);
         } else {
-          InheritedBlocs.of(context)
-              .bibleBloc
-              .goToPreviousChapter(this.chapter);
+          BlocProvider.of<ReaderBloc>(context).add(ReaderGoToChapter(ChapterReference(chapter:this.previousChapter, verseNumber: 1)));
+          //InheritedBlocs.of(context).bibleBloc.goToPreviousChapter(this.chapter);
         }
       },
       child: VerseText(

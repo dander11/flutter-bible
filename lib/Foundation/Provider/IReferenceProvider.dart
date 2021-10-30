@@ -1,5 +1,5 @@
 
-import 'package:bible_bloc/Foundation/Models/ChapterReference.dart';
+import '../Models/ChapterReference.dart';
 
 abstract class IReferenceProvider {
 

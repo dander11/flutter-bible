@@ -1,7 +1,6 @@
-import 'package:bible_bloc/Feature/History/Views/HistoryIndex.dart';
-import 'package:bible_bloc/Feature/InheritedBlocs.dart';
-import 'package:bible_bloc/Feature/Navigation/navigation_feature.dart';
-import 'package:bible_bloc/Foundation/foundation.dart';
+import '../../Feature/History/Views/HistoryIndex.dart';
+import '../../Feature/InheritedBlocs.dart';
+import '../../Feature/Navigation/navigation_feature.dart';
 import 'package:flutter/material.dart';
 //import 'package:notus/notus.dart';
 

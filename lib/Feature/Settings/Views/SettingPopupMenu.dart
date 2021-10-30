@@ -1,5 +1,5 @@
 
-import 'package:bible_bloc/Feature/InheritedBlocs.dart';
+import '../../InheritedBlocs.dart';
 import 'package:flutter/material.dart';
 
 class SettingsPopupMenu extends StatelessWidget {

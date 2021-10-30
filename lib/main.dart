@@ -1,14 +1,18 @@
-import 'package:bible_bloc/Feature/InheritedBlocs.dart';
-import 'package:bible_bloc/Feature/Navigation/navigation_feature.dart';
-import 'package:bible_bloc/Feature/Notes/notes_feature.dart';
-import 'package:bible_bloc/Feature/Reader/reader_feature.dart';
-import 'package:bible_bloc/Feature/Search/search_feature.dart';
-import 'package:bible_bloc/Feature/Settings/settings_feature.dart';
-import 'package:bible_bloc/Foundation/Provider/ReferenceProvider.dart';
-import 'package:bible_bloc/Foundation/foundation.dart';
-import 'package:bible_bloc/Project/Designs/DarkDesign.dart';
-import 'package:bible_bloc/Project/Pages/NotesPage.dart';
-import 'package:bible_bloc/Project/Pages/ReaderPage.dart';
+import 'Feature/Reader/bloc/reader_bloc.dart';
+import 'Foundation/Provider/MultiPartXmlBibleProvider.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+
+import 'Feature/InheritedBlocs.dart';
+import 'Feature/Navigation/navigation_feature.dart';
+import 'Feature/Notes/notes_feature.dart';
+import 'Feature/Reader/reader_feature.dart';
+import 'Feature/Search/search_feature.dart';
+import 'Feature/Settings/settings_feature.dart';
+import 'Foundation/Provider/ReferenceProvider.dart';
+import 'Foundation/Search/XmlBibleProvider.dart';
+import 'Project/Designs/DarkDesign.dart';
+import 'Project/Pages/NotesPage.dart';
+import 'Project/Pages/ReaderPage.dart';
 import 'package:flutter/material.dart';
 import 'package:global_configuration/global_configuration.dart';
 
@@ -33,16 +37,19 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return InheritedBlocs(
-      bibleBloc: bibleBloc,
-      settingsBloc: settingsBloc,
-      notesBloc: NotesBloc(),
-      navigationBloc: NavigationBloc(),
-      searchBloc: SearchBloc(XmlBibleProvider()),
-      child: MaterialApp(
-        theme: Designs.darkTheme,
-        home: MyHomePage(
-          bibleBloc: bibleBloc,
+    return BlocProvider(
+      create: (context) => ReaderBloc(MultiPartXmlBibleProvider()),
+      child: InheritedBlocs(
+        bibleBloc: bibleBloc,
+        settingsBloc: settingsBloc,
+        notesBloc: NotesBloc(),
+        navigationBloc: NavigationBloc(),
+        searchBloc: SearchBloc(XmlBibleProvider()),
+        child: MaterialApp(
+          theme: Designs.darkTheme,
+          home: MyHomePage(
+            bibleBloc: bibleBloc,
+          ),
         ),
       ),
     );

@@ -1,7 +1,8 @@
 
-import 'package:bible_bloc/Feature/InheritedBlocs.dart';
-import 'package:bible_bloc/Feature/Navigation/navigation_feature.dart';
-import 'package:bible_bloc/Foundation/foundation.dart';
+import '../../../Foundation/Models/Note.dart';
+
+import '../../InheritedBlocs.dart';
+import '../../Navigation/navigation_feature.dart';
 import 'package:flutter/material.dart';
 
 import 'NoteTile.dart';

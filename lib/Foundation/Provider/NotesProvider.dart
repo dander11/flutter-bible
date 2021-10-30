@@ -1,8 +1,8 @@
 import 'dart:async';
 import 'dart:convert';
 import 'dart:io';
-import 'package:bible_bloc/Foundation/Models/Note.dart';
-import 'package:bible_bloc/Foundation/Provider/INotesProvider.dart';
+import '../Models/Note.dart';
+import 'INotesProvider.dart';
 import 'package:intl/intl.dart';
 //import 'package:notus/notus.dart';
 import 'package:path/path.dart';

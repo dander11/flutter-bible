@@ -1,5 +1,7 @@
-import 'package:bible_bloc/Feature/InheritedBlocs.dart';
-import 'package:bible_bloc/Foundation/foundation.dart';
+import '../../../../Foundation/Models/Book.dart';
+import '../../../../Foundation/Models/SearchQuery.dart';
+
+import '../../../InheritedBlocs.dart';
 import 'package:flutter/material.dart';
 import 'package:queries/collections.dart';
 

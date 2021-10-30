@@ -1,4 +1,5 @@
-import 'package:bible_bloc/Foundation/foundation.dart';
+import '../../../Foundation/Models/Note.dart';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
 

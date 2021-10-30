@@ -1,6 +1,7 @@
-import 'package:bible_bloc/Feature/InheritedBlocs.dart';
-import 'package:bible_bloc/Foundation/Models/ChapterElements/Verse.dart';
-import 'package:bible_bloc/Foundation/foundation.dart';
+import '../../../../Foundation/Models/ChapterReference.dart';
+
+import '../../../InheritedBlocs.dart';
+import '../../../../Foundation/Models/ChapterElements/Verse.dart';
 import 'package:collection/collection.dart';
 import 'package:flutter/material.dart';
 

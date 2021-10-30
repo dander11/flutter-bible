@@ -1,10 +1,11 @@
-import 'package:bible_bloc/Foundation/Models/Book.dart';
-import 'package:bible_bloc/Foundation/Models/Chapter.dart';
-import 'package:bible_bloc/Foundation/Models/ChapterElements/Verse.dart';
-import 'package:bible_bloc/Foundation/Search/ISearchProvider.dart';
+import '../Models/Book.dart';
+import '../Models/Chapter.dart';
+import '../Models/ChapterElements/Verse.dart';
+import 'ISearchProvider.dart';
 import 'package:flutter/services.dart';
 import 'package:global_configuration/global_configuration.dart';
 import 'package:xml/xml.dart' as xml;
+import 'package:darq/darq.dart';
 
 class XmlBibleProvider extends ISearchProvider {
   xml.XmlDocument xmlDocument;
@@ -94,10 +95,10 @@ class XmlBibleProvider extends ISearchProvider {
         : this._searchableBooks;
 
     var chapters = books.expand((book) => book.chapters);
-
-    var verses = chapters.expand((c) => c.elements.whereType<Verse>());
+    var verses = <Verse>[];
+    verses = chapters.expand((c) => c.elements.whereType<Verse>().toList()).toList();
     verses = verses.where((verse) =>
-        _contains(searchTerm.toLowerCase(), verse.text.toLowerCase()));
+        _contains(searchTerm.toLowerCase(), verse.text.toLowerCase())).toList();
     if (verses.contains(" ") && !searchTerm.contains(" ")) {
       verses = verses
           .where((verse) => verse.text
@@ -108,7 +109,57 @@ class XmlBibleProvider extends ISearchProvider {
           .toList();
     } else {
       verses = verses.where((verse) =>
-          verse.text.toLowerCase().contains(searchTerm.toLowerCase()));
+          verse.text.toLowerCase().contains(searchTerm.toLowerCase())).toList();
+    }
+    RegExp referenceExpression = new RegExp(
+        r'(\b[a-zA-Z]+)(?:\s+(\d+))?(?::(\d+)(?:–\d+)?(?:,\s*\d+(?:–\d+)?)*)?',
+        caseSensitive: false);
+    if (referenceExpression.hasMatch(searchTerm)) {
+      var bookName = referenceExpression.firstMatch(searchTerm)?.group(1);
+      var chapter = referenceExpression.firstMatch(searchTerm)?.group(2);
+      var verseStart = referenceExpression.firstMatch(searchTerm)?.group(3);
+      if (bookName != null && bookName.isNotEmpty) {
+        var verseMatches = <Verse>[];
+        var possibleBookMatches = books
+            .where((element) =>
+                element.name.toLowerCase().contains(bookName.toLowerCase()))
+            .toList();
+        if (chapter != null && chapter.isNotEmpty) {
+          int chapterNumber = int.tryParse(chapter) ?? 1;
+
+          possibleBookMatches = possibleBookMatches
+              .where((element) => element.chapters.length > chapterNumber)
+              .toList();
+          var possiblechapters = possibleBookMatches
+              .select((element, index) => element.chapters
+                  .firstWhere((element) => element.number == chapterNumber))
+              .toList();
+          if (verseStart != null && verseStart.isNotEmpty) {
+            int verseNumber = int.tryParse(chapter) ?? 1;
+
+            possiblechapters = possiblechapters
+                .where((element) =>
+                    element.elements.whereType<Verse>().length > verseNumber)
+                .toList();
+            var verses = possiblechapters
+                .select((element, index) => element.elements
+                    .whereType<Verse>()
+                    .firstWhere((element) => element.number == verseNumber))
+                .toList();
+            verseMatches.addAll(verses);
+          } else {
+            var verses = possiblechapters
+                .select((element, index) => element.elements
+                    .whereType<Verse>()
+                    .firstWhere((element) => element.number == 1))
+                .toList();
+            verseMatches.addAll(verses);
+          }
+        }
+        verses.isNotEmpty
+            ? verses.toList().insertAll(0, verseMatches.toList())
+            : verses.addAll(verseMatches.toList());
+      }
     }
     return verses.toList();
   }

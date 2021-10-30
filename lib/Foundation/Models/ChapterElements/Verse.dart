@@ -1,6 +1,7 @@
+import 'package:flutter/material.dart';
+
 import '../Chapter.dart';
 import 'IChapterElement.dart';
-import 'package:flutter/material.dart';
 
 class Verse extends IChapterElement {
   int id;

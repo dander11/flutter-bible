@@ -1,5 +1,4 @@
-import 'package:bible_bloc/Feature/InheritedBlocs.dart';
-import 'package:bible_bloc/Foundation/foundation.dart';
+import '../../../InheritedBlocs.dart';
 import 'package:flutter/material.dart';
 
 import 'BookPanel.dart';

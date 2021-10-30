@@ -1,7 +1,7 @@
 import 'dart:async';
-import 'package:bible_bloc/Feature/Notes/notes_bloc.dart';
-import 'package:bible_bloc/Foundation/Models/Note.dart';
-import 'package:bible_bloc/Foundation/Provider/INotesProvider.dart';
+import '../../Feature/Notes/notes_bloc.dart';
+import '../Models/Note.dart';
+import 'INotesProvider.dart';
 //import 'package:notus/notus.dart';
 
 class TestNotesProvider extends INotesProvider {

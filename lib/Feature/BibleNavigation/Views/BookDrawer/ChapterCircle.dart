@@ -1,5 +1,11 @@
-import 'package:bible_bloc/Feature/InheritedBlocs.dart';
-import 'package:bible_bloc/Foundation/foundation.dart';
+import '../../../Reader/bloc/reader_bloc.dart';
+import '../../../Reader/bloc/reader_event.dart';
+import '../../../../Foundation/Models/Book.dart';
+import '../../../../Foundation/Models/Chapter.dart';
+import '../../../../Foundation/Models/ChapterReference.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+
+import '../../../InheritedBlocs.dart';
 import 'package:flutter/material.dart';
 
 class ChapterCircle extends StatelessWidget {
@@ -25,10 +31,12 @@ class ChapterCircle extends StatelessWidget {
       padding: EdgeInsets.all(8.0),
       elevation: 0.0,
       onPressed: () {
-        InheritedBlocs.of(context)
+        BlocProvider.of<ReaderBloc>(context).add(ReaderGoToChapter(ChapterReference(chapter: chapter)));
+        //context.read<ReaderBloc>(;
+        /* InheritedBlocs.of(context)
             .bibleBloc
             .currentChapterReference
-            .add(ChapterReference(chapter: chapter));
+            .add(ChapterReference(chapter: chapter)); */
         Navigator.of(context).pop();
       },
     );
