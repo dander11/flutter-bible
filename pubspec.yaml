@@ -32,8 +32,6 @@ dependencies:
   cupertino_icons: ^0.1.2
 
 dev_dependencies:
-  flutter_test:
-    sdk: flutter
   faker: ^1.0.0  
   flutter_launcher_icons: "^0.7.0"
   mockito: "^4.0.0"
