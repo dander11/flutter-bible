@@ -27,8 +27,7 @@ void main() async {
   await GlobalConfiguration().loadFromAsset("app_settings");
   final bibleBloc = BibleBloc(MultiPartXmlBibleProvider(), ReferenceProvider());
   HydratedBloc.storage = await HydratedStorage.build(
-    storageDirectory: await getTemporaryDirectory()
-  );
+      storageDirectory: await getTemporaryDirectory());
 
   runApp(MyApp(
     bibleBloc: bibleBloc,
@@ -36,38 +35,50 @@ void main() async {
   ));
 }
 
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget {
   final bibleBloc;
   final settingsBloc;
 
   MyApp({this.bibleBloc, this.settingsBloc});
 
-  // This widget is the root of your application.
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  MultiPartXmlBibleProvider _bibleProvider;
+  @override
+  void initState() {
+    _bibleProvider = MultiPartXmlBibleProvider();
+    //_bibleProvider.init();
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return MultiBlocProvider(
       providers: [
         BlocProvider<ReaderBloc>(
           create: (context) => ReaderBloc(
-            MultiPartXmlBibleProvider(),
+            _bibleProvider,
           ),
         ),
         BlocProvider<VerseReferenceBloc>(
           create: (context) => VerseReferenceBloc(
-            MultiPartXmlBibleProvider(),
+            _bibleProvider,
           ),
         ),
       ],
       child: InheritedBlocs(
-        bibleBloc: bibleBloc,
-        settingsBloc: settingsBloc,
+        bibleBloc: widget.bibleBloc,
+        settingsBloc: widget.settingsBloc,
         notesBloc: NotesBloc(),
         navigationBloc: NavigationBloc(),
         searchBloc: SearchBloc(XmlBibleProvider()),
         child: MaterialApp(
           theme: Designs.darkTheme,
           home: MyHomePage(
-            bibleBloc: bibleBloc,
+            bibleBloc: widget.bibleBloc,
           ),
         ),
       ),

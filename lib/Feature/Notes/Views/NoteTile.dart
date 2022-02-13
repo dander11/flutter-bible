@@ -17,10 +17,10 @@ class NoteTile extends StatefulWidget {
   _NoteTileState createState() => _NoteTileState();
 }
 
-class _NoteTileState extends State<NoteTile> {
+class _NoteTileState extends State<NoteTile> with TickerProviderStateMixin{
   var _selected = false;
   final _slideKey = GlobalKey();
-  final SlidableController slidableController = SlidableController();
+  //final SlidableController slidableController = SlidableController(this);
 
   @override
   Widget build(BuildContext context) {

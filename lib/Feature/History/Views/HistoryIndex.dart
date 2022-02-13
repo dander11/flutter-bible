@@ -1,4 +1,9 @@
+import 'package:bible_bloc/Feature/Reader/bloc/reader_bloc.dart';
+import 'package:bible_bloc/Feature/Reader/bloc/reader_event.dart';
+import 'package:bible_bloc/Feature/Reader/bloc/reader_state.dart';
+import 'package:bible_bloc/Feature/Reader/bloc/verse_reference_bloc.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../Foundation/Models/ChapterElements/Verse.dart';
 import '../../../Foundation/Models/ChapterReference.dart';
@@ -15,26 +20,19 @@ class HistoryIndex extends StatelessWidget {
       slivers: <Widget>[
         HistoryAppBar(),
         SliverFillRemaining(
-          child: StreamBuilder<List<ChapterReference>>(
-            stream: InheritedBlocs.of(context).bibleBloc.chapterHistory,
-            initialData: [],
-            builder: (BuildContext context,
-                AsyncSnapshot<List<ChapterReference>> snapshot) {
+          child: BlocBuilder<ReaderBloc, ReaderState>(
+            bloc: BlocProvider.of<ReaderBloc>(context),
+            builder: (BuildContext context, ReaderState ReaderState) {
               return ListView.builder(
-                itemCount: snapshot.data.length,
+                itemCount: BlocProvider.of<ReaderBloc>(context).history.length,
                 itemBuilder: (context, index) {
-                  var reference = snapshot.data[index];
+                  var reference =
+                      BlocProvider.of<ReaderBloc>(context).history[index];
                   return ListTile(
                     onTap: () async {
-                      InheritedBlocs.of(context)
-                          .bibleBloc
-                          .currentPopupChapterReference
-                          .add(
-                            ChapterReference(
-                              chapter: reference.chapter,
-                              verseNumber: reference.verseNumber,
-                            ),
-                          );
+                      BlocProvider.of<VerseReferenceBloc>(context)
+                          .add(ReaderGoToChapter(reference));
+
                       InheritedBlocs.of(context)
                           .showReferenceInBottomSheet(
                         context,

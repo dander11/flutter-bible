@@ -14,10 +14,10 @@ class HistoryAppBar extends StatelessWidget {
       centerTitle: true,
       title: Text("History"),
       actions: <Widget>[
-        IconButton(
+        /*  IconButton(
           icon: Icon(Icons.clear_all),
           onPressed: () => InheritedBlocs.of(context).bibleBloc.clearHistory(),
-        )
+        ) */
       ],
     );
   }

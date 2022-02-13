@@ -144,26 +144,23 @@ class BibleBloc {
 
   void _initCurrentBook() async {
     try {
-       SharedPreferences sp = await SharedPreferences.getInstance();
-    var currentChapterString = sp.getString(membershipKey);
-    if (currentChapterString != null && currentChapterString.contains("_")) {
-      var bookName = currentChapterString.split("_")[0];
-      var chapterNumber = int.parse(currentChapterString.split("_")[1]);
-      // var verseNumber = int.tryParse(currentChapterString.split("_")[2]);
-      var chapterReference = ChapterReference(
-        chapter: await _importer.getChapter(bookName, chapterNumber),
-        //verseNumber: verseNumber,
-      );
-      currentChapterReference.add(chapterReference);
-    } else {
-     
-    }
+      SharedPreferences sp = await SharedPreferences.getInstance();
+      var currentChapterString = sp.getString(membershipKey);
+      if (currentChapterString != null && currentChapterString.contains("_")) {
+        var bookName = currentChapterString.split("_")[0];
+        var chapterNumber = int.parse(currentChapterString.split("_")[1]);
+        // var verseNumber = int.tryParse(currentChapterString.split("_")[2]);
+        var chapterReference = ChapterReference(
+          chapter: await _importer.getChapter(bookName, chapterNumber),
+          //verseNumber: verseNumber,
+        );
+        currentChapterReference.add(chapterReference);
+      } else {}
     } catch (e) {
       var chapterReference = ChapterReference(
           chapter: await _importer.getChapter(_books.first.name, 1));
       currentChapterReference.add(chapterReference);
-    } 
-   
+    }
   }
 
   void _saveCurrentBookAndChapter() async {
@@ -246,7 +243,7 @@ class BibleBloc {
         .toList();
 
     CrossReference reference = CrossReference(
-      elements: List<ICrossReferenceElement>(),
+      elements: <ICrossReferenceElement>[],
       id: referenceId,
     );
     var userLines = "";
@@ -282,16 +279,6 @@ class BibleBloc {
     }
 
     _crossReference.add(reference);
-
-    /*  bookNumber = referencedId.substring(0, 2);
-    chapterNumber = referencedId.substring(2, 5);
-    verseNumber = referencedId.substring(5);
-    var refChapter = await _importer.getChapterByBookNumber(
-        int.parse(bookNumber), int.parse(chapterNumber));
-    _updatePopupChapter(ChapterReference(
-        chapter: refChapter, verseNumber: int.parse(verseNumber)));
-
-    print(userLines); */
   }
 
   updatePopupReferenceFromCrossReference(

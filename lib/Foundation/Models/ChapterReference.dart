@@ -9,13 +9,13 @@ class ChapterReference {
 
   ChapterReference({@required this.chapter, this.verseNumber = 1});
 
-  ChapterReference.fromJson(Map<String, dynamic> json) {
+  factory ChapterReference.fromJson(Map<String, dynamic> json) {
     Book book = Book(name: json['book']);
     Chapter aChapter = Chapter(
       book: book,
       number: json["chapter"],
     );
-    ChapterReference(chapter: aChapter, verseNumber: json['verse']);
+   return ChapterReference(chapter: aChapter, verseNumber: json['verse']);
   }
 
   Map<String, dynamic> toJson() => {

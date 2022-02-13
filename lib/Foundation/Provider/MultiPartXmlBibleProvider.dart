@@ -30,6 +30,9 @@ class MultiPartXmlBibleProvider extends IBibleProvider {
 
   @override
   Future init() async {
+    if (_booksDirectory != null) {
+      return;
+    }
     var path = (_cfg.getString("multipartXmlBiblePath") + 'books.xml');
     _booksDirectory = await loadDocument(path);
     return;
@@ -37,6 +40,9 @@ class MultiPartXmlBibleProvider extends IBibleProvider {
 
   @override
   Future<List<Book>> getAllBooks() async {
+    if (_books != null) {
+      return Future.value(_books);
+    }
     var xmlBooks = _booksDirectory.findAllElements("book");
     _books = List<Book>();
     for (var item in xmlBooks) {
@@ -293,8 +299,10 @@ class MultiPartXmlBibleProvider extends IBibleProvider {
   String _getBookNameByNumber(int bookNumber) {
     var books = _booksDirectory.findAllElements("book");
     var bookName = books
-        .firstWhere((xml.XmlElement x) =>
-            int.parse(x.getAttribute("number")) == bookNumber)
+        .firstWhere(
+            (xml.XmlElement x) =>
+                int.parse(x.getAttribute("number")) == bookNumber,
+            orElse: () => books.first)
         .getAttribute("title");
     return bookName;
   }

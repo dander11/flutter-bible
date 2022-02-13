@@ -29,11 +29,11 @@ class CrossReferenceElement extends IChapterElement {
     var span = TextSpan(
       children: [
         WidgetSpan(
-            child: InkWell(
-              onTap: () {
+            child: GestureDetector(
+              onTapDown: (TapDownDetails details) {
                 HapticFeedback.vibrate();
-                InheritedBlocs.of(context)
-                    .openChapterReference(context, referenceId);
+                InheritedBlocs.of(context).openChapterReference(
+                    context, referenceId, details.globalPosition);
               },
               child: Text(
                 '''${this.letter}''',

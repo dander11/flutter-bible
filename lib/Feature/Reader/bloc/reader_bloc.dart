@@ -18,6 +18,7 @@ class ReaderBloc extends HydratedBloc<ReaderEvent, ReaderState> {
   Chapter _currentChapter;
   Chapter _nextChapter;
   Chapter _prevChapter;
+  final List<ChapterReference> history = [];
 
   ReaderBloc(this.importer) : super(ReaderInitial()) {
     _getBooks();
@@ -46,6 +47,7 @@ class ReaderBloc extends HydratedBloc<ReaderEvent, ReaderState> {
         ChapterReference(chapter: _currentChapter, verseNumber: 1),
         _nextChapter,
         _prevChapter));
+    history.add(event.reference);
   }
 
   Future<Null> _getBooks() async {
@@ -94,7 +96,7 @@ class ReaderBloc extends HydratedBloc<ReaderEvent, ReaderState> {
   ReaderState fromJson(Map<String, dynamic> json) {
     try {
       if (json.isNotEmpty && json.containsKey('currentChapter')) {
-        _getBooks().then((value) {
+        _getBooks().then((value) async {
           var reference = ChapterReference.fromJson(json['currentChapter']);
           var chapter = _books
               .firstWhere(
@@ -104,6 +106,7 @@ class ReaderBloc extends HydratedBloc<ReaderEvent, ReaderState> {
                   (chapter) => chapter.number == reference.chapter.number);
           reference = ChapterReference(
               chapter: chapter, verseNumber: reference.verseNumber);
+          this.add(ReaderGoToChapter(reference));
         });
       } else {
         _getBooks().then((value) => this.add(ReaderGoToChapter(ChapterReference(

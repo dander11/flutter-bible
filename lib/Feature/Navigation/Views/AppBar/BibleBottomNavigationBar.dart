@@ -73,7 +73,7 @@ class BibleBottomNavigationBar extends StatelessWidget {
               },
               items: [
                 BottomNavigationBarItem(
-                  title: Text("Bible"),
+                  label: "Bible",
                   icon: Icon(Icons.library_books),
                 ),
                 /*BottomNavigationBarItem(
@@ -85,7 +85,7 @@ class BibleBottomNavigationBar extends StatelessWidget {
                   icon: Icon(Icons.search),
                 ),*/
                 BottomNavigationBarItem(
-                  title: Text("History"),
+                  label: "History",
                   icon: Icon(Icons.history),
                 ),
               ],

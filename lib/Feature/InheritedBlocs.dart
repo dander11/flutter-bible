@@ -1,4 +1,7 @@
+import 'dart:async';
+
 import 'package:bible_bloc/Feature/Reader/bloc/verse_reference_bloc.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../Foundation/Models/ChapterReference.dart';
@@ -48,6 +51,7 @@ class InheritedBlocs extends InheritedWidget {
     ScrollController _controller = ScrollController();
     return showModalBottomSheet<bool>(
         context: context,
+        useRootNavigator: true,
         isScrollControlled: true,
         builder: (BuildContext context) {
           return FractionallySizedBox(
@@ -56,30 +60,34 @@ class InheritedBlocs extends InheritedWidget {
                 controller: _controller,
                 slivers: <Widget>[
                   BlocBuilder<VerseReferenceBloc, ReaderState>(
+                      bloc: BlocProvider.of<VerseReferenceBloc>(context),
                       builder: (context, state) {
-                    if (state is ReaderLoaded) {
-                      return SliverAppBar(
-                        pinned: true,
-                        actions: <Widget>[
-                          IconButton(
-                            icon: Icon(Icons.open_in_new),
-                            onPressed: () {
-                              BlocProvider.of<ReaderBloc>(context).add(
-                                  ReaderGoToChapter(
-                                      state.currentChapterReference));
+                        if (state is ReaderLoaded) {
+                          return SliverAppBar(
+                            pinned: true,
+                            centerTitle: true,
+                            title: Text(
+                                "${state.currentChapterReference.chapter.book.name} ${state.currentChapterReference.chapter.number.toString()}:${state.currentChapterReference.verseNumber.toString()}"),
+                            actions: <Widget>[
+                              IconButton(
+                                icon: Icon(Icons.open_in_new),
+                                onPressed: () {
+                                  BlocProvider.of<ReaderBloc>(context).add(
+                                      ReaderGoToChapter(
+                                          state.currentChapterReference));
 
-                              Navigator.of(context).pop(true);
-                            },
-                          )
-                        ],
-                      );
-                    } else {
-                      return SliverAppBar(
-                        pinned: true,
-                        actions: <Widget>[],
-                      );
-                    }
-                  }),
+                                  Navigator.of(context).pop(true);
+                                },
+                              )
+                            ],
+                          );
+                        } else {
+                          return SliverAppBar(
+                            pinned: true,
+                            actions: <Widget>[],
+                          );
+                        }
+                      }),
                   SliverToBoxAdapter(child:
                       BlocBuilder<VerseReferenceBloc, ReaderState>(
                           builder: (context, state) {
@@ -99,35 +107,67 @@ class InheritedBlocs extends InheritedWidget {
         });
   }
 
-  openChapterReference(BuildContext context, String referenceId) {
-    this.bibleBloc.addChapterReferenceFromId(referenceId);
+  openChapterReference(
+      BuildContext context, String referenceId, Offset globalPostiion) {
+    bool hasFired = false;
+    StreamSubscription<CrossReference> listener;
 
-    var snackBar = SnackBar(
-      backgroundColor: Theme.of(context).primaryColor,
-      content: StreamBuilder<CrossReference>(
-        stream: this.bibleBloc.crossReference.stream,
-        builder: (BuildContext snackContext,
-            AsyncSnapshot<CrossReference> snapshot) {
-          if (!snapshot.hasData) {
-            return CircularProgressIndicator();
-          }
-          var reference = this.bibleBloc.crossReference.value;
-          return Container(
-            child: Text.rich(
-              reference.toInlineSpan(context),
-              style: Theme.of(context).textTheme.bodyText2,
-            ),
-          );
-        },
-      ),
+    listener = this.bibleBloc.crossReference.listen((value) {
+      var reference = this.bibleBloc.crossReference.value;
+      if (!hasFired && reference.id == referenceId) {
+        hasFired = true;
+        showMenu(
+            context: context,
+            position: RelativeRect.fromLTRB(
+                globalPostiion.dx, globalPostiion.dy, globalPostiion.dx, 0),
+            /* 
+        RelativeRect.fromRect(
+            globalPostiion & Size(40, 40), // smaller rect, the touch area
+            Offset.zero & Size(40, 40) // Bigger rect, the entire screen
+            ), */
+            items: <PopupMenuItem>[
+              for (var ref
+                  in reference.elements.whereType<VerseReferenceElement>())
+                PopupMenuItem(
+                  onTap: () {
+                    HapticFeedback.vibrate();
+                    this.openVerseReferenceInSheet(context, ref);
+                  },
+                  child: Text.rich(
+                    ref.toInlineSpan(context),
+                    style: Theme.of(context).textTheme.bodyText2,
+                  ),
+                )
+            ]);
+        listener.cancel();
+      }
+    });
+    this.bibleBloc.addChapterReferenceFromId(referenceId);
+    var snackBar = StreamBuilder<CrossReference>(
+      stream: this.bibleBloc.crossReference.stream,
+      builder:
+          (BuildContext snackContext, AsyncSnapshot<CrossReference> snapshot) {
+        if (!snapshot.hasData) {
+          return CircularProgressIndicator();
+        }
+        var reference = this.bibleBloc.crossReference.value;
+        /*  return Container(
+          child: Text.rich(
+            reference.toInlineSpan(context),
+            style: Theme.of(context).textTheme.bodyText2,
+          ),
+        ); */
+      },
     );
 
-    Scaffold.of(context).showSnackBar(snackBar);
+    // Scaffold.of(context).showSnackBar(snackBar);
   }
 
   openVerseReferenceInSheet(
-      BuildContext context, VerseReferenceElement referenceElement) {
-    this.bibleBloc.updatePopupReferenceFromCrossReference(referenceElement);
+      BuildContext context, VerseReferenceElement referenceElement) async {
+    BlocProvider.of<VerseReferenceBloc>(context)
+        .add(GoToVerseReferenceFromNumbers(referenceElement));
+    //this.bibleBloc.updatePopupReferenceFromCrossReference(referenceElement);
     this.showReferenceInBottomSheet(context);
   }
 }

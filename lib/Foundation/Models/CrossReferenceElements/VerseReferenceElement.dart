@@ -1,3 +1,6 @@
+import 'package:bible_bloc/Feature/Reader/bloc/verse_reference_bloc.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+
 import '../../../Feature/InheritedBlocs.dart';
 import 'ICrossReferenceElement.dart';
 import 'package:flutter/cupertino.dart';
@@ -18,7 +21,7 @@ class VerseReferenceElement extends ICrossReferenceElement {
     var span = TextSpan(
       children: [
         WidgetSpan(
-            child: InkWell(
+            child: GestureDetector(
               onTap: () {
                 HapticFeedback.vibrate();
                 InheritedBlocs.of(context)

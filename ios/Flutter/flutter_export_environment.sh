@@ -1,6 +1,6 @@
 #!/bin/sh
 # This is a generated file; do not edit or check into version control.
-export "FLUTTER_ROOT=C:\tools\flutter"
+export "FLUTTER_ROOT=C:\Users\dander11\fvm\versions\stable"
 export "FLUTTER_APPLICATION_PATH=C:\dev\flutter\flutter_bible"
 export "COCOAPODS_PARALLEL_CODE_SIGN=true"
 export "FLUTTER_TARGET=lib\main.dart"

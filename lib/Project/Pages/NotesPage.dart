@@ -34,8 +34,7 @@ class NotesPage extends StatelessWidget {
         return SimpleDialog(
           children: <Widget>[
             Form(
-              key: _formKey,
-              autovalidate: false,
+              autovalidateMode: AutovalidateMode.disabled, key: _formKey,
               child: Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: Column(
@@ -52,7 +51,7 @@ class NotesPage extends StatelessWidget {
                         }
                       },
                     ),
-                    RaisedButton(
+                    TextButton(
                       onPressed: () {
                         // Validate will return true if the form is valid, or false if
                         // the form is invalid.
